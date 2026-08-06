@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<gpx version="1.1" creator="Lufop https://lufop.net" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Base Radars</name>
+  </metadata>
+  <wpt lat="42.87821" lon="23.80284">
+    <name>Radar BG 130</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.19831" lon="24.63773">
+    <name>Radar BG 130</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.19811" lon="24.63383">
+    <name>Radar BG 130</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.43197" lon="23.85207">
+    <name>Radar BG 130</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="41.7789928" lon="26.2172145">
+    <name>Radar BG 130</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.0756" lon="25.68336">
+    <name>Radar BG 40</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.11699" lon="23.03844">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.9465" lon="23.76811">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.41423" lon="23.20473">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.43178" lon="25.68376">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.41086" lon="25.59438">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.53023" lon="26.07737">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.49776" lon="25.993">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.47562" lon="25.87368">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.21622" lon="27.95597">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.25841" lon="27.82288">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.84131" lon="25.97645">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.709798" lon="23.294085">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.6889239" lon="23.3398813">
+    <name>Radar BG 50</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.39548" lon="23.24029">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.08942" lon="25.48325">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.04032" lon="24.52977">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.44368" lon="27.58622">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.35675" lon="25.65705">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.64109" lon="25.87304">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="41.94737" lon="23.09675">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.0078" lon="23.0756">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.3497" lon="23.09512">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.2043827" lon="24.7337588">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="41.7244368" lon="26.3264126">
+    <name>Radar BG 60</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.43333" lon="27.55775">
+    <name>Radar BG 80</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.6842555" lon="23.3465657">
+    <name>Radar BG 80</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.67135" lon="23.99485">
+    <name>Radar BG 90</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.56139" lon="27.57277">
+    <name>Radar BG 90</name>
+    <type>Radars : BULGARIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt></gpx>

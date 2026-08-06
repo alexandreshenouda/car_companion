@@ -1,0 +1,2922 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<gpx version="1.1" creator="Lufop https://lufop.net" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Base Radars</name>
+  </metadata>
+  <wpt lat="59.73607" lon="10.17682">
+    <name>Radar NO 40</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.90708" lon="10.56462">
+    <name>Radar NO 40</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.94535" lon="11.04138">
+    <name>Radar NO 40</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.74031" lon="7.20935">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.38131" lon="5.35929">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.10847" lon="9.65696">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.26598" lon="5.19469">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.96259" lon="23.39335">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.95277" lon="5.64195">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.11013" lon="7.77851">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.03589" lon="18.50698">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.95392" lon="10.6437">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.73133" lon="10.30722">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.92192" lon="10.78603">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.26987" lon="5.20206">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.69521" lon="10.30148">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.92459" lon="10.59425">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.03278" lon="18.50427">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.85338" lon="7.15587">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.72837" lon="10.31199">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.96478" lon="10.34259">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.22083" lon="5.19249">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.77427" lon="10.48007">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.15097" lon="7.96787">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.91396" lon="10.46896">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.32973" lon="5.63523">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.73307" lon="10.30478">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.96392" lon="10.34728">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.04861" lon="10.0165">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.49696" lon="10.28299">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.9326" lon="10.72495">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.90144" lon="10.56182">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.35999" lon="5.29584">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.81767" lon="10.46568">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.4906" lon="8.84182">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.52213" lon="10.15798">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.8412" lon="10.43546">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.9199" lon="10.59561">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.2503" lon="5.19831">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.8152" lon="10.468">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.4905" lon="8.84174">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.84189" lon="10.43631">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.86122" lon="10.7851">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.39974" lon="10.46364">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.82305" lon="5.71191">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.91141" lon="10.50727">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.34763" lon="5.24467">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.93502" lon="10.74646">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.85307" lon="10.78278">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.39362" lon="10.4627">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.83312" lon="5.71892">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="68.85913" lon="18.33281">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.71988" lon="10.80978">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.92086" lon="10.79356">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.9423" lon="10.66505">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.72554" lon="10.20785">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.83981" lon="5.72422">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="68.86508" lon="18.34575">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.71958" lon="10.8026">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.91883" lon="10.58133">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.44556" lon="5.32476">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.97427" lon="23.35295">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.09033" lon="10.87179">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="68.85926" lon="18.33133">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.957" lon="11.01954">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.92417" lon="10.57192">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.94595" lon="11.03649">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.11002" lon="9.6556">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.9577" lon="23.22178">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.95145" lon="5.64933">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.95593" lon="11.01424">
+    <name>Radar NO 50</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.74166" lon="7.22512">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.64727" lon="9.04978">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.74812" lon="10.29165">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.75397" lon="10.14061">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.26573" lon="5.43108">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.26191" lon="10.8929">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.50947" lon="8.77778">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.32843" lon="5.64963">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.20152" lon="10.11935">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.9094" lon="10.79367">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="66.33968" lon="14.12168">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.21095" lon="10.99704">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.15003" lon="7.98937">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.36481" lon="5.99097">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.41083" lon="8.69785">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.92372" lon="10.47429">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.35395" lon="5.23274">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.21618" lon="11.00754">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.15108" lon="7.99135">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.34123" lon="5.39782">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.40645" lon="8.69638">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.902" lon="11.09323">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.92384" lon="10.98466">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.22567" lon="11.04792">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.34413" lon="10.57587">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.15411" lon="7.99589">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.58295" lon="5.79578">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.2328" lon="11.00255">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.54715" lon="19.19918">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.24579" lon="10.89853">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.12563" lon="9.69412">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.11801" lon="8.85314">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.5082" lon="5.34856">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.23065" lon="11.00061">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.5593" lon="19.18248">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.24419" lon="10.89944">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.09442" lon="9.68743">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.11852" lon="8.92414">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.49511" lon="5.37156">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.19711" lon="7.93222">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.0099" lon="9.66326">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.35247" lon="5.34887">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.12248" lon="9.6482">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.85527" lon="7.18502">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.09414" lon="9.04972">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.35528" lon="5.95955">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.96568" lon="23.41935">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.34392" lon="5.34544">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.82432" lon="11.3407">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.26754" lon="5.33716">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.7309" lon="9.54973">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.68057" lon="10.85664">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.13762" lon="7.9668">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.82416" lon="10.43542">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.74932" lon="10.17898">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="66.33765" lon="14.1596">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.27117" lon="10.89893">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.68273" lon="10.84011">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.14109" lon="7.9729">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.20327" lon="10.10243">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.74979" lon="10.28949">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.84638" lon="10.77673">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.25838" lon="11.06002">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.27938" lon="5.40777">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.26882" lon="10.89997">
+    <name>Radar NO 60</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.80763" lon="5.77751">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.56586" lon="19.18336">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.98164" lon="9.60644">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.90614" lon="10.74438">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.43452" lon="6.39998">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.66951" lon="9.56747">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.67313" lon="10.88489">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.25389" lon="11.0399">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.13911" lon="7.1747">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.5633" lon="8.82051">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.91018" lon="10.71846">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.36277" lon="5.12616">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.16319" lon="10.30438">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.40238" lon="10.40713">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.5839" lon="11.0084">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.27046" lon="11.06933">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.95466" lon="10.86842">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.96622" lon="9.48807">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.91148" lon="10.72624">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.10801" lon="10.85288">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.51547" lon="10.85857">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.13434" lon="18.58624">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.54271" lon="10.86299">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.26698" lon="11.04444">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.95178" lon="10.77381">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.62176" lon="10.96197">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.56911" lon="11.35107">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.41756" lon="5.47055">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.14003" lon="7.85933">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.28801" lon="10.73802">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.61748" lon="10.61487">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.26662" lon="11.03963">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.172" lon="5.44665">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.62246" lon="10.97319">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.46931" lon="5.37013">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.42367" lon="5.50477">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.03736" lon="7.53312">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.79695" lon="5.67055">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.6524" lon="10.60509">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.12641" lon="11.35747">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.16939" lon="5.44303">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.46003" lon="5.41132">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.92064" lon="10.63279">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.41692" lon="5.19702">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.14517" lon="7.8702">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.79328" lon="5.66311">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.09494" lon="7.97274">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.49673" lon="8.64819">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.02773" lon="10.01569">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.12525" lon="11.35028">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.255" lon="11.0425">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="67.32288" lon="15.08921">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.55368" lon="11.37136">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.37219" lon="11.29628">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.07753" lon="7.9923">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.90294" lon="10.78258">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.03753" lon="10.01601">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.12348" lon="11.33773">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.10701" lon="7.81482">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.10009" lon="9.67684">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.35938" lon="11.2776">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.69042" lon="10.65384">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.55699" lon="11.36508">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.90287" lon="10.78222">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.25782" lon="11.05166">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.12229" lon="11.32302">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.92612" lon="10.65047">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.98284" lon="11.45144">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.37896" lon="11.30585">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.66256" lon="10.56915">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.63085" lon="8.89526">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.89807" lon="10.8039">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.26969" lon="11.06357">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.12146" lon="11.29833">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.63959" lon="18.96881">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.97575" lon="11.46728">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.80304" lon="5.78093">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.52815" lon="19.23615">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.61368" lon="8.87949">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.89803" lon="10.75588">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.23424" lon="18.05213">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.62838" lon="18.95143">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.67146" lon="10.89271">
+    <name>Radar NO 70</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.3121" lon="5.27024">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="68.70558" lon="16.52326">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.10487" lon="5.70307">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.01539" lon="5.63348">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.93648" lon="9.32492">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.11835" lon="18.58248">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.10317" lon="7.47708">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.40336" lon="10.80324">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.38169" lon="5.27196">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.96078" lon="9.45423">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.33062" lon="5.26421">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.355" lon="10.0973">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.09333" lon="7.7669">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.01103" lon="11.79353">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.94352" lon="9.37617">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.09687" lon="18.59997">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.41098" lon="10.77309">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.56476" lon="5.6652">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.41046" lon="10.81621">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.32552" lon="5.2694">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.27975" lon="10.19293">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.38864" lon="5.33966">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.9372" lon="11.67874">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.41465" lon="5.32273">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.81075" lon="9.28105">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.42183" lon="10.61635">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.52057" lon="5.72589">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.29965" lon="9.68062">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.89971" lon="7.05973">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.89908" lon="7.21499">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.23589" lon="8.29832">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.68103" lon="18.98316">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.87956" lon="6.8471">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.40291" lon="11.33296">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.15167" lon="7.41522">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.31265" lon="5.42703">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.42304" lon="10.58326">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.08464" lon="9.66518">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.06299" lon="7.49795">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="68.60547" lon="15.10258">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="69.66208" lon="19.01969">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.89306" lon="7.05465">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.38675" lon="11.31393">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.35838" lon="10.28731">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.32378" lon="5.37137">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.49573" lon="10.17454">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.09526" lon="9.66658">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.03723" lon="11.00235">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="68.58772" lon="15.05706">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.63915" lon="6.16624">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.65454" lon="8.82094">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.9204" lon="9.34011">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="68.95422" lon="18.47067">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.32087" lon="5.2956">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.46549" lon="10.18652">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.84773" lon="10.01827">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.04532" lon="10.95562">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.74029" lon="5.40687">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.48857" lon="7.77814">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.70011" lon="8.8162">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.89611" lon="9.39361">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.70914" lon="11.25574">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.30514" lon="10.30466">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.10295" lon="9.25128">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="67.31506" lon="15.01798">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.24487" lon="5.89597">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.68253" lon="5.48272">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.4914" lon="7.77753">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.66203" lon="9.67253">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.31159" lon="10.15163">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.49098" lon="9.17772">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.41697" lon="10.82735">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.27784" lon="10.34182">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.45735" lon="10.76059">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.21638" lon="5.98463">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.7951" lon="10.75996">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.1159" lon="9.7035">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.49702" lon="9.15261">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.62474" lon="9.70891">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.62734" lon="8.55934">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.55546" lon="9.13142">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.3312" lon="9.91773">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.15192" lon="10.75373">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.44889" lon="10.71972">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.21457" lon="10.69803">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.89664" lon="9.28303">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.93976" lon="11.0145">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.51687" lon="9.10981">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.56227" lon="9.92542">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.62951" lon="8.56674">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.05156" lon="10.72745">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.05465" lon="5.65616">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="68.72762" lon="16.5412">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.07185" lon="5.67648">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.24475" lon="10.68728">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.0806" lon="9.82608">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.22123" lon="11.06257">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.32239" lon="5.86725">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="61.54816" lon="10.02275">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="60.38188" lon="5.31318">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.00044" lon="10.86255">
+    <name>Radar NO 80</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="62.09543" lon="9.20314">
+    <name>Radar NO Troncon</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="59.05572" lon="5.65847">
+    <name>Radar NO Troncon</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="58.93562" lon="9.32409">
+    <name>Radar NO Troncon</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="63.44432" lon="10.87615">
+    <name>Radar NO Troncon</name>
+    <type>Radars : NORVEGE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt></gpx>

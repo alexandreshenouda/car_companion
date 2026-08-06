@@ -1,0 +1,3237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<gpx version="1.1" creator="Lufop https://lufop.net" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Base Radars</name>
+  </metadata>
+  <wpt lat="45.5840031" lon="-73.5006005">
+    <name>Radar Chantier CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.4204435" lon="-73.9834195">
+    <name>Radar Chantier CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.5821305" lon="-71.5589601">
+    <name>Radar Chantier CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.77028100104" lon="-79.546526005329">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.760311995344" lon="-79.222982003299">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.796339996804" lon="-79.327178006218">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.715615003519" lon="-79.446520005341">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.721532000016" lon="-79.284993004874">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.648805996449" lon="-79.548980997994">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.712453007463" lon="-79.307427005445">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.775107004008" lon="-79.347040002097">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.760027003473" lon="-79.571818990966">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.768852005787" lon="-79.466926998713">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.750251006407" lon="-79.463390000313">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.8330695" lon="-97.1081432">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.593396000335" lon="-79.538179994071">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.787345007936" lon="-79.353028995611">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.815650005906" lon="-79.341316999885">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.798122008941" lon="-79.217665008053">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.792660004716" lon="-79.354736004171">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.800480005185" lon="-79.206898991275">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.6357" lon="-72.96651">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.712045007219" lon="-79.2810030013">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.681484003503" lon="-79.332381996919">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.792407007558" lon="-79.445755006486">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.741924005059" lon="-79.594209990199">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.56505" lon="-73.70197">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.795147000012" lon="-79.341261004564">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.779588002328" lon="-79.254217991905">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.757868999984" lon="-79.315245000971">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.656481004806" lon="-79.407721998349">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.80988799842" lon="-79.257698996839">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.766589004604" lon="-79.38805600118">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.655361003645" lon="-79.373916993319">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.770612002503" lon="-79.186864996256">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.755458002897" lon="-79.438481004437">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.749496999073" lon="-79.274934007067">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.798555006947" lon="-79.241040998371">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.74124000574" lon="-79.513685004835">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.755454000257" lon="-79.614089994995">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.826896001515" lon="-79.275907999274">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.684625003965" lon="-79.411169006015">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.75352600203" lon="-79.255366994085">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.777127999279" lon="-79.347897010848">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.612306996806" lon="-79.562676997797">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.79386900474" lon="-79.238752005142">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.61699300132" lon="-79.518845993217">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.737173005055" lon="-79.3434479955">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.773859005677" lon="-79.443007997978">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.793106003413" lon="-79.331412008294">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.2695" lon="-74.13657">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.661983998353" lon="-79.425658997727">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.836598005807" lon="-79.251189003695">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.620475000298" lon="-79.549415000337">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.3927" lon="-73.5806">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.620917995683" lon="-79.526741005286">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.743182001893" lon="-79.21891300097">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.76654500319" lon="-79.564784009809">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.828293997602" lon="-79.287201997168">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.808636999874" lon="-79.311167997882">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.780475010161" lon="-79.41231499153">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.622968011206" lon="-79.48121100966">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.737354002349" lon="-79.43400500463">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.709996003918" lon="-79.334394005724">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.751663001011" lon="-79.456751001921">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.774333999948" lon="-79.241759006698">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.784700001586" lon="-79.481056997688">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.690142004576" lon="-79.500600997078">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.644648002484" lon="-79.52343799847">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.785344002386" lon="-79.193342000164">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.778731005945" lon="-79.30790499033">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.747962000698" lon="-79.311817011924">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.635624993978" lon="-79.562317995946">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.781745998046" lon="-79.23389000259">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.651692000732" lon="-79.378984009028">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.702350995649" lon="-79.419108008664">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.77524400861" lon="-79.323017000568">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.794331009186" lon="-79.325968991843">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.554517" lon="-73.668969">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.616419004295" lon="-79.546286991847">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.720875005616" lon="-79.241447998072">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.761852003674" lon="-79.215837998568">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.677178001683" lon="-79.550890994997">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.60681" lon="-73.73269">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.739724005944" lon="-79.580402002851">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.736696007299" lon="-79.248083999068">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.795851005955" lon="-79.319311998644">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.773089005537" lon="-79.30535600995">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.708659007242" lon="-79.478061998085">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.801268006843" lon="-79.296597992124">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.638453004598" lon="-79.392225998691">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.717268007419" lon="-79.595621995463">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.74600200411" lon="-79.209349008432">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.764343003064" lon="-79.574870993127">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.761917005908" lon="-79.518821999491">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.823689002124" lon="-79.307066008764">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.744777004434" lon="-79.48645199477">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.668464011299" lon="-79.439035009653">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.804225006225" lon="-79.168787997981">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.678937003718" lon="-79.551711996877">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.69058700737" lon="-79.326574001917">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.798924001528" lon="-79.146222999432">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.804122000535" lon="-79.330734002608">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.71653100324" lon="-79.592615003885">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.725101000317" lon="-79.402195006586">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.788663002424" lon="-79.409916994778">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.81969800576" lon="-79.221072004745">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.85799" lon="-71.40697">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.713843999317" lon="-79.581117010177">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.706998002456" lon="-79.268130006035">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.718225999356" lon="-79.240362993736">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.647361997712" lon="-79.511363001347">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.7846" lon="-71.1613">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.646383004689" lon="-79.384098992288">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.665733999197" lon="-79.491186001499">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.726686006104" lon="-79.303470009725">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.821392003995" lon="-79.316924996247">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.730711001685" lon="-79.288761994365">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.81421700106" lon="-79.237137001351">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.765420996795" lon="-79.248958001976">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.808934002802" lon="-79.202724008411">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.694249004488" lon="-79.558649005924">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.64605301128" lon="-79.38556100057">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.808025999283" lon="-79.266505992264">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.64630300434" lon="-79.55999199585">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.787283002884" lon="-79.470088990947">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.693241004604" lon="-79.350290997049">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.726641999117" lon="-79.482069004509">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.641003996953" lon="-79.3806910081">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.790439996452" lon="-79.302294997824">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.722255002013" lon="-79.415609006098">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.757840005045" lon="-79.224708990266">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.656321007307" lon="-79.452452994412">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.819630997147" lon="-79.324435988807">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.789251006745" lon="-79.329586000083">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.90377" lon="-73.65864">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.652728998693" lon="-79.363245010823">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.745376005506" lon="-79.294729997595">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.757721009063" lon="-79.235266993106">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.775281000471" lon="-79.263183005771">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.747518008185" lon="-79.284836004575">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.1103" lon="-71.3026">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.78157900293" lon="-79.494505999245">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.743242002563" lon="-79.304645011313">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.780352006837" lon="-79.325394997667">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.814578007714" lon="-79.292218008112">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.668992999674" lon="-79.483563990614">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.746822006177" lon="-79.287960994199">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.726995007704" lon="-79.457653009275">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.698442002073" lon="-79.463522997534">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.742952001262" lon="-79.600093993312">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.809173002128" lon="-79.221657998674">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.724827004884" lon="-79.253960998646">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.640559999553" lon="-79.436989998683">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.683962001253" lon="-79.511457004345">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.785004995748" lon="-79.39214700481">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.650851999225" lon="-79.386628004658">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.808376005437" lon="-79.17081100198">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.790011996195" lon="-79.368067000426">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.715456010238" lon="-79.507223997328">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.787578011553" lon="-79.268312002016">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.682136002713" lon="-79.471597997949">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.783440004556" lon="-79.407870999859">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.832704002018" lon="-79.267961999997">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.58212" lon="-73.70487">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.789620007573" lon="-79.258838008916">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.823997006358" lon="-79.247816998906">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.772965000143" lon="-79.27298599424">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.798407002527" lon="-79.273365997678">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.785477003365" lon="-79.31095199995">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.529278" lon="-73.545947">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.806349002171" lon="-79.320974993651">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.796772002107" lon="-79.315766003199">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.769421006409" lon="-79.282256997504">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.760586003212" lon="-79.386635002929">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.797999006818" lon="-79.420083998351">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.816265001128" lon="-79.227600001176">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.709245006261" lon="-79.505565998259">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.796007006294" lon="-79.429267000886">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.737097003451" lon="-79.246163992116">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.716524999831" lon="-79.261333998319">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.666725000263" lon="-79.446460994332">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.65470700095" lon="-79.460047997342">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.636484003583" lon="-79.399649001543">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.648869002318" lon="-79.385556001383">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.772142005623" lon="-79.251497995166">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.765802001907" lon="-79.281078006951">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.759821997458" lon="-79.225324000818">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.770065005842" lon="-79.261331011104">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.654960001723" lon="-79.337434002234">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.792179002687" lon="-79.313882007193">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.796148001925" lon="-79.227541997245">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.43691" lon="-75.71196">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.645470003001" lon="-79.395045996344">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.757466003137" lon="-79.543761993849">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.8201199964" lon="-79.262094997679">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.698778001793" lon="-79.406156005223">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.769274006965" lon="-79.412904005566">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.720915002026" lon="-79.508633993822">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.812971000655" lon="-79.243075999823">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.685624998563" lon="-79.554702990361">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.752954002484" lon="-79.359969991144">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.737235996556" lon="-79.565305006978">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.667184004707" lon="-79.491766990095">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.665493003861" lon="-79.31621500087">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.655833995023" lon="-79.598410002394">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.792013001414" lon="-79.447588998966">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.633341003722" lon="-79.43456300188">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.811183997038" lon="-79.360776003651">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.635189002938" lon="-79.46814699688">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.776436008694" lon="-79.231756002544">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.787972004287" lon="-79.208343002147">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.653563999124" lon="-79.363597998395">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.751520997506" lon="-79.265052004952">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.707473006025" lon="-79.343625002551">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.634442002196" lon="-79.408745008946">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.767652999547" lon="-79.189608995367">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.648224996325" lon="-79.370932001403">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.76119300351" lon="-79.300750990609">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.660439005871" lon="-79.375898998977">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.91227" lon="-71.0942">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.671781009339" lon="-79.471124006379">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.76745200132" lon="-79.23916500512">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.759031003219" lon="-79.310187990576">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.679823996869" lon="-79.416981999195">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.774574009373" lon="-79.252238993772">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.636929000958" lon="-79.556708999718">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.701948009218" lon="-79.575632000571">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.73912599952" lon="-79.605448001438">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.734535002051" lon="-79.355978997575">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.700157998234" lon="-79.516200999617">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.736771999273" lon="-79.591703001577">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.676730008546" lon="-79.415786001934">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.641460002164" lon="-79.380868007064">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.805706007633" lon="-79.277399990533">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.785348005961" lon="-79.278570001469">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.733383001436" lon="-79.452862993442">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.812136006091" lon="-79.301945009227">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.722989995016" lon="-79.50912000393">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.650086998954" lon="-79.386291007077">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.739389004647" lon="-79.513220998494">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.661875001324" lon="-79.379373998368">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.626336004264" lon="-79.502632002292">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.707544999154" lon="-79.578243991555">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.659235004089" lon="-79.328435994296">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.654790006135" lon="-79.388314002135">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.72444300945" lon="-79.481590005942">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.4961" lon="-73.6553">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.81794100826" lon="-79.271980005772">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.797828996743" lon="-79.197745010658">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.779562002068" lon="-79.304392004129">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.706982004009" lon="-79.453180007189">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.79547600246" lon="-79.419421996024">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.798997999518" lon="-79.305980995157">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.640340004813" lon="-79.38318699705">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.773499003479" lon="-79.230680992998">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.792296999915" lon="-79.393596004046">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.711703008511" lon="-79.566701999079">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.789554000022" lon="-79.237058001732">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.688620001532" lon="-79.542872997017">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.783286002042" lon="-79.288262995949">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.654559011073" lon="-79.364022998154">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.674477002843" lon="-79.563176003498">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.737694995271" lon="-79.340976997293">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.614217004666" lon="-79.55615399185">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.800279996273" lon="-79.199080006279">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.825080001196" lon="-79.275140003052">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.773187002153" lon="-79.283868004747">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.775470007186" lon="-79.521734995474">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.71408600383" lon="-79.454751001797">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.640562002107" lon="-79.393004001533">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.718906006889" lon="-79.304468002626">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.650463001136" lon="-79.371912996297">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.659858002736" lon="-79.390494009671">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.737414004745" lon="-79.30228000572">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.49523" lon="-73.40931">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.735173003811" lon="-79.247384001005">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.7555480047" lon="-79.245421996635">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.734096994712" lon="-79.609913000342">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.686757003577" lon="-79.595565997676">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.709851004015" lon="-79.29093001102">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.758184004357" lon="-79.233076999">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.757861007668" lon="-79.603381003563">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.81066000783" lon="-79.339209005151">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.719258001801" lon="-79.429815990405">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.794662009404" lon="-79.234931007825">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.644552006335" lon="-79.567250012182">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.696993009783" lon="-79.263999006132">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.770920008533" lon="-79.543448000972">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.618393002075" lon="-79.51132800687">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.82070700586" lon="-79.294934010042">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.60720099678" lon="-79.520750997632">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.801974005656" lon="-79.199771004869">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.659460002296" lon="-79.513578003478">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.786578002388" lon="-79.188310006407">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.767924006804" lon="-79.271109994768">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.771643011523" lon="-79.364136000894">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.46855" lon="-73.46805">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.766343002102" lon="-79.400905996478">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.668757006978" lon="-79.305775001925">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.640758000846" lon="-79.411468998273">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.723112008977" lon="-79.558921998063">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.57916" lon="-73.78824">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.668893002719" lon="-79.379452004981">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.716846011755" lon="-79.259920004673">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.807186003862" lon="-79.270391999229">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.768408003812" lon="-79.186225006382">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.697049002433" lon="-79.54673100312">
+    <name>Radar Feu Rouge CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.760065" lon="-79.324688">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.35063734" lon="-75.80628401">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.3872" lon="-73.98563">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.73667" lon="-79.56022">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.43843109" lon="-75.64533439">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.662992" lon="-79.460827">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.46910126" lon="-75.45925606">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.5714" lon="-73.4422">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.27369244" lon="-75.93102766">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.26520237" lon="-75.90999805">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.2814636" lon="-75.74395486">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.64413" lon="-79.438036">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.49459" lon="-73.595">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.27851085" lon="-75.85734374">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.33408694" lon="-75.78383463">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.1244" lon="-70.6731">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.593861" lon="-79.536289">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.798854" lon="-71.257939">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.36486918" lon="-75.77023033">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.37627225" lon="-75.66090557">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.60261" lon="-73.80517">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.598678" lon="-79.520736">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.28507344" lon="-75.70962263">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.43322705" lon="-75.56546896">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.72761" lon="-73.49624">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.612814" lon="-79.494063">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.27212849" lon="-75.72346496">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.34465537" lon="-75.75007177">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.64794" lon="-73.8706">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.686174" lon="-79.518366">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.26251239" lon="-75.74182334">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="47.5218958" lon="-52.8255326">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.40031162" lon="-75.63584852">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.42877" lon="-73.6493">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.683652" lon="-79.553795">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.2949096" lon="-75.88133355">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.799996" lon="-79.328873">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.4391538" lon="-75.59991898">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.85028" lon="-71.20058">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.67337" lon="-79.562614">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.32300041" lon="-75.92470916">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.709106" lon="-79.29438">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.47896899" lon="-75.4782706">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.7278" lon="-71.26332">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.748847" lon="-79.594933">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.36465138" lon="-75.71241514">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.713933" lon="-79.33203">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.30800918" lon="-75.89990585">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="46.851827" lon="-71.231318">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="43.71741" lon="-79.569425">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="45.47178519" lon="-75.49442704">
+    <name>Radar Fixe CA</name>
+    <type>Radars : CANADA</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt></gpx>

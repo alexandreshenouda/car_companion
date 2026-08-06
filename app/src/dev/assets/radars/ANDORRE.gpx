@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<gpx version="1.1" creator="Lufop https://lufop.net" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Base Radars</name>
+  </metadata>
+  <wpt lat="42.49976" lon="1.507625">
+    <name>Radar Fixe AD 50</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.55245" lon="1.50846">
+    <name>Radar Fixe AD 50</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.52188" lon="1.55937">
+    <name>Radar Fixe AD 60</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.50712" lon="1.5375">
+    <name>Radar Fixe AD 60</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.44664" lon="1.48222">
+    <name>Radar Fixe AD 60</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.548" lon="1.69809">
+    <name>Radar Fixe AD 60</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.54564" lon="1.72991">
+    <name>Radar Fixe AD 60</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.579895" lon="1.659478">
+    <name>Radar Fixe AD 60</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.469536" lon="1.491969">
+    <name>Radar Fixe AD 60</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.52537" lon="1.5206">
+    <name>Radar Fixe AD 60</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.5107" lon="1.53274">
+    <name>Radar Fixe AD Tunnel</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.5185" lon="1.52438">
+    <name>Radar Fixe AD Tunnel</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.528816" lon="1.522215">
+    <name>Radar Fixe AD Tunnel</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.518749" lon="1.554385">
+    <name>Radar Fixe AD Tunnel</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="42.518471" lon="1.554315">
+    <name>Radar Fixe AD Tunnel</name>
+    <type>Radars : ANDORRE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt></gpx>

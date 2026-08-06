@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<gpx version="1.1" creator="Lufop https://lufop.net" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Base Radars</name>
+  </metadata>
+  <wpt lat="56.823203295775" lon="24.763692047787">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.582382" lon="21.33565">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9247546" lon="24.1718869">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.238961" lon="26.399691">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.944287" lon="23.922873">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.846198" lon="24.410446">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.127149" lon="24.289033">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.280874" lon="25.499694">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.010312" lon="23.508348">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.764255836688" lon="24.68436839838">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.5365935" lon="21.1865291">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.4649511" lon="24.1628692">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.359948" lon="26.172884">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9548581" lon="23.9193108">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.742997" lon="24.385397">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.36699" lon="24.276017">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.4838868" lon="25.410032">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.619501" lon="23.407746">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.1435972" lon="24.6758792">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9345898" lon="24.1387185">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.804959" lon="26.0763">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.7270918" lon="23.8559815">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.627063" lon="24.38327">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.996868" lon="24.266821">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.4648086" lon="25.2620143">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.781845" lon="23.376746">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.7936956" lon="24.6300966">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.933525947591" lon="24.120815992355">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.5405717" lon="26.0702838">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9584779" lon="23.8381154">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.959343675369" lon="24.375710513783">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9805734" lon="24.2534474">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.206725" lon="25.163996">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9123338" lon="23.3593491">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.089707" lon="24.554089">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.501171" lon="27.328577">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.931687815908" lon="24.118348360062">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.6873691" lon="23.8209626">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.7022507" lon="24.3720279">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.442052" lon="26.068816">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.8026872" lon="24.2472327">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.624494" lon="25.085866">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.663308" lon="22.968538">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.608153" lon="24.518967">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.347624" lon="27.166324">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9408556" lon="24.0604517">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.694504" lon="23.802347">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.18359" lon="24.344357">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.061614" lon="25.811484">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.882334" lon="24.244426">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.7751753" lon="25.0554577">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.034719" lon="22.922996">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.5411069" lon="27.1445761">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9378611" lon="24.049859">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.89497" lon="24.440686">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.6301675" lon="23.7424007">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.017329" lon="24.331704">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.547687" lon="25.801133">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9863097" lon="24.2186645">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.182258700064" lon="25.034809735012">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.6835802" lon="22.5678158">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.276375" lon="27.074869">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.898835256642" lon="24.041593101215">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.403632" lon="24.430582">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.4084362" lon="23.6824219">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.015917" lon="24.327223">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.16485" lon="25.733079">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.620038" lon="24.218411">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.375063" lon="25.031056">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.211099" lon="22.281734">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.075671081972" lon="26.733594861221">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.8336669" lon="24.0395251">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.042142" lon="24.423788">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9575829" lon="23.6684791">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.929009525472" lon="24.316492703152">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.627797" lon="25.708099">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.262193" lon="24.875033">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.2736505" lon="22.0360866">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.1025456" lon="24.2068252">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.567466" lon="26.641175">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.964132" lon="24.027794">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.8463867" lon="24.421697">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.831868" lon="23.555921">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.044641" lon="24.316477">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.159167" lon="25.664947">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.8084993" lon="24.8732522">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.6729762" lon="22.0201225">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.9303063" lon="24.1810867">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="55.907911" lon="26.618994">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.8863897" lon="23.9426491">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.2274646" lon="24.4196773">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="57.097988" lon="24.312106">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.5997823" lon="25.6535376">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="56.926354" lon="23.545982">
+    <name>Radar Fixe LV </name>
+    <type>Radars : LETTONIE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt></gpx>

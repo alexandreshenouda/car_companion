@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<gpx version="1.1" creator="Lufop https://lufop.net" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Base Radars</name>
+  </metadata>
+  <wpt lat="-36.931284" lon="174.65535">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-40.2178" lon="175.4205">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-44.258484" lon="171.273078">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.725766" lon="174.628865">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.77754" lon="174.68869">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.257763" lon="174.933713">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.78232" lon="176.3213">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.22802" lon="174.91624">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-38.67455" lon="178.04284">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-39.628663" lon="174.373007">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.919" lon="174.8756">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.777395" lon="174.57722">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.75841" lon="174.74143">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.23445" lon="174.80713">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.776719" lon="175.268559">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.122479" lon="174.858305">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-40.47617" lon="175.28432">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-38.161519" lon="175.267402">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.9118" lon="174.86545">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.890578" lon="174.594286">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.71805" lon="174.724442">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.10699" lon="175.09794">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.767029" lon="175.258338">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.24388" lon="174.9231">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.872274" lon="174.554558">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.245986" lon="175.202723">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.909514" lon="174.847831">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-35.662412" lon="174.294067">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-40.61722" lon="175.29155">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.67887" lon="176.13596">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.986567" lon="174.919333">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-45.899924" lon="170.454383">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.038255" lon="174.875582">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.909357" lon="174.667891">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.909205" lon="174.636871">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-40.36983" lon="175.62169">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.64944" lon="176.19224">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.998883" lon="174.92425">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-45.895317" lon="170.506504">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.874561" lon="174.70379">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.89756" lon="174.82561">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.773633" lon="174.741908">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-40.36871" lon="175.58362">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.276014" lon="175.487902">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.22529" lon="174.853871">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-45.86706" lon="170.54861">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.228826" lon="174.701606">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.89594" lon="174.64621">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.768289" lon="174.7485">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-40.35349" lon="175.59795">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.038868" lon="174.886095">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.889643" lon="175.460383">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-43.54423" lon="172.51888">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.217496" lon="174.789372">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.888846" lon="174.697723">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-38.15578" lon="176.24117">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.855224" lon="174.809218">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.9773" lon="174.81074">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.719483" lon="176.1461">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.312403" lon="174.77658">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-37.174787" lon="174.789002">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.879248" lon="174.818844">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-38.14599" lon="176.23097">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.897945" lon="174.710156">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.95431" lon="174.8484">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-44.390479" lon="171.227674">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.312121" lon="174.794154">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.905676" lon="174.679361">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.810436" lon="174.735054">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-38.13734" lon="176.22595">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-43.660197" lon="172.420005">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.931798" lon="174.674013">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.20086" lon="174.93265">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.321926" lon="174.549203">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-36.80911" lon="174.70831">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-41.272565" lon="174.776967">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-38.1461" lon="176.259241">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="-45.895735" lon="170.47219">
+    <name>Radar NZ Fixe</name>
+    <type>Radars : NOUVELLE-ZELANDE</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt></gpx>

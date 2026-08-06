@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<gpx version="1.1" creator="Lufop https://lufop.net" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Base Radars</name>
+  </metadata>
+  <wpt lat="49.599791" lon="6.119708">
+    <name>Radar Feu Rouge LU</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.600086" lon="6.11414">
+    <name>Radar Feu Rouge LU</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.5998062" lon="6.1187947">
+    <name>Radar Feu Rouge LU</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.6138278" lon="6.1204771">
+    <name>Radar Feu Rouge LU</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.7297258" lon="5.983834">
+    <name>Radar Fixe LU 50</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.6517219" lon="6.1179471">
+    <name>Radar Fixe LU 50</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.834405" lon="6.100046">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.506274" lon="5.947298">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.7312706" lon="6.007947">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.5829" lon="6.308223">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.731973" lon="5.867574">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.752254" lon="6.077873">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.561888" lon="6.312359">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.60042" lon="6.101376">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.50018" lon="5.943721">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.533572" lon="6.179792">
+    <name>Radar Fixe LU 70</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.8233038" lon="6.1894118">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.7072181" lon="6.1413896">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.818389" lon="6.463807">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="50.092046" lon="5.954772">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.6886738" lon="6.1627722">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.769867" lon="6.086659">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.6654161" lon="6.1630404">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.839477" lon="6.319944">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.6542155" lon="6.1825669">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.919437" lon="6.099365">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.4778661" lon="6.3600567">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="50.038575" lon="6.07987">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.4776757" lon="6.3600902">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.715056" lon="6.090489">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.4821108" lon="6.3396102">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.687043" lon="6.230637">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.6557384" lon="6.1903185">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.629955" lon="5.956354">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.6625168" lon="6.1982149">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.9036604" lon="5.9600441">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.542498" lon="6.286154">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.7311961" lon="6.1055017">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.511565" lon="5.968969">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.5867751" lon="6.3736796">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.7091313" lon="6.1187303">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.593419" lon="6.018627">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.857886" lon="6.0329533">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt>  <wpt lat="49.5571776" lon="6.1298507">
+    <name>Radar Fixe LU 90</name>
+    <type>Radars : LUXEMBOURG</type>
+    <extensions>
+      <osmand:address></osmand:address>
+      <osmand:icon>highway_speed_camera</osmand:icon>
+      <osmand:color>#f21606</osmand:color>
+      <osmand:background>square</osmand:background>
+    </extensions>
+  </wpt></gpx>

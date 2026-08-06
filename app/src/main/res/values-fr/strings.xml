@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- app_name is generated per flavor via resValue() in build.gradle.kts; declaring it
+         here as well would be a duplicate-resource error. -->
+
+    <!-- ===== common / shared format strings ===== -->
+    <string name="common_cancel">Annuler</string>
+    <string name="common_save">Enregistrer</string>
+    <string name="common_done">Terminé</string>
+    <string name="common_delete">Supprimer</string>
+    <string name="common_edit">Modifier</string>
+    <string name="common_share">Partager</string>
+    <string name="common_ok">OK</string>
+    <string name="common_close">Fermer</string>
+    <string name="common_speed_kmh">%1$d km/h</string>
+    <string name="common_speed_kmh_rounded">%1$.0f km/h</string>
+    <string name="common_distance_km">%1$.1f km</string>
+
+    <!-- ===== util/TimeFormat.kt ===== -->
+    <string name="time_just_now">à l\'instant</string>
+    <string name="time_seconds_ago">il y a %1$d s</string>
+    <string name="time_minutes_ago">il y a %1$d min</string>
+    <string name="time_hours_ago">il y a %1$d h</string>
+    <string name="time_days_ago">il y a %1$d j</string>
+    <string name="time_duration_hours_minutes">%1$d h %2$d min</string>
+    <string name="time_duration_minutes">%1$d min</string>
+
+    <!-- ===== data/model/EventType.kt ===== -->
+    <string name="event_type_car_meet">Rassemblement auto</string>
+    <string name="event_type_racetrack">Circuit</string>
+    <string name="event_type_exploration">Exploration</string>
+    <string name="event_type_other">Autre</string>
+
+    <!-- ===== data/model/ShareTemplate.kt ===== -->
+    <string name="share_template_minimal">Minimal</string>
+    <string name="share_template_speed_zones">Zones de vitesse</string>
+    <string name="share_template_detailed">Détaillé</string>
+    <string name="share_template_stats_only">Stats seulement</string>
+
+    <!-- ===== data/model/LocationPoint.kt (HistoryRange) ===== -->
+    <string name="history_range_today">Aujourd\'hui</string>
+    <string name="history_range_7_days">7 jours</string>
+    <string name="history_range_30_days">30 jours</string>
+    <string name="history_range_all">Tout</string>
+
+    <!-- ===== data/model/Trophy.kt ===== -->
+    <string name="trophy_tier_bronze">Bronze</string>
+    <string name="trophy_tier_silver">Argent</string>
+    <string name="trophy_tier_gold">Or</string>
+    <string name="trophy_tier_platinum">Platine</string>
+
+    <string name="trophy_category_distance">Distance &amp; vitesse</string>
+    <string name="trophy_category_habit">Habitudes &amp; séries</string>
+    <string name="trophy_category_exploration">Exploration</string>
+    <string name="trophy_category_collection">Collection</string>
+
+    <string name="trophy_unit_trip">trajet</string>
+    <string name="trophy_unit_trips">trajets</string>
+    <string name="trophy_unit_km">km</string>
+    <string name="trophy_unit_kmh">km/h</string>
+    <string name="trophy_unit_days">jours</string>
+    <string name="trophy_unit_seasons">saisons</string>
+    <string name="trophy_unit_hours">h</string>
+    <string name="trophy_unit_departements">départements</string>
+    <string name="trophy_unit_squares">cases</string>
+    <string name="trophy_unit_car">voiture</string>
+    <string name="trophy_unit_cars">voitures</string>
+    <string name="trophy_unit_mods">mods</string>
+    <string name="trophy_unit_events">événements</string>
+    <string name="trophy_unit_import">import</string>
+    <string name="trophy_unit_fields">champs</string>
+    <string name="trophy_progress_format">%1$d / %2$d %3$s</string>
+
+    <string name="trophy_first_light_title">Première lumière</string>
+    <string name="trophy_first_light_desc">Enregistre ton tout premier trajet</string>
+    <string name="trophy_century_title">Centaine</string>
+    <string name="trophy_century_desc">Cumule 100 km au total</string>
+    <string name="trophy_road_warrior_title">Guerrier de la route</string>
+    <string name="trophy_road_warrior_desc">Cumule 1 000 km au total</string>
+    <string name="trophy_continental_title">Continental</string>
+    <string name="trophy_continental_desc">Cumule 10 000 km au total</string>
+    <string name="trophy_long_haul_title">Longue distance</string>
+    <string name="trophy_long_haul_desc">Roule 200 km en un seul trajet</string>
+    <string name="trophy_ton_up_title">130 à l\'heure</string>
+    <string name="trophy_ton_up_desc">Atteins les 130 km/h</string>
+    <string name="trophy_redline_title">Zone rouge</string>
+    <string name="trophy_redline_desc">Atteins les 200 km/h</string>
+    <string name="trophy_autobahn_title">Autobahn</string>
+    <string name="trophy_autobahn_desc">Atteins les 300 km/h</string>
+    <string name="trophy_terminal_velocity_title">Vitesse terminale</string>
+    <string name="trophy_terminal_velocity_desc">Atteins les 400 km/h</string>
+
+    <string name="trophy_commuter_title">Habitué</string>
+    <string name="trophy_commuter_desc">Termine 10 trajets</string>
+    <string name="trophy_regular_title">Régulier</string>
+    <string name="trophy_regular_desc">Termine 50 trajets</string>
+    <string name="trophy_three_in_a_row_title">Trois d\'affilée</string>
+    <string name="trophy_three_in_a_row_desc">Roule 3 jours de suite</string>
+    <string name="trophy_week_streak_title">Semaine complète</string>
+    <string name="trophy_week_streak_desc">Roule 7 jours de suite</string>
+    <string name="trophy_month_streak_title">Mois complet</string>
+    <string name="trophy_month_streak_desc">Roule 30 jours de suite</string>
+    <string name="trophy_night_owl_title">Oiseau de nuit</string>
+    <string name="trophy_night_owl_desc">Démarre 10 trajets entre 22h et 5h</string>
+    <string name="trophy_early_bird_title">Lève-tôt</string>
+    <string name="trophy_early_bird_desc">Démarre 10 trajets entre 5h et 7h</string>
+    <string name="trophy_four_seasons_title">Quatre saisons</string>
+    <string name="trophy_four_seasons_desc">Roule pendant les quatre saisons</string>
+    <string name="trophy_endurance_title">Endurance</string>
+    <string name="trophy_endurance_desc">Cumule 24 heures de conduite au total</string>
+
+    <string name="trophy_tourist_title">Touriste</string>
+    <string name="trophy_tourist_desc">Traverse 5 départements</string>
+    <string name="trophy_explorer_title">Explorateur</string>
+    <string name="trophy_explorer_desc">Traverse 20 départements</string>
+    <string name="trophy_cartographer_title">Cartographe</string>
+    <string name="trophy_cartographer_desc">Traverse 50 départements</string>
+    <string name="trophy_far_from_home_title">Loin de chez toi</string>
+    <string name="trophy_far_from_home_desc">Éloigne-toi de 300 km de l\'endroit où tu roules le plus</string>
+    <string name="trophy_grid_runner_title">Coureur des cases</string>
+    <string name="trophy_grid_runner_desc">Entre dans 100 cases différentes de la carte</string>
+
+    <string name="trophy_keys_in_hand_title">Clés en main</string>
+    <string name="trophy_keys_in_hand_desc">Ajoute ta première voiture au garage</string>
+    <string name="trophy_collector_title">Collectionneur</string>
+    <string name="trophy_collector_desc">Garde 3 voitures dans le garage</string>
+    <string name="trophy_tuner_title">Préparateur</string>
+    <string name="trophy_tuner_desc">Enregistre 5 modifications</string>
+    <string name="trophy_event_horizon_title">Horizon des événements</string>
+    <string name="trophy_event_horizon_desc">Enregistre 5 événements</string>
+    <string name="trophy_archivist_title">Archiviste</string>
+    <string name="trophy_archivist_desc">Importe une trace GPX dans un événement</string>
+    <string name="trophy_full_profile_title">Profil complet</string>
+    <string name="trophy_full_profile_desc">Renseigne ton âge, ta ville et tes départements</string>
+
+    <string name="trophy_unlocked_single">Trophée débloqué : %1$s</string>
+    <plurals name="trophy_unlocked_count">
+        <item quantity="one">%1$d trophée débloqué</item>
+        <item quantity="other">%1$d trophées débloqués</item>
+    </plurals>
+    <string name="notif_channel_trophies_name">Trophées</string>
+    <string name="notif_channel_trophies_desc">Se déclenche quand tu débloques un nouveau trophée</string>
+
+    <!-- ===== push/CompanionFcmService.kt (dev) ===== -->
+    <string name="push_car_started">%1$s a démarré</string>
+    <string name="push_channel_car_started">Voiture démarrée</string>
+
+    <!-- ===== ui/trophies/TrophiesScreen.kt ===== -->
+    <string name="trophies_unlocked_label">Débloqués</string>
+    <string name="trophies_summary_format">%1$,.0f km · %2$d trajets · %3$d jours</string>
+    <string name="trophies_category_progress_format">%1$d/%2$d</string>
+    <string name="trophies_header_progress_format">%1$d / %2$d</string>
+    <string name="trophies_tier_category_format">%1$s · %2$s</string>
+    <string name="trophies_unlocked_at_format">Débloqué %1$s</string>
+    <string name="trophies_earned_by_car_label">Obtenu par cette voiture</string>
+    <plurals name="trophies_streak">
+        <item quantity="one">%1$d jour de série</item>
+        <item quantity="other">%1$d jours de série</item>
+    </plurals>
+
+    <!-- ===== ui/trophies/TrophyCelebrationDialog.kt ===== -->
+    <plurals name="trophy_celebration_title">
+        <item quantity="one">Trophée débloqué !</item>
+        <item quantity="other">%1$d trophées débloqués !</item>
+    </plurals>
+    <string name="trophy_celebration_dismiss">Génial !</string>
+
+    <!-- ===== ui/feed/FeedScreen.kt ===== -->
+    <string name="feed_headline_car_added">%1$s a ajouté %2$s au garage</string>
+    <string name="feed_headline_shared">%1$s a partagé %2$s</string>
+    <string name="feed_headline_trophy_unlocked">%1$s a débloqué %2$s</string>
+    <string name="feed_fallback_car">une voiture</string>
+    <string name="feed_fallback_trip">un trajet</string>
+    <string name="feed_fallback_trophy">un trophée</string>
+
+    <!-- ===== ui/common/StatsDisplay.kt ===== -->
+    <string name="stats_time_by_speed_zone">Temps par zone de vitesse</string>
+    <string name="stats_zone_duration_percent_format">%1$s · %2$d%%</string>
+
+    <!-- ===== ui/common/CarPhoto.kt ===== -->
+    <string name="car_photo_content_description">Photo de la voiture</string>
+
+    <!-- ===== ui/map/MapScreen.kt ===== -->
+    <string name="map_marker_last_known_position">Dernière position connue</string>
+    <string name="map_marker_snippet_format">%1$d km/h · %2$s</string>
+    <string name="map_marker_your_phone">Ton téléphone</string>
+    <string name="map_marker_selected_point">Point sélectionné</string>
+    <string name="map_recenter_content_description">Recentrer sur ma position</string>
+    <string name="map_share_trip_content_description">Partager le trajet</string>
+    <string name="map_stop_recording_content_description">Arrêter l\'enregistrement</string>
+    <string name="map_record_location_content_description">Enregistrer la position depuis le GPS du téléphone</string>
+    <string name="map_no_position_data">Pas encore de données de position</string>
+    <string name="map_speed_unit_kmh">km/h</string>
+    <string name="map_history_trail_label">Trace de l\'historique</string>
+    <string name="map_last_update_format">%1$s · %2$s</string>
+    <string name="map_legend_speed_format">%1$s km/h</string>
+
+    <!-- ===== ui/history/HistoryScreen.kt ===== -->
+    <string name="history_syncing">Synchronisation</string>
+    <string name="history_sync_now">Synchroniser</string>
+    <string name="history_export_gpx">Exporter en GPX</string>
+    <string name="history_reassign">Réattribuer</string>
+    <string name="history_empty_state">Aucun point sur cette période. Appuie sur Synchroniser pour récupérer l\'historique récent.</string>
+    <string name="history_clear_day_content_description">Effacer cette journée</string>
+    <string name="history_collapse">Réduire</string>
+    <string name="history_show_all_points">Afficher tous les points</string>
+    <string name="history_show_points">Afficher les points</string>
+    <string name="history_day_summary_format">%1$d points · %2$.1f km · max %3$d km/h</string>
+    <plurals name="history_points_count">
+        <item quantity="one">%1$d pt</item>
+        <item quantity="other">%1$d pts</item>
+    </plurals>
+    <string name="history_clear_day_confirm_title_format">Effacer %1$s ?</string>
+    <string name="history_clear_day_confirm_body">Ceci supprime les points enregistrés localement pour cette journée. Les autres jours ne sont pas affectés.</string>
+    <string name="history_dialog_clear_button">Effacer</string>
+    <string name="history_reassign_dialog_title">Réattribuer les points</string>
+    <string name="history_reassign_body_format">Déplace tous les points de « %1$s » vers l\'appareil choisi. C\'est un simple changement d\'étiquette — aucune donnée n\'est supprimée, et tu peux les réattribuer à nouveau à tout moment.</string>
+    <string name="history_reassign_move_to_label">Déplacer vers</string>
+    <string name="history_reassign_move_button">Déplacer</string>
+
+    <!-- ===== ui/stats/StatsScreen.kt ===== -->
+    <string name="stats_empty_state">Aucune donnée sur cette période. Appuie sur Synchroniser pour récupérer l\'historique récent.</string>
+    <string name="stats_tile_max_speed">Vitesse max · km/h</string>
+    <string name="stats_tile_avg_speed">Vitesse moy. · km/h</string>
+    <string name="stats_tile_median_speed">Médiane · km/h</string>
+    <string name="stats_tile_distance">Distance · km</string>
+    <string name="stats_tile_moving_time">Temps de conduite</string>
+    <string name="stats_tile_points">Points</string>
+    <string name="stats_range_covered_label">Période couverte</string>
+    <string name="stats_range_covered_format">%1$s  →  %2$s</string>
+
+    <!-- ===== ui/share/ShareScreen.kt ===== -->
+    <string name="share_title_trip">Partager le trajet</string>
+    <string name="share_title_event">Partager l\'événement</string>
+    <string name="share_no_data">Aucune donnée pour cette période</string>
+    <string name="share_avg_speed_format">Moy. %1$.1f km/h</string>
+    <string name="share_max_median_format">Max %1$d km/h · Médiane %2$.1f km/h</string>
+
+    <!-- ===== ui/garage/GarageScreen.kt ===== -->
+    <string name="garage_add_car_content_description">Ajouter une voiture</string>
+    <string name="garage_empty_state">Aucune voiture dans ton garage pour l\'instant</string>
+    <string name="garage_odometer_km_format">%1$.0f km</string>
+    <string name="garage_favorite_content_description">Favori</string>
+    <string name="garage_add_car_dialog_title">Ajouter une voiture</string>
+    <string name="garage_field_name">Nom</string>
+    <string name="garage_no_linked_device">Aucune (pas suivie par GPS)</string>
+    <string name="garage_field_linked_device">Voiture suivie liée</string>
+    <string name="garage_field_brand">Marque</string>
+    <string name="garage_field_model">Modèle</string>
+    <string name="garage_field_year">Année</string>
+    <string name="garage_field_details">Détails</string>
+    <string name="garage_field_odometer">Kilométrage (km)</string>
+    <string name="garage_add_button">Ajouter</string>
+
+    <!-- ===== ui/garage/CarDetailScreen.kt ===== -->
+    <string name="car_detail_tap_photo_to_change">Touche la photo pour la changer</string>
+    <string name="car_detail_remove_favorite_content_description">Retirer des favoris</string>
+    <string name="car_detail_set_favorite_content_description">Définir comme voiture favorite</string>
+    <string name="car_detail_remove_car_content_description">Supprimer la voiture</string>
+    <string name="car_detail_odometer_label">Kilométrage</string>
+    <string name="car_detail_odometer_not_set">Non défini</string>
+    <string name="car_detail_stats_label">Statistiques</string>
+    <string name="car_detail_stat_distance">Distance</string>
+    <string name="car_detail_stat_max_speed">Vitesse max</string>
+    <string name="car_detail_stat_avg_speed">Vitesse moy.</string>
+    <string name="car_detail_modifications_label">Modifications</string>
+    <string name="car_detail_add_modification_content_description">Ajouter une modification</string>
+    <string name="car_detail_no_modifications">Aucune modification enregistrée pour l\'instant</string>
+    <string name="car_detail_remove_confirm_title_format">Supprimer %1$s ?</string>
+    <string name="car_detail_remove_confirm_body">Ceci supprime la voiture, sa photo et ses modifications. Cela n\'affecte aucune voiture suivie liée.</string>
+    <string name="car_detail_remove_button">Supprimer</string>
+    <string name="car_detail_delete_modification_content_description">Supprimer la modification</string>
+    <string name="car_detail_modification_cost_format">%1$.0f €</string>
+    <string name="car_detail_edit_car_title">Modifier la voiture</string>
+    <string name="car_detail_save_button">Enregistrer</string>
+    <string name="car_detail_add_modification_title">Ajouter une modification</string>
+    <string name="car_detail_field_title">Titre</string>
+    <string name="car_detail_field_category_hint">Catégorie (ex. Moteur, Suspension)</string>
+    <string name="car_detail_field_cost">Coût</string>
+    <string name="car_detail_field_notes">Notes</string>
+
+    <!-- ===== ui/profile/ProfileScreen.kt ===== -->
+    <string name="profile_title">Profil</string>
+    <string name="profile_cloud_account_title">Compte cloud</string>
+    <string name="profile_cloud_signed_in">Connecté</string>
+    <string name="profile_cloud_checking">Vérification…</string>
+    <string name="profile_cloud_sign_in_prompt">Connecte-toi pour sauvegarder et partager</string>
+    <string name="profile_friends_title">Amis</string>
+    <string name="profile_friends_subtitle">Demandes et liste d\'amis</string>
+    <string name="profile_garage_section_label">Garage</string>
+    <string name="profile_pick_favorite_hint">Choisis une voiture favorite dans le Garage pour la mettre en avant ici</string>
+    <string name="profile_all_cars_title">Toutes les voitures</string>
+    <plurals name="profile_cars_count">
+        <item quantity="one">%1$d voiture</item>
+        <item quantity="other">%1$d voitures</item>
+    </plurals>
+    <string name="profile_personal_info_label">Informations personnelles</string>
+    <plurals name="profile_age_years">
+        <item quantity="one">%1$d an</item>
+        <item quantity="other">%1$d ans</item>
+    </plurals>
+    <string name="profile_not_set">Non défini</string>
+    <string name="profile_edit_personal_info_content_description">Modifier les informations personnelles</string>
+    <string name="profile_no_departments_selected">Aucun département sélectionné</string>
+    <string name="profile_events_title">Événements</string>
+    <plurals name="profile_events_count">
+        <item quantity="one">%1$d événement</item>
+        <item quantity="other">%1$d événements</item>
+    </plurals>
+    <string name="profile_trophies_title">Trophées</string>
+    <string name="profile_trophies_unlocked_format">%1$d sur %2$d débloqués</string>
+    <string name="profile_favorite_car_label">Voiture favorite</string>
+    <string name="profile_field_age">Âge</string>
+    <string name="profile_field_city">Ville</string>
+    <string name="profile_select_departments">Sélectionner les départements</string>
+    <plurals name="profile_departments_selected">
+        <item quantity="one">%1$d département sélectionné</item>
+        <item quantity="other">%1$d départements sélectionnés</item>
+    </plurals>
+    <string name="profile_departments_dialog_title">Départements</string>
+
+    <!-- ===== ui/events/EventsScreen.kt ===== -->
+    <string name="events_add_event_content_description">Ajouter un événement</string>
+    <string name="events_empty_state">Aucun événement enregistré pour l\'instant</string>
+
+    <!-- ===== ui/events/EventDetailScreen.kt ===== -->
+    <string name="event_detail_delete_content_description">Supprimer l\'événement</string>
+    <string name="event_detail_date_range_format">%1$s → %2$s</string>
+    <string name="event_detail_car_format">Voiture : %1$s</string>
+    <string name="event_detail_track_label">Trace</string>
+    <string name="event_detail_stat_duration">Durée</string>
+    <string name="event_detail_no_gps_points">Aucun point GPS n\'a été enregistré pour cette voiture pendant la période de l\'événement.</string>
+    <string name="event_detail_delete_confirm_title_format">Supprimer %1$s ?</string>
+    <string name="event_detail_field_type">Type</string>
+    <string name="event_detail_no_car">Aucune</string>
+    <string name="event_detail_field_car">Voiture</string>
+    <string name="event_detail_car_no_gps_format">%1$s (aucune trace GPS disponible)</string>
+    <string name="event_detail_track_source_label">Source de la trace</string>
+    <string name="event_detail_source_from_car">Depuis la voiture</string>
+    <string name="event_detail_source_import_gpx">Importer un GPX</string>
+    <string name="event_detail_field_day">Jour</string>
+    <string name="event_detail_field_start">Début</string>
+    <string name="event_detail_field_end">Fin</string>
+    <string name="event_detail_import_gpx_file">Importer un fichier GPX</string>
+    <string name="event_detail_replace_gpx_file">Remplacer le fichier GPX</string>
+    <string name="event_detail_gpx_no_points">Aucun point de trace trouvé dans ce fichier</string>
+    <string name="event_detail_gpx_imported_file_fallback">Fichier importé</string>
+    <string name="event_detail_gpx_summary_format">%1$s · %2$d points · %3$s → %4$s</string>
+    <string name="event_detail_gpx_existing_summary_format">Trace importée utilisée · %1$d points · %2$s → %3$s</string>
+    <string name="event_detail_gpx_none_imported">Aucun fichier importé pour l\'instant</string>
+    <string name="event_detail_field_location">Lieu</string>
+
+    <!-- ===== ui/auth/AuthScreen.kt ===== -->
+    <string name="auth_title">Car Companion Cloud</string>
+    <string name="auth_subtitle">Facultatif. Tout fonctionne hors ligne sans compte — se connecter ajoute la sauvegarde, les amis et le fil communautaire.</string>
+    <string name="auth_mode_sign_in">Se connecter</string>
+    <string name="auth_mode_create_account">Créer un compte</string>
+    <string name="auth_field_email">E-mail</string>
+    <string name="auth_field_username">Nom d\'utilisateur</string>
+    <string name="auth_username_supporting_text">3 à 20 caractères : lettres, chiffres, tiret bas. C\'est par ce nom que tes amis te trouvent.</string>
+    <string name="auth_field_password">Mot de passe</string>
+    <string name="auth_password_supporting_text_format">Au moins %1$d caractères. La longueur prime sur les symboles — une courte phrase fonctionne bien.</string>
+    <string name="auth_hide_password_content_description">Masquer le mot de passe</string>
+    <string name="auth_show_password_content_description">Afficher le mot de passe</string>
+    <string name="auth_forgot_password">Mot de passe oublié ?</string>
+    <string name="auth_before_you_start_label">Avant de commencer</string>
+    <string name="auth_before_you_start_body">Rien n\'est envoyé tant que tu ne l\'actives pas, catégorie par catégorie. Ton historique GPS et tes statistiques sont chiffrés sur ce téléphone avant de le quitter, donc ils ne peuvent pas être lus par le serveur et ne peuvent jamais être partagés avec qui que ce soit.</string>
+    <string name="auth_terms_gate_text">J\'ai 18 ans ou plus, et j\'accepte les Conditions d\'utilisation et la Politique de confidentialité.</string>
+    <string name="auth_terms_of_use">Conditions d\'utilisation</string>
+    <string name="auth_privacy_policy">Politique de confidentialité</string>
+    <string name="auth_notice_account_created">Compte créé. Confirme ton adresse e-mail, puis connecte-toi.</string>
+    <string name="auth_error_invalid_credentials">Cette combinaison d\'e-mail et de mot de passe n\'a pas fonctionné.</string>
+    <string name="auth_error_username_taken">Ce nom d\'utilisateur est déjà pris.</string>
+    <string name="auth_error_invalid_username">Les noms d\'utilisateur comportent 3 à 20 caractères : lettres, chiffres et tirets bas.</string>
+    <string name="auth_error_invalid_email">Cela ne ressemble pas à une adresse e-mail.</string>
+    <string name="auth_error_weak_password_format">Le mot de passe doit comporter au moins %1$d caractères.</string>
+    <string name="auth_error_terms_not_accepted">Tu dois accepter les conditions pour créer un compte.</string>
+    <string name="auth_error_email_not_confirmed">Confirme d\'abord ton adresse e-mail — vérifie ta boîte de réception.</string>
+    <string name="auth_error_rate_limited">Trop de tentatives. Attends quelques minutes et réessaie.</string>
+    <string name="auth_error_offline">Impossible de joindre le serveur. Vérifie ta connexion — le reste de l\'app fonctionne hors ligne.</string>
+    <string name="auth_error_unknown">Une erreur s\'est produite. Réessaie.</string>
+
+    <!-- ===== ui/auth/CloudEntryScreen.kt ===== -->
+    <string name="cloud_entry_disabled_title">Le cloud n\'est pas configuré</string>
+    <string name="cloud_entry_disabled_body">Cette version n\'a pas d\'identifiants Supabase, donc les comptes et le partage ne sont pas disponibles. Tout le reste fonctionne normalement.</string>
+    <string name="cloud_entry_signed_in_title">Connecté</string>
+    <string name="cloud_entry_settings_pill">Sauvegarde, partage &amp; restauration</string>
+    <string name="cloud_entry_sign_out">Se déconnecter</string>
+    <string name="cloud_entry_delete_account">Supprimer le compte</string>
+    <string name="cloud_entry_delete_confirm_title">Supprimer ton compte ?</string>
+    <string name="cloud_entry_delete_confirm_body">Ceci supprime définitivement tes données cloud : voitures, événements, trophées, amitiés et sauvegardes chiffrées. Cette action est irréversible.\n\nLes données stockées sur ce téléphone ne sont pas affectées — tes trajets, ton garage et tes événements restent ici.</string>
+
+    <!-- ===== ui/auth/PasswordResetScreen.kt ===== -->
+    <string name="password_reset_check_email_title">Vérifie tes e-mails</string>
+    <string name="password_reset_title">Réinitialise ton mot de passe</string>
+    <string name="password_reset_sent_body_format">Si %1$s correspond à un compte, un lien de réinitialisation est en route. Ouvre-le sur ce téléphone et l\'app le détectera pour que tu puisses choisir un nouveau mot de passe.</string>
+    <string name="password_reset_email_hint">Nous t\'enverrons par e-mail un lien qui ouvre cette app.</string>
+    <string name="password_reset_send_link_button">Envoyer le lien</string>
+    <string name="password_reset_changed_title">Mot de passe changé</string>
+    <string name="password_reset_choose_new_title">Choisis un nouveau mot de passe</string>
+    <string name="password_reset_backups_restored">Ton historique GPS et tes statistiques chiffrés ont aussi été restaurés.</string>
+    <string name="password_reset_new_password_field">Nouveau mot de passe</string>
+    <string name="password_reset_new_password_supporting_format">Au moins %1$d caractères.</string>
+    <string name="password_reset_encrypted_backups_label">Sauvegardes chiffrées</string>
+    <string name="password_reset_recovery_explainer">Si tu as ton code de récupération, saisis-le pour aussi restaurer ton historique GPS et tes statistiques chiffrés. Sans lui, ton compte revient quand même, mais ces données ne pourront être déverrouillées par personne — la clé provenait du mot de passe que tu remplaces — et elles seront supprimées.</string>
+    <string name="password_reset_recovery_code_field">Code de récupération (facultatif)</string>
+    <string name="password_reset_set_button">Définir le nouveau mot de passe</string>
+    <string name="password_reset_failed">Impossible de définir le nouveau mot de passe. Le lien a peut-être expiré — demandes-en un nouveau.</string>
+
+    <!-- ===== ui/auth/RecoveryCodeScreen.kt ===== -->
+    <string name="recovery_code_new_title">Ton nouveau code de récupération</string>
+    <string name="recovery_code_title">Ton code de récupération</string>
+    <string name="recovery_code_write_down">Note-le quelque part en sécurité. Il ne te sera plus montré.</string>
+    <string name="recovery_code_previous_discarded_label">Sauvegardes précédentes supprimées</string>
+    <string name="recovery_code_previous_discarded_body">Ton mot de passe a été réinitialisé sans code de récupération valide, donc l\'historique GPS et les statistiques chiffrés sous l\'ancien mot de passe n\'ont pu être déverrouillés par personne et ont été supprimés. Les sauvegardes faites à partir de maintenant utilisent ce nouveau code.</string>
+    <string name="recovery_code_copy_button">Copier</string>
+    <string name="recovery_code_clip_label">Code de récupération Car Companion</string>
+    <string name="recovery_code_what_for_label">À quoi ça sert</string>
+    <string name="recovery_code_what_for_body">Ton historique GPS et tes statistiques sont chiffrés sur ce téléphone avant d\'être envoyés. Personne d\'autre ne peut les lire — ni les autres utilisateurs, ni le serveur, ni nous.\n\nLa clé provient de ton mot de passe. Si tu oublies ton mot de passe, ce code est le seul moyen de retrouver ces données. Si tu perds les deux, elles sont perdues définitivement : ton compte et tout le reste continueront de fonctionner, mais ces sauvegardes chiffrées ne pourront être récupérées par personne.</string>
+    <string name="recovery_code_confirm_saved">J\'ai sauvegardé mon code de récupération en lieu sûr.</string>
+    <string name="recovery_code_continue_button">Continuer</string>
+
+    <!-- ===== data/cloud/CloudPrefsRepository.kt enums ===== -->
+    <string name="visibility_private_label">Moi seulement</string>
+    <string name="visibility_private_desc">Rien de ce que tu possèdes n\'est visible par personne d\'autre.</string>
+    <string name="visibility_friends_label">Amis seulement</string>
+    <string name="visibility_friends_desc">Seules les personnes que tu as ajoutées comme amis peuvent voir les éléments partagés.</string>
+    <string name="visibility_public_label">Tout le monde</string>
+    <string name="visibility_public_desc">Toute personne ayant un compte peut voir les éléments que tu marques comme partagés.</string>
+    <string name="feed_scope_friends_label">Amis seulement</string>
+    <string name="feed_scope_everyone_label">Tout le monde</string>
+    <string name="sync_category_cars_label">Voitures</string>
+    <string name="sync_category_cars_desc">Ton garage : marques, modèles, kilométrage, modifications. Les photos restent toujours sur ce téléphone.</string>
+    <string name="sync_category_events_label">Événements</string>
+    <string name="sync_category_events_desc">Rassemblements, journées circuit et explorations, y compris leur trace GPS.</string>
+    <string name="sync_category_profile_label">Informations personnelles</string>
+    <string name="sync_category_profile_desc">Âge, ville et les départements où tu aimerais rencontrer du monde.</string>
+    <string name="sync_category_gps_history_label">Historique GPS</string>
+    <string name="sync_category_gps_history_desc">Chaque trajet enregistré. Chiffré sur ce téléphone avant l\'envoi — le serveur ne peut pas le lire, et il ne peut jamais être partagé.</string>
+    <string name="sync_category_statistics_label">Statistiques</string>
+    <string name="sync_category_statistics_desc">Totaux de distance, vitesse et temps de conduite. Chiffrés, et jamais partageables.</string>
+    <string name="sync_category_trophies_label">Trophées</string>
+    <string name="sync_category_trophies_desc">Les succès que tu as débloqués.</string>
+    <string name="profile_section_personal_info_label">Infos personnelles</string>
+    <string name="profile_section_personal_info_desc">Ta ville et les départements où tu aimerais rencontrer du monde. Active aussi la sauvegarde des informations personnelles, si ce n\'était pas déjà fait.</string>
+    <string name="profile_section_garage_label">Garage</string>
+    <string name="profile_section_garage_desc">Ajoute une section Garage à ton profil, listant les voitures que tu as individuellement marquées comme partagées. Active aussi la sauvegarde des voitures, si ce n\'était pas déjà fait.</string>
+    <string name="profile_section_trophies_label">Trophées</string>
+    <string name="profile_section_trophies_desc">Montre les succès que tu as débloqués, et permet à tes déblocages d\'apparaître dans le Fil de tes amis. Active aussi la sauvegarde des trophées, si ce n\'était pas déjà fait.</string>
+
+    <!-- ===== ui/cloud/CloudSettingsScreen.kt ===== -->
+    <string name="cloud_settings_backup_label">Sauvegarder sur le cloud</string>
+    <string name="cloud_settings_backup_hint">Désactivé par défaut. Chaque catégorie est ton choix, et peut être désactivée à nouveau à tout moment.</string>
+    <string name="cloud_settings_visibility_label">Qui peut voir ce que tu partages</string>
+    <string name="cloud_settings_visibility_hint">S\'applique uniquement aux éléments que tu marques individuellement comme partagés (une voiture, un événement). Ton historique GPS et tes statistiques ne sont jamais visibles par personne, quel que soit le réglage.</string>
+    <string name="cloud_settings_feed_scope_label">Ton Fil affiche</string>
+    <string name="cloud_settings_profile_sections_label">Sur ta page de profil</string>
+    <string name="cloud_settings_profile_sections_hint">Désactivé par défaut. Un ami visitant ton profil ne voit rien ici tant que tu n\'actives pas une section — même si elle est déjà sauvegardée, et même en réglage « Tout le monde ».</string>
+    <string name="cloud_settings_sync_label">Synchronisation</string>
+    <string name="cloud_settings_sync_now">Synchroniser</string>
+    <string name="cloud_settings_sync_never">Jamais synchronisé.</string>
+    <string name="cloud_settings_sync_last_format">Dernière synchro %1$s.</string>
+    <string name="cloud_settings_sync_sign_in_first">Rien à synchroniser — connecte-toi d\'abord.</string>
+    <string name="cloud_settings_sync_nothing_enabled">Rien n\'est activé à sauvegarder pour l\'instant.</string>
+    <plurals name="cloud_settings_sync_success">
+        <item quantity="one">%1$d catégorie synchronisée.</item>
+        <item quantity="other">%1$d catégories synchronisées.</item>
+    </plurals>
+    <string name="cloud_settings_sync_partial_format">Synchronisé avec des erreurs : %1$s n\'est pas passé.</string>
+    <string name="cloud_settings_restore_label">Restauration</string>
+    <string name="cloud_settings_restore_hint">Récupère tes données cloud sur ce téléphone — pour un nouvel appareil, ou après une réinstallation. Les données locales existantes sont conservées ; les éléments restaurés s\'y ajoutent.</string>
+    <string name="cloud_settings_restore_button">Restaurer depuis le cloud</string>
+    <string name="cloud_settings_restore_confirm_title">Restaurer depuis le cloud ?</string>
+    <string name="cloud_settings_restore_confirm_body">Récupère tes voitures, événements, profil, trophées, et — si sauvegardés et si c\'est l\'appareil qui les a configurés — ton historique GPS et tes statistiques chiffrés. Cela peut prendre un moment pour un historique volumineux.</string>
+    <string name="cloud_settings_restore_confirm_button">Restaurer</string>
+    <string name="cloud_settings_restore_sign_in_first">Impossible de restaurer — connecte-toi d\'abord.</string>
+    <string name="cloud_settings_restore_result_format">%1$d des %2$d catégories restaurées.</string>
+    <string name="cloud_settings_restore_gps_skipped">L\'historique GPS et les statistiques nécessitent que ce téléphone se déverrouille d\'abord avec ton mot de passe.</string>
+    <string name="cloud_settings_working">En cours…</string>
+
+    <!-- ===== ui/cloud/ShareToggle.kt ===== -->
+    <string name="share_toggle_title">Partager à la communauté</string>
+    <string name="share_toggle_visible_to_format">Visible par : %1$s</string>
+    <string name="share_toggle_private">Privé — non montré à personne</string>
+
+    <!-- ===== ui/friends/FriendsScreen.kt ===== -->
+    <string name="friends_add_title">Ajouter un ami</string>
+    <string name="friends_add_button">Ajouter</string>
+    <string name="friends_request_sent_format">Demande envoyée à %1$s.</string>
+    <string name="friends_auto_accepted_format">Tu es maintenant ami avec %1$s — il/elle t\'avait déjà envoyé une demande.</string>
+    <string name="friends_user_not_found">Aucun compte avec ce nom d\'utilisateur.</string>
+    <string name="friends_offline">Impossible de joindre le serveur. Vérifie ta connexion.</string>
+    <string name="friends_requests_label">Demandes</string>
+    <string name="friends_accept">Accepter</string>
+    <string name="friends_decline">Refuser</string>
+    <string name="friends_sent_label">Envoyées</string>
+    <string name="friends_pending">En attente</string>
+    <string name="friends_friends_label">Amis</string>
+    <string name="friends_no_friends_yet">Pas encore d\'amis</string>
+    <string name="friends_at_username_format">@%1$s</string>
+
+    <!-- ===== ui/feed/FeedScreen.kt ===== -->
+    <string name="feed_empty_friends">Rien de tes amis pour l\'instant</string>
+    <string name="feed_empty_everyone">Rien de partagé pour l\'instant</string>
+    <string name="feed_empty_hint">Partager une voiture ou un événement, ou ajouter des amis, c\'est ce qui remplit cet espace.</string>
+    <plurals name="feed_mod_count">
+        <item quantity="one">%1$d modification</item>
+        <item quantity="other">%1$d modifications</item>
+    </plurals>
+    <string name="feed_distance_speed_format">%1$.1f km · %2$d km/h max</string>
+
+    <!-- ===== ui/feed/PublicProfileScreen.kt ===== -->
+    <string name="public_profile_not_visible">Ce profil ne t\'est pas visible</string>
+    <string name="public_profile_would_like_to_meet_label">Aimerait rencontrer du monde en</string>
+    <string name="public_profile_trophies_count_format">Trophées (%1$d)</string>
+    <string name="public_profile_shared_events_label">Événements partagés</string>
+    <string name="public_profile_nothing_shared">Rien d\'autre n\'est partagé ici.</string>
+
+    <!-- ===== ui/feed/SharedCarDetailScreen.kt ===== -->
+    <string name="shared_car_not_visible">Cette voiture ne t\'est plus visible</string>
+
+    <!-- ===== ui/feed/SharedEventDetailScreen.kt ===== -->
+    <string name="shared_event_not_visible">Cet événement ne t\'est plus visible</string>
+
+    <!-- ===== ui/nav/Destinations.kt / CompanionNavHost.kt ===== -->
+    <string name="nav_title_devices">Gérer les voitures</string>
+    <string name="nav_title_bluetooth_trigger">Déclencheur radar</string>
+    <string name="nav_title_car_detail">Voiture</string>
+    <string name="nav_title_event_detail">Événement</string>
+    <string name="nav_title_password_reset">Réinitialiser le mot de passe</string>
+    <string name="nav_title_set_new_password">Nouveau mot de passe</string>
+    <string name="nav_title_recovery_code">Code de récupération</string>
+    <string name="nav_title_legal">Mentions légales</string>
+    <string name="nav_title_cloud_settings">Cloud</string>
+    <string name="nav_back_content_description">Retour</string>
+    <string name="nav_tab_map">Carte</string>
+    <string name="nav_tab_history">Historique</string>
+    <string name="nav_tab_stats">Stats</string>
+    <string name="nav_tab_feed">Fil</string>
+
+    <!-- ===== ui/devices/DevicesScreen.kt (dev) ===== -->
+    <string name="devices_add_device_content_description">Ajouter un appareil</string>
+    <string name="devices_scan_failed">Échec de la recherche</string>
+    <string name="devices_discovered_label">Voitures découvertes</string>
+    <string name="devices_scan_content_description">Rechercher des voitures</string>
+    <string name="devices_scan_error_format">Impossible de vérifier les nouvelles voitures : %1$s</string>
+    <string name="devices_no_new_cars">Aucune nouvelle voiture trouvée.</string>
+    <string name="devices_last_seen_format">Vu pour la dernière fois %1$s</string>
+    <string name="devices_scanning">Recherche de voitures…</string>
+    <string name="devices_no_cars_yet">Pas encore de voiture</string>
+    <string name="devices_scanning_hint">Recherche des launchers ayant envoyé une position.</string>
+    <string name="devices_no_cars_hint">Dès qu\'un launcher envoie une position, elle apparaîtra ci-dessus, ou ajoutes-en une manuellement.</string>
+    <string name="devices_edit_car_content_description">Modifier la voiture</string>
+    <string name="devices_remove_content_description">Supprimer</string>
+    <string name="devices_paste_id_hint">Colle l\'ID de l\'appareil depuis la console Firestore (tracks/{deviceId}). Les voitures ayant déjà envoyé une position sont généralement trouvées automatiquement ci-dessus.</string>
+    <string name="devices_field_device_id">ID de l\'appareil</string>
+    <string name="devices_field_name_hint">Nom (ex. Ma voiture)</string>
+    <string name="devices_field_brand_hint">Marque (ex. Porsche)</string>
+    <string name="devices_field_model_hint">Modèle (ex. 911 GT3)</string>
+    <string name="devices_field_details_hint">Détails (ex. Manuelle, Turbo)</string>
+    <string name="devices_remove_confirm_title_format">Supprimer %1$s ?</string>
+    <string name="devices_remove_confirm_body">Ceci supprime définitivement son historique de position, sur ce téléphone et dans Firestore. Cela n\'affecte pas le launcher de la voiture.</string>
+
+    <!-- ===== ui/bluetooth/BluetoothTriggerScreen.kt (dev) ===== -->
+    <string name="bt_trigger_explainer">Le suivi radar ne fonctionne que lorsque le téléphone est connecté à l\'un des appareils que tu coches ici — généralement l\'autoradio de ta voiture. Il démarre à la connexion et s\'arrête à la déconnexion.</string>
+    <string name="bt_trigger_nothing_ticked">Rien de coché : le suivi radar démarre par défaut quand Android Auto se connecte, ou quand la voiture signale qu\'elle a démarré.</string>
+    <string name="bt_trigger_permission_hint">Car Companion a besoin de la permission Appareils à proximité pour voir tes appareils Bluetooth appairés.</string>
+    <string name="bt_trigger_grant_permission">Accorder la permission</string>
+    <string name="bt_trigger_bluetooth_off">Le Bluetooth est désactivé — active-le pour voir tes appareils appairés.</string>
+    <string name="bt_trigger_no_paired_devices">Aucun appareil Bluetooth appairé trouvé. Appaire d\'abord ta voiture, dans les réglages Bluetooth du système.</string>
+
+    <!-- ===== data/model/RadarType.kt ===== -->
+    <string name="radar_type_fixed">Fixe</string>
+    <string name="radar_type_red_light">Feu rouge</string>
+    <string name="radar_type_section_control">Vitesse moyenne</string>
+    <string name="radar_type_tunnel">Tunnel</string>
+    <string name="radar_type_construction">Travaux</string>
+    <string name="radar_type_truck">Poids lourd</string>
+    <string name="radar_type_carpool">Voie de covoiturage</string>
+    <string name="radar_type_level_crossing">Passage à niveau</string>
+
+    <!-- ===== ui/map/RadarControls.kt (dev) ===== -->
+    <string name="radar_section_snippet_format">%1$s · %2$.1f km</string>
+    <string name="radar_point_speed_limit_format"> · %1$d km/h</string>
+    <string name="radar_pill_label">Radars</string>
+    <string name="radar_deselect_all">Tout désélectionner</string>
+    <string name="radar_select_all">Tout sélectionner</string>
+
+    <!-- ===== car/RadarAlertNotifier.kt (dev) ===== -->
+    <string name="radar_alert_title_format">Radar %1$s</string>
+    <string name="radar_alert_text_format">%1$d m %2$s</string>
+    <string name="radar_alert_channel_name">Alertes radar</string>
+    <string name="radar_alert_channel_description">Alerte instantanée quand un radar de vitesse ou de feu est à proximité</string>
+
+    <!-- ===== ui/nav/CompanionNavHost.kt ===== -->
+    <string name="nav_no_car_selected">Aucune voiture sélectionnée</string>
+    <string name="nav_switch_car_content_description">Changer de voiture</string>
+
+    <!-- ===== car/LocalTrackingService.kt ===== -->
+    <string name="local_tracking_notification_title">Enregistrement de ta position</string>
+    <string name="local_tracking_notification_text">Suivi du GPS du téléphone à la place de la voiture</string>
+    <string name="local_tracking_channel_name">Enregistrement GPS du téléphone</string>
+    <string name="local_tracking_channel_description">Indique si l\'enregistrement de position par le GPS du téléphone est actif</string>
+
+    <!-- ===== car/RadarAlertService.kt (dev) ===== -->
+    <string name="radar_service_notification_title_active">Alertes radar actives</string>
+    <string name="radar_service_notification_title_inactive">Alertes radar inactives</string>
+    <string name="radar_service_notification_text_active">Surveillance des radars à proximité</string>
+    <string name="radar_service_notification_text_inactive">En attente de connexion à la voiture</string>
+    <string name="radar_service_channel_name">État des alertes radar</string>
+    <string name="radar_service_channel_description">Indique si la surveillance des alertes radar est active</string>
+</resources>

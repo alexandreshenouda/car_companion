@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "378112683495",
+    "project_id": "car-tracking-fc69c",
+    "storage_bucket": "car-tracking-fc69c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378112683495:android:baadc78d021faddc726142",
+        "android_client_info": {
+          "package_name": "com.carlauncher.companion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXmHpDAPSxVC2NhMf2o3CzK3T9-FH01XI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378112683495:android:8e147cb330855a63726142",
+        "android_client_info": {
+          "package_name": "com.carlauncher.pcm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXmHpDAPSxVC2NhMf2o3CzK3T9-FH01XI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378112683495:android:6a7eed4b91117717726142",
+        "android_client_info": {
+          "package_name": "com.shenzou.carcompanion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXmHpDAPSxVC2NhMf2o3CzK3T9-FH01XI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
