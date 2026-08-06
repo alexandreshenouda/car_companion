@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Dev-flavor-only manifest: everything the beta features need. Merged on top of
+  src/main/AndroidManifest.xml for dev variants and simply absent from prod, so the prod APK
+  declares none of these components and requests none of these permissions.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Only MainActivity's battery-optimization exemption prompt uses this, and only so the
+         "car started" FCM push can wake the app while backgrounded or killed. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- Required so RadarAlertService can legally start a "location" foreground service when
+         woken by the car-started push while fully backgrounded (see RadarControls' permission
+         request flow and RadarAlertService.hasBackgroundLocationAccess()). -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- Needed to list bonded devices and to receive ACL_CONNECTED/DISCONNECTED with the device
+         attached, so CarBluetoothReceiver can tell the car's stereo from a smartwatch. -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <application>
+
+        <!-- Required for Android Auto (phone-projected) to discover this as a car-notification app. -->
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc" />
+
+        <service
+            android:name=".push.CompanionFcmService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Keeps radar tracking/alerts running for as long as Android Auto is connected
+             (see BetaAppInitializer.observeCarConnection); alerts reach the car screen purely as
+             notifications (RadarAlertNotifier), there's no car-app screen of our own. -->
+        <service
+            android:name=".car.RadarAlertService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+        <!-- Manifest-declared on purpose, so it fires with this app backgrounded or its process
+             dead. ACL_CONNECTED/ACL_DISCONNECTED are on the documented exemption list for the
+             Android 8 implicit-broadcast restrictions, so this keeps working on modern targets. -->
+        <receiver
+            android:name=".car.CarBluetoothReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

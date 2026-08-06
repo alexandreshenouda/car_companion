@@ -1,0 +1,39 @@
+# Gradle
+.gradle/
+/build/
+/app/build/
+**/build/
+
+# Local configuration file (sdk path, etc.)
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+.navigation/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Log/OS files
+*.log
+.DS_Store
+
+# Android Profiling
+*.hprof
+
+# Google Services (uncomment if it shouldn't be committed)
+# google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# Version control
+vcs.xml

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App is dark-only by design (car console aesthetic), so the XML bootstrap
+         theme forces dark rather than following the system DayNight setting. -->
+    <style name="Theme.Companion" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">@color/ink_950</item>
+        <item name="android:statusBarColor">@color/ink_950</item>
+        <item name="android:navigationBarColor">@color/ink_950</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Must stay in sync with Ink950 in ui/theme/Color.kt — this is the pre-Compose
+         window background, so a mismatch shows as a flash on cold start. -->
+    <color name="ink_950">#06080C</color>
+</resources>
