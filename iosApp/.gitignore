@@ -1,0 +1,6 @@
+# iosApp.xcodeproj is generated from project.yml by `xcodegen generate` (CI does this on
+# every build) — project.yml is the source of truth, the .xcodeproj is disposable output.
+*.xcodeproj/
+DerivedData/
+build/
+xcuserdata/
