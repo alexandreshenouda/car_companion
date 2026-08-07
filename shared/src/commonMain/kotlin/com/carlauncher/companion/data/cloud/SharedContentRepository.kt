@@ -7,6 +7,7 @@ import com.carlauncher.companion.data.cloud.dto.EventTrackPolylineRow
 import com.carlauncher.companion.data.cloud.dto.EventTrackRestoreRow
 import com.carlauncher.companion.data.cloud.dto.GetPublicProfileParams
 import com.carlauncher.companion.data.cloud.dto.PublicProfileRow
+import com.carlauncher.companion.data.cloud.dto.ReportCarParams
 import com.carlauncher.companion.data.cloud.dto.TrophyUnlockRestoreRow
 import com.carlauncher.companion.data.db.LocationPointEntity
 import com.carlauncher.companion.util.Logger
@@ -151,6 +152,17 @@ class SharedContentRepository(private val provider: SupabaseClientProvider) {
             .getOrNull()
         if (bytes != null) photoCacheMutex.withLock { photoCache[key] = bytes }
         return bytes
+    }
+
+    /** Flags a shared car for operator review via `report_car()` (`schema.sql`) — no
+     * notification mechanism, a filed report is only ever reachable through the Supabase
+     * dashboard. The RPC itself no-ops on a repeat report from the same reporter for the same
+     * car, so there's no separate "already reported" outcome to surface here. */
+    suspend fun reportCar(carId: String, reason: String?): Boolean {
+        val client = provider.client ?: return false
+        return runCatching {
+            client.postgrest.rpc("report_car", ReportCarParams(carId = carId, reason = reason?.takeIf { it.isNotBlank() }))
+        }.onFailure { Logger.w(TAG, "reportCar($carId) failed", it) }.isSuccess
     }
 
     private companion object {

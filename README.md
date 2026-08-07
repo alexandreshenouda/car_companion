@@ -603,6 +603,18 @@ attached needs a small SECURITY DEFINER function, `get_friends()` — a plain
 client-side join of `friendships` against `profiles` is impossible by design,
 since `profiles` blocks reading anyone else's row directly.
 
+Anyone can flag a shared car via the "Report this car" action on
+`SharedCarDetailScreen.kt`, which calls the `report_car()` RPC (an optional
+free-text reason, deduplicated per reporter/car). There's no notification —
+a filed report is only ever visible through the Supabase dashboard/SQL
+editor, a deliberate manual-review choice rather than building out an alert
+path. Separately, `profiles.blacklisted` is an operator-only flag (no
+client-writable path — see the column-restricted `GRANT` in `schema.sql`)
+that every visibility-bearing function (`can_view`, `activity_visible`,
+`get_public_profile`, `find_user_by_username`, `send_friend_request`,
+`get_friends`) checks and treats as "this account has no data to show
+anyone but themselves," independent of and in addition to `block_user`.
+
 ### Feed and public profiles
 
 The Feed (`ui/feed/FeedScreen.kt`) is the fifth bottom tab, and only exists at
@@ -627,7 +639,7 @@ RPC — the client renders exactly what comes back, nothing more.
 
 Tapping a card opens either a read-only shared car/event detail screen
 (`ui/feed/SharedCarDetailScreen.kt`, `SharedEventDetailScreen.kt` — no edit,
-no delete, no photo) or the actor's public profile
+no delete) or the actor's public profile
 (`ui/feed/PublicProfileScreen.kt`, `get_public_profile` RPC), each section of
 which — départements, trophies, garage — only renders if that person chose to
 expose it. `SharedContentRepository.kt` fetches a stranger's shared cars,

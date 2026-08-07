@@ -519,6 +519,13 @@
 
     <!-- ===== ui/feed/SharedCarDetailScreen.kt ===== -->
     <string name="shared_car_not_visible">This car isn\'t visible to you anymore</string>
+    <string name="shared_car_report_action">Report this car</string>
+    <string name="shared_car_report_dialog_title">Report car</string>
+    <string name="shared_car_report_dialog_body">Let the app operator know something\'s wrong with this listing. No one else is notified.</string>
+    <string name="shared_car_report_reason_label">Reason (optional)</string>
+    <string name="shared_car_report_submit">Report</string>
+    <string name="shared_car_report_success">Reported. Thanks for letting us know.</string>
+    <string name="shared_car_report_failed">Couldn\'t send the report. Try again.</string>
 
     <!-- ===== ui/feed/SharedEventDetailScreen.kt ===== -->
     <string name="shared_event_not_visible">This event isn\'t visible to you anymore</string>

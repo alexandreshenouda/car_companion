@@ -519,6 +519,13 @@
 
     <!-- ===== ui/feed/SharedCarDetailScreen.kt ===== -->
     <string name="shared_car_not_visible">Cette voiture ne t\'est plus visible</string>
+    <string name="shared_car_report_action">Signaler cette voiture</string>
+    <string name="shared_car_report_dialog_title">Signaler la voiture</string>
+    <string name="shared_car_report_dialog_body">Signale un problème avec cette annonce à l\'opérateur de l\'application. Personne d\'autre n\'est averti.</string>
+    <string name="shared_car_report_reason_label">Motif (facultatif)</string>
+    <string name="shared_car_report_submit">Signaler</string>
+    <string name="shared_car_report_success">Signalement envoyé. Merci de nous avoir prévenus.</string>
+    <string name="shared_car_report_failed">Impossible d\'envoyer le signalement. Réessaie.</string>
 
     <!-- ===== ui/feed/SharedEventDetailScreen.kt ===== -->
     <string name="shared_event_not_visible">Cet événement ne t\'est plus visible</string>

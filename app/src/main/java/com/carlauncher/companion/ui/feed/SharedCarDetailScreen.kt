@@ -1,5 +1,6 @@
 package com.carlauncher.companion.ui.feed
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,14 +16,18 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.DirectionsCar
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -40,6 +45,7 @@ import com.carlauncher.companion.ui.common.NeonCard
 import com.carlauncher.companion.ui.common.SectionLabel
 import com.carlauncher.companion.ui.theme.AccentGarage
 import com.carlauncher.companion.util.formatAbsolute
+import kotlinx.coroutines.launch
 
 /** A friend's shared car, read-only — no edit, no delete. */
 @Composable
@@ -47,6 +53,9 @@ fun SharedCarDetailScreen(carId: String, sharedContentRepository: SharedContentR
     var result by remember(carId) { mutableStateOf<Pair<CarRestoreRow, List<CarModificationRestoreRow>>?>(null) }
     var photoBytes by remember(carId) { mutableStateOf<ByteArray?>(null) }
     var loading by remember(carId) { mutableStateOf(true) }
+    var showReportDialog by remember(carId) { mutableStateOf(false) }
+    var reportResult by remember(carId) { mutableStateOf<Boolean?>(null) }
+    val scope = rememberCoroutineScope()
 
     LaunchedEffect(carId) {
         loading = true
@@ -120,6 +129,49 @@ fun SharedCarDetailScreen(carId: String, sharedContentRepository: SharedContentR
                 }
             }
         }
+
+        Spacer(Modifier.height(20.dp))
+        Text(
+            stringResource(R.string.shared_car_report_action),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.error,
+            modifier = Modifier.clickable { reportResult = null; showReportDialog = true },
+        )
+        reportResult?.let {
+            Spacer(Modifier.height(4.dp))
+            Text(
+                stringResource(if (it) R.string.shared_car_report_success else R.string.shared_car_report_failed),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
         Spacer(Modifier.height(24.dp))
+    }
+
+    if (showReportDialog) {
+        var reason by remember(carId) { mutableStateOf("") }
+        AlertDialog(
+            onDismissRequest = { showReportDialog = false },
+            title = { Text(stringResource(R.string.shared_car_report_dialog_title)) },
+            text = {
+                Column {
+                    Text(stringResource(R.string.shared_car_report_dialog_body), style = MaterialTheme.typography.bodyMedium)
+                    Spacer(Modifier.height(12.dp))
+                    OutlinedTextField(
+                        value = reason,
+                        onValueChange = { reason = it },
+                        label = { Text(stringResource(R.string.shared_car_report_reason_label)) },
+                        modifier = Modifier.fillMaxWidth(),
+                    )
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    showReportDialog = false
+                    scope.launch { reportResult = sharedContentRepository.reportCar(carId, reason) }
+                }) { Text(stringResource(R.string.shared_car_report_submit)) }
+            },
+            dismissButton = { TextButton(onClick = { showReportDialog = false }) { Text(stringResource(R.string.common_cancel)) } },
+        )
     }
 }
