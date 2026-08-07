@@ -18,8 +18,12 @@ struct ContentView: View {
     }
 
     private func runSmokeTest() {
+        // Top-level Kotlin functions are exposed to Swift as static members of a
+        // per-file "<FileName>Kt" class under Kotlin/Native's classic ObjC-interop
+        // framework export — never as bare global functions. readBundledAsset lives
+        // in :shared's BundledAsset.kt, hence BundledAssetKt here.
         let context = PlatformContext()
-        let json = readBundledAsset(context: context, name: "departments_centroids.json")
+        let json = BundledAssetKt.readBundledAsset(context: context, name: "departments_centroids.json")
         status = "Shared.framework linked.\ndepartments_centroids.json: \(json.count) chars"
     }
 }
