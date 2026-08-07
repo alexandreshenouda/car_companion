@@ -519,6 +519,13 @@
 
     <!-- ===== ui/feed/SharedCarDetailScreen.kt ===== -->
     <string name="shared_car_not_visible">Dieses Auto ist für dich nicht mehr sichtbar</string>
+    <string name="shared_car_report_action">Dieses Auto melden</string>
+    <string name="shared_car_report_dialog_title">Auto melden</string>
+    <string name="shared_car_report_dialog_body">Melde dem App-Betreiber ein Problem mit diesem Eintrag. Niemand sonst wird benachrichtigt.</string>
+    <string name="shared_car_report_reason_label">Grund (optional)</string>
+    <string name="shared_car_report_submit">Melden</string>
+    <string name="shared_car_report_success">Gemeldet. Danke für den Hinweis.</string>
+    <string name="shared_car_report_failed">Meldung konnte nicht gesendet werden. Versuch es erneut.</string>
 
     <!-- ===== ui/feed/SharedEventDetailScreen.kt ===== -->
     <string name="shared_event_not_visible">Dieses Event ist für dich nicht mehr sichtbar</string>

@@ -83,6 +83,12 @@ create table if not exists public.profiles (
   terms_version     text,
   terms_accepted_at timestamptz,
 
+  -- Set only by an operator (no client-writable path — see the column-restricted
+  -- GRANT in section 7). While true, every social-feature function in this file
+  -- must treat this user as if they had no data at all: not searchable, not
+  -- friendable, no profile/cars/events/trophies visible to anyone but themselves.
+  blacklisted       boolean not null default false,
+
   created_at        timestamptz not null default now(),
   updated_at        timestamptz not null default now(),
 
@@ -138,6 +144,9 @@ create table if not exists public.cars (
 
 -- Idempotent add for anyone re-running this file against a database created before photos existed.
 alter table public.cars add column if not exists photo_updated_at timestamptz;
+
+-- Idempotent add for anyone re-running this file against a database created before blacklisting existed.
+alter table public.profiles add column if not exists blacklisted boolean not null default false;
 
 create index if not exists cars_owner_idx on public.cars (owner_id);
 create index if not exists cars_shared_idx on public.cars (owner_id) where is_shared;
@@ -296,6 +305,23 @@ create table if not exists public.lookup_attempts (
   primary key (actor_id, window_start)
 );
 
+-- ---------------------------------------------------------------------
+-- reports — a user flagging a shared car for operator review. Insert-only
+-- from the client: there is deliberately no read/update/delete policy or
+-- grant below, so once filed a report is visible only via the Supabase
+-- dashboard/SQL editor, never through the app or PostgREST. No
+-- notification mechanism — checking this table is a manual/operator task.
+-- ---------------------------------------------------------------------
+create table if not exists public.reports (
+  id          uuid primary key default gen_random_uuid(),
+  car_id      uuid not null references public.cars(id) on delete cascade,
+  reporter_id uuid not null references auth.users(id) on delete cascade,
+  reason      text,
+  created_at  timestamptz not null default now(),
+  unique (car_id, reporter_id),
+  constraint report_reason_len check (reason is null or char_length(reason) <= 500)
+);
+
 
 -- =====================================================================
 -- 3. HELPER FUNCTIONS
@@ -340,6 +366,7 @@ as $$
     else exists (
       select 1 from public.profiles p
       where p.id = p_owner
+        and not p.blacklisted
         and (
           p.visibility = 'public'
           or (p.visibility = 'friends' and public.are_friends(auth.uid(), p_owner))
@@ -390,6 +417,7 @@ as $$
     when p_actor <> auth.uid() and not exists (
       select 1 from public.profiles p
       where p.id = p_actor
+        and not p.blacklisted
         and (
           p.visibility = 'public'
           or (p.visibility = 'friends' and public.are_friends(auth.uid(), p_actor))
@@ -592,6 +620,7 @@ alter table public.private_backups   enable row level security;
 alter table public.user_keys         enable row level security;
 alter table public.activities        enable row level security;
 alter table public.lookup_attempts   enable row level security;
+alter table public.reports           enable row level security;
 
 alter table public.profiles          force row level security;
 alter table public.friendships       force row level security;
@@ -604,6 +633,7 @@ alter table public.private_backups   force row level security;
 alter table public.user_keys         force row level security;
 alter table public.activities        force row level security;
 alter table public.lookup_attempts   force row level security;
+alter table public.reports           force row level security;
 
 -- ---- profiles --------------------------------------------------------
 -- Own row only. Other people's profiles are reachable exclusively through
@@ -663,6 +693,12 @@ drop policy if exists car_mods_write_own on public.car_modifications;
 create policy car_mods_write_own on public.car_modifications
   for all to authenticated
   using (owner_id = auth.uid()) with check (owner_id = auth.uid());
+
+-- ---- reports -----------------------------------------------------------
+-- No policy at all, on purpose — same shape as friendships above: the only
+-- write path is the report_car() RPC (section 6), which is SECURITY DEFINER
+-- and so bypasses RLS entirely; there is no client-writable path into this
+-- table otherwise, and nothing ever reads it back out through PostgREST.
 
 -- ---- events ----------------------------------------------------------
 drop policy if exists events_select on public.events;
@@ -777,7 +813,7 @@ begin
   return query
     select p.id, p.username, p.display_name
     from public.profiles p
-    where p.username = v_norm and p.id <> v_actor;
+    where p.username = v_norm and p.id <> v_actor and not p.blacklisted;
 end;
 $$;
 
@@ -798,7 +834,7 @@ begin
     raise exception 'not_authenticated' using errcode = '42501';
   end if;
 
-  select p.id into v_target from public.profiles p where p.username = v_norm;
+  select p.id into v_target from public.profiles p where p.username = v_norm and not p.blacklisted;
   if v_target is null or v_target = v_actor then
     raise exception 'user_not_found';
   end if;
@@ -878,6 +914,42 @@ begin
        or (requester_id = p_user and addressee_id = v_actor);
   insert into public.friendships (requester_id, addressee_id, status, responded_at)
   values (v_actor, p_user, 'blocked', now());
+end;
+$$;
+
+
+-- Flags a shared car for operator review. No notification mechanism — a filed
+-- report is visible only via the dashboard/SQL editor (see the `reports` table
+-- comment). Silently no-ops on a repeat report from the same reporter for the
+-- same car (the table's `unique(car_id, reporter_id)`), so the client doesn't
+-- need to special-case "already reported" as an error.
+create or replace function public.report_car(p_car_id uuid, p_reason text default null)
+returns void
+language plpgsql
+volatile
+security definer
+set search_path = public, pg_temp
+as $$
+declare
+  v_actor uuid := auth.uid();
+begin
+  if v_actor is null then
+    raise exception 'not_authenticated' using errcode = '42501';
+  end if;
+
+  -- can_view() re-checked explicitly rather than relying on RLS: this
+  -- function is SECURITY DEFINER, so it bypasses cars_select entirely and
+  -- must not let a caller report a car they aren't actually allowed to see.
+  if not exists (
+    select 1 from public.cars c
+    where c.id = p_car_id and public.can_view(c.owner_id, c.is_shared)
+  ) then
+    raise exception 'car_not_found';
+  end if;
+
+  insert into public.reports (car_id, reporter_id, reason)
+  values (p_car_id, v_actor, nullif(trim(coalesce(p_reason, '')), ''))
+  on conflict (car_id, reporter_id) do nothing;
 end;
 $$;
 
@@ -986,6 +1058,7 @@ as $$
     on other.id = case when f.requester_id = auth.uid() then f.addressee_id else f.requester_id end
   where (f.requester_id = auth.uid() or f.addressee_id = auth.uid())
     and f.status in ('accepted', 'pending')
+    and not other.blacklisted
   order by f.status, other.username;
 $$;
 
@@ -1028,8 +1101,13 @@ as $$
     and auth.uid() is not null
     and (
       p.id = auth.uid()
-      or p.visibility = 'public'
-      or (p.visibility = 'friends' and public.are_friends(auth.uid(), p.id))
+      or (
+        not p.blacklisted
+        and (
+          p.visibility = 'public'
+          or (p.visibility = 'friends' and public.are_friends(auth.uid(), p.id))
+        )
+      )
     );
 $$;
 
@@ -1064,7 +1142,7 @@ $$;
 revoke all on public.profiles, public.friendships, public.cars,
               public.car_modifications, public.events, public.event_tracks,
               public.trophy_unlocks, public.private_backups, public.user_keys,
-              public.activities, public.lookup_attempts
+              public.activities, public.lookup_attempts, public.reports
   from anon;
 
 revoke all on public.lookup_attempts from authenticated;
@@ -1075,8 +1153,20 @@ grant select, insert, update, delete on
   public.cars, public.car_modifications, public.events, public.event_tracks,
   public.trophy_unlocks, public.private_backups, public.user_keys
   to authenticated;
-grant select, update on public.profiles to authenticated;
+-- Column-restricted rather than a blanket UPDATE: `blacklisted` (and every other
+-- column not listed here, e.g. username/terms_*) must never be client-writable,
+-- since profiles_update_own only checks row ownership and would otherwise let a
+-- user un-blacklist themselves. Keep this list in sync with whatever
+-- CloudSyncManager.pushProfile()/pushVisibility() actually write.
+grant select on public.profiles to authenticated;
+grant update (
+  age, city, department_codes,
+  visibility, feed_scope, share_profile, share_garage, share_trophies
+) on public.profiles to authenticated;
 grant select, delete on public.friendships to authenticated;
+-- No grant on public.reports at all: its only write path is the SECURITY
+-- DEFINER report_car() RPC below, which runs as the function owner and so
+-- needs no table-level grant to `authenticated` — same as friendships' insert.
 
 -- RPCs: authenticated only, never anon.
 do $$
@@ -1087,6 +1177,7 @@ begin
     'public.send_friend_request(text)',
     'public.respond_friend_request(uuid, boolean)',
     'public.block_user(uuid)',
+    'public.report_car(uuid, text)',
     'public.get_feed(text, timestamptz, int)',
     'public.get_friends()',
     'public.get_public_profile(uuid)',

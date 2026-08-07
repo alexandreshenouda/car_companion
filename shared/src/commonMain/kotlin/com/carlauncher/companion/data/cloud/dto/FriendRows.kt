@@ -17,6 +17,12 @@ data class RespondFriendRequestParams(
 @Serializable
 data class BlockUserParams(@SerialName("p_user") val userId: String)
 
+@Serializable
+data class ReportCarParams(
+    @SerialName("p_car_id") val carId: String,
+    @SerialName("p_reason") val reason: String? = null,
+)
+
 /** One row of `find_user_by_username` — at most one, since it's an exact-match lookup. */
 @Serializable
 data class FoundUserRow(
