@@ -1,7 +1,9 @@
 package com.carlauncher.companion.data.db
 
+import androidx.room3.ConstructedBy
 import androidx.room3.Database
 import androidx.room3.RoomDatabase
+import androidx.room3.RoomDatabaseConstructor
 import androidx.room3.migration.Migration
 import androidx.sqlite.SQLiteConnection
 import androidx.sqlite.execSQL
@@ -26,6 +28,7 @@ import kotlinx.coroutines.Dispatchers
     version = 11,
     exportSchema = false,
 )
+@ConstructedBy(AppDatabaseConstructor::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun deviceDao(): DeviceDao
     abstract fun locationPointDao(): LocationPointDao
@@ -179,6 +182,14 @@ internal val APP_DATABASE_MIGRATIONS = arrayOf(
     MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10,
     MIGRATION_10_11,
 )
+
+/** Room's KSP compiler generates the `actual` for each target (Android, iOS) — required by
+ * Room3/KMP for any non-JVM-reflection platform, hence needed even though this project has
+ * no other constructor-injection use for it. */
+@Suppress("NO_ACTUAL_FOR_EXPECT")
+expect object AppDatabaseConstructor : RoomDatabaseConstructor<AppDatabase> {
+    override fun initialize(): AppDatabase
+}
 
 /** Finishes a platform-supplied [RoomDatabase.Builder] (see `getDatabaseBuilder` in
  * androidMain/iosMain) with the driver, migrations, and coroutine dispatcher common to both. */
