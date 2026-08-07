@@ -192,10 +192,13 @@ expect object AppDatabaseConstructor : RoomDatabaseConstructor<AppDatabase> {
 }
 
 /** Finishes a platform-supplied [RoomDatabase.Builder] (see `getDatabaseBuilder` in
- * androidMain/iosMain) with the driver, migrations, and coroutine dispatcher common to both. */
+ * androidMain/iosMain) with the driver, migrations, and coroutine dispatcher common to both.
+ * [Dispatchers.Default], not `.IO`: kotlinx-coroutines-core 1.8.1's `Dispatchers.IO` isn't a
+ * public symbol on the Native target (only on JVM) — confirmed by a real iOS compile, see
+ * README's "iOS port" section. */
 fun getRoomDatabase(builder: RoomDatabase.Builder<AppDatabase>): AppDatabase =
     builder
         .addMigrations(*APP_DATABASE_MIGRATIONS)
         .setDriver(BundledSQLiteDriver())
-        .setQueryCoroutineContext(Dispatchers.IO)
+        .setQueryCoroutineContext(Dispatchers.Default)
         .build()

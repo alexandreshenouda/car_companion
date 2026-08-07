@@ -32,6 +32,7 @@ actual class PlatformFileStore actual constructor(private val context: PlatformC
         path?.let { NSFileManager.defaultManager.removeItemAtPath(it, error = null) }
     }
 
+    @OptIn(ExperimentalForeignApi::class)
     private fun documentDirectory(): String {
         val documentDirectory = NSFileManager.defaultManager.URLForDirectory(
             directory = NSDocumentDirectory,

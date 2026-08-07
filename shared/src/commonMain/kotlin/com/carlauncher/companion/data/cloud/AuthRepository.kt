@@ -133,7 +133,7 @@ class AuthRepository(
         return try {
             supabase.auth.signUpWith(Email) {
                 this.email = email.trim()
-                this.password = String(password)
+                this.password = password.concatToString()
                 // Read by the handle_new_user() trigger, which creates the profile row in
                 // the same transaction — so a taken username aborts signup atomically
                 // instead of leaving an account with no profile.
@@ -161,7 +161,7 @@ class AuthRepository(
         return try {
             supabase.auth.signInWith(Email) {
                 this.email = email.trim()
-                this.password = String(password)
+                this.password = password.concatToString()
             }
             val userId = supabase.auth.currentUserOrNull()?.id
                 ?: return SignInResult.Failure(AuthError.UNKNOWN)
@@ -249,7 +249,7 @@ class AuthRepository(
     ): PasswordResetOutcome {
         val supabase = client ?: return PasswordResetOutcome.Failed
         return try {
-            supabase.auth.updateUser { password = String(newPassword) }
+            supabase.auth.updateUser { password = newPassword.concatToString() }
             val userId = supabase.auth.currentUserOrNull()?.id ?: return PasswordResetOutcome.Failed
 
             val recovered = !recoveryCode.isNullOrBlank() &&
@@ -275,7 +275,7 @@ class AuthRepository(
         val supabase = client ?: return false
         return try {
             validatePassword(newPassword)?.let { return false }
-            supabase.auth.updateUser { password = String(newPassword) }
+            supabase.auth.updateUser { password = newPassword.concatToString() }
             val userId = supabase.auth.currentUserOrNull()?.id ?: return false
             keyVault.rewrapForNewPassword(supabase, userId, newPassword)
         } catch (e: Exception) {

@@ -251,7 +251,7 @@ class CloudSyncManager(
                     points = page.map { GpsPointPayload(it.lat, it.lng, it.ts, it.speedKmh) },
                 )
                 val sealed = CryptoBox.sealCompressed(
-                    json.encodeToString(payload).toByteArray(),
+                    json.encodeToString(payload).encodeToByteArray(),
                     dek,
                     CryptoBox.backupAad(userId, "gps", nextChunk),
                 )
@@ -298,7 +298,7 @@ class CloudSyncManager(
             computedAt = progress.computedAt,
         )
         val sealed = CryptoBox.sealCompressed(
-            json.encodeToString(payload).toByteArray(),
+            json.encodeToString(payload).encodeToByteArray(),
             dek,
             CryptoBox.backupAad(userId, "stats", 0),
         )
