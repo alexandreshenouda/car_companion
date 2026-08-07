@@ -12,8 +12,7 @@ import platform.Foundation.create
 import platform.Foundation.dataWithBytes
 import platform.Foundation.writeToFile
 
-/** UNVERIFIED on this machine (no Xcode/iOS SDK here) — mirrors `DatabaseBuilder.ios.kt`'s
- * Documents-directory pattern; needs a real compile on the Mac side. */
+/** Mirrors `DatabaseBuilder.ios.kt`'s Documents-directory pattern. */
 actual class PlatformFileStore actual constructor(private val context: PlatformContext) {
 
     @OptIn(ExperimentalForeignApi::class)
@@ -28,6 +27,7 @@ actual class PlatformFileStore actual constructor(private val context: PlatformC
         return path
     }
 
+    @OptIn(ExperimentalForeignApi::class)
     actual suspend fun deleteCarPhoto(path: String?) {
         path?.let { NSFileManager.defaultManager.removeItemAtPath(it, error = null) }
     }
