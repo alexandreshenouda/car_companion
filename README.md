@@ -264,45 +264,117 @@ its own localized strings and SF Symbols instead of porting these.
 (events store their type as a plain `String` column), so it's still entirely
 `:app`-only, Compose icons included.
 
-**Verification status**: everything above has been built and tested on
-Linux — both `:app` flavors compile and their full unit test suites pass
-against `:shared`, and `:shared`'s own `androidTarget` compiles/tests clean.
-The `iosMain` `actual`s (Keychain settings, bundled-asset reading via
-`NSBundle`, file storage via `NSFileManager`, the Compression-framework zlib
-calls, Room's iOS database builder) are **not yet verified** — this
-environment has no Xcode/iOS SDK. They need a real compile on a Mac before
-they can be trusted.
+**Verification status**: everything above builds and is exercised by CI —
+both `:app` flavors compile and their full unit test suites pass against
+`:shared`; `:shared`'s own `androidTarget` compiles/tests clean; and, on
+`.github/workflows/ios.yml`'s `macos-latest` runner, `:shared`'s
+`iosSimulatorArm64` target compiles and its tests pass, `iosApp/` builds
+against the real iOS SDK, and an unsigned `.ipa` comes out the other end.
+No development machine here has ever had Xcode installed — this is CI-only
+verification, which is also why it's a *build*, not a UI smoke test:
+nothing has driven the app on an actual simulator/device screen yet (Phase 4
+below).
 
-**Remaining work, Mac-only:**
+Getting the `iosMain` actuals (Keychain settings, `NSBundle` asset reads,
+`NSFileManager` file storage, Room's iOS database builder, zlib compression)
+to a real, passing compile surfaced several genuine Kotlin/Native gaps that
+no amount of reading could have caught: Apple's `Compression` framework
+turns out not to be usable from Kotlin/Native at all (its bindings aren't
+part of Kotlin/Native's default platform libraries — swapped for
+`platform.zlib`, see `Gzip.ios.kt`), `Math.toRadians`/`Dispatchers.IO` don't
+exist on Native, `@Volatile` needs the multiplatform
+`kotlin.concurrent.Volatile` import rather than the JVM-default one, and
+Room's KMP path needs an explicit `@ConstructedBy` declaration that the
+Android/JVM-reflection path never required. All fixed; see the git history
+on `shared/` and `iosApp/` for the specifics.
 
-1. Confirm `shared/build.gradle.kts`'s `iosArm64()`/`iosSimulatorArm64()`
-   framework blocks and every `iosMain` file actually compile —
-   `./gradlew :shared:compileKotlinIosSimulatorArm64` is the fastest signal.
-2. Create an `iosApp/` Xcode project (SwiftUI, iOS 16+ suggested — matches
-   Room3/cryptography-kotlin's realistic floor). Add a Run Script build
-   phase before "Compile Sources":
-   ```
-   cd "$SRCROOT/.."
-   ./gradlew :shared:embedAndSignAppleFrameworkForXcode
-   ```
-   (reads Xcode's `SDK_NAME`/`CONFIGURATION`/`ARCHS` env vars automatically —
-   no CocoaPods, no manual per-scheme wiring.) `import Shared` then exposes
-   every public Kotlin type to Swift.
-3. Add `departments_centroids.json` to the iOS target's bundle resources
-   (drag into Xcode, check target membership) — `readBundledAsset`'s iOS
-   `actual` looks it up via `NSBundle.mainBundle.pathForResource`.
-4. Build screens in the order the shared repos were verified in, so each one
-   proves the stack before the next depends on it: sign-in (`AuthRepository`)
-   → Map (MapKit + `MKTileOverlay` against the same dark Carto tile URL
-   `CartoDarkMatterTileSource.kt` uses, `CLLocationManager` writing through
-   `TrackRepository`'s Room half — iOS's own thin repo, see above) → History
-   → Stats → Garage → Events → Trophies (+ `UNUserNotificationCenter` for
-   celebrations) → Feed/Friends/Cloud settings → `BackgroundTasks`-driven
-   sync (iOS's equivalent of `CloudSyncWorker`, calling the same shared
-   `CloudSyncManager`) → share-card export (`ImageRenderer`, mirroring
-   `ShareImageExporter`'s PNG-card approach).
-5. Once the app builds and runs on-device/simulator, update this section and
-   the "What it does" list above to describe the shipped iOS feature set.
+### The pipeline: iOS builds and ships without ever owning a Mac
+
+Compiling Swift/Xcode targets is only possible on macOS — there's no way
+around needing a macOS *build* environment somewhere. The pipeline splits
+that requirement (ephemeral, nobody owns or maintains it) from *signing +
+install* (genuinely Mac-free, self-hosted on Linux):
+
+```
+push to GitHub
+      │
+      ▼
+GitHub Actions (macos-latest runner, ephemeral — .github/workflows/ios.yml)
+  1. ./gradlew :shared:iosSimulatorArm64Test
+  2. xcodegen generate                     (iosApp/project.yml → iosApp.xcodeproj)
+  3. xcodebuild ... -sdk iphoneos CODE_SIGNING_ALLOWED=NO build
+  4. zip into an UNSIGNED .ipa, publish to the rolling "ios-latest" GitHub Release
+      │
+      ▼
+altserver-docker (self-hosted, Ubuntu — see ios-signing/)
+  - free Apple ID signing via a from-scratch reimplementation of Apple's
+    private auth protocol (anisette), not fastlane — fastlane's cert/sigh
+    only work against the paid-Program Developer Portal API, not the
+    free/personal-team one
+  - re-signs before the 7-day free-tier cert expiry, pushes to the iPhone
+```
+
+`iosApp/project.yml` is an [XcodeGen](https://github.com/yonaskolb/XcodeGen)
+spec, not a hand-committed `.pbxproj` — CI regenerates the actual Xcode
+project from it on every run, so the YAML is the real source of truth. Its
+`preBuildScripts` entry is the Run Script build phase from the original plan
+here (`./gradlew :shared:embedAndSignAppleFrameworkForXcode`, reading
+Xcode's `SDK_NAME`/`CONFIGURATION`/`ARCHS` env vars automatically — no
+CocoaPods). `iosApp/iosApp/Resources/departments_centroids.json` is a
+physical copy of the Android asset (`readBundledAsset`'s iOS `actual` looks
+it up via `NSBundle.mainBundle.pathForResource`) — small, static, and
+duplicating it was simpler than coupling the iOS target's resources to
+`:shared`'s internal Android asset layout.
+
+One Swift/Kotlin interop gotcha worth knowing before writing more iOS UI:
+Kotlin/Native's classic ObjC-interop framework export wraps **top-level**
+Kotlin functions in an unpredictable per-source-file `<Mangled>Kt` class —
+never call them as bare globals from Swift. Kotlin `object`s don't have
+this problem (exposed unambiguously as `MyObject.shared.foo()`), so prefer
+a small iOS-facing `object` wrapper over a top-level function when adding a
+new `:shared` entry point Swift needs to call — see
+`shared/src/iosMain/.../IosSmokeTest.kt` for the pattern the placeholder
+screen (`iosApp/iosApp/ContentView.swift`) currently uses.
+
+**Signing (free Apple ID, no $99/yr Program)**: see `ios-signing/` —
+`fetch-latest-ipa.sh` pulls the latest unsigned build from the `ios-latest`
+release into a local [altserver-docker](https://github.com/FacuM/altserver-docker)
+checkout for signing. `altserver-docker` bundles AltServer, an anisette-v3
+server, netmuxd, and usbmuxd-based USB pairing into one Docker Compose
+setup — free-tier Apple signing without fastlane (which only supports the
+paid-Program Developer Portal API) and without ever needing Xcode. One-time
+setup, done on the Ubuntu machine that will keep the phone's install fresh:
+
+```bash
+git clone https://github.com/FacuM/altserver-docker
+cd altserver-docker && docker compose up -d --build
+# connect the iPhone over USB, then:
+docker exec -it altserver pair
+# first install (also bootstraps AltStore itself onto the phone):
+../car_companion/ios-signing/fetch-latest-ipa.sh .
+docker exec -it altserver install iosApp-unsigned.ipa <apple-id> <app-specific-password>
+```
+
+Free-tier limits apply regardless of host OS: 3 sideloaded apps per device,
+apps expire after 7 days (AltServer/AltStore auto-refresh over WiFi once the
+device has been paired and is on the same network as the Docker host — USB
+refresh always works as a fallback if WiFi refresh is flaky).
+
+### Phase 4 — build out real screens
+
+With the pipeline proven, screens still need to be built in the order the
+shared repos were verified in, so each one proves the stack before the next
+depends on it: sign-in (`AuthRepository`) → Map (MapKit + `MKTileOverlay`
+against the same dark Carto tile URL `CartoDarkMatterTileSource.kt` uses,
+`CLLocationManager` writing through `TrackRepository`'s Room half — iOS's
+own thin repo, see above) → History → Stats → Garage → Events → Trophies
+(+ `UNUserNotificationCenter` for celebrations) → Feed/Friends/Cloud
+settings → `BackgroundTasks`-driven sync (iOS's equivalent of
+`CloudSyncWorker`, calling the same shared `CloudSyncManager`) → share-card
+export (`ImageRenderer`, mirroring `ShareImageExporter`'s PNG-card
+approach). Once the app has real screens and has actually been driven on a
+device, update this section and the "What it does" list above to describe
+the shipped iOS feature set.
 
 ## Average-speed radar sections
 
