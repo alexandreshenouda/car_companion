@@ -3,7 +3,6 @@ package com.carlauncher.companion.data.repo
 import com.carlauncher.companion.data.cloud.PlatformContext
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.addressOf
-import kotlinx.cinterop.memcpy
 import kotlinx.cinterop.usePinned
 import platform.Foundation.NSData
 import platform.Foundation.NSDocumentDirectory
@@ -13,6 +12,7 @@ import platform.Foundation.create
 import platform.Foundation.dataWithBytes
 import platform.Foundation.dataWithContentsOfFile
 import platform.Foundation.writeToFile
+import platform.posix.memcpy
 
 /** Mirrors `DatabaseBuilder.ios.kt`'s Documents-directory pattern. */
 actual class PlatformFileStore actual constructor(private val context: PlatformContext) {
