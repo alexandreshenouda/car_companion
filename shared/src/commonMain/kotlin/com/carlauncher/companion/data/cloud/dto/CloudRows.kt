@@ -30,6 +30,7 @@ data class CarRow(
     // forces this field to serialize on every row, every time, so the key is never absent.
     @SerialName("is_favorite") val isFavorite: Boolean,
     @SerialName("is_shared") val isShared: Boolean,
+    @SerialName("photo_updated_at") val photoUpdatedAt: String? = null,
 )
 
 @Serializable

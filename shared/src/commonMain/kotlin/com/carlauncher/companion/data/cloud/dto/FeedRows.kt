@@ -29,6 +29,7 @@ data class FeedActivityRow(
     @SerialName("distance_km") val distanceKm: Double = 0.0,
     @SerialName("max_speed_kmh") val maxSpeedKmh: Int = 0,
     @SerialName("mod_count") val modCount: Int = 0,
+    @SerialName("photo_updated_at") val photoUpdatedAt: String? = null,
 )
 
 @Serializable

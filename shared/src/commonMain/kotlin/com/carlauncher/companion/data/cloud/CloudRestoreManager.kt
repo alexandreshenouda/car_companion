@@ -29,9 +29,11 @@ import com.carlauncher.companion.data.db.TrophyProgressEntity
 import com.carlauncher.companion.data.db.TrophyUnlockEntity
 import com.carlauncher.companion.data.db.UserProfileDao
 import com.carlauncher.companion.data.db.UserProfileEntity
+import com.carlauncher.companion.data.repo.PlatformFileStore
 import com.carlauncher.companion.util.Logger
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.postgrest.postgrest
+import io.github.jan.supabase.storage.storage
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.serialization.decodeFromString
@@ -80,6 +82,7 @@ class CloudRestoreManager(
     private val trophyDao: TrophyDao,
     private val locationPointDao: LocationPointDao,
     private val deviceDao: DeviceDao,
+    private val photoStore: PlatformFileStore,
 ) {
     private val mutex = Mutex()
     private val json = Json { ignoreUnknownKeys = true }
@@ -135,6 +138,16 @@ class CloudRestoreManager(
 
         for (row in rows) {
             val createdAt = row.createdAt.fromIso()
+            val photoUpdatedAt = row.photoUpdatedAt?.fromIso()
+            val existing = carDao.getById(row.id)
+            // Only re-download when the remote timestamp moved past what's already on this
+            // device — a restore that finds nothing new for this car keeps its existing local
+            // file untouched rather than re-fetching bytes it already has.
+            val photoPath = when {
+                photoUpdatedAt == null -> null
+                photoUpdatedAt == existing?.photoUpdatedAt -> existing.photoPath
+                else -> downloadPhoto(client, row.id)?.let { photoStore.saveCarPhoto(row.id, it) } ?: existing?.photoPath
+            }
             carDao.upsert(
                 CarEntity(
                     id = row.id,
@@ -144,12 +157,15 @@ class CloudRestoreManager(
                     model = row.model,
                     year = row.year,
                     details = row.details,
+                    photoPath = photoPath,
                     odometerKm = row.odometerKm,
                     createdAt = createdAt,
                     isFavorite = false, // local favorite pick is a per-device UI preference
                     isShared = row.isShared,
                     updatedAt = createdAt,
                     cloudSyncedAt = Clock.System.now().toEpochMilliseconds(),
+                    photoUpdatedAt = photoUpdatedAt,
+                    photoSyncedAt = photoUpdatedAt,
                 ),
             )
 
@@ -170,6 +186,11 @@ class CloudRestoreManager(
             }
         }
     }
+
+    private suspend fun downloadPhoto(client: SupabaseClient, carId: String): ByteArray? =
+        runCatching { client.storage.from("car-photos").downloadAuthenticated("$carId.jpg") }
+            .onFailure { Logger.w(TAG, "downloadPhoto($carId) failed", it) }
+            .getOrNull()
 
     // ------------------------------------------------------------------ events
 

@@ -18,6 +18,7 @@ data class CarRestoreRow(
     @SerialName("odometer_km") val odometerKm: Double? = null,
     @SerialName("is_favorite") val isFavorite: Boolean = false,
     @SerialName("is_shared") val isShared: Boolean = false,
+    @SerialName("photo_updated_at") val photoUpdatedAt: String? = null,
     @SerialName("created_at") val createdAt: String,
 )
 

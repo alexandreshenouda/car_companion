@@ -114,23 +114,30 @@ create index if not exists friendships_requester_idx on public.friendships (requ
 -- cars — mirrors CarEntity minus photoPath (no image uploads).
 -- ---------------------------------------------------------------------
 create table if not exists public.cars (
-  id           uuid primary key,
-  owner_id     uuid not null references auth.users(id) on delete cascade,
-  name         text not null,
-  brand        text,
-  model        text,
-  year         int,
-  details      text,
-  odometer_km  double precision,
-  is_favorite  boolean not null default false,
-  is_shared    boolean not null default false,
-  created_at   timestamptz not null default now(),
-  updated_at   timestamptz not null default now(),
+  id                uuid primary key,
+  owner_id          uuid not null references auth.users(id) on delete cascade,
+  name              text not null,
+  brand             text,
+  model             text,
+  year              int,
+  details           text,
+  odometer_km       double precision,
+  is_favorite       boolean not null default false,
+  is_shared         boolean not null default false,
+  -- No path/URL stored here — the object lives in the `car-photos` bucket at a
+  -- fixed key derived from `id` (see section 8, STORAGE). Null means no photo;
+  -- non-null doubles as a change marker so viewers know to re-fetch.
+  photo_updated_at  timestamptz,
+  created_at        timestamptz not null default now(),
+  updated_at        timestamptz not null default now(),
   constraint car_name_len check (char_length(name) between 1 and 60),
   constraint car_year_sane check (year is null or (year between 1885 and 2100)),
   constraint car_details_len check (details is null or char_length(details) <= 2000),
   constraint car_odo_sane check (odometer_km is null or (odometer_km >= 0 and odometer_km < 10000000))
 );
+
+-- Idempotent add for anyone re-running this file against a database created before photos existed.
+alter table public.cars add column if not exists photo_updated_at timestamptz;
 
 create index if not exists cars_owner_idx on public.cars (owner_id);
 create index if not exists cars_shared_idx on public.cars (owner_id) where is_shared;
@@ -895,7 +902,8 @@ returns table (
   subtitle      text,
   distance_km   double precision,
   max_speed_kmh int,
-  mod_count     int
+  mod_count     int,
+  photo_updated_at timestamptz
 )
 language sql
 stable
@@ -925,7 +933,8 @@ as $$
     case when a.kind in ('car_added', 'car_shared')
       then (select count(*)::int from public.car_modifications m where m.car_id = c.id)
       else 0
-    end
+    end,
+    c.photo_updated_at
   from public.activities a
   join public.profiles p on p.id = a.actor_id
   left join public.events e on e.id = a.subject_id and a.kind = 'event_shared'
@@ -1109,3 +1118,68 @@ grant execute on function public.can_view(uuid, boolean) to authenticated;
 grant execute on function public.shares_trophies(uuid) to authenticated;
 grant execute on function
   public.activity_visible(uuid, public.activity_kind, uuid, text) to authenticated;
+
+
+-- =====================================================================
+-- 8. STORAGE — car photos
+--
+-- Private bucket. Object key is the flat `{car_id}.jpg`, deliberately with no
+-- owner-id folder: both the uploader (CloudSyncManager, which already has the
+-- car row at hand) and a friend viewing a shared car (SharedContentRepository,
+-- which only ever has the car id) can build the path from what they already
+-- have, with no extra round trip.
+--
+-- Neither policy below re-derives can_view(). Like car_mods_select above,
+-- they exists()-check the `cars` table and let its own cars_select RLS
+-- (already can_view()-gated) transitively decide visibility — that subquery
+-- runs as the calling role, so a car the caller can't see simply doesn't
+-- match, with no separate visibility logic to keep in sync here.
+-- =====================================================================
+
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('car-photos', 'car-photos', false, 2097152, array['image/jpeg'])
+on conflict (id) do update
+  set file_size_limit = excluded.file_size_limit,
+      allowed_mime_types = excluded.allowed_mime_types;
+
+-- Guards the uuid cast: only a name shaped exactly like `<uuid>.jpg` is ever
+-- attempted, so a stray/malformed object key filters out as "no match" rather
+-- than raising an "invalid input syntax for uuid" error inside the policy.
+create or replace function public.car_id_from_photo_key(name text)
+returns uuid
+language sql
+immutable
+as $$
+  select substring(name from '^([0-9a-fA-F-]{36})\.jpg$')::uuid;
+$$;
+
+-- objects.name (not the bare column) throughout below: `cars` has its own `name`
+-- column (the car's display name), and inside the EXISTS subquery an unqualified
+-- `name` resolves to that closer scope, not storage.objects' — silently feeding
+-- car_id_from_photo_key() a value like "Porsche 911" instead of the object key,
+-- which never matches the uuid regex and made every policy check fail closed.
+drop policy if exists car_photos_select on storage.objects;
+create policy car_photos_select on storage.objects
+  for select to authenticated
+  using (
+    bucket_id = 'car-photos'
+    and exists (select 1 from public.cars c where c.id = public.car_id_from_photo_key(objects.name))
+  );
+
+drop policy if exists car_photos_write_own on storage.objects;
+create policy car_photos_write_own on storage.objects
+  for all to authenticated
+  using (
+    bucket_id = 'car-photos'
+    and exists (
+      select 1 from public.cars c
+      where c.id = public.car_id_from_photo_key(objects.name) and c.owner_id = auth.uid()
+    )
+  )
+  with check (
+    bucket_id = 'car-photos'
+    and exists (
+      select 1 from public.cars c
+      where c.id = public.car_id_from_photo_key(objects.name) and c.owner_id = auth.uid()
+    )
+  );

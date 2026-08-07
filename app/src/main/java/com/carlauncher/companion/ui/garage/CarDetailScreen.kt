@@ -127,12 +127,22 @@ fun CarDetailScreen(
         ) {
             CarPhoto(photoPath = current.photoPath, modifier = Modifier.fillMaxWidth().aspectRatio(16f / 9f))
         }
-        Text(
-            stringResource(R.string.car_detail_tap_photo_to_change),
-            style = MaterialTheme.typography.bodySmall,
-            color = AccentGarage,
-            modifier = Modifier.padding(top = 4.dp),
-        )
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+            Text(
+                stringResource(R.string.car_detail_tap_photo_to_change),
+                style = MaterialTheme.typography.bodySmall,
+                color = AccentGarage,
+                modifier = Modifier.padding(top = 4.dp),
+            )
+            if (current.photoPath != null) {
+                Text(
+                    stringResource(R.string.car_detail_remove_photo),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error,
+                    modifier = Modifier.padding(top = 4.dp).clickable { scope.launch { carRepository.removePhoto(carId) } },
+                )
+            }
+        }
 
         Spacer(Modifier.height(8.dp))
         NeonCard(accent = AccentGarage, modifier = Modifier.fillMaxWidth()) {

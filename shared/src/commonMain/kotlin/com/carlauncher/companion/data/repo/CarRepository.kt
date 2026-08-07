@@ -69,14 +69,21 @@ class CarRepository(
     }
 
     /** [bytes] is already-read photo data — each platform's UI layer reads its own picker
-     * result (Android `Uri`, iOS `PHPickerViewController`) into bytes before calling this. */
+     * result (Android `Uri`, iOS `PHPickerViewController`) into bytes before calling this.
+     * [PlatformFileStore.saveCarPhoto] downsizes/compresses before writing, so what lands on
+     * disk here is also exactly what cloud sync later uploads unchanged. */
     suspend fun updatePhoto(carId: String, bytes: ByteArray) {
         val car = carDao.getById(carId) ?: return
         val path = photoStore.saveCarPhoto(carId, bytes)
-        // Not `updatedAt`-bumping: photos are never uploaded, so a photo-only change has
-        // nothing for the cloud sync to push — bumping it would just waste an upload cycle
-        // re-sending unchanged fields.
-        carDao.upsert(car.copy(photoPath = path))
+        val now = Clock.System.now().toEpochMilliseconds()
+        carDao.upsert(car.copy(photoPath = path, photoUpdatedAt = now, updatedAt = now))
+    }
+
+    suspend fun removePhoto(carId: String) {
+        val car = carDao.getById(carId) ?: return
+        photoStore.deleteCarPhoto(car.photoPath)
+        val now = Clock.System.now().toEpochMilliseconds()
+        carDao.upsert(car.copy(photoPath = null, photoUpdatedAt = now, updatedAt = now))
     }
 
     suspend fun removeCar(car: CarEntity) {
