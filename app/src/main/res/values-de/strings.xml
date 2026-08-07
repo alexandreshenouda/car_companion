@@ -254,6 +254,7 @@
 
     <!-- ===== ui/garage/CarDetailScreen.kt ===== -->
     <string name="car_detail_tap_photo_to_change">Foto antippen zum Ändern</string>
+    <string name="car_detail_remove_photo">Foto entfernen</string>
     <string name="car_detail_remove_favorite_content_description">Aus Favoriten entfernen</string>
     <string name="car_detail_set_favorite_content_description">Als Lieblingsauto festlegen</string>
     <string name="car_detail_remove_car_content_description">Auto entfernen</string>

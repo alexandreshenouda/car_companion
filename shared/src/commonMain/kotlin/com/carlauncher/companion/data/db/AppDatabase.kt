@@ -25,7 +25,7 @@ import kotlinx.coroutines.Dispatchers
         TrophyProgressEntity::class,
         CloudPrefsEntity::class,
     ],
-    version = 11,
+    version = 12,
     exportSchema = false,
 )
 @ConstructedBy(AppDatabaseConstructor::class)
@@ -177,10 +177,22 @@ private val MIGRATION_10_11 = object : Migration(10, 11) {
     }
 }
 
+/** Cars whose photo predates this migration get `photoUpdatedAt` stamped with the migration's
+ * own run time (rather than left null) so they're immediately "dirty" against a still-null
+ * `photoSyncedAt` — otherwise a photo set before this update shipped would never sync to the
+ * `car-photos` bucket until the user touched it again. */
+private val MIGRATION_11_12 = object : Migration(11, 12) {
+    override suspend fun migrate(connection: SQLiteConnection) {
+        connection.execSQL("ALTER TABLE cars ADD COLUMN photoUpdatedAt INTEGER")
+        connection.execSQL("ALTER TABLE cars ADD COLUMN photoSyncedAt INTEGER")
+        connection.execSQL("UPDATE cars SET photoUpdatedAt = 1786087282699 WHERE photoPath IS NOT NULL")
+    }
+}
+
 internal val APP_DATABASE_MIGRATIONS = arrayOf(
     MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5,
     MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10,
-    MIGRATION_10_11,
+    MIGRATION_10_11, MIGRATION_11_12,
 )
 
 /** Room's KSP compiler generates the `actual` for each target (Android, iOS) — required by

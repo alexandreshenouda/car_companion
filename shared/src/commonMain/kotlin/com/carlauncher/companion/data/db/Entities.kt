@@ -72,6 +72,14 @@ data class CarEntity(
     val updatedAt: Long = 0,
     /** [updatedAt] at the last successful cloud push; `null` means never uploaded. */
     val cloudSyncedAt: Long? = null,
+    /** Bumped whenever [photoPath] changes locally (set or cleared). Drives cloud photo sync
+     * independently of [cloudSyncedAt] — the row can be dirty for unrelated reasons without
+     * forcing a re-upload of unchanged photo bytes. */
+    val photoUpdatedAt: Long? = null,
+    /** [photoUpdatedAt] at the last successful photo push to the `car-photos` bucket; `null`
+     * means either never uploaded or currently photo-less on the server. In sync when equal
+     * to [photoUpdatedAt] (including both null). */
+    val photoSyncedAt: Long? = null,
 )
 
 @Entity(

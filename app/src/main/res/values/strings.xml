@@ -254,6 +254,7 @@
 
     <!-- ===== ui/garage/CarDetailScreen.kt ===== -->
     <string name="car_detail_tap_photo_to_change">Tap photo to change</string>
+    <string name="car_detail_remove_photo">Remove photo</string>
     <string name="car_detail_remove_favorite_content_description">Remove from favorite</string>
     <string name="car_detail_set_favorite_content_description">Set as favorite car</string>
     <string name="car_detail_remove_car_content_description">Remove car</string>

@@ -5,6 +5,7 @@ import io.github.jan.supabase.auth.Auth
 import io.github.jan.supabase.auth.FlowType
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.postgrest.Postgrest
+import io.github.jan.supabase.storage.Storage
 
 /**
  * Builds the single [SupabaseClient] for the app, or reports that cloud features are
@@ -49,6 +50,7 @@ class SupabaseClientProvider(
                 autoLoadFromStorage = true
             }
             install(Postgrest)
+            install(Storage)
         }
     }
 }

@@ -78,6 +78,7 @@ kotlin {
             // hard-errors on.
             api("io.github.jan-tennert.supabase:auth-kt")
             api("io.github.jan-tennert.supabase:postgrest-kt")
+            api("io.github.jan-tennert.supabase:storage-kt")
             implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
         }
         androidMain.dependencies {

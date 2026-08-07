@@ -22,6 +22,10 @@ data class FeedActivity(
     val distanceKm: Double,
     val maxSpeedKmh: Int,
     val modCount: Int,
+    /** ISO timestamp string, not epoch millis — passed straight through to
+     * [SharedContentRepository.getCarPhoto]'s cache key rather than parsed, since nothing here
+     * needs it as a comparable time, only as a "did the photo change" version marker. */
+    val photoUpdatedAt: String?,
 )
 
 /**
@@ -60,4 +64,5 @@ private fun FeedActivityRow.toActivity() = FeedActivity(
     distanceKm = distanceKm,
     maxSpeedKmh = maxSpeedKmh,
     modCount = modCount,
+    photoUpdatedAt = photoUpdatedAt,
 )

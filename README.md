@@ -82,6 +82,11 @@ flavors](#build-flavors-dev-and-prod).
     car can be marked **favorite** (star toggle on its detail screen); the
     favorite gets a full-width photo hero at the top of the Profile screen
     and a star badge in the Garage list, so it's visible without drilling in.
+    The photo is downsized/compressed on-device (long edge capped at 960px,
+    JPEG under ~300KB) before it's written locally, so the same small file
+    also travels to Supabase Storage — see [Cloud accounts](#cloud-accounts-supabase)
+    — when the car is shared, and shows up on `SharedCarDetailScreen` for
+    friends/the public.
   - **Events** (`ui/events/`) — car meets, racetrack days and explorations,
     each with a track sourced one of two ways: **from a car**, with a day +
     time window whose GPS points are cropped from the linked device and
@@ -494,6 +499,13 @@ Uploading is not sharing. **GPS history and overall statistics can never be
 shared with anyone** — there is no setting for it and no RLS policy that would
 permit it. The only GPS other users can ever see is the trace attached to an
 event explicitly marked as shared.
+
+A car's photo rides along with the "cars" backup toggle and its own share
+flag, same as the rest of the row: it lives in a private `car-photos` Storage
+bucket (not the database — see `supabase/schema.sql`'s STORAGE section), keyed
+by car id, with `storage.objects` RLS that mirrors `cars_select` rather than
+a public URL. It's plaintext on the server (unlike GPS/stats above), since
+the whole point is for a friend to see it once the car is shared.
 
 ### End-to-end encryption
 

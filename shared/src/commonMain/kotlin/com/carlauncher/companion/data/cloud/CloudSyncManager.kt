@@ -27,11 +27,13 @@ import com.carlauncher.companion.data.db.LocationPointDao
 import com.carlauncher.companion.data.db.LocationPointEntity
 import com.carlauncher.companion.data.db.TrophyDao
 import com.carlauncher.companion.data.db.UserProfileDao
+import com.carlauncher.companion.data.repo.PlatformFileStore
 import com.carlauncher.companion.data.repo.computeStats
 import com.carlauncher.companion.util.Logger
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.postgrest.postgrest
 import io.github.jan.supabase.postgrest.query.filter.FilterOperator
+import io.github.jan.supabase.storage.storage
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -76,6 +78,7 @@ class CloudSyncManager(
     private val trophyDao: TrophyDao,
     private val locationPointDao: LocationPointDao,
     private val deviceDao: DeviceDao,
+    private val photoStore: PlatformFileStore,
 ) {
     private val mutex = Mutex()
     private val json = Json { ignoreUnknownKeys = true }
@@ -131,6 +134,7 @@ class CloudSyncManager(
             client.postgrest.from("cars").upsert(dirty.map { it.toRow(userId) })
             for (car in dirty) {
                 pushModifications(client, userId, car.id)
+                if (car.photoUpdatedAt != car.photoSyncedAt) pushPhoto(client, car)
             }
             val now = Clock.System.now().toEpochMilliseconds()
             dirty.forEach { carDao.markSynced(it.id, now) }
@@ -146,6 +150,21 @@ class CloudSyncManager(
         if (mods.isNotEmpty()) {
             client.postgrest.from("car_modifications").upsert(mods.map { it.toRow(userId) })
         }
+    }
+
+    /** Uploads/deletes the `car-photos` bucket object to match [car]'s local photo state — the
+     * `cars` row upsert just above already carries the matching `photo_updated_at`, so a friend
+     * viewing the shared car sees the two change together. */
+    private suspend fun pushPhoto(client: SupabaseClient, car: CarEntity) {
+        val bucket = client.storage.from("car-photos")
+        val path = car.photoPath
+        if (path != null) {
+            val bytes = photoStore.readCarPhoto(path) ?: return
+            bucket.upload("${car.id}.jpg", bytes) { upsert = true }
+        } else {
+            bucket.delete(listOf("${car.id}.jpg"))
+        }
+        carDao.markPhotoSynced(car.id, car.photoUpdatedAt)
     }
 
     // ------------------------------------------------------------------ events
@@ -336,6 +355,7 @@ class CloudSyncManager(
 private fun CarEntity.toRow(ownerId: String) = CarRow(
     id = id, ownerId = ownerId, name = name, brand = brand, model = model, year = year,
     details = details, odometerKm = odometerKm, isFavorite = isFavorite, isShared = isShared,
+    photoUpdatedAt = photoUpdatedAt?.toIso(),
 )
 
 @OptIn(ExperimentalUuidApi::class)

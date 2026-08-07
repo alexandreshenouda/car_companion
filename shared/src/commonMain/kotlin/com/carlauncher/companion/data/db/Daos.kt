@@ -135,10 +135,13 @@ interface CarDao {
     @Query("UPDATE cars SET cloudSyncedAt = :at WHERE id = :carId")
     suspend fun markSynced(carId: String, at: Long)
 
+    @Query("UPDATE cars SET photoSyncedAt = :at WHERE id = :carId")
+    suspend fun markPhotoSynced(carId: String, at: Long?)
+
     /** Sync markers are local flags, not account-scoped — a second account signing in on this
      * device must not inherit "already synced" from the first, or its own backup silently
      * omits every row the first account happened to have already pushed. */
-    @Query("UPDATE cars SET cloudSyncedAt = NULL")
+    @Query("UPDATE cars SET cloudSyncedAt = NULL, photoSyncedAt = NULL")
     suspend fun clearSyncMarkers()
 
     @Query("UPDATE cars SET isFavorite = 0, updatedAt = :at WHERE isFavorite = 1")

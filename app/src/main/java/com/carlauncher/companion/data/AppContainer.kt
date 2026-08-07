@@ -54,8 +54,10 @@ class AppContainer(context: Context) {
     /** Beta-only singletons (radars, Bluetooth trigger). Empty in the prod flavor — see [BetaContainer]. */
     val beta = BetaContainer(context)
 
+    private val photoStore = PlatformFileStore(platformContext)
+
     val profileRepository = ProfileRepository(db.userProfileDao())
-    val carRepository = CarRepository(db.carDao(), db.carModificationDao(), PlatformFileStore(platformContext))
+    val carRepository = CarRepository(db.carDao(), db.carModificationDao(), photoStore)
     val eventRepository = EventRepository(db.eventDao(), db.eventPointDao(), db.locationPointDao())
 
     // Supabase — accounts, opt-in cloud backup and the community Feed. Unlike `beta` above
@@ -99,6 +101,7 @@ class AppContainer(context: Context) {
         trophyDao = db.trophyDao(),
         locationPointDao = db.locationPointDao(),
         deviceDao = db.deviceDao(),
+        photoStore = photoStore,
     )
 
     val cloudRestoreManager = CloudRestoreManager(
@@ -115,5 +118,6 @@ class AppContainer(context: Context) {
         trophyDao = db.trophyDao(),
         locationPointDao = db.locationPointDao(),
         deviceDao = db.deviceDao(),
+        photoStore = photoStore,
     )
 }

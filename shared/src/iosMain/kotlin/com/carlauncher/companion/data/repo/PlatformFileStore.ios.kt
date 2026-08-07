@@ -3,6 +3,7 @@ package com.carlauncher.companion.data.repo
 import com.carlauncher.companion.data.cloud.PlatformContext
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.addressOf
+import kotlinx.cinterop.memcpy
 import kotlinx.cinterop.usePinned
 import platform.Foundation.NSData
 import platform.Foundation.NSDocumentDirectory
@@ -10,6 +11,7 @@ import platform.Foundation.NSFileManager
 import platform.Foundation.NSUserDomainMask
 import platform.Foundation.create
 import platform.Foundation.dataWithBytes
+import platform.Foundation.dataWithContentsOfFile
 import platform.Foundation.writeToFile
 
 /** Mirrors `DatabaseBuilder.ios.kt`'s Documents-directory pattern. */
@@ -30,6 +32,16 @@ actual class PlatformFileStore actual constructor(private val context: PlatformC
     @OptIn(ExperimentalForeignApi::class)
     actual suspend fun deleteCarPhoto(path: String?) {
         path?.let { NSFileManager.defaultManager.removeItemAtPath(it, error = null) }
+    }
+
+    @OptIn(ExperimentalForeignApi::class)
+    actual suspend fun readCarPhoto(path: String): ByteArray? {
+        val data = NSData.dataWithContentsOfFile(path) ?: return null
+        val bytes = ByteArray(data.length.toInt())
+        if (bytes.isNotEmpty()) {
+            bytes.usePinned { memcpy(it.addressOf(0), data.bytes, data.length) }
+        }
+        return bytes
     }
 
     @OptIn(ExperimentalForeignApi::class)

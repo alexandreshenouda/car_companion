@@ -52,6 +52,7 @@ import com.carlauncher.companion.data.model.descriptionRes
 import com.carlauncher.companion.data.model.icon
 import com.carlauncher.companion.data.model.labelRes
 import com.carlauncher.companion.data.model.titleRes
+import com.carlauncher.companion.ui.common.CarPhotoBadge
 import com.carlauncher.companion.ui.common.IconBadge
 import com.carlauncher.companion.ui.common.NeonCard
 import com.carlauncher.companion.ui.common.NeonPill
@@ -100,6 +101,29 @@ fun FeedScreen(
         trackCache[eventId] = sharedContentRepository.getEventTrackPreview(eventId)
     }
 
+    // Keyed by activity id rather than car id: two activities can reference the same car (e.g.
+    // "added" then later "shared") with different photoUpdatedAt snapshots, and keying this way
+    // sidesteps ever needing to reconcile that — SharedContentRepository's own cache (keyed by
+    // car id + photoUpdatedAt) still dedupes the actual network fetch either way.
+    val photoCache = remember { mutableStateMapOf<String, ByteArray?>() }
+    // Deliberately doesn't remember a failed fetch the way trackCache remembers a car with no
+    // photo (getCarPhoto only ever returns null here on a transient failure, never as a
+    // legitimate "no photo" answer — see its own doc comment) — leaving the key unset means the
+    // next retry (see photoRefreshToken below) has something to actually attempt.
+    suspend fun ensurePhotoLoaded(activityId: String, carId: String, photoUpdatedAt: String?) {
+        if (photoCache.containsKey(activityId)) return
+        val bytes = sharedContentRepository.getCarPhoto(carId, photoUpdatedAt)
+        if (bytes != null) photoCache[activityId] = bytes
+    }
+
+    // Card composables survive a refresh unchanged (LazyColumn keys them by the now-stable
+    // activityId), so LaunchedEffect(activity.activityId) alone would never re-fire for a photo
+    // that failed earlier — pull-to-refresh would refresh everything except the one thing a user
+    // pulling to refresh a blank photo actually wants retried. Bumping this on every refresh and
+    // folding it into that LaunchedEffect's key forces exactly that retry; a photo that already
+    // succeeded just re-reads instantly from SharedContentRepository's own cache.
+    var photoRefreshToken by remember { mutableStateOf(0) }
+
     LaunchedEffect(feedScope) {
         loading = true
         endReached = false
@@ -111,6 +135,7 @@ fun FeedScreen(
         scope.launch {
             isRefreshing = true
             endReached = false
+            photoRefreshToken++
             activities = feedRepository.page(feedScope.wire, before = null)
             isRefreshing = false
         }
@@ -177,6 +202,9 @@ fun FeedScreen(
                             activity = activity,
                             trackCache = trackCache,
                             ensureTrackLoaded = ::ensureTrackLoaded,
+                            photoCache = photoCache,
+                            ensurePhotoLoaded = ::ensurePhotoLoaded,
+                            photoRefreshToken = photoRefreshToken,
                             onClick = {
                                 when (activity.kind) {
                                     "car_added", "car_shared" -> activity.subjectId?.let { onOpenCar(activity.actorId, it) }
@@ -207,10 +235,13 @@ private fun ActivityCard(
     activity: FeedActivity,
     trackCache: Map<String, List<Pair<Double, Double>>?>,
     ensureTrackLoaded: suspend (String) -> Unit,
+    photoCache: Map<String, ByteArray?>,
+    ensurePhotoLoaded: suspend (activityId: String, carId: String, photoUpdatedAt: String?) -> Unit,
+    photoRefreshToken: Int,
     onClick: () -> Unit,
 ) {
     when (activity.kind) {
-        "car_added", "car_shared" -> CarActivityCard(activity, onClick)
+        "car_added", "car_shared" -> CarActivityCard(activity, photoCache, ensurePhotoLoaded, photoRefreshToken, onClick)
         "event_shared" -> EventActivityCard(activity, trackCache, ensureTrackLoaded, onClick)
         "trophy_unlocked" -> TrophyActivityCard(activity, onClick)
         else -> DefaultActivityCard(activity, onClick)
@@ -218,10 +249,21 @@ private fun ActivityCard(
 }
 
 @Composable
-private fun CarActivityCard(activity: FeedActivity, onClick: () -> Unit) {
+private fun CarActivityCard(
+    activity: FeedActivity,
+    photoCache: Map<String, ByteArray?>,
+    ensurePhotoLoaded: suspend (activityId: String, carId: String, photoUpdatedAt: String?) -> Unit,
+    photoRefreshToken: Int,
+    onClick: () -> Unit,
+) {
+    val carId = activity.subjectId
+    LaunchedEffect(activity.activityId, photoRefreshToken) {
+        carId?.let { ensurePhotoLoaded(activity.activityId, it, activity.photoUpdatedAt) }
+    }
+
     NeonCard(accent = AccentGarage, modifier = Modifier.fillMaxWidth(), onClick = onClick) {
         Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
-            IconBadge(Icons.Filled.DirectionsCar, AccentGarage, size = 64.dp)
+            CarPhotoBadge(bytes = photoCache[activity.activityId], tint = AccentGarage, size = 64.dp)
             Spacer(Modifier.width(16.dp))
             Column(Modifier.weight(1f)) {
                 Text(activity.headline(), style = MaterialTheme.typography.titleMedium)

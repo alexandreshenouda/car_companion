@@ -13,6 +13,9 @@ import com.carlauncher.companion.util.Logger
 import io.github.jan.supabase.postgrest.postgrest
 import io.github.jan.supabase.postgrest.query.Columns
 import io.github.jan.supabase.postgrest.rpc
+import io.github.jan.supabase.storage.storage
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlin.time.ExperimentalTime
 import kotlin.time.Instant
 
@@ -27,6 +30,9 @@ import kotlin.time.Instant
  * same guarantee: if the row comes back at all, it was already cleared to be shown.
  */
 class SharedContentRepository(private val provider: SupabaseClientProvider) {
+
+    private val photoCacheMutex = Mutex()
+    private val photoCache = mutableMapOf<String, ByteArray?>()
 
     suspend fun getProfile(userId: String): PublicProfileRow? {
         val client = provider.client ?: return null
@@ -116,6 +122,35 @@ class SharedContentRepository(private val provider: SupabaseClientProvider) {
                 .decodeSingleOrNull<EventTrackPolylineRow>()
                 ?.let { PolylineCodec.decode(it.encodedPolyline) }
         }.onFailure { Logger.w(TAG, "getEventTrackPreview($eventId) failed", it) }.getOrNull()
+    }
+
+    /** Downloads a shared car's photo bytes via the `car-photos` bucket's RLS-gated
+     * `authenticated` endpoint — no public URL exists, so visibility is enforced the same way
+     * as everything else here, by `storage.objects`' own policies. `null` covers both "this car
+     * has no photo" and "not visible to the caller", same as every other method in this class.
+     *
+     * Successful downloads are cached in-memory, keyed by [photoUpdatedAt] rather than just
+     * [carId] — the object at `{carId}.jpg` is overwritten in place on every re-upload, so
+     * without the version in the key a car whose owner changed their photo this session would
+     * keep showing the stale bytes fetched earlier. Shared across every caller (Feed cards,
+     * [getSharedCar]'s detail screen) since this repository is a single long-lived instance for
+     * the signed-in session.
+     *
+     * A failed download is deliberately NOT cached: by the time this runs, the row already says
+     * a photo exists, so `null` here only ever means a transient failure, never a legitimate
+     * "no photo" — caching it would turn one flaky network blip into a permanently blank photo
+     * for the rest of the session. */
+    suspend fun getCarPhoto(carId: String, photoUpdatedAt: String?): ByteArray? {
+        if (photoUpdatedAt == null) return null
+        val key = "$carId:$photoUpdatedAt"
+        photoCacheMutex.withLock { photoCache[key] }?.let { return it }
+
+        val client = provider.client ?: return null
+        val bytes = runCatching { client.storage.from("car-photos").downloadAuthenticated("$carId.jpg") }
+            .onFailure { Logger.w(TAG, "getCarPhoto($carId) failed", it) }
+            .getOrNull()
+        if (bytes != null) photoCacheMutex.withLock { photoCache[key] = bytes }
+        return bytes
     }
 
     private companion object {
