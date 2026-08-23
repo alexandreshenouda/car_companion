@@ -37,3 +37,6 @@ freeline_project_description.json
 
 # Version control
 vcs.xml
+
+# Radar data (Lufop/OsmAnd export, third-party licensed — supply locally, never commit)
+/app/src/dev/assets/radars/*.gpx

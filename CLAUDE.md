@@ -172,6 +172,9 @@ adb shell dumpsys bluetooth_manager | grep -iE "connected|state"
 ```
 
 **Known constraints:**
+- `app/src/dev/assets/radars/*.gpx` is gitignored (third-party Lufop/OsmAnd data,
+  repo is public) — a fresh clone has no radar markers and `generateRadarSections`
+  has nothing to pair until the 25 country files are dropped in manually.
 - `assembleDebug` is flaky in a sandboxed/headless dev shell (JVM SIGSEGV in the
   Gradle daemon under D8) — see `gradle-build-jdk-setup` memory. Verify with
   `./gradlew :app:compileDevDebugKotlin :app:compileProdDebugKotlin` first (both

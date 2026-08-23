@@ -54,7 +54,10 @@ flavors](#build-flavors-dev-and-prod).
   needed to receive it reliably while backgrounded/killed).
 - **Speed camera radars** *(dev only)* — fixed, mobile, red-light, tunnel, roadworks and
   average-speed cameras across 25 countries, bundled offline (no network
-  needed at runtime) and shown as filterable markers on the map. Average-speed
+  needed at runtime) and shown as filterable markers on the map. The
+  third-party GPX data isn't committed to this (public) repo — see the
+  "Radars" entry under Architecture below — so a fresh clone needs it
+  supplied locally before a dev-flavor build has any markers. Average-speed
   ("Troncon") sections are also drawn as a line following the road between
   the entry and exit camera — see
   [Average-speed radar sections](#average-speed-radar-sections) below. A
@@ -244,7 +247,12 @@ a conditional.
   no network call. `RadarRepository` parses country files lazily, on demand,
   as the map viewport reaches them. Because the source GPX lives in the dev
   source set, neither the raw data nor the generated JSON is produced or
-  bundled for prod.
+  bundled for prod. The GPX files themselves are **gitignored, not
+  committed** — this is public Lufop/OsmAnd export data with its own
+  license, so it's supplied locally rather than shipped in the repo. A fresh
+  clone must have someone manually drop the 25 `COUNTRY.gpx` files into
+  `app/src/dev/assets/radars/` before a dev-flavor build will show any radar
+  markers or generate `radar_sections.json`.
 
 ## iOS port (in progress)
 
