@@ -184,6 +184,7 @@ fully-qualified name and identical public API, declared once in
 | `data/repo/RemoteTrackSync.kt` | Firestore discovery / live tail / backfill / delete, wrapped by `TrackRepository` | same signatures returning empty |
 | `BetaAppInitializer.kt` | the Firebase-auth / push-topic / radar-trigger half of `CompanionApp.onCreate()`, plus `MainActivity`'s battery-optimization prompt | empty |
 | `ui/nav/BetaNavEntries.kt` | the Bluetooth + Devices top-bar icons, their nav routes, and Map's "Add a car" button | empty |
+| `ui/nav/BetaNavEntries.kt`'s `showMainTopBar` | `true` | `false` — with no beta icons and always exactly one device, the top bar on Map/History/Stats/Profile/Feed has nothing to show, so it's hidden entirely there (detail screens still get their back-button bar in both flavors) |
 | `ui/map/RadarControls.kt` | radar state, viewport loading, marker/section overlay drawing, the "Radars" filter pill, and the background-location request | inert state object, draws nothing |
 
 Adding a beta feature therefore means putting it in `src/dev` and, if shared
@@ -572,7 +573,8 @@ categories are switched on in Cloud settings. It runs two ways —
 - **Automatically**, via a WorkManager `CloudSyncWorker` (network-constrained,
   every 30 minutes) started unconditionally from `CompanionApp.onCreate()` —
   it safely no-ops when signed out or the build has no Supabase credentials —
-  plus an immediate one-off run the moment a category toggle flips on;
+  plus an immediate one-off run on every app launch and the moment a category
+  toggle flips on;
 - **Manually**, via the "Sync now" button in Cloud settings, which calls
   `CloudSyncManager.syncAll()` directly rather than going through WorkManager,
   so the result shows up right away.

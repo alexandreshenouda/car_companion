@@ -147,35 +147,37 @@ fun CompanionNavHost(
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                navigationIcon = {
-                    if (detailTitle != null && currentRoute !in noBackRoutes) {
-                        IconButton(onClick = { navController.popBackStack() }) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.nav_back_content_description))
+            if (detailTitle != null || showMainTopBar) {
+                TopAppBar(
+                    navigationIcon = {
+                        if (detailTitle != null && currentRoute !in noBackRoutes) {
+                            IconButton(onClick = { navController.popBackStack() }) {
+                                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.nav_back_content_description))
+                            }
                         }
-                    }
-                },
-                title = {
-                    if (detailTitle != null) {
-                        Text(stringResource(detailTitle), style = MaterialTheme.typography.titleLarge)
-                    } else {
-                        DeviceSwitcher(
-                            devices = devices,
-                            selected = selectedDevice,
-                            onSelect = { id -> scope.launch { container.deviceRepository.selectDevice(id) } },
-                        )
-                    }
-                },
-                actions = {
-                    if (detailTitle == null) BetaTopBarIcons(navController)
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.background,
-                    titleContentColor = MaterialTheme.colorScheme.onSurface,
-                    actionIconContentColor = MaterialTheme.colorScheme.primary,
-                    navigationIconContentColor = MaterialTheme.colorScheme.primary,
-                ),
-            )
+                    },
+                    title = {
+                        if (detailTitle != null) {
+                            Text(stringResource(detailTitle), style = MaterialTheme.typography.titleLarge)
+                        } else {
+                            DeviceSwitcher(
+                                devices = devices,
+                                selected = selectedDevice,
+                                onSelect = { id -> scope.launch { container.deviceRepository.selectDevice(id) } },
+                            )
+                        }
+                    },
+                    actions = {
+                        if (detailTitle == null) BetaTopBarIcons(navController)
+                    },
+                    colors = TopAppBarDefaults.topAppBarColors(
+                        containerColor = MaterialTheme.colorScheme.background,
+                        titleContentColor = MaterialTheme.colorScheme.onSurface,
+                        actionIconContentColor = MaterialTheme.colorScheme.primary,
+                        navigationIconContentColor = MaterialTheme.colorScheme.primary,
+                    ),
+                )
+            }
         },
         bottomBar = {
             if (detailTitle == null) {

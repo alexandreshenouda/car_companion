@@ -11,6 +11,8 @@ import com.carlauncher.companion.data.AppContainer
  * and the Bluetooth radar trigger aren't part of this build, so there are no routes to register
  * and no top-bar icons to show. The only car is this phone, seeded at startup and auto-selected.
  */
+val showMainTopBar: Boolean = false
+
 @Suppress("UNUSED_PARAMETER")
 fun NavGraphBuilder.betaDestinations(navController: NavHostController, container: AppContainer) = Unit
 

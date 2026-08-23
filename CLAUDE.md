@@ -35,7 +35,7 @@ public API, declared once per flavor (real in `src/dev/java`, no-op in `src/prod
 | `data/BetaContainer.kt` | `radarRepository`/`sectionRepository`/`bluetoothTriggerStore`/`backgroundFeatureSettings`, exposed as `AppContainer.beta` | empty class |
 | `data/repo/RemoteTrackSync.kt` | Firestore discover/live-tail/backfill/delete; `TrackRepository` delegates to it and keeps its full public API, so no call sites changed | same signatures, empty results |
 | `BetaAppInitializer.kt` | `initialize()` = the Firebase/push/radar-trigger half of `CompanionApp.onCreate()`; `initializeActivity()` = `MainActivity`'s battery-opt prompt | both empty |
-| `ui/nav/BetaNavEntries.kt` | `betaDestinations()` (Devices + BluetoothTrigger + Settings routes), `BetaTopBarIcons()`, `BetaAddCarAction()` | all empty |
+| `ui/nav/BetaNavEntries.kt` | `betaDestinations()` (Devices + BluetoothTrigger + Settings routes), `BetaTopBarIcons()`, `BetaAddCarAction()`, `showMainTopBar` (`true`) | all empty, `showMainTopBar` (`false`) |
 | `ui/map/RadarControls.kt` | `RadarOverlayState`/`rememberRadarOverlays()`/`RadarControls()` — radar state, viewport loading, overlay drawing, filter pill, background-location request | inert state, draws nothing |
 
 Adding a beta feature = put it in `src/dev` and, if shared code must call it, extend a

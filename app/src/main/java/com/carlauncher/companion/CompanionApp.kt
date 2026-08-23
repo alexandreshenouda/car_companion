@@ -29,6 +29,9 @@ class CompanionApp : Application() {
         // Safe to schedule unconditionally, signed in or not, cloud-configured build or not:
         // CloudSyncManager.syncAll() itself no-ops when there's no client or no session.
         CloudSyncWorker.schedulePeriodic(this)
+        // Also fire one immediately, so a fresh launch doesn't wait up to 30 minutes for the
+        // periodic tick to back up anything that changed since the app was last open.
+        CloudSyncWorker.enqueueImmediate(this)
         // Firebase auth/push and the radar-tracking triggers, in the dev flavor only — this is a
         // no-op object in prod, so none of that code is compiled into the prod APK.
         BetaAppInitializer.initialize(this, container)

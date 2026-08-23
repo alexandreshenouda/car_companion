@@ -33,6 +33,8 @@ import com.carlauncher.companion.ui.settings.SettingsScreen
  * never references [DevicesScreen]/[BluetoothTriggerScreen], neither of which is compiled into
  * the prod APK.
  */
+val showMainTopBar: Boolean = true
+
 fun NavGraphBuilder.betaDestinations(navController: NavHostController, container: AppContainer) {
     composable(Destination.Devices.route) {
         DevicesScreen(
