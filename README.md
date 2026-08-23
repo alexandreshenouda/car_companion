@@ -55,9 +55,9 @@ flavors](#build-flavors-dev-and-prod).
 - **Speed camera radars** *(dev only)* — fixed, mobile, red-light, tunnel, roadworks and
   average-speed cameras across 25 countries, bundled offline (no network
   needed at runtime) and shown as filterable markers on the map. The
-  third-party GPX data isn't committed to this (public) repo — see the
-  "Radars" entry under Architecture below — so a fresh clone needs it
-  supplied locally before a dev-flavor build has any markers. Average-speed
+  third-party GPX data isn't committed to this (public) repo — see [Radar
+  data](#radar-data-optional-dev-flavor-only) below for how to supply it
+  locally; a dev-flavor build without it just has no markers. Average-speed
   ("Troncon") sections are also drawn as a line following the road between
   the entry and exit camera — see
   [Average-speed radar sections](#average-speed-radar-sections) below. A
@@ -252,7 +252,9 @@ a conditional.
   license, so it's supplied locally rather than shipped in the repo. A fresh
   clone must have someone manually drop the 25 `COUNTRY.gpx` files into
   `app/src/dev/assets/radars/` before a dev-flavor build will show any radar
-  markers or generate `radar_sections.json`.
+  markers or generate `radar_sections.json` — see [Radar
+  data](#radar-data-optional-dev-flavor-only) below for the file format and
+  naming.
 
 ## iOS port (in progress)
 
@@ -407,6 +409,53 @@ export (`ImageRenderer`, mirroring `ShareImageExporter`'s PNG-card
 approach). Once the app has real screens and has actually been driven on a
 device, update this section and the "What it does" list above to describe
 the shipped iOS feature set.
+
+## Radar data (optional, dev flavor only)
+
+`app/src/dev/assets/radars/` is gitignored and ships **empty** in this repo —
+the bundled radar positions are third-party licensed data (Lufop/OsmAnd
+exports), not something this public repo redistributes. Without anything in
+that folder, a dev-flavor build still succeeds; the map just has no radar
+markers or average-speed lines, and there's nothing for the proximity-alert
+service to alert on. To build with your own radar data:
+
+1. Get one export per country from [Lufop](https://lufop.net) (its "OsmAnd"
+   download format) or any other source producing the same shape (see
+   below). Lufop's own files are named `COUNTRY.osm`, but the *content* is
+   already plain GPX — just rename each to `COUNTRY.gpx` when copying it in,
+   no conversion needed.
+2. Drop each file into `app/src/dev/assets/radars/`, named to match exactly
+   what `RadarRepository.kt`'s `COUNTRY_FILES` list expects (e.g.
+   `FRANCE.gpx`, `ALLEMAGNE.gpx`, `GRANDE-BRETAGNE.gpx`) — that list is the
+   source of truth for the full set of 25 country names and their rough
+   bounding boxes; a file whose name isn't in that list is silently never
+   loaded, and adding a genuinely new country means adding it there too.
+3. Build the dev flavor as usual
+   (`./gradlew :app:assembleDevDebug`) — `RadarRepository` parses whichever
+   country files the map viewport reaches, and the average-speed section
+   lines are computed automatically from the same data (see [Average-speed
+   radar sections](#average-speed-radar-sections) below).
+
+**Expected file shape** — standard GPX 1.1, one `<wpt>` per camera, with an
+OsmAnd-style `<extensions>` block:
+
+```xml
+<wpt lat="48.8566" lon="2.3522">
+  <name>Radar Fixe FR 50</name>
+  <type>Radars : FRANCE</type>
+  <extensions>
+    <osmand:icon>highway_speed_camera</osmand:icon>
+  </extensions>
+</wpt>
+```
+
+`RadarType.fromLabel()` (`data/model/RadarType.kt`) sorts each point into a
+category purely from keywords in its `<name>`: `Feu Rouge` → red light,
+`Troncon` → average-speed section, `Tunnel`, `Chantier` → roadworks, `Poid
+lourd` → truck, `Covoiturage` → carpool, `Passage Niveau` → level crossing;
+anything else is treated as a plain fixed radar. Average-speed entry/exit
+pairs need no id or link in the source data — they're matched geometrically
+at build time (next section).
 
 ## Average-speed radar sections
 
