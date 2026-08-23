@@ -72,6 +72,17 @@ class RadarAlertService : Service() {
 
     override fun onBind(intent: Intent?): IBinder? = null
 
+    // A service started via startForegroundService() (as CompanionFcmService does) must call
+    // startForeground() before it returns, even to immediately abort — otherwise the OS kills the
+    // whole process with ForegroundServiceDidNotStartInTimeException instead of just this service.
+    // stopSelf() alone does not satisfy that contract.
+    private fun bailWithoutStarting() {
+        ensureChannel(this)
+        startForeground(NOTIFICATION_ID, buildNotification(this, active = false))
+        stopForeground(STOP_FOREGROUND_REMOVE)
+        stopSelf()
+    }
+
     override fun onCreate() {
         super.onCreate()
         // Belt and braces: background starters check these themselves, but a sticky restart can
@@ -79,12 +90,12 @@ class RadarAlertService : Service() {
         val container = (application as CompanionApp).container
         if (!container.beta.backgroundFeatureSettings.backgroundRadarEnabled.value) {
             Log.w(RADAR_LOG_TAG, "service: background radar checks disabled in settings, stopping")
-            stopSelf()
+            bailWithoutStarting()
             return
         }
         if (!canRunInBackground(this)) {
             Log.w(RADAR_LOG_TAG, "service: background location not granted, stopping")
-            stopSelf()
+            bailWithoutStarting()
             return
         }
         ensureChannel(this)
