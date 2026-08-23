@@ -98,6 +98,13 @@ data class VisibilityUpdateRow(
     @SerialName("share_profile") val shareProfile: Boolean,
     @SerialName("share_garage") val shareGarage: Boolean,
     @SerialName("share_trophies") val shareTrophies: Boolean,
+    // XP/leaderboard fields ride along on this same "core account settings, pushed every sync
+    // run" row rather than getting their own — they're small, non-sensitive, always-current
+    // metadata, same category as visibility/feed_scope above.
+    @SerialName("total_xp") val totalXp: Long,
+    val level: Int,
+    @SerialName("login_streak_days") val loginStreakDays: Int,
+    @SerialName("leaderboard_visibility") val leaderboardVisibility: String,
 )
 
 /** One page of a chunked, end-to-end encrypted backup. See `CryptoBox` for the encryption. */

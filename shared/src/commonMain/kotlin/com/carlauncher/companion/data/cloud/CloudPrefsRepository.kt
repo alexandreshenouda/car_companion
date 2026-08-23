@@ -30,6 +30,20 @@ enum class FeedScope(val wire: String) {
     }
 }
 
+/** Who can see this account on the XP leaderboard. Deliberately its own setting rather than
+ * reusing [Visibility] — a user may want GPS/events private but still compete, or vice versa.
+ * Mirrors `profiles.leaderboard_visibility` in Postgres. */
+enum class LeaderboardVisibility(val wire: String) {
+    PRIVATE("private"),
+    FRIENDS("friends"),
+    PUBLIC("public"),
+    ;
+
+    companion object {
+        fun from(wire: String?) = entries.firstOrNull { it.wire == wire } ?: PRIVATE
+    }
+}
+
 /** The six independent upload switches, as a category enum so the UI can render them generically. */
 enum class SyncCategory(val encrypted: Boolean) {
     CARS(false),
@@ -70,6 +84,8 @@ class CloudPrefsRepository(private val dao: CloudPrefsDao) {
 
     val visibility: Flow<Visibility> = prefs.map { Visibility.from(it.visibility) }
 
+    val leaderboardVisibility: Flow<LeaderboardVisibility> = prefs.map { LeaderboardVisibility.from(it.leaderboardVisibility) }
+
     suspend fun current(): CloudPrefsEntity = dao.get() ?: CloudPrefsEntity()
 
     suspend fun isEnabled(category: SyncCategory): Boolean = current().isEnabled(category)
@@ -84,6 +100,10 @@ class CloudPrefsRepository(private val dao: CloudPrefsDao) {
 
     suspend fun setFeedScope(scope: FeedScope) {
         dao.upsert(current().copy(feedScope = scope.wire))
+    }
+
+    suspend fun setLeaderboardVisibility(visibility: LeaderboardVisibility) {
+        dao.upsert(current().copy(leaderboardVisibility = visibility.wire))
     }
 
     suspend fun isEnabled(section: ProfileSection): Boolean = current().isEnabled(section)

@@ -188,6 +188,24 @@ data class TrophyProgressEntity(
 )
 
 /**
+ * Singleton row (id = 0) tracking the login-XP streak. Only the streak needs persisting —
+ * every other XP source ([com.carlauncher.companion.data.repo.computeBaseXp]) is a pure
+ * function of [TrophyProgressEntity]/[TrophyUnlockEntity], recomputed rather than stored.
+ * [accumulatedLoginXp] can't be recomputed the same way: today's bonus depends on whether
+ * yesterday was played, not on any stat that survives independently of this row.
+ */
+@Entity(tableName = "xp_state")
+data class XpStateEntity(
+    @PrimaryKey val id: Int = 0,
+    val currentStreakDays: Int = 0,
+    val bestStreakDays: Int = 0,
+    /** `LocalDate.toEpochDays()` of the last day a login bonus was credited; null before the
+     * first ever app open. */
+    val lastLoginEpochDay: Long? = null,
+    val accumulatedLoginXp: Long = 0,
+)
+
+/**
  * Singleton row holding what this device is willing to send to the cloud, and how widely the
  * account shares.
  *
@@ -217,6 +235,10 @@ data class CloudPrefsEntity(
     val visibility: String = "private",
     /** "friends" | "everyone" — whose activity this user wants in their own Feed. */
     val feedScope: String = "friends",
+    /** "private" | "friends" | "public" — mirrors `profiles.leaderboard_visibility`. Independent
+     * of [visibility]: a user can keep GPS/events private while still competing on the
+     * leaderboard, or vice versa. */
+    val leaderboardVisibility: String = "private",
 
     // Independent of `visibility`/per-item `isShared`: these three gate which *sections* of
     // the public profile page exist at all, mirroring `profiles.share_profile`/`share_garage`/

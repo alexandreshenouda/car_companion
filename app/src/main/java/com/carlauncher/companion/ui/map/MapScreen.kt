@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
+import android.location.Location
 import android.location.LocationManager
 import android.view.GestureDetector
 import android.view.MotionEvent
@@ -29,6 +30,7 @@ import androidx.compose.material.icons.filled.FiberManualRecord
 import androidx.compose.material.icons.filled.MyLocation
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Stop
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SmallFloatingActionButton
@@ -37,6 +39,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -46,11 +49,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.flowWithLifecycle
 import com.carlauncher.companion.R
 import com.carlauncher.companion.car.LocalTrackingService
 import com.carlauncher.companion.data.BetaContainer
@@ -68,6 +76,7 @@ import com.carlauncher.companion.util.buildSpeedSegments
 import com.carlauncher.companion.util.formatAbsolute
 import com.carlauncher.companion.util.formatRelative
 import kotlinx.coroutines.channels.BufferOverflow
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import org.osmdroid.events.MapListener
 import org.osmdroid.events.ScrollEvent
@@ -79,6 +88,37 @@ import org.osmdroid.views.overlay.Marker
 import org.osmdroid.views.overlay.Polyline
 
 private const val PHONE_MARKER_TINT = 0xFF4285F4.toInt()
+
+/** Zoom the map snaps to whenever the user explicitly asks to be taken somewhere. */
+private const val FOCUS_ZOOM = 16.0
+
+/** A fix older than this is considered stale enough that any newer one supersedes it. */
+private const val LOCATION_STALE_MS = 30_000L
+
+/** How long a recenter tap waits for a first fix before giving up rather than spinning forever. */
+private const val LOCATION_WAIT_TIMEOUT_MS = 20_000L
+
+/**
+ * One "take the camera there" order. [serial] makes two consecutive requests for the *same* point
+ * distinct, so tapping recenter twice in a row re-fires instead of being swallowed as no state
+ * change.
+ */
+private data class CameraRequest(val point: GeoPoint, val zoom: Double, val serial: Int)
+
+/**
+ * Whether [candidate] should replace [current] as the phone's position. We listen to GPS *and*
+ * network, so fixes arrive interleaved and out of order: prefer the newer one once the old one has
+ * gone stale, otherwise keep whichever is more accurate.
+ */
+private fun isBetterFix(candidate: Location, current: Location?): Boolean {
+    if (current == null) return true
+    val newerBy = candidate.time - current.time
+    if (newerBy > LOCATION_STALE_MS) return true
+    if (newerBy < 0) return false
+    if (!current.hasAccuracy()) return true
+    if (!candidate.hasAccuracy()) return false
+    return candidate.accuracy <= current.accuracy
+}
 
 @SuppressLint("MissingPermission")
 @Composable
@@ -105,6 +145,11 @@ fun MapScreen(
     var followCar by remember { mutableStateOf(true) }
     var focusedPoint by remember { mutableStateOf<GeoPoint?>(null) }
     var phoneLocation by remember { mutableStateOf<GeoPoint?>(null) }
+    // Set when the user asks to be located before the first fix has arrived; the request is then
+    // honoured as soon as one does, instead of the tap silently doing nothing.
+    var awaitingLocationFix by remember { mutableStateOf(false) }
+    var cameraRequest by remember { mutableStateOf<CameraRequest?>(null) }
+    var cameraSerial by remember { mutableIntStateOf(0) }
     var hasLocationPermission by remember {
         mutableStateOf(
             ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) ==
@@ -120,18 +165,30 @@ fun MapScreen(
         if (!hasLocationPermission) locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
     }
 
-    // Tails Firestore for as long as this screen stays composed; detaches automatically
-    // when the coroutine is cancelled (navigating away cancels the LaunchedEffect). Skipped for
-    // "This phone": it has no Firestore doc — its points come from LocalTrackingService instead.
-    LaunchedEffect(deviceId) {
-        if (!isLocalDevice) trackRepository.liveUpdates(deviceId).collect { }
+    // Tails Firestore while this screen is both composed and resumed. flowWithLifecycle detaches
+    // the Firestore listener as soon as the Activity backgrounds (screen off, home button, another
+    // app) and resubscribes on resume — without it the listener stayed registered for as long as
+    // the process lived, since backgrounding stops the Activity but never leaves composition (the
+    // same pattern the phone-location listener below was fixed for). Skipped for "This phone": it
+    // has no Firestore doc — its points come from LocalTrackingService instead.
+    val lifecycleOwner = LocalLifecycleOwner.current
+    LaunchedEffect(deviceId, lifecycleOwner) {
+        if (!isLocalDevice) {
+            trackRepository.liveUpdates(deviceId)
+                .flowWithLifecycle(lifecycleOwner.lifecycle, Lifecycle.State.RESUMED)
+                .collect { }
+        }
     }
 
     LaunchedEffect(deviceId, showHistory, historyRange, latestPoint) {
         historyPoints = if (showHistory) trackRepository.pointsInRange(deviceId, historyRange) else emptyList()
     }
 
-    val mapView = remember(deviceId) { MapView(context) }
+    // Deliberately NOT keyed on deviceId: AndroidView's factory below only ever runs once, so a
+    // fresh MapView here on every device switch would leave the on-screen view (and everything
+    // that manipulates it — camera effects, the touch listener, tile setup) pointed at a new,
+    // never-attached instance while the real view silently stops receiving any of it.
+    val mapView = remember { MapView(context) }
     val accentColor = MaterialTheme.colorScheme.primary.toArgb()
 
     // historyPoints only actually changes on sync/range/device switches, but the AndroidView
@@ -156,6 +213,35 @@ fun MapScreen(
     val selectedPointLabel = stringResource(R.string.map_marker_selected_point)
 
     val mapMoveEvents = remember { MutableSharedFlow<Unit>(extraBufferCapacity = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST) }
+
+    // Every deliberate "take me there" goes through here instead of poking mapView.controller
+    // straight from a click lambda. Two reasons, both of which used to make a recenter tap look
+    // like it did nothing:
+    //  - a controller call made before the MapView's first Android layout pass is not executed,
+    //    it is queued in osmdroid's ReplayController and replayed at first layout, so it could be
+    //    swallowed or fired at the wrong moment. The effect below waits for layout first.
+    //  - marking hasCenteredOnce here means the one-shot "centre on the car" below can no longer
+    //    fire afterwards and yank the map back off whatever the user just asked for (that one
+    //    triggers on latestPoint's *first* arrival, which can easily be seconds after the app
+    //    opened, i.e. right after the user panned around and hit recenter).
+    val moveCameraTo: (GeoPoint) -> Unit = { point ->
+        hasCenteredOnce = true
+        cameraSerial += 1
+        cameraRequest = CameraRequest(point, FOCUS_ZOOM, cameraSerial)
+    }
+
+    LaunchedEffect(cameraRequest) {
+        val request = cameraRequest ?: return@LaunchedEffect
+        mapView.awaitFirstLayout()
+        // osmdroid's animateTo() never actually cancels a still-running previous animator (it
+        // only resets its own bookkeeping), so back-to-back animateTo calls within ~1s leave two
+        // ValueAnimators fighting over the camera and the recenter can lose. stopAnimation(true)
+        // jumps any in-flight animation/fling to its end first so this one always wins.
+        mapView.controller.stopAnimation(true)
+        mapView.controller.setZoom(request.zoom)
+        mapView.controller.animateTo(request.point)
+        mapMoveEvents.tryEmit(Unit)
+    }
     // Radars (and the background-location grant they need) exist in the dev flavor only — this
     // returns an inert state object in prod.
     val radarOverlays = rememberRadarOverlays(beta, mapView, mapMoveEvents, hasLocationPermission)
@@ -179,12 +265,49 @@ fun MapScreen(
         focusRequest?.let { req ->
             followCar = false
             focusedPoint = GeoPoint(req.lat, req.lng)
-            mapView.controller.setZoom(16.0)
-            mapView.controller.animateTo(GeoPoint(req.lat, req.lng))
-            hasCenteredOnce = true
+            moveCameraTo(GeoPoint(req.lat, req.lng))
             focusRequestHolder.consume()
-            mapMoveEvents.tryEmit(Unit)
         }
+    }
+
+    // Honour a recenter tap that arrived before the first fix did.
+    LaunchedEffect(phoneLocation, awaitingLocationFix) {
+        if (!awaitingLocationFix) return@LaunchedEffect
+        val loc = phoneLocation
+        if (loc != null) {
+            awaitingLocationFix = false
+            moveCameraTo(loc)
+            return@LaunchedEffect
+        }
+        delay(LOCATION_WAIT_TIMEOUT_MS)
+        awaitingLocationFix = false
+    }
+
+    // Auto-centre and auto-follow used to live in the AndroidView update block below. That block
+    // is re-run on every unrelated state change (a phone-location tick, a radar viewport reload,
+    // a history reload) and also runs before the first layout pass, so it fired controller calls
+    // at essentially arbitrary times — including on top of a recenter the user had just asked
+    // for. Both are camera decisions, so they belong in an effect keyed to the thing that
+    // actually justifies moving: a new car position.
+    LaunchedEffect(latestPoint) {
+        val p = latestPoint ?: return@LaunchedEffect
+        val initialCentering = !hasCenteredOnce
+        if (!initialCentering && !followCar) return@LaunchedEffect
+        if (initialCentering) hasCenteredOnce = true
+
+        val serialBefore = cameraSerial
+        mapView.awaitFirstLayout()
+        // A recenter the user asked for while we were waiting for layout outranks the automatic
+        // move, so drop this one rather than stomping on it.
+        if (cameraSerial != serialBefore) return@LaunchedEffect
+
+        val carPoint = GeoPoint(p.lat, p.lng)
+        // Same overlapping-animator hazard as the explicit-request effect above: this fires on
+        // every live position tick while follow is on, which can land inside a prior animateTo's
+        // ~1s window.
+        mapView.controller.stopAnimation(true)
+        if (initialCentering) mapView.controller.setCenter(carPoint) else mapView.controller.animateTo(carPoint)
+        mapMoveEvents.tryEmit(Unit)
     }
 
     // Only a real finger-drag should break auto-follow — our own programmatic animateTo/setCenter
@@ -214,20 +337,30 @@ fun MapScreen(
         val locationManager = ContextCompat.getSystemService(context, LocationManager::class.java)
         if (!hasLocationPermission || locationManager == null) return@LifecycleResumeEffect onPauseOrDispose {}
 
-        val listener = android.location.LocationListener { location ->
-            phoneLocation = GeoPoint(location.latitude, location.longitude)
+        // Seed from whichever provider has the freshest cached fix, rather than from one chosen
+        // provider: getLastKnownLocation(GPS_PROVIDER) is very often null just after a cold start
+        // while network/passive still hold something usable.
+        var bestFix: Location? = null
+        for (provider in locationManager.getProviders(true)) {
+            val cached = runCatching { locationManager.getLastKnownLocation(provider) }.getOrNull() ?: continue
+            if (isBetterFix(cached, bestFix)) bestFix = cached
         }
-        val provider = when {
-            locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) -> LocationManager.GPS_PROVIDER
-            locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) -> LocationManager.NETWORK_PROVIDER
-            else -> null
-        }
-        if (provider == null) return@LifecycleResumeEffect onPauseOrDispose {}
+        bestFix?.let { phoneLocation = GeoPoint(it.latitude, it.longitude) }
 
-        locationManager.getLastKnownLocation(provider)?.let {
-            phoneLocation = GeoPoint(it.latitude, it.longitude)
+        val listener = android.location.LocationListener { location ->
+            if (isBetterFix(location, bestFix)) {
+                bestFix = location
+                phoneLocation = GeoPoint(location.latitude, location.longitude)
+            }
         }
-        locationManager.requestLocationUpdates(provider, 5000L, 10f, listener)
+        // Subscribe to GPS *and* network. Preferring GPS and only falling back to network when GPS
+        // is switched off meant that indoors — where GPS never gets a first fix — phoneLocation
+        // stayed null indefinitely and the recenter button was a silent no-op.
+        val providers = listOf(LocationManager.GPS_PROVIDER, LocationManager.NETWORK_PROVIDER)
+            .filter { runCatching { locationManager.isProviderEnabled(it) }.getOrDefault(false) }
+        if (providers.isEmpty()) return@LifecycleResumeEffect onPauseOrDispose {}
+
+        providers.forEach { locationManager.requestLocationUpdates(it, 5000L, 10f, listener) }
         onPauseOrDispose { locationManager.removeUpdates(listener) }
     }
 
@@ -291,13 +424,6 @@ fun MapScreen(
                         setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
                     }
                     view.overlays.add(marker)
-                    if (!hasCenteredOnce) {
-                        view.controller.setCenter(marker.position)
-                        hasCenteredOnce = true
-                        mapMoveEvents.tryEmit(Unit)
-                    } else if (followCar) {
-                        view.controller.animateTo(marker.position)
-                    }
                 }
 
                 phoneLocation?.let { loc ->
@@ -331,17 +457,29 @@ fun MapScreen(
                     if (!hasLocationPermission) {
                         locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
                     } else {
-                        phoneLocation?.let {
-                            followCar = false
-                            focusedPoint = null
-                            mapView.controller.setZoom(16.0)
-                            mapView.controller.animateTo(it)
-                            mapMoveEvents.tryEmit(Unit)
+                        followCar = false
+                        focusedPoint = null
+                        val known = phoneLocation
+                        if (known != null) {
+                            awaitingLocationFix = false
+                            moveCameraTo(known)
+                        } else {
+                            // No fix yet: remember the intent and honour it the moment one lands,
+                            // rather than swallowing the tap.
+                            awaitingLocationFix = true
                         }
                     }
                 },
             ) {
-                Icon(Icons.Filled.MyLocation, contentDescription = stringResource(R.string.map_recenter_content_description))
+                val recenterLabel = stringResource(R.string.map_recenter_content_description)
+                if (awaitingLocationFix) {
+                    CircularProgressIndicator(
+                        Modifier.size(20.dp).semantics { contentDescription = recenterLabel },
+                        strokeWidth = 2.dp,
+                    )
+                } else {
+                    Icon(Icons.Filled.MyLocation, contentDescription = recenterLabel)
+                }
             }
             SmallFloatingActionButton(onClick = { onShare(historyRange) }) {
                 Icon(Icons.Filled.Share, contentDescription = stringResource(R.string.map_share_trip_content_description))
@@ -391,9 +529,8 @@ fun MapScreen(
                     latestPoint?.let {
                         followCar = true
                         focusedPoint = null
-                        mapView.controller.setZoom(16.0)
-                        mapView.controller.animateTo(GeoPoint(it.lat, it.lng))
-                        mapMoveEvents.tryEmit(Unit)
+                        awaitingLocationFix = false
+                        moveCameraTo(GeoPoint(it.lat, it.lng))
                     }
                 },
             ) {

@@ -35,6 +35,22 @@ val FeedScope.labelRes: Int
     }
 
 @get:StringRes
+val LeaderboardVisibility.labelRes: Int
+    get() = when (this) {
+        LeaderboardVisibility.PRIVATE -> R.string.leaderboard_visibility_private_label
+        LeaderboardVisibility.FRIENDS -> R.string.leaderboard_visibility_friends_label
+        LeaderboardVisibility.PUBLIC -> R.string.leaderboard_visibility_public_label
+    }
+
+@get:StringRes
+val LeaderboardVisibility.descriptionRes: Int
+    get() = when (this) {
+        LeaderboardVisibility.PRIVATE -> R.string.leaderboard_visibility_private_desc
+        LeaderboardVisibility.FRIENDS -> R.string.leaderboard_visibility_friends_desc
+        LeaderboardVisibility.PUBLIC -> R.string.leaderboard_visibility_public_desc
+    }
+
+@get:StringRes
 val SyncCategory.labelRes: Int
     get() = when (this) {
         SyncCategory.CARS -> R.string.sync_category_cars_label

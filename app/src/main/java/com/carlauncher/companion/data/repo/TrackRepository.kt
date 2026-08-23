@@ -60,6 +60,11 @@ class TrackRepository(
         pointDao.deleteInRange(deviceId, fromTs, toTs)
     }
 
+    /** Clears a single locally cached point, e.g. dropping one bad GPS fix from a day. */
+    suspend fun deletePoint(id: Long) {
+        pointDao.deleteById(id)
+    }
+
     /**
      * Moves every point currently in [range] from [sourceDeviceId] to [targetDeviceId] — e.g.
      * attributing a "This phone" recording to a real, remotely-synced car after the fact. A

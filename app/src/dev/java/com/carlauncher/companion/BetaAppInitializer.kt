@@ -17,9 +17,8 @@ import com.carlauncher.companion.car.BluetoothCarDetector
 import com.carlauncher.companion.car.RadarAlertService
 import com.carlauncher.companion.data.AppContainer
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.messaging.FirebaseMessaging
 
-private const val LAUNCHER_EVENTS_TOPIC = "launcher_events"
+private const val NOTIFICATION_CHANNEL_ID_CAR_STARTED = "launcher_events"
 
 /**
  * Dev half of the process-startup seam: everything [CompanionApp.onCreate] used to do that only
@@ -32,12 +31,20 @@ private const val LAUNCHER_EVENTS_TOPIC = "launcher_events"
 object BetaAppInitializer {
 
     fun initialize(app: Application, container: AppContainer) {
+        val settings = container.beta.backgroundFeatureSettings
         ensureAnonymousAuth()
         createNotificationChannel(app)
-        subscribeToLauncherEvents()
-        RadarAlertService.ensureInactiveNotification(app)
+        settings.applyFirebaseSubscription()
+        // Belt and braces, same as the FCM topic sync above: reconciles the baseline notification
+        // with whatever was persisted last session, including clearing a stale one left over from
+        // before this toggle existed.
+        if (settings.backgroundRadarEnabled.value) {
+            RadarAlertService.ensureInactiveNotification(app)
+        } else {
+            RadarAlertService.cancelNotification(app)
+        }
         observeCarConnection(app, container)
-        BluetoothCarDetector.checkAlreadyConnected(app)
+        if (settings.backgroundRadarEnabled.value) BluetoothCarDetector.checkAlreadyConnected(app)
     }
 
     /**
@@ -71,15 +78,11 @@ object BetaAppInitializer {
     private fun createNotificationChannel(app: Application) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return
         val channel = NotificationChannel(
-            LAUNCHER_EVENTS_TOPIC,
+            NOTIFICATION_CHANNEL_ID_CAR_STARTED,
             app.getString(R.string.push_channel_car_started),
             NotificationManager.IMPORTANCE_HIGH,
         )
         app.getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
-    }
-
-    private fun subscribeToLauncherEvents() {
-        FirebaseMessaging.getInstance().subscribeToTopic(LAUNCHER_EVENTS_TOPIC)
     }
 
     /**
@@ -94,10 +97,11 @@ object BetaAppInitializer {
      */
     private fun observeCarConnection(app: Application, container: AppContainer) {
         val bluetoothTriggerStore = container.beta.bluetoothTriggerStore
+        val settings = container.beta.backgroundFeatureSettings
         CarConnection(app).type.observeForever { connectionType ->
             if (bluetoothTriggerStore.isConfigured()) return@observeForever
             val serviceIntent = Intent(app, RadarAlertService::class.java)
-            if (connectionType == CarConnection.CONNECTION_TYPE_PROJECTION) {
+            if (connectionType == CarConnection.CONNECTION_TYPE_PROJECTION && settings.backgroundRadarEnabled.value) {
                 ContextCompat.startForegroundService(app, serviceIntent)
             } else {
                 app.stopService(serviceIntent)

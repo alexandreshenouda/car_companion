@@ -63,6 +63,7 @@ import com.carlauncher.companion.ui.feed.PublicProfileScreen
 import com.carlauncher.companion.ui.feed.SharedCarDetailScreen
 import com.carlauncher.companion.ui.feed.SharedEventDetailScreen
 import com.carlauncher.companion.ui.friends.FriendsScreen
+import com.carlauncher.companion.ui.leaderboard.LeaderboardScreen
 import com.carlauncher.companion.ui.common.IconBadge
 import com.carlauncher.companion.ui.common.NeonPill
 import com.carlauncher.companion.ui.legal.LegalDocument
@@ -298,6 +299,7 @@ fun CompanionNavHost(
                     carRepository = container.carRepository,
                     eventRepository = container.eventRepository,
                     trophyRepository = container.trophyRepository,
+                    xpRepository = container.xpRepository,
                     authRepository = container.authRepository,
                     onOpenGarage = { navController.navigate(Destination.Garage.route) { launchSingleTop = true } },
                     onOpenCar = { carId -> navController.navigate(Destination.CarDetail.build(carId)) },
@@ -305,6 +307,7 @@ fun CompanionNavHost(
                     onOpenTrophies = { navController.navigate(Destination.Trophies.route) { launchSingleTop = true } },
                     onOpenCloud = { navController.navigate(Destination.Auth.route) { launchSingleTop = true } },
                     onOpenFriends = { navController.navigate(Destination.Friends.route) { launchSingleTop = true } },
+                    onOpenLeaderboard = { navController.navigate(Destination.Leaderboard.route) { launchSingleTop = true } },
                 )
             }
             composable(Destination.Garage.route) {
@@ -370,6 +373,9 @@ fun CompanionNavHost(
                     friendsRepository = container.friendsRepository,
                     onOpenProfile = { userId -> navController.navigate(Destination.PublicProfile.build(userId)) },
                 )
+            }
+            composable(Destination.Leaderboard.route) {
+                LeaderboardScreen(leaderboardRepository = container.leaderboardRepository)
             }
             composable(Destination.Feed.route) {
                 FeedScreen(

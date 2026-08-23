@@ -38,6 +38,7 @@ import com.carlauncher.companion.data.cloud.CloudRestoreManager
 import com.carlauncher.companion.data.cloud.CloudSyncManager
 import com.carlauncher.companion.data.cloud.CloudSyncWorker
 import com.carlauncher.companion.data.cloud.FeedScope
+import com.carlauncher.companion.data.cloud.LeaderboardVisibility
 import com.carlauncher.companion.data.cloud.ProfileSection
 import com.carlauncher.companion.data.cloud.SyncCategory
 import com.carlauncher.companion.data.cloud.Visibility
@@ -152,6 +153,32 @@ fun CloudSettingsScreen(
             onSelect = {
                 scope.launch {
                     cloudPrefsRepository.setFeedScope(it)
+                    CloudSyncWorker.enqueueImmediate(context)
+                }
+            },
+            accent = accent,
+            modifier = Modifier.fillMaxWidth(),
+        )
+
+        // Independent of Visibility above: a user can keep GPS/events private while still
+        // competing on the leaderboard, or vice versa — so this is its own setting rather than
+        // reusing that one.
+        Spacer(Modifier.height(20.dp))
+        SectionLabel(stringResource(R.string.cloud_settings_leaderboard_visibility_label), tint = accent)
+        Spacer(Modifier.height(4.dp))
+        Text(
+            stringResource(R.string.cloud_settings_leaderboard_visibility_hint),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Spacer(Modifier.height(10.dp))
+        NeonSegmentedSelector(
+            options = LeaderboardVisibility.entries,
+            selected = LeaderboardVisibility.from(prefs.leaderboardVisibility),
+            label = { stringResource(it.labelRes) },
+            onSelect = {
+                scope.launch {
+                    cloudPrefsRepository.setLeaderboardVisibility(it)
                     CloudSyncWorker.enqueueImmediate(context)
                 }
             },

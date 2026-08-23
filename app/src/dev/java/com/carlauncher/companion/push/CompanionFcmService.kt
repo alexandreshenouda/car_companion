@@ -31,11 +31,16 @@ class CompanionFcmService : FirebaseMessagingService() {
     // its own executor thread and holds a wake lock for the duration, so a direct blocking Room
     // lookup here is safe — no goAsync() (that's a BroadcastReceiver API, not available here).
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        val container = (application as CompanionApp).container
+        val settings = container.beta.backgroundFeatureSettings
+        // Belt and braces: unsubscribing from the topic is not instant, so an in-flight push can
+        // still arrive right after the user turns this off.
+        if (!settings.firebaseListenersEnabled.value) return
+
         val fallbackTitle = remoteMessage.data["title"] ?: return
         val body = remoteMessage.data["body"]
         val deviceId = remoteMessage.data["deviceId"]
 
-        val container = (application as CompanionApp).container
         val name = deviceId?.let {
             runBlocking { container.deviceRepository.getDeviceName(it) }
         }
@@ -49,8 +54,9 @@ class CompanionFcmService : FirebaseMessagingService() {
         //
         // Skipped once the user has nominated a car Bluetooth device: CarBluetoothReceiver then
         // owns when tracking runs, and it doesn't need waking this way — a manifest-declared
-        // receiver starts the process itself.
-        if (!container.beta.bluetoothTriggerStore.isConfigured()) {
+        // receiver starts the process itself. Also skipped when background radar checks are
+        // turned off in settings.
+        if (settings.backgroundRadarEnabled.value && !container.beta.bluetoothTriggerStore.isConfigured()) {
             ContextCompat.startForegroundService(this, Intent(this, RadarAlertService::class.java))
         }
     }

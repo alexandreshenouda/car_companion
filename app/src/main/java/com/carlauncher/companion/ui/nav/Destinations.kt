@@ -17,6 +17,7 @@ sealed class Destination(val route: String) {
     data object Stats : Destination("stats")
     data object Devices : Destination("devices")
     data object BluetoothTrigger : Destination("bluetooth-trigger")
+    data object Settings : Destination("settings")
     data object Share : Destination("share/{deviceId}/{range}") {
         fun build(deviceId: String, range: HistoryRange) = "share/$deviceId/${range.name}"
     }
@@ -49,6 +50,7 @@ sealed class Destination(val route: String) {
     }
     data object CloudSettings : Destination("cloud-settings")
     data object Friends : Destination("friends")
+    data object Leaderboard : Destination("leaderboard")
     data object Feed : Destination("feed")
     data object PublicProfile : Destination("u/{userId}") {
         fun build(userId: String) = "u/$userId"
@@ -65,6 +67,7 @@ sealed class Destination(val route: String) {
 val detailTitles = mapOf(
     Destination.Devices.route to R.string.nav_title_devices,
     Destination.BluetoothTrigger.route to R.string.nav_title_bluetooth_trigger,
+    Destination.Settings.route to R.string.nav_title_settings,
     Destination.Share.route to R.string.share_title_trip,
     Destination.ShareEvent.route to R.string.share_title_trip,
     Destination.Garage.route to R.string.profile_garage_section_label,
@@ -79,6 +82,7 @@ val detailTitles = mapOf(
     Destination.Legal.route to R.string.nav_title_legal,
     Destination.CloudSettings.route to R.string.nav_title_cloud_settings,
     Destination.Friends.route to R.string.profile_friends_title,
+    Destination.Leaderboard.route to R.string.profile_leaderboard_title,
     Destination.PublicProfile.route to R.string.profile_title,
     Destination.SharedCar.route to R.string.nav_title_car_detail,
     Destination.SharedEvent.route to R.string.nav_title_event_detail,

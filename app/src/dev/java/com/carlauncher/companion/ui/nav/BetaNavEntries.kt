@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bluetooth
+import androidx.compose.material.icons.filled.DirectionsCar
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -21,6 +22,7 @@ import com.carlauncher.companion.data.AppContainer
 import com.carlauncher.companion.ui.bluetooth.BluetoothTriggerScreen
 import com.carlauncher.companion.ui.common.NeonPill
 import com.carlauncher.companion.ui.devices.DevicesScreen
+import com.carlauncher.companion.ui.settings.SettingsScreen
 
 /**
  * Dev half of the navigation seam: the two top-bar-only beta screens (Manage cars, Radar
@@ -42,6 +44,9 @@ fun NavGraphBuilder.betaDestinations(navController: NavHostController, container
     composable(Destination.BluetoothTrigger.route) {
         BluetoothTriggerScreen(store = container.beta.bluetoothTriggerStore)
     }
+    composable(Destination.Settings.route) {
+        SettingsScreen(settings = container.beta.backgroundFeatureSettings)
+    }
 }
 
 @Composable
@@ -54,7 +59,12 @@ fun RowScope.BetaTopBarIcons(navController: NavHostController) {
     IconButton(onClick = {
         navController.navigate(Destination.Devices.route) { launchSingleTop = true }
     }) {
-        Icon(Icons.Filled.Settings, contentDescription = stringResource(R.string.nav_title_devices))
+        Icon(Icons.Filled.DirectionsCar, contentDescription = stringResource(R.string.nav_title_devices))
+    }
+    IconButton(onClick = {
+        navController.navigate(Destination.Settings.route) { launchSingleTop = true }
+    }) {
+        Icon(Icons.Filled.Settings, contentDescription = stringResource(R.string.nav_title_settings))
     }
 }
 

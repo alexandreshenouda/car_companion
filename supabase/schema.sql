@@ -80,6 +80,16 @@ create table if not exists public.profiles (
   share_garage      boolean not null default false,
   share_trophies    boolean not null default false,
 
+  -- XP/leaderboard. total_xp/level are derived (distance, trophy unlocks, events, garage,
+  -- login streak — see :shared's XpCalculator.kt) and pushed on every sync, same as
+  -- visibility/feed_scope above. leaderboard_visibility is deliberately independent of
+  -- `visibility`: a user can compete on the leaderboard while keeping GPS/events private,
+  -- or vice versa.
+  total_xp             integer not null default 0,
+  level                integer not null default 1,
+  login_streak_days    integer not null default 0,
+  leaderboard_visibility public.visibility_level not null default 'private',
+
   terms_version     text,
   terms_accepted_at timestamptz,
 
@@ -97,7 +107,10 @@ create table if not exists public.profiles (
   constraint city_len         check (city is null or char_length(city) <= 80),
   -- 18+ requirement, enforced in the database and not only in the UI.
   constraint age_adult        check (age is null or (age >= 18 and age <= 120)),
-  constraint departments_sane check (cardinality(department_codes) <= 101)
+  constraint departments_sane check (cardinality(department_codes) <= 101),
+  constraint total_xp_sane    check (total_xp >= 0),
+  constraint level_sane       check (level >= 1),
+  constraint login_streak_sane check (login_streak_days >= 0)
 );
 
 -- ---------------------------------------------------------------------
@@ -147,6 +160,31 @@ alter table public.cars add column if not exists photo_updated_at timestamptz;
 
 -- Idempotent add for anyone re-running this file against a database created before blacklisting existed.
 alter table public.profiles add column if not exists blacklisted boolean not null default false;
+
+-- Idempotent add for anyone re-running this file against a database created before the XP
+-- mechanism existed.
+alter table public.profiles add column if not exists total_xp integer not null default 0;
+alter table public.profiles add column if not exists level integer not null default 1;
+alter table public.profiles add column if not exists login_streak_days integer not null default 0;
+alter table public.profiles add column if not exists leaderboard_visibility public.visibility_level not null default 'private';
+
+-- Idempotent constraint adds: plain `add constraint` fails on a second run, so guard with the
+-- standard duplicate_object catch rather than an `if not exists` Postgres doesn't support here.
+do $$
+begin
+  alter table public.profiles add constraint total_xp_sane check (total_xp >= 0);
+exception when duplicate_object then null;
+end $$;
+do $$
+begin
+  alter table public.profiles add constraint level_sane check (level >= 1);
+exception when duplicate_object then null;
+end $$;
+do $$
+begin
+  alter table public.profiles add constraint login_streak_sane check (login_streak_days >= 0);
+exception when duplicate_object then null;
+end $$;
 
 create index if not exists cars_owner_idx on public.cars (owner_id);
 create index if not exists cars_shared_idx on public.cars (owner_id) where is_shared;
@@ -1112,6 +1150,57 @@ as $$
 $$;
 
 
+-- Ranked by total_xp desc. Always includes the caller's own row (same self-short-circuit
+-- pattern as can_view()/activity_visible() above) so a user can see their own rank even at
+-- leaderboard_visibility = 'private'; everyone else's row only appears per their own
+-- leaderboard_visibility, independent of their `visibility`/sharing settings entirely.
+create or replace function public.get_leaderboard(p_scope text default 'friends', p_limit int default 50)
+returns table (
+  user_id           uuid,
+  username          text,
+  display_name      text,
+  total_xp          int,
+  level             int,
+  login_streak_days int,
+  is_self           boolean
+)
+language sql
+stable
+security definer
+set search_path = public, pg_temp
+as $$
+  select
+    p.id,
+    p.username,
+    p.display_name,
+    p.total_xp,
+    p.level,
+    p.login_streak_days,
+    p.id = auth.uid()
+  from public.profiles p
+  where auth.uid() is not null
+    and not p.blacklisted
+    and (
+      p.id = auth.uid()
+      or (
+        -- Consent gate: has this account opted this row into being seen at all?
+        (
+          p.leaderboard_visibility = 'public'
+          or (p.leaderboard_visibility = 'friends' and public.are_friends(auth.uid(), p.id))
+        )
+        -- Scope gate: the viewer's own choice of what to see, layered on top — same
+        -- relationship to the consent gate as get_feed()'s p_scope has to activity_visible().
+        and (
+          coalesce(p_scope, 'friends') = 'everyone'
+          or public.are_friends(auth.uid(), p.id)
+        )
+      )
+    )
+  order by p.total_xp desc
+  limit least(coalesce(p_limit, 50), 100);
+$$;
+
+
 -- GDPR erasure. Deleting the auth user cascades through every table above.
 create or replace function public.delete_my_account()
 returns void
@@ -1161,7 +1250,8 @@ grant select, insert, update, delete on
 grant select on public.profiles to authenticated;
 grant update (
   age, city, department_codes,
-  visibility, feed_scope, share_profile, share_garage, share_trophies
+  visibility, feed_scope, share_profile, share_garage, share_trophies,
+  total_xp, level, login_streak_days, leaderboard_visibility
 ) on public.profiles to authenticated;
 grant select, delete on public.friendships to authenticated;
 -- No grant on public.reports at all: its only write path is the SECURITY
@@ -1181,6 +1271,7 @@ begin
     'public.get_feed(text, timestamptz, int)',
     'public.get_friends()',
     'public.get_public_profile(uuid)',
+    'public.get_leaderboard(text, int)',
     'public.delete_my_account()'
   ] loop
     execute format('revoke all on function %s from public, anon', fn);

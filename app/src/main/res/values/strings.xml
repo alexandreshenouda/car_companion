@@ -213,6 +213,9 @@
     <string name="history_clear_day_confirm_title_format">Clear %1$s?</string>
     <string name="history_clear_day_confirm_body">This removes the locally saved points for this day. It doesn\'t affect other days.</string>
     <string name="history_dialog_clear_button">Clear</string>
+    <string name="history_delete_point_content_description">Delete this point</string>
+    <string name="history_delete_point_confirm_title">Delete this point?</string>
+    <string name="history_delete_point_confirm_body">This removes this single GPS point from local history. It doesn\'t affect other points.</string>
     <string name="history_reassign_dialog_title">Reassign points</string>
     <string name="history_reassign_body_format">Moves every point in \"%1$s\" to the chosen device. This is a plain relabel — no data is deleted, and it can be reassigned again at any time.</string>
     <string name="history_reassign_move_to_label">Move to</string>
@@ -288,6 +291,14 @@
     <string name="profile_cloud_sign_in_prompt">Sign in to back up and share</string>
     <string name="profile_friends_title">Friends</string>
     <string name="profile_friends_subtitle">Requests and friends list</string>
+    <string name="profile_leaderboard_title">Leaderboard</string>
+    <string name="profile_leaderboard_subtitle">See how you rank</string>
+    <string name="profile_level_format">Level %1$d</string>
+    <string name="profile_xp_progress_format">%1$d / %2$d XP</string>
+    <plurals name="profile_streak_days">
+        <item quantity="one">%1$d day streak</item>
+        <item quantity="other">%1$d days streak</item>
+    </plurals>
     <string name="profile_garage_section_label">Garage</string>
     <string name="profile_pick_favorite_hint">Pick a favorite car in the Garage to feature it here</string>
     <string name="profile_all_cars_title">All cars</string>
@@ -430,6 +441,18 @@
     <string name="visibility_public_desc">Anyone with an account can see the items you mark as shared.</string>
     <string name="feed_scope_friends_label">Friends only</string>
     <string name="feed_scope_everyone_label">Everyone</string>
+    <string name="leaderboard_visibility_private_label">Only me</string>
+    <string name="leaderboard_visibility_private_desc">You do not appear on anyone else\'s leaderboard, though you can still see your own rank.</string>
+    <string name="leaderboard_visibility_friends_label">Friends only</string>
+    <string name="leaderboard_visibility_friends_desc">Only people you have added as friends can see your level and XP on the leaderboard.</string>
+    <string name="leaderboard_visibility_public_label">Everyone</string>
+    <string name="leaderboard_visibility_public_desc">Anyone with an account can see your level and XP on the leaderboard.</string>
+
+    <!-- ===== ui/leaderboard/LeaderboardScreen.kt ===== -->
+    <string name="leaderboard_scope_friends_label">Friends only</string>
+    <string name="leaderboard_scope_everyone_label">Everyone</string>
+    <string name="leaderboard_xp_format">%1$d XP</string>
+    <string name="leaderboard_empty">No one to show yet — add friends, or switch to Everyone.</string>
     <string name="sync_category_cars_label">Cars</string>
     <string name="sync_category_cars_desc">Your garage: makes, models, odometer, modifications. Photos always stay on this phone.</string>
     <string name="sync_category_events_label">Events</string>
@@ -455,6 +478,8 @@
     <string name="cloud_settings_visibility_label">Who can see what you share</string>
     <string name="cloud_settings_visibility_hint">Applies only to items you individually mark as shared (a car, an event). Your GPS history and statistics are never visible to anyone, at any setting.</string>
     <string name="cloud_settings_feed_scope_label">Your Feed shows</string>
+    <string name="cloud_settings_leaderboard_visibility_label">Who can see you on the leaderboard</string>
+    <string name="cloud_settings_leaderboard_visibility_hint">Independent of who can see what you share, above — you can compete on the leaderboard while keeping everything else private, or vice versa.</string>
     <string name="cloud_settings_profile_sections_label">On your profile page</string>
     <string name="cloud_settings_profile_sections_hint">Off by default. A friend visiting your profile sees nothing here until you turn a section on — even if it\'s already backed up, and even at \"Everyone\".</string>
     <string name="cloud_settings_sync_label">Sync</string>
@@ -533,6 +558,7 @@
     <!-- ===== ui/nav/Destinations.kt / CompanionNavHost.kt ===== -->
     <string name="nav_title_devices">Manage cars</string>
     <string name="nav_title_bluetooth_trigger">Radar trigger</string>
+    <string name="nav_title_settings">Settings</string>
     <string name="nav_title_car_detail">Car</string>
     <string name="nav_title_event_detail">Event</string>
     <string name="nav_title_password_reset">Reset password</string>
@@ -576,6 +602,14 @@
     <string name="bt_trigger_grant_permission">Grant permission</string>
     <string name="bt_trigger_bluetooth_off">Bluetooth is off — turn it on to see your paired devices.</string>
     <string name="bt_trigger_no_paired_devices">No paired Bluetooth devices found. Pair your car first, in the system Bluetooth settings.</string>
+
+    <!-- ===== ui/settings/SettingsScreen.kt (dev) ===== -->
+    <string name="settings_background_section_label">Background activity</string>
+    <string name="settings_background_section_hint">Both are on by default. Turning either off can save battery at the cost of that feature not working while the app is closed or backgrounded.</string>
+    <string name="settings_firebase_listeners_label">Car-started push notifications</string>
+    <string name="settings_firebase_listeners_hint">Get notified — and let radar tracking start automatically — when your car reports it started, even while this app is closed.</string>
+    <string name="settings_background_radar_label">Background radar checks</string>
+    <string name="settings_background_radar_hint">Run radar-proximity checks and alerts while connected to the car (Bluetooth or Android Auto), including when this app is backgrounded.</string>
 
     <!-- ===== data/model/RadarType.kt ===== -->
     <string name="radar_type_fixed">Fixed</string>

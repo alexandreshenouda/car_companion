@@ -8,6 +8,7 @@ import android.content.Intent
 import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat
+import com.carlauncher.companion.CompanionApp
 import com.carlauncher.companion.data.bluetooth.BluetoothTriggerStore
 
 private const val TAG = RADAR_LOG_TAG
@@ -57,6 +58,11 @@ class CarBluetoothReceiver : BroadcastReceiver() {
 /** Shared with [BluetoothCarDetector], which needs the exact same start logic for the case where
  *  a configured device is found already connected instead of connecting via a fresh broadcast. */
 internal fun startTracking(context: Context) {
+    val settings = (context.applicationContext as CompanionApp).container.beta.backgroundFeatureSettings
+    if (!settings.backgroundRadarEnabled.value) {
+        Log.i(TAG, "Background radar checks are disabled in settings — not starting")
+        return
+    }
     // Checked here rather than letting the service bail in onCreate: a foreground service
     // started with startForegroundService() that never reaches startForeground() is killed
     // with an exception, and without background location RadarAlertService can't legally call

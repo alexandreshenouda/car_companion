@@ -32,10 +32,10 @@ public API, declared once per flavor (real in `src/dev/java`, no-op in `src/prod
 
 | Seam (path under `com/carlauncher/companion/`) | dev | prod |
 |---|---|---|
-| `data/BetaContainer.kt` | `radarRepository`/`sectionRepository`/`bluetoothTriggerStore`, exposed as `AppContainer.beta` | empty class |
+| `data/BetaContainer.kt` | `radarRepository`/`sectionRepository`/`bluetoothTriggerStore`/`backgroundFeatureSettings`, exposed as `AppContainer.beta` | empty class |
 | `data/repo/RemoteTrackSync.kt` | Firestore discover/live-tail/backfill/delete; `TrackRepository` delegates to it and keeps its full public API, so no call sites changed | same signatures, empty results |
 | `BetaAppInitializer.kt` | `initialize()` = the Firebase/push/radar-trigger half of `CompanionApp.onCreate()`; `initializeActivity()` = `MainActivity`'s battery-opt prompt | both empty |
-| `ui/nav/BetaNavEntries.kt` | `betaDestinations()` (Devices + BluetoothTrigger routes), `BetaTopBarIcons()`, `BetaAddCarAction()` | all empty |
+| `ui/nav/BetaNavEntries.kt` | `betaDestinations()` (Devices + BluetoothTrigger + Settings routes), `BetaTopBarIcons()`, `BetaAddCarAction()` | all empty |
 | `ui/map/RadarControls.kt` | `RadarOverlayState`/`rememberRadarOverlays()`/`RadarControls()` — radar state, viewport loading, overlay drawing, filter pill, background-location request | inert state, draws nothing |
 
 Adding a beta feature = put it in `src/dev` and, if shared code must call it, extend a
@@ -74,6 +74,14 @@ that don't exist in the prod flavor:)
   `RadarAlertService` (supersedes Android Auto's `CarConnection` signal). Persisted as
   Android shared-prefs XML at
   `/data/data/com.carlauncher.companion/shared_prefs/bluetooth_trigger.xml`.
+- **Settings** **[dev]** (`ui/settings/SettingsScreen.kt`, gear icon in the main screen's
+  top bar) — two kill switches over `data/settings/BackgroundFeatureSettings.kt` (both
+  on by default): "car-started push notifications" (FCM topic subscribe/unsubscribe +
+  early-return in `CompanionFcmService.onMessageReceived`) and "background radar checks"
+  (gates every `RadarAlertService` start path — `BetaAppInitializer.observeCarConnection`,
+  `BluetoothCarDetector`, `CarBluetoothReceiver.startTracking`, the FCM-triggered start —
+  plus a belt-and-braces check in `RadarAlertService.onCreate` against a `START_STICKY`
+  restart, and stops the service immediately on toggle-off regardless of what started it).
 - **Trophies** (`ui/trophies/TrophiesScreen.kt`, reached from Profile) — 29 unlockable
   achievements over the lifetime driving history of *all* devices combined; pure
   definitions in `:shared`'s `data/model/Trophy.kt`, icon/title/description decoration
@@ -320,6 +328,9 @@ and doesn't fit a `:shared` seam. Paths below are under `src/main` unless tagged
   - `data/bluetooth/BluetoothTriggerStore.kt` **[dev]** — persists chosen car BT device(s)
   - `data/firebase/` **[dev]** — `PushDocument.kt`, `TrackRemoteSource.kt` (Firestore
     read/listen)
+  - `data/settings/BackgroundFeatureSettings.kt` **[dev]** — the two Settings-screen kill
+    switches (SharedPreferences + a `StateFlow` mirror so `CarBluetoothReceiver.onReceive`/
+    `BetaAppInitializer`/`CompanionFcmService` can all read synchronously)
   - `data/model/` — `EventType.kt` (car meet/racetrack/exploration/other, Compose icon +
     accent color baked in — see the `:shared` section above for why this one never
     split), `TrophyUi.kt`/`HistoryRangeUi.kt` (icon/`@StringRes` extension properties for
@@ -342,7 +353,7 @@ and doesn't fit a `:shared` seam. Paths below are under `src/main` unless tagged
   osmdroid `MapView` to a bounding box on load) + `map/RadarControls.kt` (**seam**),
   `history/HistoryScreen.kt`,
   `stats/StatsScreen.kt`, `devices/DevicesScreen.kt` **[dev]**,
-  `bluetooth/BluetoothTriggerScreen.kt` **[dev]**,
+  `bluetooth/BluetoothTriggerScreen.kt` **[dev]**, `settings/SettingsScreen.kt` **[dev]**,
   `profile/ProfileScreen.kt` (personal info + Garage/Events hub, favorite-car photo
   hero), `garage/` (`GarageScreen.kt`, `CarDetailScreen.kt`), `events/`
   (`EventsScreen.kt`, `EventDetailScreen.kt` — combined create/edit/view), `trophies/TrophiesScreen.kt`

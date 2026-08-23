@@ -24,8 +24,9 @@ import kotlinx.coroutines.Dispatchers
         TrophyUnlockEntity::class,
         TrophyProgressEntity::class,
         CloudPrefsEntity::class,
+        XpStateEntity::class,
     ],
-    version = 12,
+    version = 13,
     exportSchema = false,
 )
 @ConstructedBy(AppDatabaseConstructor::class)
@@ -41,6 +42,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun eventPointDao(): EventPointDao
     abstract fun trophyDao(): TrophyDao
     abstract fun cloudPrefsDao(): CloudPrefsDao
+    abstract fun xpStateDao(): XpStateDao
 }
 
 /** Adds free-text brand/model/details for a car, set from the Devices screen. */
@@ -189,10 +191,23 @@ private val MIGRATION_11_12 = object : Migration(11, 12) {
     }
 }
 
+/** Adds the XP mechanism: a singleton login-streak state table, and the leaderboard's own
+ * independent visibility toggle alongside the existing `visibility`/`feedScope` settings. */
+private val MIGRATION_12_13 = object : Migration(12, 13) {
+    override suspend fun migrate(connection: SQLiteConnection) {
+        connection.execSQL(
+            "CREATE TABLE IF NOT EXISTS `xp_state` (`id` INTEGER NOT NULL, `currentStreakDays` INTEGER NOT NULL, " +
+                "`bestStreakDays` INTEGER NOT NULL, `lastLoginEpochDay` INTEGER, `accumulatedLoginXp` INTEGER NOT NULL, " +
+                "PRIMARY KEY(`id`))",
+        )
+        connection.execSQL("ALTER TABLE cloud_prefs ADD COLUMN leaderboardVisibility TEXT NOT NULL DEFAULT 'private'")
+    }
+}
+
 internal val APP_DATABASE_MIGRATIONS = arrayOf(
     MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5,
     MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10,
-    MIGRATION_10_11, MIGRATION_11_12,
+    MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13,
 )
 
 /** Room's KSP compiler generates the `actual` for each target (Android, iOS) — required by

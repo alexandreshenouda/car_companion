@@ -60,6 +60,9 @@ interface LocationPointDao {
     )
     suspend fun deleteInRange(deviceId: String, fromTs: Long, toTs: Long)
 
+    @Query("DELETE FROM location_points WHERE id = :id")
+    suspend fun deleteById(id: Long)
+
     /**
      * Re-labels points from one device to another — a plain column update, not a delete+reinsert,
      * so nothing is lost. `OR IGNORE` skips any row that would collide with an existing
@@ -258,6 +261,18 @@ interface TrophyDao {
 
     @Upsert
     suspend fun upsertProgress(progress: TrophyProgressEntity)
+}
+
+@Dao
+interface XpStateDao {
+    @Query("SELECT * FROM xp_state WHERE id = 0")
+    fun observe(): Flow<XpStateEntity?>
+
+    @Query("SELECT * FROM xp_state WHERE id = 0")
+    suspend fun get(): XpStateEntity?
+
+    @Upsert
+    suspend fun upsert(state: XpStateEntity)
 }
 
 @Dao

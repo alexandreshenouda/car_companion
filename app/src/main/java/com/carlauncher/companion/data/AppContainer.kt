@@ -8,6 +8,7 @@ import com.carlauncher.companion.data.cloud.CloudRestoreManager
 import com.carlauncher.companion.data.cloud.CloudSyncManager
 import com.carlauncher.companion.data.cloud.FeedRepository
 import com.carlauncher.companion.data.cloud.FriendsRepository
+import com.carlauncher.companion.data.cloud.LeaderboardRepository
 import com.carlauncher.companion.data.cloud.PlatformContext
 import com.carlauncher.companion.data.cloud.SharedContentRepository
 import com.carlauncher.companion.data.cloud.SupabaseClientProvider
@@ -23,6 +24,7 @@ import com.carlauncher.companion.data.repo.ProfileRepository
 import com.carlauncher.companion.data.repo.RemoteTrackSync
 import com.carlauncher.companion.data.repo.TrackRepository
 import com.carlauncher.companion.data.repo.TrophyRepository
+import com.carlauncher.companion.data.repo.XpRepository
 
 /** Hand-rolled DI container — small enough app that Hilt would be pure overhead. */
 class AppContainer(context: Context) {
@@ -75,6 +77,7 @@ class AppContainer(context: Context) {
     val cloudPrefsRepository = CloudPrefsRepository(db.cloudPrefsDao())
     val friendsRepository = FriendsRepository(supabase)
     val feedRepository = FeedRepository(supabase)
+    val leaderboardRepository = LeaderboardRepository(supabase)
     val sharedContentRepository = SharedContentRepository(supabase)
 
     val trophyRepository = TrophyRepository(
@@ -86,6 +89,11 @@ class AppContainer(context: Context) {
         modificationDao = db.carModificationDao(),
         userProfileDao = db.userProfileDao(),
         departmentLocator = DepartmentLocator(platformContext),
+    )
+
+    val xpRepository = XpRepository(
+        trophyDao = db.trophyDao(),
+        xpStateDao = db.xpStateDao(),
     )
 
     val cloudSyncManager = CloudSyncManager(
@@ -102,6 +110,7 @@ class AppContainer(context: Context) {
         locationPointDao = db.locationPointDao(),
         deviceDao = db.deviceDao(),
         photoStore = photoStore,
+        xpRepository = xpRepository,
     )
 
     val cloudRestoreManager = CloudRestoreManager(

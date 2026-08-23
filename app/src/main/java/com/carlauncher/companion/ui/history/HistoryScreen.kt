@@ -94,6 +94,7 @@ fun HistoryScreen(
     var expandedDay by remember { mutableStateOf<String?>(null) }
     var expandedHour by remember { mutableStateOf<String?>(null) }
     var dayPendingDelete by remember { mutableStateOf<DaySummary?>(null) }
+    var pointPendingDelete by remember { mutableStateOf<LocationPointEntity?>(null) }
     var showReassignDialog by remember { mutableStateOf(false) }
     val devices by deviceRepository.observeDevices().collectAsStateWithLifecycle(initialValue = emptyList())
     val otherDevices = devices.filter { it.deviceId != deviceId }
@@ -269,7 +270,11 @@ fun HistoryScreen(
                             }
                             if (isHourExpanded) {
                                 items(hourPoints, key = { "$hKey-${it.ts}" }) { point ->
-                                    PointRow(point, onClick = { onPointSelected(point.lat, point.lng) })
+                                    PointRow(
+                                        point,
+                                        onClick = { onPointSelected(point.lat, point.lng) },
+                                        onDelete = { pointPendingDelete = point },
+                                    )
                                 }
                             }
                         }
@@ -300,6 +305,32 @@ fun HistoryScreen(
             },
             dismissButton = {
                 TextButton(onClick = { dayPendingDelete = null }) {
+                    Text(stringResource(R.string.common_cancel))
+                }
+            },
+        )
+    }
+
+    pointPendingDelete?.let { point ->
+        AlertDialog(
+            onDismissRequest = { pointPendingDelete = null },
+            title = { Text(stringResource(R.string.history_delete_point_confirm_title)) },
+            text = { Text(stringResource(R.string.history_delete_point_confirm_body)) },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        scope.launch {
+                            trackRepository.deletePoint(point.id)
+                            pointPendingDelete = null
+                            reload()
+                        }
+                    },
+                ) {
+                    Text(stringResource(R.string.history_dialog_clear_button))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { pointPendingDelete = null }) {
                     Text(stringResource(R.string.common_cancel))
                 }
             },
@@ -374,20 +405,30 @@ private data class DaySummary(val key: String, val label: String, val fromTs: Lo
 private data class DayEntry(val key: String, val points: List<LocationPointEntity>, val stats: TrackStats)
 
 @Composable
-private fun PointRow(point: LocationPointEntity, onClick: () -> Unit) {
+private fun PointRow(point: LocationPointEntity, onClick: () -> Unit, onDelete: () -> Unit) {
     Column(
         Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick)
             .padding(horizontal = 16.dp, vertical = 8.dp),
     ) {
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
             Text(formatAbsolute(point.ts), style = MaterialTheme.typography.bodyMedium)
-            Text(
-                stringResource(R.string.common_speed_kmh, point.speedKmh),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    stringResource(R.string.common_speed_kmh, point.speedKmh),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                IconButton(onClick = onDelete, modifier = Modifier.size(32.dp)) {
+                    Icon(
+                        Icons.Filled.Delete,
+                        contentDescription = stringResource(R.string.history_delete_point_content_description),
+                        modifier = Modifier.size(18.dp),
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
         }
         Text(
             // Raw coordinates, not natural-language content — kept locale-invariant

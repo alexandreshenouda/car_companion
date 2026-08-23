@@ -28,6 +28,7 @@ import com.carlauncher.companion.data.db.LocationPointEntity
 import com.carlauncher.companion.data.db.TrophyDao
 import com.carlauncher.companion.data.db.UserProfileDao
 import com.carlauncher.companion.data.repo.PlatformFileStore
+import com.carlauncher.companion.data.repo.XpRepository
 import com.carlauncher.companion.data.repo.computeStats
 import com.carlauncher.companion.util.Logger
 import io.github.jan.supabase.SupabaseClient
@@ -79,6 +80,7 @@ class CloudSyncManager(
     private val locationPointDao: LocationPointDao,
     private val deviceDao: DeviceDao,
     private val photoStore: PlatformFileStore,
+    private val xpRepository: XpRepository,
 ) {
     private val mutex = Mutex()
     private val json = Json { ignoreUnknownKeys = true }
@@ -223,6 +225,7 @@ class CloudSyncManager(
 
     private suspend fun pushVisibility(client: SupabaseClient, userId: String) {
         val prefs = cloudPrefsRepository.current()
+        val xp = xpRepository.currentState()
         client.postgrest.from("profiles").update(
             VisibilityUpdateRow(
                 visibility = prefs.visibility,
@@ -230,6 +233,10 @@ class CloudSyncManager(
                 shareProfile = prefs.shareProfileInfo,
                 shareGarage = prefs.shareGarageSection,
                 shareTrophies = prefs.shareTrophiesSection,
+                totalXp = xp.totalXp,
+                level = xp.level,
+                loginStreakDays = xp.currentStreakDays,
+                leaderboardVisibility = prefs.leaderboardVisibility,
             ),
         ) { filter { eq("id", userId) } }
     }

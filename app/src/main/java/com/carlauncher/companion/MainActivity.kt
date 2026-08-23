@@ -13,10 +13,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import com.carlauncher.companion.car.TrophyNotifier
 import com.carlauncher.companion.ui.nav.CompanionNavHost
 import com.carlauncher.companion.ui.theme.CompanionTheme
 import io.github.jan.supabase.auth.handleDeeplinks
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
 
@@ -39,6 +41,9 @@ class MainActivity : ComponentActivity() {
         openTrophiesOnLaunch = intent?.getBooleanExtra(TrophyNotifier.EXTRA_OPEN_TROPHIES, false) == true
         val container = (application as CompanionApp).container
         handleAuthDeepLink(intent)
+        // Idempotent per calendar day, so firing on every onCreate (including recreation from
+        // recents) is safe — it only ever credits the login-streak bonus once per day.
+        lifecycleScope.launch { container.xpRepository.recordAppOpen() }
         setContent {
             CompanionTheme {
                 CompanionNavHost(

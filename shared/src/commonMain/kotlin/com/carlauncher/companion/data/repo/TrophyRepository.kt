@@ -169,7 +169,9 @@ class TrophyRepository(
     }
 }
 
-private fun TrophyProgressEntity.toStats() = TrophyStats(
+/** Not private: also reused by [XpRepository] to turn cached progress into a [TrophyStats]
+ * snapshot for [computeBaseXp]. */
+internal fun TrophyProgressEntity.toStats() = TrophyStats(
     totalDistanceKm = totalDistanceKm,
     longestTripKm = longestTripKm,
     maxSpeedKmh = maxSpeedKmh,

@@ -74,8 +74,14 @@ class RadarAlertService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        // Belt and braces: background starters check this themselves, but a sticky restart can
-        // land here after the user revoked the grant.
+        // Belt and braces: background starters check these themselves, but a sticky restart can
+        // land here after the user disabled the setting or revoked the grant mid-trip.
+        val container = (application as CompanionApp).container
+        if (!container.beta.backgroundFeatureSettings.backgroundRadarEnabled.value) {
+            Log.w(RADAR_LOG_TAG, "service: background radar checks disabled in settings, stopping")
+            stopSelf()
+            return
+        }
         if (!canRunInBackground(this)) {
             Log.w(RADAR_LOG_TAG, "service: background location not granted, stopping")
             stopSelf()
@@ -120,11 +126,18 @@ class RadarAlertService : Service() {
         carConnectionType?.removeObserver(connectionObserver)
         if (engineStarted) {
             RadarAlertEngine.stop()
-            // Detach rather than let stopForeground() take the notification down with it: leaving
-            // a plain "inactive" notification behind (same id) is the whole point — a permanent,
-            // truthful signal of whether monitoring is actually running, not just silence.
             stopForeground(STOP_FOREGROUND_DETACH)
-            postNotification(this, active = false)
+            if (container.beta.backgroundFeatureSettings.backgroundRadarEnabled.value) {
+                // Detach rather than let stopForeground() take the notification down with it:
+                // leaving a plain "inactive" notification behind (same id) is the whole point — a
+                // permanent, truthful signal of whether monitoring is actually running, not just
+                // silence. But if this stop is itself the toggle being turned off, that baseline
+                // would just be replacing one background notification with another — remove it
+                // instead so disabling the setting actually leaves no trace.
+                postNotification(this, active = false)
+            } else {
+                NotificationManagerCompat.from(this).cancel(NOTIFICATION_ID)
+            }
         }
         super.onDestroy()
     }
@@ -150,10 +163,17 @@ class RadarAlertService : Service() {
         }
 
         /** Posts the baseline "inactive" notification so it exists from first app launch, before
-         *  any car connection has ever happened. */
+         *  any car connection has ever happened. Only meaningful while background radar checks
+         *  are enabled in settings — see [cancelNotification] for the opposite case. */
         fun ensureInactiveNotification(context: Context) {
             ensureChannel(context)
             postNotification(context, active = false)
+        }
+
+        /** Removes the baseline/active notification entirely, so turning background radar checks
+         *  off in settings leaves no lingering "inactive" notification behind. */
+        fun cancelNotification(context: Context) {
+            NotificationManagerCompat.from(context).cancel(NOTIFICATION_ID)
         }
     }
 }

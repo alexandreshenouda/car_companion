@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -26,6 +27,8 @@ import androidx.compose.material.icons.filled.DirectionsCar
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.Event
+import androidx.compose.material.icons.filled.Leaderboard
+import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.filled.People
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Star
@@ -64,10 +67,13 @@ import com.carlauncher.companion.data.repo.EventRepository
 import com.carlauncher.companion.data.repo.ProfileRepository
 import com.carlauncher.companion.data.repo.TrophyRepository
 import com.carlauncher.companion.data.repo.TrophyState
+import com.carlauncher.companion.data.repo.XpRepository
+import com.carlauncher.companion.data.repo.XpState
 import com.carlauncher.companion.ui.common.AccentDivider
 import com.carlauncher.companion.ui.common.CarPhoto
 import com.carlauncher.companion.ui.common.NeonCard
 import com.carlauncher.companion.ui.common.NeonPill
+import com.carlauncher.companion.ui.common.NeonProgressBar
 import com.carlauncher.companion.ui.common.DashboardRow
 import com.carlauncher.companion.ui.common.IconBadge
 import com.carlauncher.companion.ui.common.SectionLabel
@@ -84,6 +90,7 @@ fun ProfileScreen(
     carRepository: CarRepository,
     eventRepository: EventRepository,
     trophyRepository: TrophyRepository,
+    xpRepository: XpRepository,
     authRepository: AuthRepository,
     onOpenGarage: () -> Unit,
     onOpenCar: (String) -> Unit,
@@ -91,6 +98,7 @@ fun ProfileScreen(
     onOpenTrophies: () -> Unit,
     onOpenCloud: () -> Unit,
     onOpenFriends: () -> Unit,
+    onOpenLeaderboard: () -> Unit,
 ) {
     val cloudState by authRepository.sessionState
         .collectAsStateWithLifecycle(initialValue = CloudSessionState.Loading)
@@ -99,6 +107,10 @@ fun ProfileScreen(
     val favoriteCar by carRepository.observeFavoriteCar().collectAsStateWithLifecycle(initialValue = null)
     val events by eventRepository.observeEvents().collectAsStateWithLifecycle(initialValue = emptyList())
     val trophyState by trophyRepository.observeState().collectAsStateWithLifecycle(initialValue = TrophyState())
+    // Level 1 needs 100 XP to reach level 2 (see XpCalculator.xpForLevelStart) — placeholder
+    // shown only until the real Flow value arrives.
+    val xpState by xpRepository.observeState()
+        .collectAsStateWithLifecycle(initialValue = XpState(totalXp = 0, level = 1, xpIntoLevel = 0, xpForNextLevel = 100, currentStreakDays = 0, bestStreakDays = 0))
     val scope = rememberCoroutineScope()
 
     var editingProfile by remember { mutableStateOf(false) }
@@ -136,6 +148,13 @@ fun ProfileScreen(
                     title = stringResource(R.string.profile_friends_title),
                     subtitle = stringResource(R.string.profile_friends_subtitle),
                     onClick = onOpenFriends,
+                )
+                DashboardRow(
+                    icon = Icons.Filled.Leaderboard,
+                    iconTint = AccentProfile,
+                    title = stringResource(R.string.profile_leaderboard_title),
+                    subtitle = stringResource(R.string.profile_leaderboard_subtitle),
+                    onClick = onOpenLeaderboard,
                 )
             }
             Spacer(Modifier.height(20.dp))
@@ -220,6 +239,9 @@ fun ProfileScreen(
             subtitle = stringResource(R.string.profile_trophies_unlocked_format, trophyState.unlockedCount, trophyState.totalCount),
             onClick = onOpenTrophies,
         )
+
+        Spacer(Modifier.height(12.dp))
+        LevelBadge(xpState)
     }
 
     if (editingProfile) {
@@ -262,6 +284,36 @@ private fun FavoriteCarHero(car: CarEntity, onClick: () -> Unit) {
                     Text(it, style = MaterialTheme.typography.bodyLarge, color = Color.White.copy(alpha = 0.85f))
                 }
             }
+        }
+    }
+}
+
+/** Level + XP progress toward the next level, plus the current login streak. */
+@Composable
+private fun LevelBadge(xpState: XpState) {
+    NeonCard(accent = AccentTrophy, modifier = Modifier.fillMaxWidth(), glow = false) {
+        Column(Modifier.padding(16.dp)) {
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+                Text(stringResource(R.string.profile_level_format, xpState.level), style = MaterialTheme.typography.titleLarge)
+                if (xpState.currentStreakDays > 0) {
+                    NeonPill(
+                        text = pluralStringResource(R.plurals.profile_streak_days, xpState.currentStreakDays, xpState.currentStreakDays),
+                        accent = AccentTrophy,
+                        leading = { Icon(Icons.Filled.LocalFireDepartment, contentDescription = null, tint = AccentTrophy, modifier = Modifier.size(14.dp)) },
+                    )
+                }
+            }
+            Spacer(Modifier.height(10.dp))
+            NeonProgressBar(
+                progress = if (xpState.xpForNextLevel > 0) xpState.xpIntoLevel.toFloat() / xpState.xpForNextLevel.toFloat() else 0f,
+                accent = AccentTrophy,
+            )
+            Spacer(Modifier.height(6.dp))
+            Text(
+                stringResource(R.string.profile_xp_progress_format, xpState.xpIntoLevel, xpState.xpForNextLevel),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
         }
     }
 }

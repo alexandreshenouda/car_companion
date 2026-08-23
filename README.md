@@ -119,6 +119,24 @@ flavors](#build-flavors-dev-and-prod).
     the trophy definitions themselves live in Kotlin
     (`data/model/Trophy.kt`), so adding one needs no schema migration.
     Unlocks are permanent — deleting history later does not take one back.
+  - **XP, levels and leaderboard** (`data/repo/XpCalculator.kt`,
+    `data/repo/XpRepository.kt`) — a second, complementary gamification layer
+    on top of Trophies. XP comes from distance driven, trophy tier bonuses,
+    events logged, garage setup (cars/modifications), and a daily login
+    streak that grows the longer it stays unbroken and resets on a missed
+    day. Distance/trophy/event/garage XP is a pure function of the same
+    cached `trophy_progress`/`trophy_unlocks` state Trophies already
+    maintains — only the login streak needs its own persisted state
+    (`xp_state`), since it's inherently sequential. Level and XP total show
+    on the Profile screen; the ranked leaderboard (friends or everyone, per
+    its own dedicated `leaderboard_visibility` setting — independent of the
+    Cloud account visibility below, so a user can compete while keeping
+    everything else private) is reached from Profile and served by the
+    `get_leaderboard` RPC (`supabase/schema.sql`). Known limitation: the
+    login-streak XP accumulated so far lives only in local Room, not in
+    `CloudRestoreManager`'s restore path — a reinstall resets the streak and
+    its earned XP to zero (every other XP source is unaffected, since it's
+    recomputed from data that does restore).
 - **Cloud account** *(both flavors, optional)* — reached via "Cloud account"
   on the Profile screen. Create an account or sign in, then choose what backs
   up to the cloud (cars, events, personal information, GPS history,
