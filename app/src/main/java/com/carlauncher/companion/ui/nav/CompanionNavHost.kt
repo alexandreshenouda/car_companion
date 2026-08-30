@@ -327,6 +327,7 @@ fun CompanionNavHost(
                 CarDetailScreen(
                     carId = carId,
                     carRepository = container.carRepository,
+                    deviceRepository = container.deviceRepository,
                     trackRepository = container.trackRepository,
                     trophyRepository = container.trophyRepository,
                     authRepository = container.authRepository,

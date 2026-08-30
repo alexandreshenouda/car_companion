@@ -253,12 +253,10 @@ fun CarDetailScreen(
         EditCarDetailsDialog(
             car = current,
             onDismiss = { editingDetails = false },
-            onConfirm = { name, brand, model, year, details, odometer ->
-                scope.launch {
+            onConfirm = { name, deviceId, brand, model, year, details, odometer ->
                     carRepository.updateCar(
-                        current.copy(name = name, brand = brand, model = model, year = year, details = details, odometerKm = odometer),
+                        current.copy(name = name, deviceId = deviceId, brand = brand, model = model, year = year, details = details, odometerKm = odometer),
                     )
-                }
                 editingDetails = false
             },
         )
@@ -322,29 +320,28 @@ private fun ModificationRow(mod: CarModificationEntity, onDelete: () -> Unit) {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun EditCarDetailsDialog(
     car: CarEntity,
+    devices: List<DeviceEntity>,
     onDismiss: () -> Unit,
-    onConfirm: (name: String, brand: String?, model: String?, year: Int?, details: String?, odometer: Double?) -> Unit,
 ) {
     var name by remember { mutableStateOf(car.name) }
-    var brand by remember { mutableStateOf(car.brand.orEmpty()) }
     var model by remember { mutableStateOf(car.model.orEmpty()) }
     var year by remember { mutableStateOf(car.year?.toString().orEmpty()) }
     var details by remember { mutableStateOf(car.details.orEmpty()) }
     var odometer by remember { mutableStateOf(car.odometerKm?.toString().orEmpty()) }
+    var selectedDevice by remember { mutableStateOf(devices.find { it.deviceId == car.deviceId }) }
+    var deviceMenuExpanded by remember { mutableStateOf(false) }
 
-    AlertDialog(
-        onDismissRequest = onDismiss,
         title = { Text(stringResource(R.string.car_detail_edit_car_title)) },
         text = {
             Column {
                 OutlinedTextField(name, { name = it }, label = { Text(stringResource(R.string.garage_field_name)) }, singleLine = true, modifier = Modifier.fillMaxWidth())
                 Spacer(Modifier.height(8.dp))
-                OutlinedTextField(brand, { brand = it }, label = { Text(stringResource(R.string.garage_field_brand)) }, singleLine = true, modifier = Modifier.fillMaxWidth())
-                Spacer(Modifier.height(8.dp))
-                OutlinedTextField(model, { model = it }, label = { Text(stringResource(R.string.garage_field_model)) }, singleLine = true, modifier = Modifier.fillMaxWidth())
+                if (devices.isNotEmpty()) {
+                    ExposedDropdownMenuBox(expanded = deviceMenuExpanded, onExpandedChange = { deviceMenuExpanded = it }) {
+                        OutlinedTextField(
                 Spacer(Modifier.height(8.dp))
                 OutlinedTextField(
                     year,
@@ -373,9 +370,9 @@ private fun EditCarDetailsDialog(
                 onClick = {
                     onConfirm(
                         name.trim(),
+                        selectedDevice?.deviceId,
                         brand.trim().ifBlank { null },
                         model.trim().ifBlank { null },
-                        year.toIntOrNull(),
                         details.trim().ifBlank { null },
                         odometer.toDoubleOrNull(),
                     )
