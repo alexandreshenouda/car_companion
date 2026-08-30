@@ -41,6 +41,7 @@ data class AppStateEntity(
     @PrimaryKey val id: Int = 0,
     val selectedDeviceId: String?,
     val localRecordingActive: Boolean = false,
+    val selectedRange: String = "LAST_7_DAYS",
 )
 
 @Entity(tableName = "user_profile")

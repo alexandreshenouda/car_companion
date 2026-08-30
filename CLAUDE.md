@@ -273,7 +273,7 @@ unless tagged.
   merged into whichever app depends on it; **[iosMain]** reads `NSBundle.mainBundle`,
   UNVERIFIED, needs a matching resource added to the Xcode target) underlie the above.
 - `data/db/` — Room 3 (`androidx.room3`, the KMP-capable line): `AppDatabase.kt`
-  (currently version 13, see migrations below), `Entities.kt` (`DeviceEntity`→`devices`,
+  (currently version 14, see migrations below), `Entities.kt` (`DeviceEntity`→`devices`,
   `LocationPointEntity`→`location_points`, `SyncStateEntity`→`sync_state`,
   `AppStateEntity`→`app_state`, `UserProfileEntity`→`user_profile`, `CarEntity`→`cars`
   (Garage, incl. `isFavorite`, `photoUpdatedAt`, `cloudPhotoSyncedAt`),

@@ -31,9 +31,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.carlauncher.companion.R
 import com.carlauncher.companion.data.model.HistoryRange
 import com.carlauncher.companion.data.model.TrackStats
+import com.carlauncher.companion.data.repo.DeviceRepository
 import com.carlauncher.companion.data.repo.TrackRepository
 import com.carlauncher.companion.ui.common.NeonCard
 import com.carlauncher.companion.ui.common.NeonPill
@@ -46,8 +48,13 @@ import com.carlauncher.companion.util.formatDuration
 import kotlinx.coroutines.launch
 
 @Composable
-fun StatsScreen(deviceId: String, trackRepository: TrackRepository, onShare: (HistoryRange) -> Unit) {
-    var range by remember { mutableStateOf(HistoryRange.LAST_7_DAYS) }
+fun StatsScreen(
+    deviceId: String,
+    trackRepository: TrackRepository,
+    deviceRepository: DeviceRepository,
+    onShare: (HistoryRange) -> Unit,
+) {
+    val range by deviceRepository.observeSelectedRange().collectAsStateWithLifecycle(initialValue = HistoryRange.LAST_7_DAYS)
     var stats by remember { mutableStateOf(TrackStats.EMPTY) }
     var isSyncing by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
@@ -65,7 +72,11 @@ fun StatsScreen(deviceId: String, trackRepository: TrackRepository, onShare: (Hi
             .padding(16.dp),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            RangeSelector(selected = range, onSelect = { range = it }, modifier = Modifier.weight(1f))
+            RangeSelector(
+                selected = range,
+                onSelect = { scope.launch { deviceRepository.selectRange(it) } },
+                modifier = Modifier.weight(1f),
+            )
             Spacer(Modifier.width(8.dp))
             IconButton(onClick = { onShare(range) }) {
                 Icon(Icons.Filled.Share, contentDescription = stringResource(R.string.map_share_trip_content_description), tint = MaterialTheme.colorScheme.primary)

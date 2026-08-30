@@ -264,6 +264,7 @@ fun CompanionNavHost(
                     StatsScreen(
                         deviceId = deviceId,
                         trackRepository = container.trackRepository,
+                        deviceRepository = container.deviceRepository,
                         onShare = { range ->
                             navController.navigate(Destination.Share.build(deviceId, range))
                         },

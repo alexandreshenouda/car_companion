@@ -44,6 +44,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -81,6 +82,7 @@ import com.carlauncher.companion.util.formatRelative
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.launch
 import org.osmdroid.events.MapListener
 import org.osmdroid.events.ScrollEvent
 import org.osmdroid.events.ZoomEvent
@@ -146,7 +148,8 @@ fun MapScreen(
     val focusRequest by focusRequestHolder.request.collectAsStateWithLifecycle()
 
     var showHistory by remember { mutableStateOf(true) }
-    var historyRange by remember { mutableStateOf(HistoryRange.LAST_7_DAYS) }
+    val historyRange by deviceRepository.observeSelectedRange().collectAsStateWithLifecycle(initialValue = HistoryRange.LAST_7_DAYS)
+    val scope = rememberCoroutineScope()
     var historyPoints by remember { mutableStateOf<List<LocationPointEntity>>(emptyList()) }
     var hasCenteredOnce by remember { mutableStateOf(false) }
     // While true, the map re-centers on the car whenever it reports a new position. Cleared as
@@ -625,7 +628,10 @@ fun MapScreen(
             }
 
             if (showHistory) {
-                RangeSelector(selected = historyRange, onSelect = { historyRange = it })
+                RangeSelector(
+                    selected = historyRange,
+                    onSelect = { scope.launch { deviceRepository.selectRange(it) } },
+                )
             }
         }
     }

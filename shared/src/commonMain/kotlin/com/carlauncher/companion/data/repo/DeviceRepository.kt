@@ -6,6 +6,7 @@ import com.carlauncher.companion.data.db.DeviceDao
 import com.carlauncher.companion.data.db.DeviceEntity
 import com.carlauncher.companion.data.db.LocationPointDao
 import com.carlauncher.companion.data.db.SyncStateDao
+import com.carlauncher.companion.data.model.HistoryRange
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlin.time.Clock
@@ -25,6 +26,17 @@ class DeviceRepository(
     suspend fun getDevice(deviceId: String): DeviceEntity? = deviceDao.getById(deviceId)
 
     fun observeSelectedDeviceId(): Flow<String?> = appStateDao.observe().map { it?.selectedDeviceId }
+
+    fun observeSelectedRange(): Flow<HistoryRange> =
+        appStateDao.observe().map { state ->
+            state?.selectedRange?.let { runCatching { HistoryRange.valueOf(it) }.getOrNull() }
+                ?: HistoryRange.LAST_7_DAYS
+        }
+
+    suspend fun selectRange(range: HistoryRange) {
+        val current = appStateDao.getOnce() ?: AppStateEntity(selectedDeviceId = null)
+        appStateDao.upsert(current.copy(selectedRange = range.name))
+    }
 
     fun observeLocalRecordingActive(): Flow<Boolean> =
         appStateDao.observe().map { it?.localRecordingActive ?: false }

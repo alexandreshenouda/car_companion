@@ -88,7 +88,7 @@ fun HistoryScreen(
     deviceRepository: DeviceRepository,
     onPointSelected: (LocationPointEntity) -> Unit,
 ) {
-    var range by remember { mutableStateOf(HistoryRange.LAST_7_DAYS) }
+    val range by deviceRepository.observeSelectedRange().collectAsStateWithLifecycle(initialValue = HistoryRange.LAST_7_DAYS)
     var points by remember { mutableStateOf<List<LocationPointEntity>>(emptyList()) }
     var isSyncing by remember { mutableStateOf(false) }
     var expandedDay by remember { mutableStateOf<String?>(null) }
@@ -130,7 +130,10 @@ fun HistoryScreen(
     }
 
     Column(Modifier.fillMaxSize().padding(16.dp)) {
-        RangeSelector(selected = range, onSelect = { range = it })
+        RangeSelector(
+            selected = range,
+            onSelect = { scope.launch { deviceRepository.selectRange(it) } },
+        )
         Spacer(Modifier.height(12.dp))
 
         FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {

@@ -26,7 +26,7 @@ import kotlinx.coroutines.Dispatchers
         CloudPrefsEntity::class,
         XpStateEntity::class,
     ],
-    version = 13,
+    version = 14,
     exportSchema = false,
 )
 @ConstructedBy(AppDatabaseConstructor::class)
@@ -204,10 +204,17 @@ private val MIGRATION_12_13 = object : Migration(12, 13) {
     }
 }
 
+/** Adds the persisted time range selection shared across map/history/stats. */
+private val MIGRATION_13_14 = object : Migration(13, 14) {
+    override suspend fun migrate(connection: SQLiteConnection) {
+        connection.execSQL("ALTER TABLE app_state ADD COLUMN selectedRange TEXT NOT NULL DEFAULT 'LAST_7_DAYS'")
+    }
+}
+
 internal val APP_DATABASE_MIGRATIONS = arrayOf(
     MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5,
     MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10,
-    MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13,
+    MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14,
 )
 
 /** Room's KSP compiler generates the `actual` for each target (Android, iOS) — required by
