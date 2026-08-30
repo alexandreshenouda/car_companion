@@ -88,14 +88,20 @@ that don't exist in the prod flavor:)
   in `:app`'s `data/model/TrophyUi.kt`, scoring in `:shared`'s
   `data/repo/TrophyEvaluator.kt` (pure) + `data/repo/TrophyRepository.kt` (paging/IO).
   Re-scored on app start, on trip end (either tracking service's `onDestroy`), and on
-  screen open.
-- **Profile** (`ui/profile/`, 4th bottom tab) — personal info (age/city/French
-  départements), **Garage** (`ui/garage/`: owned cars, optionally linked to a tracked
-  device, photo/odometer/modifications, one markable as favorite), and **Events**
-  (`ui/events/`: car meets/racetrack days/explorations, GPS points either cropped from
-  a linked device or imported from a GPX file via `data/repo/GpxImporter.kt`, shown on
-  a compact trace map and exportable back to GPX). See `README.md` "What it does" for
-  the full breakdown — this is the source of truth for the feature.
+  screen open. A refresh pass also relocks/revokes trophies if track history was deleted
+  and criteria are no longer met (deleting corresponding cloud unlock rows and feed activities).
+- **XP, levels and leaderboard** (`data/repo/XpCalculator.kt`, `data/repo/XpRepository.kt`,
+  `ui/leaderboard/LeaderboardScreen.kt`, `data/cloud/LeaderboardRepository.kt`) — gamification
+  layer derived from distance, trophies, events, garage cars/modifications, and a persisted
+  daily login streak (`xp_state`). Leaderboard ranks users by XP, filterable by Friends vs Everyone
+  (controlled by its own `leaderboard_visibility` preference).
+- **Profile** (`ui/profile/`, bottom tab) — Level & XP progress hero with login streak badge,
+  favorite-car photo hero, Cloud Account tile, quick-access stat buttons for **Garage**
+  (`ui/garage/`: owned cars, device linking/re-linking, photo, odometer, modifications), **Events**
+  (`ui/events/`: car meets/racetrack days/explorations, cropped from device or imported from GPX
+  via `data/repo/GpxImporter.kt`, compact trace map, GPX export), and **Trophies**, navigation tiles
+  for **Friends** (`ui/friends/`) and **Leaderboard**, and personal info card (age, city, French
+  départements). See `README.md` "What it does" for the full breakdown — this is the source of truth for the feature.
 
 ## Live testing (real physical device over wireless ADB)
 No emulator has been used in this project's sessions — testing is on a real phone
@@ -230,7 +236,7 @@ unless tagged.
   `SupabaseClientProvider.kt` (config strings passed in by each platform's DI root, not
   read from `BuildConfig` directly — `:shared` stays config-source-agnostic; inert when
   blank, so the app stays usable offline/signed-out), `AuthRepository.kt`,
-  `CloudPrefsRepository.kt` (the six upload toggles + visibility, pure — see
+  `CloudPrefsRepository.kt` (the six upload toggles + visibility + leaderboard visibility, pure — see
   `:app`'s `CloudPrefsLabels.kt` for the `@StringRes`/icon decoration, split out because
   Android resources aren't reachable from a KMP module), `EncryptedSessionManager.kt`
   (tokens at rest, via `PlatformContext`/`createSecureSettings.kt` — **[androidMain]**
@@ -241,38 +247,40 @@ unless tagged.
   platforms), `crypto/Base64Codec.kt` (`kotlin.io.encoding.Base64` — every blob sent
   through PostgREST travels as base64 text, never raw `bytea`). `CloudSyncManager.kt` is
   the one-way local→cloud push (dirty-tracked via `updatedAt`/`cloudSyncedAt` on
-  `cars`/`events`/`trophy_unlocks`; GPS/stats go through `CryptoBox` first) — run by
-  `:app`'s `CloudSyncWorker.kt` (WorkManager, Android-only; iOS gets a `BackgroundTasks`
-  equivalent in Phase 6) or the "Sync now" button. `CloudRestoreManager.kt` is the one
-  deliberate pull — user-triggered only; it takes an `onGpsRestored` callback instead of
-  depending on `TrophyRepository` directly, since that would be a dependency in the
-  wrong direction if `TrophyRepository` ever needed to move back out. `PolylineCodec.kt`
-  (Google-style encoded polyline, precision 5) is how an event's GPS trace is stored as
-  one `event_tracks` row instead of one row per point. `FriendsRepository.kt` wraps the
-  friend-graph RPCs (`find_user_by_username` — exact match only, rate-limited, the sole
-  discovery path in the app; `send_friend_request`, `respond_friend_request`,
-  `block_user`, `get_friends()`). `FeedRepository.kt` pages the `get_feed` RPC (activity
-  cards — car added/shared, event shared, trophy unlocked). `SharedContentRepository.kt`
-  reads *other* people's content — `get_public_profile`, plus plain
-  `.select { eq("owner_id", userId) } }` reads of `cars`/`events`/`trophy_unlocks` that
-  rely entirely on RLS to resolve to "shared and visible to me". `dto/` holds the
+  `cars`/`events`/`trophy_unlocks`, with car photos pushed/deleted in the private `car-photos`
+  Storage bucket, and cloud-side deletion for locally relocked trophies; GPS/stats go through
+  `CryptoBox` first) — run by `:app`'s `CloudSyncWorker.kt` (WorkManager, Android-only; iOS
+  gets a `BackgroundTasks` equivalent in Phase 6) or the "Sync now" button. `CloudRestoreManager.kt`
+  is the one deliberate pull — user-triggered only; it takes an `onGpsRestored` callback instead of
+  depending on `TrophyRepository` directly, and pulls car photos back from `car-photos`.
+  `PolylineCodec.kt` (Google-style encoded polyline, precision 5) is how an event's GPS trace is
+  stored as one `event_tracks` row instead of one row per point. `FriendsRepository.kt` wraps the
+  friend-graph and moderation RPCs (`find_user_by_username` — exact match only, rate-limited;
+  `send_friend_request`, `respond_friend_request`, `block_user`, `get_friends()`, `report_user`,
+  `ban_user`, `unban_user`). `FeedRepository.kt` pages the `get_feed` RPC (activity cards —
+  car added/shared, event shared, trophy unlocked). `LeaderboardRepository.kt` pages the
+  `get_leaderboard` RPC (ranked XP ladder by scope: Friends vs Everyone). `SharedContentRepository.kt`
+  reads *other* people's content — `get_public_profile`, shared cars/events/trophy_unlocks
+  governed by RLS, downloads shared car photos, and reports/bans users. `dto/` holds the
   `@Serializable` wire shapes: push rows (`CloudRows.kt`), restore-read rows
   (`RestoreRows.kt`), E2E payload shapes (`BackupPayloads.kt`), friend-RPC shapes
-  (`FriendRows.kt`), feed/profile-RPC shapes (`FeedRows.kt`). Schema, RLS policies and
-  RPCs live in `supabase/schema.sql`; dashboard steps in `supabase/SETUP.md`.
+  (`FriendRows.kt`), feed/profile-RPC shapes (`FeedRows.kt`), leaderboard-RPC shapes
+  (`LeaderboardRows.kt`). Schema, RLS policies, Storage buckets, and RPCs live in
+  `supabase/schema.sql`; dashboard steps in `supabase/SETUP.md`.
   `PlatformContext.kt` (opaque per-platform handle — **[androidMain]** wraps `Context`,
   **[iosMain]** is empty, Keychain needs none) and `BundledAsset.kt`
   (`readBundledAsset` — **[androidMain]** reads this module's own `androidMain/assets/`,
   merged into whichever app depends on it; **[iosMain]** reads `NSBundle.mainBundle`,
   UNVERIFIED, needs a matching resource added to the Xcode target) underlie the above.
 - `data/db/` — Room 3 (`androidx.room3`, the KMP-capable line): `AppDatabase.kt`
-  (currently version 11, see migrations below), `Entities.kt` (`DeviceEntity`→`devices`,
+  (currently version 13, see migrations below), `Entities.kt` (`DeviceEntity`→`devices`,
   `LocationPointEntity`→`location_points`, `SyncStateEntity`→`sync_state`,
   `AppStateEntity`→`app_state`, `UserProfileEntity`→`user_profile`, `CarEntity`→`cars`
-  (Garage, incl. `isFavorite`), `CarModificationEntity`→`car_modifications`,
-  `EventEntity`→`events` (incl. `pointsSource`: `"DEVICE"` or `"GPX"`),
-  `EventPointEntity`→`event_points`, `TrophyUnlockEntity`→`trophy_unlocks`,
-  `TrophyProgressEntity`→`trophy_progress` (singleton row, cached `TrophyStats`)),
+  (Garage, incl. `isFavorite`, `photoUpdatedAt`, `cloudPhotoSyncedAt`),
+  `CarModificationEntity`→`car_modifications`, `EventEntity`→`events` (incl. `pointsSource`:
+  `"DEVICE"` or `"GPX"`), `EventPointEntity`→`event_points`, `TrophyUnlockEntity`→`trophy_unlocks`,
+  `TrophyProgressEntity`→`trophy_progress` (singleton row, cached `TrophyStats`),
+  `CloudPrefsEntity`→`cloud_prefs`, `XpStateEntity`→`xp_state`),
   `Daos.kt`. `DatabaseBuilder.android.kt`/`.ios.kt` are the `expect`/`actual` builder
   seam (`Room.databaseBuilder(context, path)` vs. a `NSDocumentDirectory` path, no
   `Context` needed) — everything else (entities, DAOs, migrations) is unchanged
@@ -297,18 +305,20 @@ unless tagged.
   `:app`'s `GpxImporterAndroid.kt`/`GpxExporterAndroid.kt` extension functions),
   `TrophyEvaluator.kt` (pure streaming `TrophyAccumulator` + top-level streak/grid
   helpers), `TrophyRepository.kt` (full rescan paging every device via
-  `LocationPointDao.pageForDevice`, diffs against `trophy_unlocks`),
-  `DepartmentLocator.kt` (nearest-centroid département lookup off
-  `readBundledAsset`-loaded `departments_centroids.json` — approximate, see its KDoc),
-  `DeviceRepository.kt`, `PlatformFileStore.kt` (the seam itself).
+  `LocationPointDao.pageForDevice`, diffs against `trophy_unlocks`, returns `RefreshResult`
+  with newly unlocked and relocked trophies), `XpCalculator.kt` (pure XP computation from
+  driving, trophies, events, garage, and streaks) + `XpRepository.kt` (observable `XpState`,
+  persisted daily login streak tracking in `xp_state`), `DepartmentLocator.kt`
+  (nearest-centroid département lookup off `readBundledAsset`-loaded `departments_centroids.json` —
+  approximate, see its KDoc), `DeviceRepository.kt`, `PlatformFileStore.kt` (the seam itself).
   **`TrackRepository.kt`/`RemoteTrackSync.kt` deliberately did NOT move here** — they
   stay in `:app` (see below): `RemoteTrackSync` is dev/prod **flavor**-scoped (real
   Firestore vs. no-op), and `:shared`'s single `androidTarget` has no flavor dimension to
   express that split.
 - `util/` — `Haversine.kt`, `Logger.kt` (`expect object` — trivial `android.util.Log` /
   `NSLog` wrapper for the cloud sync layer's warnings).
-- `commonTest/` — `data/repo/TrophyEvaluatorTest.kt`, `data/cloud/crypto/CryptoBoxTest.kt`,
-  `data/cloud/PolylineCodecTest.kt` — see Tests below.
+- `commonTest/` — `data/repo/TrophyEvaluatorTest.kt`, `data/repo/XpCalculatorTest.kt`,
+  `data/cloud/crypto/CryptoBoxTest.kt`, `data/cloud/PolylineCodecTest.kt` — see Tests below.
 
 ### `:app` (`app/src/{main,dev,prod}/java/com/carlauncher/companion/`)
 Compose UI (always), plus whatever is inherently platform-specific or flavor-specific
@@ -328,7 +338,7 @@ and doesn't fit a `:shared` seam. Paths below are under `src/main` unless tagged
     (periodic WorkManager job wrapping `:shared`'s `CloudSyncManager`, plus an immediate
     one-shot when a toggle flips on — WorkManager itself has no iOS equivalent, hence
     staying here) and `CloudPrefsLabels.kt` (the `@StringRes` label/description
-    extension properties for `Visibility`/`FeedScope`/`SyncCategory`/`ProfileSection`).
+    extension properties for `Visibility`/`FeedScope`/`LeaderboardVisibility`/`SyncCategory`/`ProfileSection`).
   - `data/bluetooth/BluetoothTriggerStore.kt` **[dev]** — persists chosen car BT device(s)
   - `data/firebase/` **[dev]** — `PushDocument.kt`, `TrackRemoteSource.kt` (Firestore
     read/listen)
@@ -350,21 +360,24 @@ and doesn't fit a `:shared` seam. Paths below are under `src/main` unless tagged
 - `push/CompanionFcmService.kt` **[dev]** — FCM data-message handling ("car started" push)
 - `ui/` — Compose: `nav/CompanionNavHost.kt` + `Destinations.kt` (bottom nav: Map /
   History / Stats / Profile always, plus Feed inserted as the 2nd tab once signed in —
-  `bottomTabs(signedIn: Boolean)`, not a static list; Devices and Bluetooth trigger are
-  top-bar-only, not bottom tabs, and dev-only) + `nav/BetaNavEntries.kt` (**seam**),
-  `map/MapScreen.kt` + `CartoDarkMatterTileSource.kt` (osmdroid, dark
-  tiles) + `MapViewExt.kt` (`awaitFirstLayout()`, shared by any screen that zooms an
-  osmdroid `MapView` to a bounding box on load) + `map/RadarControls.kt` (**seam**),
-  `history/HistoryScreen.kt`,
+  `bottomTabs(signedIn: Boolean)`, not a static list; Devices, Bluetooth trigger, and
+  Settings are top-bar-only, not bottom tabs, and dev-only) + `nav/BetaNavEntries.kt` (**seam**),
+  `map/MapScreen.kt` + `CartoDarkMatterTileSource.kt` (osmdroid, retina dark
+  tiles with optional Carto API key via `BuildConfig.CARTO_API_KEY`) + `MapViewExt.kt`
+  (`awaitFirstLayout()`, shared by any screen that zooms an osmdroid `MapView` to a
+  bounding box on load) + `map/RadarControls.kt` (**seam**),
+  `history/HistoryScreen.kt` (track history, single-point deletion, day clearing, reassigning),
   `stats/StatsScreen.kt`, `devices/DevicesScreen.kt` **[dev]**,
   `bluetooth/BluetoothTriggerScreen.kt` **[dev]**, `settings/SettingsScreen.kt` **[dev]**,
-  `profile/ProfileScreen.kt` (personal info + Garage/Events hub, favorite-car photo
-  hero), `garage/` (`GarageScreen.kt`, `CarDetailScreen.kt`), `events/`
-  (`EventsScreen.kt`, `EventDetailScreen.kt` — combined create/edit/view), `trophies/TrophiesScreen.kt`
-  (medal grid + detail sheet + the `CarTrophyStrip` reused by Garage car detail), `common/`
-  (`RangeSelector.kt`, `NeonSurfaces.kt` (`NeonCard`/`NeonPill`/`NeonProgressBar`/`NeonSegmentedSelector`),
-  `StatsDisplay.kt`
-  (`StatTile`/`SpeedZoneCard`, shared by Stats/Garage/Events), `DashboardComponents.kt`
+  `profile/ProfileScreen.kt` (XP/level progress with login streak badge, favorite-car photo hero,
+  cloud account navigation tile, stat buttons for Garage/Events/Trophies, navigation tiles for
+  Friends/Leaderboard, personal info card), `garage/` (`GarageScreen.kt`, `CarDetailScreen.kt` —
+  with device re-linking, modifications, odometer, photo, stats, trophies strip, share toggle),
+  `events/` (`EventsScreen.kt`, `EventDetailScreen.kt` — combined create/edit/view),
+  `trophies/TrophiesScreen.kt` (medal grid + detail sheet + the `CarTrophyStrip` reused by Garage car detail),
+  `leaderboard/` (`LeaderboardScreen.kt` — ranked XP ladder with friends vs everyone scope),
+  `common/` (`RangeSelector.kt`, `NeonSurfaces.kt` (`NeonCard`/`NeonPill`/`NeonProgressBar`/`NeonSegmentedSelector`),
+  `StatsDisplay.kt` (`StatTile`/`SpeedZoneCard`, shared by Stats/Garage/Events), `DashboardComponents.kt`
   (`DashboardRow`/`IconBadge`/`SectionLabel`/`AccentDivider` — the console-menu look
   used across Profile/Garage/Events), `CarPhoto.kt`, `TraceMap.kt` — the speed-colored-trail
   map, shared by the local `EventDetailScreen` and the read-only `SharedEventDetailScreen`
@@ -372,12 +385,12 @@ and doesn't fit a `:shared` seam. Paths below are under `src/main` unless tagged
   Cloud-feature UI — **both flavors, `src/main`**, mirroring `data/cloud/` (unlike Firebase,
   none of this is behind a seam): `auth/` (sign-in/up, password reset by emailed deep link,
   recovery-code display, `CloudEntryScreen.kt` — routes between the sign-in form and the
-  signed-in panel depending on session state), `legal/` (renders the bundled terms/privacy
+  signed-in panel with manual "Sync now" button & last sync status), `legal/` (renders the bundled terms/privacy
   markdown), `cloud/` (`CloudSettingsScreen.kt` — the six upload toggles +
-  visibility/feed-scope + sync/restore; `ShareToggle.kt` — the per-item share switch shown
+  visibility/feed-scope/leaderboard-visibility + sync/restore; `ShareToggle.kt` — the per-item share switch shown
   on car/event detail screens, hidden when signed out), `friends/FriendsScreen.kt`
-  (exact-username search, requests, friend list — no browsing/listing anywhere), `feed/`
-  (`FeedScreen.kt` — paged activity cards, the 2nd bottom tab once signed in;
+  (exact-username search, requests, friend list, report/ban actions — no browsing/listing anywhere), `feed/`
+  (`FeedScreen.kt` — paged activity cards with Friends shortcut, the 2nd bottom tab once signed in;
   `PublicProfileScreen.kt`; `SharedCarDetailScreen.kt`/`SharedEventDetailScreen.kt` — read-only)
 - `util/TimeFormat.kt` — locale-aware/`@Composable` date formatting (`formatRelative`,
   `formatDuration`) plus a few pure `java.time` helpers (`dayKey`, etc.); stayed
@@ -453,6 +466,8 @@ and doesn't fit a `:shared` seam. Paths below are under `src/main` unless tagged
   2026, not an alpha pin. See the version comment in root `build.gradle.kts`.
 - No version catalog (`libs.versions.toml` absent) — deps declared directly in each
   module's own `build.gradle.kts` (`app/build.gradle.kts`, `shared/build.gradle.kts`).
+- `local.properties` (gitignored in repo root) holds optional secrets: `supabase.url`,
+  `supabase.anonKey`, and `carto.apiKey`.
 - `:app`: compileSdk 35, minSdk 26, targetSdk 35, JVM target 17; `namespace`
   `com.carlauncher.companion` for both flavors, applicationId
   `com.carlauncher.companion` (dev) / `com.shenzou.carcompanion` (prod). One flavor
@@ -493,7 +508,8 @@ Three suites, run separately:
   run against its `androidTarget` (Kotlin/Native `iosSimulatorArm64` tests need a Mac —
   see README.md's "iOS port" section for status): `data/repo/TrophyEvaluatorTest.kt`
   (trip segmentation, streaks, map-grid helpers, trophy progress; uses kotlin.test, not
-  JUnit), `data/cloud/crypto/CryptoBoxTest.kt` (AEAD round-trips, AAD binding,
+  JUnit), `data/repo/XpCalculatorTest.kt` (XP computation, trophy tier bonuses, streaks),
+  `data/cloud/crypto/CryptoBoxTest.kt` (AEAD round-trips, AAD binding,
   password-change re-wrapping, recovery codes — against `dev.whyoleg.cryptography`, not
   `javax.crypto`), and `data/cloud/PolylineCodecTest.kt` (round-trips including Google's
   own reference example, negative coordinates, empty input). Keep everything under

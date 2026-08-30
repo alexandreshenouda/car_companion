@@ -73,23 +73,24 @@ flavors](#build-flavors-dev-and-prod).
   turning Bluetooth off counts as "all disconnected" too. Addresses and
   connection state are persisted by `BluetoothTriggerStore`
   (`data/bluetooth/BluetoothTriggerStore.kt`).
-- **Profile** — a fourth bottom tab for the user's own data, separate from the
-  GPS-tracked Devices list. Garage is the screen's main element: personal
-  info and Events are secondary rows below it.
+- **Profile** — a bottom tab for the user's own data, separate from the
+  GPS-tracked Devices list. It leads with a level & XP progress badge (including
+  the active daily login streak) and the favorite car's photo hero, followed by
+  the Cloud Account entry tile, quick-access stat buttons for Garage, Events, and
+  Trophies, navigation tiles for Friends and Leaderboard, and personal info.
   - **Personal information** — age, city, and the French départements the
     user wants to drive in (picked from the official list).
   - **Garage** (`ui/garage/`) — cars the user owns, each optionally linked to
-    a tracked device to inherit its GPS stats, with a photo, manually-entered
-    odometer, and a modifications log (title/category/cost/notes). A car
-    without a tracker can still be registered with no GPS stats shown. One
-    car can be marked **favorite** (star toggle on its detail screen); the
-    favorite gets a full-width photo hero at the top of the Profile screen
-    and a star badge in the Garage list, so it's visible without drilling in.
-    The photo is downsized/compressed on-device (long edge capped at 960px,
-    JPEG under ~300KB) before it's written locally, so the same small file
-    also travels to Supabase Storage — see [Cloud accounts](#cloud-accounts-supabase)
-    — when the car is shared, and shows up on `SharedCarDetailScreen` for
-    friends/the public.
+    a tracked device to inherit its GPS stats (linkable on creation or editable
+    later from detail), with a photo, manually-entered odometer, and a modifications
+    log (title/category/cost/notes). A car without a tracker can still be registered
+    with no GPS stats shown. One car can be marked **favorite** (star toggle on its
+    detail screen); the favorite gets a full-width photo hero at the top of the Profile
+    screen and a star badge in the Garage list, so it's visible without drilling in.
+    The photo is downsized/compressed on-device (long edge capped at 960px, JPEG under ~300KB)
+    before it's written locally, so the same small file also travels to Supabase Storage
+    — see [Cloud accounts](#cloud-accounts-supabase) — when the car is shared, and shows
+    up on `SharedCarDetailScreen` for friends/the public.
   - **Events** (`ui/events/`) — car meets, racetrack days and explorations,
     each with a track sourced one of two ways: **from a car**, with a day +
     time window whose GPS points are cropped from the linked device and
@@ -103,7 +104,7 @@ flavors](#build-flavors-dev-and-prod).
     speed-colored-trail style as the main Map screen) shown once there are
     points. Events with points can also be exported back out as GPX
     (reusing `ui/export/GpxExporter.kt`).
-  - **Trophies** (`ui/trophies/`) — 26 unlockable achievements scored against
+  - **Trophies** (`ui/trophies/`) — 29 unlockable achievements scored against
     the whole driving history across every tracked device, in four
     categories: distance & speed (total km, longest trip, top speed), habits
     & streaks (trip counts, consecutive driving days, night/early starts, all
@@ -121,7 +122,9 @@ flavors](#build-flavors-dev-and-prod).
     lifetime aggregate (`trophy_progress`) so the screen paints instantly;
     the trophy definitions themselves live in Kotlin
     (`data/model/Trophy.kt`), so adding one needs no schema migration.
-    Unlocks are permanent — deleting history later does not take one back.
+    A rescan unlocks new trophies and relocks/revokes trophies if history
+    data was deleted and criteria are no longer satisfied, cleaning up
+    cloud unlock rows and feed activity cards accordingly.
   - **XP, levels and leaderboard** (`data/repo/XpCalculator.kt`,
     `data/repo/XpRepository.kt`) — a second, complementary gamification layer
     on top of Trophies. XP comes from distance driven, trophy tier bonuses,
@@ -539,9 +542,10 @@ gated on the existing "Average speed" filter chip.
   offline builds work fine. If you're offline on a clean checkout, that's
   expected to still succeed, just with straight fallback lines for any
   section that couldn't be routed.
-- Cloud accounts need two lines in `local.properties`; without them the build
-  still succeeds and the cloud features simply stay hidden. See
-  [Cloud accounts](#cloud-accounts-supabase).
+- `local.properties` (gitignored in the repo root) holds optional build keys:
+  Supabase credentials (`supabase.url`, `supabase.anonKey`) for cloud sync/backup,
+  and an optional Carto API key (`carto.apiKey`) for retina Dark Matter map tiles.
+  Without them, the app still builds and works offline.
 
 ## Cloud accounts (Supabase)
 
@@ -555,6 +559,7 @@ Setup is documented in [`supabase/SETUP.md`](supabase/SETUP.md) — run
 ```properties
 supabase.url=https://<project>.supabase.co
 supabase.anonKey=<anon / publishable key>
+carto.apiKey=<your carto api key (optional)>
 ```
 
 The anon key is public by design — it ships in the APK and can be extracted

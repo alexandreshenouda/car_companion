@@ -38,6 +38,7 @@ Add to `local.properties` in the repo root (gitignored):
 ```properties
 supabase.url=https://aehugggajqlnexhfrejf.supabase.co
 supabase.anonKey=eyJhbGciOi...
+carto.apiKey=<your carto api key (optional)>
 ```
 
 Without these the app still builds and runs — it just hides all cloud features and
@@ -118,8 +119,10 @@ limiting, which is why username lookup is throttled in SQL instead
 - **500 MB database.** GPS history is the only category that can realistically fill
   it — roughly 1000 hours of driving at 1 Hz, after the downsampling the app applies.
   Everything else is negligible.
-- **No image uploads**, by product decision. Car photos never leave the phone, so a
-  shared car shows other users its details but no picture.
+- **Car photos in Storage.** Shared cars upload downscaled/compressed JPEG photos
+  (under 2MB, capped at 960px long edge) to the private `car-photos` Supabase Storage
+  bucket created and secured with RLS by `schema.sql`. Photos are accessible only if the
+  car is shared and visible according to the owner's profile settings.
 - **2 projects max.** Both app flavors (`dev` and `prod`) share this one project, so a
   dev account and a prod account are the same account. If dev test data ever starts
   polluting the real feed, the fix is a second project and a per-flavor `local.properties`.
