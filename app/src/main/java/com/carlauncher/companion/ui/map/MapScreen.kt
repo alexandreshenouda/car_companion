@@ -12,6 +12,7 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -29,6 +30,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.FiberManualRecord
 import androidx.compose.material.icons.filled.MyLocation
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material.icons.filled.Stop
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -42,6 +44,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -630,24 +633,44 @@ fun MapScreen(
 
 @Composable
 private fun SpeedLegend(modifier: Modifier = Modifier) {
-    NeonCard(
-        accent = MaterialTheme.colorScheme.secondary,
+    var expanded by rememberSaveable { mutableStateOf(true) }
+
+    AnimatedContent(
+        targetState = expanded,
         modifier = modifier,
-        glow = false,
-        topBar = false,
-        shape = RoundedCornerShape(14.dp),
-    ) {
-        Column(Modifier.padding(10.dp)) {
-            SpeedZone.entries.forEach { zone ->
-                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(2.dp)) {
-                    Box(
-                        Modifier
-                            .size(10.dp)
-                            .background(Color(zone.color), CircleShape),
-                    )
-                    Spacer(Modifier.width(6.dp))
-                    Text(stringResource(R.string.map_legend_speed_format, zone.label), style = MaterialTheme.typography.labelSmall)
+        contentAlignment = Alignment.TopStart,
+        label = "speed_legend",
+    ) { isExpanded ->
+        if (isExpanded) {
+            NeonCard(
+                accent = MaterialTheme.colorScheme.secondary,
+                glow = false,
+                topBar = false,
+                shape = RoundedCornerShape(14.dp),
+                onClick = { expanded = false },
+            ) {
+                Column(Modifier.padding(10.dp)) {
+                    SpeedZone.entries.forEach { zone ->
+                        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(2.dp)) {
+                            Box(
+                                Modifier
+                                    .size(10.dp)
+                                    .background(Color(zone.color), CircleShape),
+                            )
+                            Spacer(Modifier.width(6.dp))
+                            Text(stringResource(R.string.map_legend_speed_format, zone.label), style = MaterialTheme.typography.labelSmall)
+                        }
+                    }
                 }
+            }
+        } else {
+            SmallFloatingActionButton(
+                onClick = { expanded = true },
+            ) {
+                Icon(
+                    Icons.Filled.Speed,
+                    contentDescription = stringResource(R.string.map_speed_legend_content_description),
+                )
             }
         }
     }

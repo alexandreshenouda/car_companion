@@ -194,6 +194,7 @@
     <string name="map_history_trail_label">Trace de l\'historique</string>
     <string name="map_last_update_format">%1$s · %2$s</string>
     <string name="map_legend_speed_format">%1$s km/h</string>
+    <string name="map_speed_legend_content_description">Légende des vitesses</string>
 
     <!-- ===== ui/history/HistoryScreen.kt ===== -->
     <string name="history_syncing">Synchronisation</string>
