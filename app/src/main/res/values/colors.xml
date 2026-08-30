@@ -3,4 +3,19 @@
     <!-- Must stay in sync with Ink950 in ui/theme/Color.kt — this is the pre-Compose
          window background, so a mismatch shows as a flash on cold start. -->
     <color name="ink_950">#06080C</color>
+    <color name="ink_900">#0D1016</color>
+    <color name="ink_850">#131820</color>
+    <color name="ink_800">#1A202B</color>
+    <color name="ink_700">#262E3C</color>
+    <color name="ink_600">#3A4557</color>
+
+    <color name="neon_lime">#C6FF3D</color>
+    <color name="neon_cyan">#22E5FF</color>
+    <color name="neon_magenta">#FF3DA5</color>
+    <color name="neon_amber">#FFC93D</color>
+    <color name="neon_red">#FF4D5E</color>
+
+    <color name="text_primary">#EDF3FF</color>
+    <color name="text_secondary">#8794AB</color>
+    <color name="text_dim">#5C687C</color>
 </resources>

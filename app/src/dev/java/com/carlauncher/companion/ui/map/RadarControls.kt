@@ -150,6 +150,7 @@ class RadarOverlayState internal constructor(
                             section.country,
                             section.lengthMeters / 1000.0,
                         )
+                        infoWindow = NeonInfoWindow(view)
                     },
                 )
             }
@@ -173,6 +174,7 @@ class RadarOverlayState internal constructor(
                             }
                         }
                         icon = icons[radar.type]
+                        infoWindow = NeonInfoWindow(view)
                         setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
                     },
                 )

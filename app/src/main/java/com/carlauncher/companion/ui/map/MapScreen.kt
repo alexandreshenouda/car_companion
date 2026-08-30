@@ -207,6 +207,7 @@ fun MapScreen(
     val phoneMarkerIcon = remember {
         ContextCompat.getDrawable(context, R.drawable.ic_phone_marker)?.mutate()?.apply { setTint(PHONE_MARKER_TINT) }
     }
+    val neonInfoWindow = remember(mapView) { NeonInfoWindow(mapView) }
 
     // Radar overlays are viewport-filtered and so need to know when the map has panned/zoomed.
     // onScroll fires continuously during a drag, so the seam debounces this until motion settles.
@@ -420,6 +421,31 @@ fun MapScreen(
                                 setPoints(segment.points)
                                 outlinePaint.color = segment.color
                                 outlinePaint.strokeWidth = 6f
+                                infoWindow = neonInfoWindow
+                                setOnClickListener { line, _, eventPos ->
+                                    val nearest = historyPoints.minByOrNull { pt ->
+                                        val dLat = pt.lat - eventPos.latitude
+                                        val dLng = pt.lng - eventPos.longitude
+                                        dLat * dLat + dLng * dLng
+                                    }
+                                    if (nearest != null) {
+                                        line.title = selectedPointLabel
+                                        line.snippet = context.getString(
+                                            R.string.map_marker_snippet_format,
+                                            nearest.speedKmh,
+                                            formatAbsolute(nearest.ts),
+                                        )
+                                        line.subDescription = String.format(
+                                            java.util.Locale.US,
+                                            "%.5f, %.5f",
+                                            nearest.lat,
+                                            nearest.lng,
+                                        )
+                                        line.setInfoWindowLocation(GeoPoint(nearest.lat, nearest.lng))
+                                        line.showInfoWindow()
+                                    }
+                                    true
+                                }
                             },
                         )
                     }
@@ -432,6 +458,7 @@ fun MapScreen(
                         snippet = markerSnippet
                         subDescription = String.format(java.util.Locale.US, "%.5f, %.5f", p.lat, p.lng)
                         icon = carMarkerIcon
+                        infoWindow = neonInfoWindow
                         setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
                     }
                     view.overlays.add(marker)
@@ -443,6 +470,7 @@ fun MapScreen(
                         title = yourPhoneLabel
                         subDescription = String.format(java.util.Locale.US, "%.5f, %.5f", loc.latitude, loc.longitude)
                         icon = phoneMarkerIcon
+                        infoWindow = neonInfoWindow
                         setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
                     }
                     view.overlays.add(marker)
@@ -462,6 +490,7 @@ fun MapScreen(
                             else -> null
                         }
                         subDescription = String.format(java.util.Locale.US, "%.5f, %.5f", point.geoPoint.latitude, point.geoPoint.longitude)
+                        infoWindow = neonInfoWindow
                         showInfoWindow()
                     }
                     view.overlays.add(marker)
