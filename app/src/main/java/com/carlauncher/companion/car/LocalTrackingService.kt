@@ -93,7 +93,7 @@ class LocalTrackingService : Service() {
         scope.launch {
             container.deviceRepository.setLocalRecordingActive(false)
             // Recording just stopped, so this is the moment new trophies can land.
-            TrophyNotifier.notifyUnlocked(applicationContext, container.trophyRepository.refresh())
+            TrophyNotifier.notifyUnlocked(applicationContext, container.trophyRepository.refresh().newlyUnlocked)
         }
         stopForeground(STOP_FOREGROUND_REMOVE)
         super.onDestroy()

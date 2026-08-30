@@ -28,9 +28,15 @@ import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -54,10 +60,12 @@ import com.carlauncher.companion.data.cloud.CloudPrefsRepository
 import com.carlauncher.companion.data.cloud.CloudSyncManager
 import com.carlauncher.companion.data.db.CarEntity
 import com.carlauncher.companion.data.db.CarModificationEntity
+import com.carlauncher.companion.data.db.DeviceEntity
 import com.carlauncher.companion.data.model.HistoryRange
 import com.carlauncher.companion.data.model.TrackStats
 import com.carlauncher.companion.data.model.TrophyStats
 import com.carlauncher.companion.data.repo.CarRepository
+import com.carlauncher.companion.data.repo.DeviceRepository
 import com.carlauncher.companion.data.repo.TrophyRepository
 import com.carlauncher.companion.data.repo.TrackRepository
 import com.carlauncher.companion.ui.common.AccentDivider
@@ -78,6 +86,7 @@ import kotlinx.coroutines.launch
 fun CarDetailScreen(
     carId: String,
     carRepository: CarRepository,
+    deviceRepository: DeviceRepository,
     trackRepository: TrackRepository,
     trophyRepository: TrophyRepository,
     authRepository: AuthRepository,
@@ -87,6 +96,7 @@ fun CarDetailScreen(
 ) {
     val car by carRepository.observeCar(carId).collectAsStateWithLifecycle(initialValue = null)
     val modifications by carRepository.observeModifications(carId).collectAsStateWithLifecycle(initialValue = emptyList())
+    val devices by deviceRepository.observeDevices().collectAsStateWithLifecycle(initialValue = emptyList())
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
 
@@ -252,11 +262,14 @@ fun CarDetailScreen(
     if (editingDetails) {
         EditCarDetailsDialog(
             car = current,
+            devices = devices,
             onDismiss = { editingDetails = false },
             onConfirm = { name, deviceId, brand, model, year, details, odometer ->
+                scope.launch {
                     carRepository.updateCar(
                         current.copy(name = name, deviceId = deviceId, brand = brand, model = model, year = year, details = details, odometerKm = odometer),
                     )
+                }
                 editingDetails = false
             },
         )
@@ -322,11 +335,14 @@ private fun ModificationRow(mod: CarModificationEntity, onDelete: () -> Unit) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+private fun EditCarDetailsDialog(
     car: CarEntity,
     devices: List<DeviceEntity>,
     onDismiss: () -> Unit,
+    onConfirm: (name: String, deviceId: String?, brand: String?, model: String?, year: Int?, details: String?, odometer: Double?) -> Unit,
 ) {
     var name by remember { mutableStateOf(car.name) }
+    var brand by remember { mutableStateOf(car.brand.orEmpty()) }
     var model by remember { mutableStateOf(car.model.orEmpty()) }
     var year by remember { mutableStateOf(car.year?.toString().orEmpty()) }
     var details by remember { mutableStateOf(car.details.orEmpty()) }
@@ -334,29 +350,80 @@ private fun ModificationRow(mod: CarModificationEntity, onDelete: () -> Unit) {
     var selectedDevice by remember { mutableStateOf(devices.find { it.deviceId == car.deviceId }) }
     var deviceMenuExpanded by remember { mutableStateOf(false) }
 
+    AlertDialog(
+        onDismissRequest = onDismiss,
         title = { Text(stringResource(R.string.car_detail_edit_car_title)) },
         text = {
             Column {
-                OutlinedTextField(name, { name = it }, label = { Text(stringResource(R.string.garage_field_name)) }, singleLine = true, modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(
+                    value = name,
+                    onValueChange = { name = it },
+                    label = { Text(stringResource(R.string.garage_field_name)) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                )
                 Spacer(Modifier.height(8.dp))
                 if (devices.isNotEmpty()) {
                     ExposedDropdownMenuBox(expanded = deviceMenuExpanded, onExpandedChange = { deviceMenuExpanded = it }) {
                         OutlinedTextField(
+                            value = selectedDevice?.name ?: stringResource(R.string.garage_no_linked_device),
+                            onValueChange = {},
+                            readOnly = true,
+                            label = { Text(stringResource(R.string.garage_field_linked_device)) },
+                            trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = deviceMenuExpanded) },
+                            modifier = Modifier.fillMaxWidth().menuAnchor(MenuAnchorType.PrimaryNotEditable),
+                        )
+                        DropdownMenu(expanded = deviceMenuExpanded, onDismissRequest = { deviceMenuExpanded = false }) {
+                            DropdownMenuItem(text = { Text(stringResource(R.string.garage_no_linked_device)) }, onClick = {
+                                selectedDevice = null
+                                deviceMenuExpanded = false
+                            })
+                            devices.forEach { device ->
+                                DropdownMenuItem(text = { Text(device.name) }, onClick = {
+                                    selectedDevice = device
+                                    deviceMenuExpanded = false
+                                })
+                            }
+                        }
+                    }
+                    Spacer(Modifier.height(8.dp))
+                }
+                OutlinedTextField(
+                    value = brand,
+                    onValueChange = { brand = it },
+                    label = { Text(stringResource(R.string.garage_field_brand)) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                )
                 Spacer(Modifier.height(8.dp))
                 OutlinedTextField(
-                    year,
-                    { year = it.filter(Char::isDigit) },
+                    value = model,
+                    onValueChange = { model = it },
+                    label = { Text(stringResource(R.string.garage_field_model)) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(Modifier.height(8.dp))
+                OutlinedTextField(
+                    value = year,
+                    onValueChange = { year = it.filter(Char::isDigit) },
                     label = { Text(stringResource(R.string.garage_field_year)) },
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth(),
                 )
                 Spacer(Modifier.height(8.dp))
-                OutlinedTextField(details, { details = it }, label = { Text(stringResource(R.string.garage_field_details)) }, singleLine = true, modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(
+                    value = details,
+                    onValueChange = { details = it },
+                    label = { Text(stringResource(R.string.garage_field_details)) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                )
                 Spacer(Modifier.height(8.dp))
                 OutlinedTextField(
-                    odometer,
-                    { odometer = it.filter { c -> c.isDigit() || c == '.' } },
+                    value = odometer,
+                    onValueChange = { odometer = it.filter { c -> c.isDigit() || c == '.' } },
                     label = { Text(stringResource(R.string.garage_field_odometer)) },
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
@@ -373,6 +440,7 @@ private fun ModificationRow(mod: CarModificationEntity, onDelete: () -> Unit) {
                         selectedDevice?.deviceId,
                         brand.trim().ifBlank { null },
                         model.trim().ifBlank { null },
+                        year.toIntOrNull(),
                         details.trim().ifBlank { null },
                         odometer.toDoubleOrNull(),
                     )

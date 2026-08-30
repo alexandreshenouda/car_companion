@@ -470,8 +470,13 @@ as $$
       where e.id = p_subject and e.owner_id = p_actor and e.is_shared
     )
     when p_kind = 'trophy_unlocked' then (
-      p_actor = auth.uid()
-      or exists (select 1 from public.profiles p where p.id = p_actor and p.share_trophies)
+      (
+        p_actor = auth.uid()
+        or exists (select 1 from public.profiles p where p.id = p_actor and p.share_trophies)
+      ) and exists (
+        select 1 from public.trophy_unlocks t
+        where t.owner_id = p_actor and t.trophy_id = p_subject_key
+      )
     )
     else false
   end;
@@ -622,20 +627,27 @@ security definer
 set search_path = public, pg_temp
 as $$
 begin
-  insert into public.activities (actor_id, kind, subject_key)
-  select new.owner_id, 'trophy_unlocked', new.trophy_id
-  where not exists (
-    select 1 from public.activities a
-    where a.actor_id = new.owner_id
-      and a.kind = 'trophy_unlocked'
-      and a.subject_key = new.trophy_id
-  );
-  return new;
+  if tg_op = 'INSERT' then
+    insert into public.activities (actor_id, kind, subject_key)
+    select new.owner_id, 'trophy_unlocked', new.trophy_id
+    where not exists (
+      select 1 from public.activities a
+      where a.actor_id = new.owner_id
+        and a.kind = 'trophy_unlocked'
+        and a.subject_key = new.trophy_id
+    );
+    return new;
+  elsif tg_op = 'DELETE' then
+    delete from public.activities
+    where actor_id = old.owner_id and subject_key = old.trophy_id and kind = 'trophy_unlocked';
+    return old;
+  end if;
+  return null;
 end;
 $$;
 
 drop trigger if exists trophies_activity on public.trophy_unlocks;
-create trigger trophies_activity after insert on public.trophy_unlocks
+create trigger trophies_activity after insert or delete on public.trophy_unlocks
   for each row execute function public.emit_trophy_activity();
 
 

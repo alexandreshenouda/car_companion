@@ -250,6 +250,9 @@ interface TrophyDao {
     @Query("UPDATE trophy_unlocks SET cloudSyncedAt = :at WHERE id = :trophyId")
     suspend fun markUnlockSynced(trophyId: String, at: Long)
 
+    @Query("DELETE FROM trophy_unlocks WHERE id IN (:ids)")
+    suspend fun deleteUnlocks(ids: List<String>)
+
     @Query("UPDATE trophy_unlocks SET cloudSyncedAt = NULL")
     suspend fun clearSyncMarkers()
 

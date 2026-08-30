@@ -131,7 +131,7 @@ class RadarAlertService : Service() {
         // The car just disconnected, i.e. a trip ended — re-score the trophies.
         val container = (application as CompanionApp).container
         CoroutineScope(Dispatchers.IO).launch {
-            TrophyNotifier.notifyUnlocked(applicationContext, container.trophyRepository.refresh())
+            TrophyNotifier.notifyUnlocked(applicationContext, container.trophyRepository.refresh().newlyUnlocked)
         }
         handler.removeCallbacks(stopIfNeverConnected)
         carConnectionType?.removeObserver(connectionObserver)

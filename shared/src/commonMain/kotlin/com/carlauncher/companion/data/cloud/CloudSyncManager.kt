@@ -27,6 +27,7 @@ import com.carlauncher.companion.data.db.LocationPointDao
 import com.carlauncher.companion.data.db.LocationPointEntity
 import com.carlauncher.companion.data.db.TrophyDao
 import com.carlauncher.companion.data.db.UserProfileDao
+import com.carlauncher.companion.data.model.Trophy
 import com.carlauncher.companion.data.repo.PlatformFileStore
 import com.carlauncher.companion.data.repo.XpRepository
 import com.carlauncher.companion.data.repo.computeStats
@@ -245,12 +246,32 @@ class CloudSyncManager(
 
     private suspend fun pushTrophies(client: SupabaseClient, userId: String) {
         val dirty = trophyDao.getDirtyUnlocks()
-        if (dirty.isEmpty()) return
-        client.postgrest.from("trophy_unlocks").upsert(
-            dirty.map { TrophyUnlockRow(ownerId = userId, trophyId = it.id, unlockedAtIso = it.unlockedAt.toIso()) },
-        )
-        val now = Clock.System.now().toEpochMilliseconds()
-        dirty.forEach { trophyDao.markUnlockSynced(it.id, now) }
+        if (dirty.isNotEmpty()) {
+            client.postgrest.from("trophy_unlocks").upsert(
+                dirty.map { TrophyUnlockRow(ownerId = userId, trophyId = it.id, unlockedAtIso = it.unlockedAt.toIso()) },
+            )
+            val now = Clock.System.now().toEpochMilliseconds()
+            dirty.forEach { trophyDao.markUnlockSynced(it.id, now) }
+        }
+
+        // Remove cloud-side unlocks for trophies relocked locally.
+        val localIds = trophyDao.getUnlocks().map { it.id }.toSet()
+        val validTrophyNames = Trophy.entries.map { it.name }.toSet()
+        val cloudRows = client.postgrest.from("trophy_unlocks")
+            .select { filter { eq("owner_id", userId) } }
+            .decodeList<TrophyUnlockRow>()
+        val toDelete = cloudRows
+            .filter { it.trophyId in validTrophyNames && it.trophyId !in localIds }
+            .map { it.trophyId }
+        if (toDelete.isNotEmpty()) {
+            client.postgrest.from("trophy_unlocks")
+                .delete {
+                    filter {
+                        eq("owner_id", userId)
+                        filter("trophy_id", FilterOperator.IN, toDelete)
+                    }
+                }
+        }
     }
 
     // ------------------------------------------------------------------ GPS history (E2E)

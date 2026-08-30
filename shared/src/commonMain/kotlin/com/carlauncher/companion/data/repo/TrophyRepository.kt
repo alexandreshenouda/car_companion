@@ -31,9 +31,16 @@ data class TrophyState(
     val totalCount: Int get() = Trophy.entries.size
 }
 
+/** Outcome of a single [TrophyRepository.refresh] pass. */
+data class RefreshResult(
+    val newlyUnlocked: List<Trophy> = emptyList(),
+    val relocked: List<Trophy> = emptyList(),
+)
+
 /**
- * Owns trophy evaluation. Unlocks are permanent once written — deleting history later
- * does not take a trophy back, which is rather the point of an achievement.
+ * Owns trophy evaluation. A [refresh] pass both unlocks new trophies whose criteria are
+ * met and relocks previously-earned trophies whose criteria are no longer satisfied (e.g.
+ * after the user deletes data). XP from relocked trophies is not preserved separately.
  */
 @OptIn(ExperimentalTime::class)
 class TrophyRepository(
@@ -63,10 +70,10 @@ class TrophyRepository(
         }
 
     /**
-     * Full rescan across every device. Returns the trophies that fired *this* run so the
-     * caller can notify about them; an empty list means nothing new.
+     * Full rescan across every device. Returns the trophies that fired *this* run and those
+     * that were revoked because the user's data no longer meets their criteria.
      */
-    suspend fun refresh(): List<Trophy> = refreshLock.withLock {
+    suspend fun refresh(): RefreshResult = refreshLock.withLock {
         withContext(Dispatchers.Default) {
             val stats = computeStats()
             trophyDao.upsertProgress(stats.toEntity())
@@ -79,7 +86,13 @@ class TrophyRepository(
                 val now = Clock.System.now().toEpochMilliseconds()
                 trophyDao.insertUnlocks(newlyUnlocked.map { TrophyUnlockEntity(it.name, now) })
             }
-            newlyUnlocked
+
+            val relocked = already.filter { !it.isUnlocked(stats) }
+            if (relocked.isNotEmpty()) {
+                trophyDao.deleteUnlocks(relocked.map { it.name })
+            }
+
+            RefreshResult(newlyUnlocked, relocked)
         }
     }
 

@@ -81,7 +81,7 @@ fun TrophiesScreen(trophyRepository: TrophyRepository) {
     // immediately — the medal grid lighting up in front of them already is the
     // celebration, so the app-open popup shouldn't repeat it on next launch.
     LaunchedEffect(Unit) {
-        val newlyUnlocked = trophyRepository.refresh()
+        val (newlyUnlocked, _) = trophyRepository.refresh()
         trophyRepository.acknowledgeCelebration(newlyUnlocked)
     }
 

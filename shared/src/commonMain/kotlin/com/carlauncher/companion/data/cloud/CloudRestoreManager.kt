@@ -270,8 +270,8 @@ class CloudRestoreManager(
             .decodeList<TrophyUnlockRestoreRow>()
         if (rows.isEmpty()) return
 
-        // IGNORE: unlocks are permanent and add-only, so this is strictly a union with
-        // whatever is already unlocked locally — never a downgrade.
+        // IGNORE: this is strictly a union with whatever is already unlocked locally.
+        // The next refresh() pass will relock any trophies whose criteria are no longer met.
         trophyDao.insertUnlocks(
             rows.map {
                 TrophyUnlockEntity(

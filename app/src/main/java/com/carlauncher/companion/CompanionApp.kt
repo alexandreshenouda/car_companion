@@ -23,7 +23,7 @@ class CompanionApp : Application() {
             container.deviceRepository.ensureLocalDeviceExists()
             // Catches anything earned while the app was closed — a trip recorded by the
             // car's own launcher and synced down, for instance.
-            TrophyNotifier.notifyUnlocked(this@CompanionApp, container.trophyRepository.refresh())
+            TrophyNotifier.notifyUnlocked(this@CompanionApp, container.trophyRepository.refresh().newlyUnlocked)
         }
         configureOsmdroid()
         // Safe to schedule unconditionally, signed in or not, cloud-configured build or not:
