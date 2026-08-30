@@ -1,12 +1,16 @@
 package com.carlauncher.companion.ui.auth
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -36,12 +40,18 @@ import com.carlauncher.companion.data.cloud.CloudPrefsRepository
 import com.carlauncher.companion.data.cloud.CloudSessionState
 import com.carlauncher.companion.data.cloud.CloudSyncManager
 import com.carlauncher.companion.data.cloud.CloudSyncWorker
+import com.carlauncher.companion.data.cloud.labelRes
+import com.carlauncher.companion.data.db.CloudPrefsEntity
 import com.carlauncher.companion.ui.common.IconBadge
 import com.carlauncher.companion.ui.common.NeonPill
 import com.carlauncher.companion.ui.legal.LegalDocument
 import com.carlauncher.companion.ui.theme.AccentAlert
 import com.carlauncher.companion.ui.theme.AccentProfile
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.text.DateFormat
+import java.util.Date
 
 /**
  * Single entry point for everything cloud: shows the sign-in form or the account panel
@@ -125,8 +135,15 @@ private fun SignedInPanel(
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val accent = AccentProfile
+    val prefs by cloudPrefsRepository.prefs.collectAsStateWithLifecycle(initialValue = CloudPrefsEntity())
     var confirmingDelete by remember { mutableStateOf(false) }
     var busy by remember { mutableStateOf(false) }
+    var syncing by remember { mutableStateOf(false) }
+    var syncMessage by remember { mutableStateOf<String?>(null) }
+
+    val syncSignInFirst = stringResource(R.string.cloud_settings_sync_sign_in_first)
+    val syncNothingEnabled = stringResource(R.string.cloud_settings_sync_nothing_enabled)
+    val syncPartialFormat = stringResource(R.string.cloud_settings_sync_partial_format)
 
     Column(
         modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
@@ -141,6 +158,65 @@ private fun SignedInPanel(
         }
 
         Spacer(Modifier.height(20.dp))
+        if (syncing) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier.fillMaxWidth().height(48.dp),
+            ) {
+                CircularProgressIndicator(color = accent, modifier = Modifier.size(20.dp), strokeWidth = 2.dp)
+                Spacer(Modifier.width(10.dp))
+                Text(
+                    stringResource(R.string.cloud_settings_working),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+        } else {
+            NeonPill(
+                text = stringResource(R.string.cloud_settings_sync_now),
+                accent = accent,
+                large = true,
+                onClick = {
+                    if (busy || syncing) return@NeonPill
+                    syncing = true
+                    syncMessage = null
+                    scope.launch {
+                        val result = withContext(Dispatchers.Default) { cloudSyncManager.syncAll() }
+                        syncing = false
+                        syncMessage = when {
+                            result == null -> syncSignInFirst
+                            result.failed.isEmpty() && result.attempted.isEmpty() -> syncNothingEnabled
+                            result.failed.isEmpty() -> context.resources.getQuantityString(R.plurals.cloud_settings_sync_success, result.succeeded.size, result.succeeded.size)
+                            else -> {
+                                val names = result.failed.keys.joinToString { context.getString(it.labelRes) }
+                                syncPartialFormat.format(names)
+                            }
+                        }
+                    }
+                },
+                modifier = Modifier.fillMaxWidth(),
+            )
+        }
+
+        prefs.lastSyncAt?.let { lastSync ->
+            Spacer(Modifier.height(6.dp))
+            Text(
+                stringResource(
+                    R.string.cloud_settings_sync_last_format,
+                    DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(Date(lastSync)),
+                ),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+
+        syncMessage?.let {
+            Spacer(Modifier.height(6.dp))
+            Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+
+        Spacer(Modifier.height(14.dp))
         NeonPill(
             text = stringResource(R.string.cloud_entry_settings_pill),
             accent = accent,

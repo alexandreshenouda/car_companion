@@ -388,6 +388,7 @@ fun CompanionNavHost(
                     onOpenCar = { ownerId, carId -> navController.navigate(Destination.SharedCar.build(ownerId, carId)) },
                     onOpenEvent = { ownerId, eventId -> navController.navigate(Destination.SharedEvent.build(ownerId, eventId)) },
                     onOpenProfile = { userId -> navController.navigate(Destination.PublicProfile.build(userId)) },
+                    onOpenFriends = { navController.navigate(Destination.Friends.route) { launchSingleTop = true } },
                 )
             }
             composable(

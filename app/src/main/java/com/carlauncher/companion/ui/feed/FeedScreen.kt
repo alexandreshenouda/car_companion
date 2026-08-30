@@ -19,9 +19,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DirectionsCar
 import androidx.compose.material.icons.filled.DynamicFeed
 import androidx.compose.material.icons.filled.EmojiEvents
+import androidx.compose.material.icons.filled.People
 import androidx.compose.material.icons.filled.Route
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
@@ -79,6 +82,7 @@ fun FeedScreen(
     onOpenCar: (ownerId: String, carId: String) -> Unit,
     onOpenEvent: (ownerId: String, eventId: String) -> Unit,
     onOpenProfile: (userId: String) -> Unit,
+    onOpenFriends: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val scope = rememberCoroutineScope()
@@ -154,15 +158,26 @@ fun FeedScreen(
     }
 
     Column(modifier.fillMaxSize()) {
-        Row(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp)) {
+        Row(
+            Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
             NeonSegmentedSelector(
                 options = FeedScope.entries,
                 selected = feedScope,
                 label = { stringResource(it.labelRes) },
                 onSelect = { scope.launch { cloudPrefsRepository.setFeedScope(it) } },
                 accent = AccentEvents,
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.weight(1f),
             )
+            Spacer(Modifier.width(8.dp))
+            IconButton(onClick = onOpenFriends) {
+                Icon(
+                    Icons.Filled.People,
+                    contentDescription = stringResource(R.string.profile_friends_title),
+                    tint = AccentEvents,
+                )
+            }
         }
 
         PullToRefreshBox(
@@ -176,7 +191,10 @@ fun FeedScreen(
                 }
 
                 activities.isEmpty() -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier.padding(horizontal = 24.dp),
+                    ) {
                         IconBadge(Icons.Filled.DynamicFeed, MaterialTheme.colorScheme.onSurfaceVariant, size = 64.dp)
                         Spacer(Modifier.height(12.dp))
                         Text(
@@ -189,6 +207,14 @@ fun FeedScreen(
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
+                        if (feedScope == FeedScope.FRIENDS) {
+                            Spacer(Modifier.height(16.dp))
+                            NeonPill(
+                                text = stringResource(R.string.profile_friends_title),
+                                accent = AccentEvents,
+                                onClick = onOpenFriends,
+                            )
+                        }
                     }
                 }
 
