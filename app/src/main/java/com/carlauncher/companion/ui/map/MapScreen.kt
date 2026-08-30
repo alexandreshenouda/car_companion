@@ -105,6 +105,12 @@ private const val LOCATION_WAIT_TIMEOUT_MS = 20_000L
  */
 private data class CameraRequest(val point: GeoPoint, val zoom: Double, val serial: Int)
 
+private data class FocusedPoint(
+    val geoPoint: GeoPoint,
+    val speedKmh: Int? = null,
+    val ts: Long? = null,
+)
+
 /**
  * Whether [candidate] should replace [current] as the phone's position. We listen to GPS *and*
  * network, so fixes arrive interleaved and out of order: prefer the newer one once the old one has
@@ -143,7 +149,7 @@ fun MapScreen(
     // While true, the map re-centers on the car whenever it reports a new position. Cleared as
     // soon as the user drags the map themselves; re-enabled by tapping back onto the car's card.
     var followCar by remember { mutableStateOf(true) }
-    var focusedPoint by remember { mutableStateOf<GeoPoint?>(null) }
+    var focusedPoint by remember { mutableStateOf<FocusedPoint?>(null) }
     var phoneLocation by remember { mutableStateOf<GeoPoint?>(null) }
     // Set when the user asks to be located before the first fix has arrived; the request is then
     // honoured as soon as one does, instead of the tap silently doing nothing.
@@ -264,7 +270,11 @@ fun MapScreen(
     LaunchedEffect(focusRequest) {
         focusRequest?.let { req ->
             followCar = false
-            focusedPoint = GeoPoint(req.lat, req.lng)
+            focusedPoint = FocusedPoint(
+                geoPoint = GeoPoint(req.lat, req.lng),
+                speedKmh = req.speedKmh,
+                ts = req.ts,
+            )
             moveCameraTo(GeoPoint(req.lat, req.lng))
             focusRequestHolder.consume()
         }
@@ -420,6 +430,7 @@ fun MapScreen(
                         position = GeoPoint(p.lat, p.lng)
                         title = lastKnownPositionLabel
                         snippet = markerSnippet
+                        subDescription = String.format(java.util.Locale.US, "%.5f, %.5f", p.lat, p.lng)
                         icon = carMarkerIcon
                         setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
                     }
@@ -430,6 +441,7 @@ fun MapScreen(
                     val marker = Marker(view).apply {
                         position = loc
                         title = yourPhoneLabel
+                        subDescription = String.format(java.util.Locale.US, "%.5f, %.5f", loc.latitude, loc.longitude)
                         icon = phoneMarkerIcon
                         setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
                     }
@@ -438,8 +450,19 @@ fun MapScreen(
 
                 focusedPoint?.let { point ->
                     val marker = Marker(view).apply {
-                        position = point
+                        position = point.geoPoint
                         title = selectedPointLabel
+                        snippet = when {
+                            point.speedKmh != null && point.ts != null ->
+                                context.getString(R.string.map_marker_snippet_format, point.speedKmh, formatAbsolute(point.ts))
+                            point.speedKmh != null ->
+                                context.getString(R.string.common_speed_kmh, point.speedKmh)
+                            point.ts != null ->
+                                formatAbsolute(point.ts)
+                            else -> null
+                        }
+                        subDescription = String.format(java.util.Locale.US, "%.5f, %.5f", point.geoPoint.latitude, point.geoPoint.longitude)
+                        showInfoWindow()
                     }
                     view.overlays.add(marker)
                 }

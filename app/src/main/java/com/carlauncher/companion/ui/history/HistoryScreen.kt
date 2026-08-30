@@ -86,7 +86,7 @@ fun HistoryScreen(
     deviceName: String,
     trackRepository: TrackRepository,
     deviceRepository: DeviceRepository,
-    onPointSelected: (lat: Double, lng: Double) -> Unit,
+    onPointSelected: (LocationPointEntity) -> Unit,
 ) {
     var range by remember { mutableStateOf(HistoryRange.LAST_7_DAYS) }
     var points by remember { mutableStateOf<List<LocationPointEntity>>(emptyList()) }
@@ -272,7 +272,7 @@ fun HistoryScreen(
                                 items(hourPoints, key = { "$hKey-${it.ts}" }) { point ->
                                     PointRow(
                                         point,
-                                        onClick = { onPointSelected(point.lat, point.lng) },
+                                        onClick = { onPointSelected(point) },
                                         onDelete = { pointPendingDelete = point },
                                     )
                                 }

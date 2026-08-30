@@ -243,8 +243,13 @@ fun CompanionNavHost(
                         deviceName = selectedDevice?.name ?: deviceId,
                         trackRepository = container.trackRepository,
                         deviceRepository = container.deviceRepository,
-                        onPointSelected = { lat, lng ->
-                            container.mapFocusRequestHolder.request(lat, lng)
+                        onPointSelected = { point ->
+                            container.mapFocusRequestHolder.request(
+                                lat = point.lat,
+                                lng = point.lng,
+                                speedKmh = point.speedKmh,
+                                ts = point.ts,
+                            )
                             navController.navigate(Destination.Map.route) {
                                 popUpTo(navController.graph.findStartDestination().id) { saveState = true }
                                 launchSingleTop = true
