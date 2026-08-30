@@ -213,6 +213,9 @@
     <string name="history_clear_day_confirm_title_format">Effacer %1$s ?</string>
     <string name="history_clear_day_confirm_body">Ceci supprime les points enregistrés localement pour cette journée. Les autres jours ne sont pas affectés.</string>
     <string name="history_dialog_clear_button">Effacer</string>
+    <string name="history_delete_point_content_description">Supprimer ce point</string>
+    <string name="history_delete_point_confirm_title">Supprimer ce point ?</string>
+    <string name="history_delete_point_confirm_body">Ceci supprime ce point GPS de l\'historique local. Les autres points ne sont pas affectés.</string>
     <string name="history_reassign_dialog_title">Réattribuer les points</string>
     <string name="history_reassign_body_format">Déplace tous les points de « %1$s » vers l\'appareil choisi. C\'est un simple changement d\'étiquette — aucune donnée n\'est supprimée, et tu peux les réattribuer à nouveau à tout moment.</string>
     <string name="history_reassign_move_to_label">Déplacer vers</string>
@@ -288,6 +291,14 @@
     <string name="profile_cloud_sign_in_prompt">Connecte-toi pour sauvegarder et partager</string>
     <string name="profile_friends_title">Amis</string>
     <string name="profile_friends_subtitle">Demandes et liste d\'amis</string>
+    <string name="profile_leaderboard_title">Classement</string>
+    <string name="profile_leaderboard_subtitle">Consulte ton classement</string>
+    <string name="profile_level_format">Niveau %1$d</string>
+    <string name="profile_xp_progress_format">%1$d / %2$d XP</string>
+    <plurals name="profile_streak_days">
+        <item quantity="one">%1$d jour de série</item>
+        <item quantity="other">%1$d jours de série</item>
+    </plurals>
     <string name="profile_garage_section_label">Garage</string>
     <string name="profile_pick_favorite_hint">Choisis une voiture favorite dans le Garage pour la mettre en avant ici</string>
     <string name="profile_all_cars_title">Toutes les voitures</string>
@@ -430,6 +441,18 @@
     <string name="visibility_public_desc">Toute personne ayant un compte peut voir les éléments que tu marques comme partagés.</string>
     <string name="feed_scope_friends_label">Amis seulement</string>
     <string name="feed_scope_everyone_label">Tout le monde</string>
+    <string name="leaderboard_visibility_private_label">Moi seulement</string>
+    <string name="leaderboard_visibility_private_desc">Tu n\'apparais sur le classement de personne d\'autre, mais tu peux toujours voir ton propre rang.</string>
+    <string name="leaderboard_visibility_friends_label">Amis seulement</string>
+    <string name="leaderboard_visibility_friends_desc">Seules les personnes que tu as ajoutées comme amis peuvent voir ton niveau et ton XP sur le classement.</string>
+    <string name="leaderboard_visibility_public_label">Tout le monde</string>
+    <string name="leaderboard_visibility_public_desc">Toute personne ayant un compte peut voir ton niveau et ton XP sur le classement.</string>
+
+    <!-- ===== ui/leaderboard/LeaderboardScreen.kt ===== -->
+    <string name="leaderboard_scope_friends_label">Amis seulement</string>
+    <string name="leaderboard_scope_everyone_label">Tout le monde</string>
+    <string name="leaderboard_xp_format">%1$d XP</string>
+    <string name="leaderboard_empty">Personne à afficher pour l\'instant — ajoute des amis ou passe sur Tout le monde.</string>
     <string name="sync_category_cars_label">Voitures</string>
     <string name="sync_category_cars_desc">Ton garage : marques, modèles, kilométrage, modifications. Les photos restent toujours sur ce téléphone.</string>
     <string name="sync_category_events_label">Événements</string>
@@ -455,6 +478,8 @@
     <string name="cloud_settings_visibility_label">Qui peut voir ce que tu partages</string>
     <string name="cloud_settings_visibility_hint">S\'applique uniquement aux éléments que tu marques individuellement comme partagés (une voiture, un événement). Ton historique GPS et tes statistiques ne sont jamais visibles par personne, quel que soit le réglage.</string>
     <string name="cloud_settings_feed_scope_label">Ton Fil affiche</string>
+    <string name="cloud_settings_leaderboard_visibility_label">Qui peut te voir sur le classement</string>
+    <string name="cloud_settings_leaderboard_visibility_hint">Indépendant de qui peut voir ce que tu partages ci-dessus — tu peux figurer sur le classement tout en gardant le reste privé, ou vice versa.</string>
     <string name="cloud_settings_profile_sections_label">Sur ta page de profil</string>
     <string name="cloud_settings_profile_sections_hint">Désactivé par défaut. Un ami visitant ton profil ne voit rien ici tant que tu n\'actives pas une section — même si elle est déjà sauvegardée, et même en réglage « Tout le monde ».</string>
     <string name="cloud_settings_sync_label">Synchronisation</string>
@@ -533,6 +558,7 @@
     <!-- ===== ui/nav/Destinations.kt / CompanionNavHost.kt ===== -->
     <string name="nav_title_devices">Gérer les voitures</string>
     <string name="nav_title_bluetooth_trigger">Déclencheur radar</string>
+    <string name="nav_title_settings">Paramètres</string>
     <string name="nav_title_car_detail">Voiture</string>
     <string name="nav_title_event_detail">Événement</string>
     <string name="nav_title_password_reset">Réinitialiser le mot de passe</string>
@@ -576,6 +602,14 @@
     <string name="bt_trigger_grant_permission">Accorder la permission</string>
     <string name="bt_trigger_bluetooth_off">Le Bluetooth est désactivé — active-le pour voir tes appareils appairés.</string>
     <string name="bt_trigger_no_paired_devices">Aucun appareil Bluetooth appairé trouvé. Appaire d\'abord ta voiture, dans les réglages Bluetooth du système.</string>
+
+    <!-- ===== ui/settings/SettingsScreen.kt (dev) ===== -->
+    <string name="settings_background_section_label">Activité en arrière-plan</string>
+    <string name="settings_background_section_hint">Les deux sont activés par défaut. Désactiver l\'un d\'eux permet d\'économiser la batterie, mais la fonctionnalité ne sera plus active lorsque l\'app est fermée ou en arrière-plan.</string>
+    <string name="settings_firebase_listeners_label">Notifications au démarrage du véhicule</string>
+    <string name="settings_firebase_listeners_hint">Reçois une notification — et lance automatiquement le suivi radar — lorsque ta voiture signale son démarrage, même si l\'application est fermée.</string>
+    <string name="settings_background_radar_label">Vérification des radars en arrière-plan</string>
+    <string name="settings_background_radar_hint">Effectue la détection des radars et émet des alertes lors de la connexion à la voiture (Bluetooth ou Android Auto), y compris lorsque l\'application est en arrière-plan.</string>
 
     <!-- ===== data/model/RadarType.kt ===== -->
     <string name="radar_type_fixed">Fixe</string>
