@@ -20,6 +20,7 @@ plugins {
 // Set both in local.properties (gitignored):
 //   supabase.url=https://<project>.supabase.co
 //   supabase.anonKey=<anon key>
+//   carto.apiKey=<your carto API key>
 val supabaseProps = Properties().apply {
     rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) }
 }
@@ -41,6 +42,7 @@ android {
         // "cloud disabled" and stays a fully working offline recorder.
         buildConfigField("String", "SUPABASE_URL", "\"${supabaseProp("supabase.url")}\"")
         buildConfigField("String", "SUPABASE_ANON_KEY", "\"${supabaseProp("supabase.anonKey")}\"")
+        buildConfigField("String", "CARTO_API_KEY", "\"${supabaseProp("carto.apiKey")}\"")
         // Bumping this string forces every user to re-accept the terms on next launch.
         buildConfigField("String", "TERMS_VERSION", "\"2026-08-03\"")
 
