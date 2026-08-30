@@ -5,10 +5,5 @@
         android:startColor="@color/neon_lime"
         android:endColor="#00C6FF3D"
         android:angle="0" />
-    <corners
-        android:topLeftRadius="14dp"
-        android:topRightRadius="14dp"
-        android:bottomLeftRadius="0dp"
-        android:bottomRightRadius="0dp" />
+    <corners android:radius="2dp" />
 </shape>
-
