@@ -294,6 +294,7 @@
     <string name="profile_friends_subtitle">Anfragen und Freundesliste</string>
     <string name="profile_leaderboard_title">Bestenliste</string>
     <string name="profile_leaderboard_subtitle">Sieh deinen Rang</string>
+    <string name="profile_settings_subtitle">Einstellungen und Anzeige</string>
     <string name="profile_level_format">Level %1$d</string>
     <string name="profile_xp_progress_format">%1$d / %2$d XP</string>
     <plurals name="profile_streak_days">
@@ -604,13 +605,18 @@
     <string name="bt_trigger_bluetooth_off">Bluetooth ist aus — schalte es ein, um deine gekoppelten Geräte zu sehen.</string>
     <string name="bt_trigger_no_paired_devices">Keine gekoppelten Bluetooth-Geräte gefunden. Koppel zuerst dein Auto, in den System-Bluetooth-Einstellungen.</string>
 
-    <!-- ===== ui/settings/SettingsScreen.kt (dev) ===== -->
+    <!-- ===== ui/settings/SettingsScreen.kt ===== -->
+    <string name="settings_section_display">Anzeige</string>
+    <string name="settings_display_section_hint">Passe das Layout und die sichtbaren Elemente an.</string>
+    <string name="settings_display_top_bar_title">Obere Leiste</string>
+    <string name="settings_display_top_bar_desc">Obere Leiste mit Fahrzeugauswahl und Verknüpfungen auf den Hauptbildschirmen anzeigen.</string>
+    <string name="settings_display_no_options">Keine Anzeigeoptionen verfügbar.</string>
     <string name="settings_background_section_label">Hintergrundaktivität</string>
-    <string name="settings_background_section_hint">Beides ist standardmäßig aktiviert. Das Deaktivieren kann Akku sparen, führt jedoch dazu, dass die Funktion bei geschlossener oder im Hintergrund laufender App nicht funktioniert.</string>
-    <string name="settings_firebase_listeners_label">Push-Benachrichtigung bei Fahrzeugstart</string>
-    <string name="settings_firebase_listeners_hint">Erhalte eine Benachrichtigung — und starte die Radar-Verfolgung automatisch —, wenn dein Auto meldet, dass es gestartet wurde, auch bei geschlossener App.</string>
-    <string name="settings_background_radar_label">Radar-Überprüfung im Hintergrund</string>
-    <string name="settings_background_radar_hint">Führe Radar-Annäherungsprüfungen und Warnungen durch, während eine Verbindung zum Auto besteht (Bluetooth oder Android Auto), auch wenn diese App im Hintergrund läuft.</string>
+    <string name="settings_background_section_hint">Beide sind standardmäßig aktiviert. Das Deaktivieren spart Akku, führt jedoch dazu, dass diese Funktion bei geschlossener App oder im Hintergrund nicht funktioniert.</string>
+    <string name="settings_firebase_listeners_label">Benachrichtigung beim Fahrzeugstart</string>
+    <string name="settings_firebase_listeners_hint">Erhalte eine Benachrichtigung — und starte die Radarüberwachung automatisch —, wenn dein Auto meldet, dass es gestartet wurde, selbst wenn diese App geschlossen ist.</string>
+    <string name="settings_background_radar_label">Radarüberwachung im Hintergrund</string>
+    <string name="settings_background_radar_hint">Führe Radarwarnungen durch, während das Handy mit dem Auto verbunden ist (Bluetooth oder Android Auto), auch im Hintergrund.</string>
 
     <!-- ===== data/model/RadarType.kt ===== -->
     <string name="radar_type_fixed">Fest</string>
@@ -638,6 +644,8 @@
     <!-- ===== ui/nav/CompanionNavHost.kt ===== -->
     <string name="nav_no_car_selected">Noch kein Auto ausgewählt</string>
     <string name="nav_switch_car_content_description">Auto wechseln</string>
+    <string name="dev_hide_top_bar">Obere Leiste ausblenden</string>
+    <string name="dev_show_top_bar">Obere Leiste anzeigen</string>
 
     <!-- ===== car/LocalTrackingService.kt ===== -->
     <string name="local_tracking_notification_title">Deine Position wird aufgezeichnet</string>

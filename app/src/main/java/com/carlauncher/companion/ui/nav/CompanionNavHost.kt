@@ -75,6 +75,7 @@ import com.carlauncher.companion.ui.garage.GarageScreen
 import com.carlauncher.companion.ui.history.HistoryScreen
 import com.carlauncher.companion.ui.map.MapScreen
 import com.carlauncher.companion.ui.profile.ProfileScreen
+import com.carlauncher.companion.ui.settings.SettingsScreen
 import com.carlauncher.companion.ui.share.EventShareScreen
 import com.carlauncher.companion.ui.share.ShareScreen
 import com.carlauncher.companion.ui.stats.StatsScreen
@@ -144,10 +145,12 @@ fun CompanionNavHost(
     val currentRoute = backStackEntry?.destination?.route
     val detailTitle = detailTitles[currentRoute]
     val selectedDevice = devices.firstOrNull { it.deviceId == selectedDeviceId }
+    val betaTopBarState = rememberBetaTopBarState()
+    val showTopBar = detailTitle != null || (betaTopBarState.isAvailable && betaTopBarState.isTopBarEnabled)
 
     Scaffold(
         topBar = {
-            if (detailTitle != null || showMainTopBar) {
+            if (showTopBar) {
                 TopAppBar(
                     navigationIcon = {
                         if (detailTitle != null && currentRoute !in noBackRoutes) {
@@ -316,6 +319,7 @@ fun CompanionNavHost(
                     onOpenCloud = { navController.navigate(Destination.Auth.route) { launchSingleTop = true } },
                     onOpenFriends = { navController.navigate(Destination.Friends.route) { launchSingleTop = true } },
                     onOpenLeaderboard = { navController.navigate(Destination.Leaderboard.route) { launchSingleTop = true } },
+                    onOpenSettings = { navController.navigate(Destination.Settings.route) { launchSingleTop = true } },
                 )
             }
             composable(Destination.Garage.route) {
@@ -482,6 +486,12 @@ fun CompanionNavHost(
                     cloudSyncManager = container.cloudSyncManager,
                     onDone = { navController.popBackStack() },
                     onShare = { id -> navController.navigate(Destination.ShareEvent.build(id)) },
+                )
+            }
+            composable(Destination.Settings.route) {
+                SettingsScreen(
+                    container = container,
+                    betaTopBarState = betaTopBarState,
                 )
             }
         }

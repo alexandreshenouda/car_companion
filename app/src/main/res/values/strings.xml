@@ -294,6 +294,7 @@
     <string name="profile_friends_subtitle">Requests and friends list</string>
     <string name="profile_leaderboard_title">Leaderboard</string>
     <string name="profile_leaderboard_subtitle">See how you rank</string>
+    <string name="profile_settings_subtitle">Preferences and display options</string>
     <string name="profile_level_format">Level %1$d</string>
     <string name="profile_xp_progress_format">%1$d / %2$d XP</string>
     <plurals name="profile_streak_days">
@@ -604,7 +605,12 @@
     <string name="bt_trigger_bluetooth_off">Bluetooth is off — turn it on to see your paired devices.</string>
     <string name="bt_trigger_no_paired_devices">No paired Bluetooth devices found. Pair your car first, in the system Bluetooth settings.</string>
 
-    <!-- ===== ui/settings/SettingsScreen.kt (dev) ===== -->
+    <!-- ===== ui/settings/SettingsScreen.kt ===== -->
+    <string name="settings_section_display">Display</string>
+    <string name="settings_display_section_hint">Customize interface layout and visible elements.</string>
+    <string name="settings_display_top_bar_title">Top bar</string>
+    <string name="settings_display_top_bar_desc">Show the top bar with car selection, Bluetooth trigger, and device management on main screens.</string>
+    <string name="settings_display_no_options">No display customization options available.</string>
     <string name="settings_background_section_label">Background activity</string>
     <string name="settings_background_section_hint">Both are on by default. Turning either off can save battery at the cost of that feature not working while the app is closed or backgrounded.</string>
     <string name="settings_firebase_listeners_label">Car-started push notifications</string>
@@ -638,6 +644,8 @@
     <!-- ===== ui/nav/CompanionNavHost.kt ===== -->
     <string name="nav_no_car_selected">No car selected yet</string>
     <string name="nav_switch_car_content_description">Switch car</string>
+    <string name="dev_hide_top_bar">Hide top bar</string>
+    <string name="dev_show_top_bar">Show top bar</string>
 
     <!-- ===== car/LocalTrackingService.kt ===== -->
     <string name="local_tracking_notification_title">Recording your location</string>

@@ -2,6 +2,7 @@ package com.carlauncher.companion.ui.nav
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import com.carlauncher.companion.data.AppContainer
@@ -11,7 +12,14 @@ import com.carlauncher.companion.data.AppContainer
  * and the Bluetooth radar trigger aren't part of this build, so there are no routes to register
  * and no top-bar icons to show. The only car is this phone, seeded at startup and auto-selected.
  */
-val showMainTopBar: Boolean = false
+data class BetaTopBarState(
+    val isAvailable: Boolean = false,
+    val isTopBarEnabled: Boolean = false,
+    val setTopBarEnabled: (Boolean) -> Unit = {},
+)
+
+@Composable
+fun rememberBetaTopBarState(): BetaTopBarState = remember { BetaTopBarState() }
 
 @Suppress("UNUSED_PARAMETER")
 fun NavGraphBuilder.betaDestinations(navController: NavHostController, container: AppContainer) = Unit
@@ -19,6 +27,10 @@ fun NavGraphBuilder.betaDestinations(navController: NavHostController, container
 @Composable
 @Suppress("UNUSED_PARAMETER")
 fun RowScope.BetaTopBarIcons(navController: NavHostController) = Unit
+
+@Composable
+@Suppress("UNUSED_PARAMETER")
+fun BetaBackgroundSettings(container: AppContainer) = Unit
 
 @Composable
 @Suppress("UNUSED_PARAMETER")

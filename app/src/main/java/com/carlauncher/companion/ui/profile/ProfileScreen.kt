@@ -31,6 +31,7 @@ import androidx.compose.material.icons.filled.Leaderboard
 import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.filled.People
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -99,6 +100,7 @@ fun ProfileScreen(
     onOpenCloud: () -> Unit,
     onOpenFriends: () -> Unit,
     onOpenLeaderboard: () -> Unit,
+    onOpenSettings: () -> Unit,
 ) {
     val cloudState by authRepository.sessionState
         .collectAsStateWithLifecycle(initialValue = CloudSessionState.Loading)
@@ -249,6 +251,16 @@ fun ProfileScreen(
                 }
             }
         }
+
+        // 7. Settings
+        Spacer(Modifier.height(14.dp))
+        NavigationTile(
+            icon = Icons.Filled.Settings,
+            accent = AccentProfile,
+            title = stringResource(R.string.nav_title_settings),
+            subtitle = stringResource(R.string.profile_settings_subtitle),
+            onClick = onOpenSettings,
+        )
     }
 
     if (editingProfile) {

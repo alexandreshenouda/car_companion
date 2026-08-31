@@ -294,6 +294,7 @@
     <string name="profile_friends_subtitle">Demandes et liste d\'amis</string>
     <string name="profile_leaderboard_title">Classement</string>
     <string name="profile_leaderboard_subtitle">Consulte ton classement</string>
+    <string name="profile_settings_subtitle">Préférences et affichage</string>
     <string name="profile_level_format">Niveau %1$d</string>
     <string name="profile_xp_progress_format">%1$d / %2$d XP</string>
     <plurals name="profile_streak_days">
@@ -604,7 +605,12 @@
     <string name="bt_trigger_bluetooth_off">Le Bluetooth est désactivé — active-le pour voir tes appareils appairés.</string>
     <string name="bt_trigger_no_paired_devices">Aucun appareil Bluetooth appairé trouvé. Appaire d\'abord ta voiture, dans les réglages Bluetooth du système.</string>
 
-    <!-- ===== ui/settings/SettingsScreen.kt (dev) ===== -->
+    <!-- ===== ui/settings/SettingsScreen.kt ===== -->
+    <string name="settings_section_display">Affichage</string>
+    <string name="settings_display_section_hint">Personnalise la disposition et les éléments visibles de l\'interface.</string>
+    <string name="settings_display_top_bar_title">Barre supérieure</string>
+    <string name="settings_display_top_bar_desc">Afficher la barre supérieure avec la sélection de voiture et les raccourcis sur les écrans principaux.</string>
+    <string name="settings_display_no_options">Aucune option d\'affichage disponible.</string>
     <string name="settings_background_section_label">Activité en arrière-plan</string>
     <string name="settings_background_section_hint">Les deux sont activés par défaut. Désactiver l\'un d\'eux permet d\'économiser la batterie, mais la fonctionnalité ne sera plus active lorsque l\'app est fermée ou en arrière-plan.</string>
     <string name="settings_firebase_listeners_label">Notifications au démarrage du véhicule</string>
@@ -638,6 +644,8 @@
     <!-- ===== ui/nav/CompanionNavHost.kt ===== -->
     <string name="nav_no_car_selected">Aucune voiture sélectionnée</string>
     <string name="nav_switch_car_content_description">Changer de voiture</string>
+    <string name="dev_hide_top_bar">Masquer la barre supérieure</string>
+    <string name="dev_show_top_bar">Afficher la barre supérieure</string>
 
     <!-- ===== car/LocalTrackingService.kt ===== -->
     <string name="local_tracking_notification_title">Enregistrement de ta position</string>
