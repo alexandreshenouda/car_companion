@@ -672,6 +672,13 @@
     <string name="fuel_e10">E10</string>
     <string name="fuel_e85">E85</string>
     <string name="fuel_gplc">GPLc</string>
+    <string name="fuel_diesel_premium">Diesel Premium</string>
+    <string name="fuel_adblue">AdBlue</string>
+    <string name="fuel_cng">CNG</string>
+    <string name="fuel_hvo100">HVO100</string>
+    <string name="fuel_h2">H₂</string>
+    <string name="gas_station_cluster_count">%1$d stations</string>
+
     <string name="gas_station_automate_24_yes">24/24: Yes</string>
     <string name="gas_station_automate_24_no">24/24: No</string>
     <string name="gas_station_type_highway">Highway station</string>

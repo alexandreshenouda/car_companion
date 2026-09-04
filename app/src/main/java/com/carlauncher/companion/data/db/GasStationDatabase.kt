@@ -115,7 +115,15 @@ class GasStationDatabase(context: Context) : SQLiteOpenHelper(context, DATABASE_
         limit: Int = 200,
     ): List<GasStation> {
         val db = readableDatabase
-        val fuelFilterClause = if (fuelType != null) "AND ${fuelType.code}_prix IS NOT NULL" else ""
+        // Only apply the column filter for fuels that have a price column in this DB.
+        // TCS-only fuels (DIESEL_PREMIUM, ADBLUE, CNG, HVO100, H2) have hasOfficialDbColumn=false
+        // and would generate a broken "WHERE _prix IS NOT NULL" clause otherwise.
+        val fuelFilterClause = if (fuelType != null && fuelType.hasOfficialDbColumn) {
+            "AND ${fuelType.code}_prix IS NOT NULL"
+        } else {
+            ""
+        }
+
         val sql = """
             SELECT id, lat, lon, address, city, postal_code, pop, automate_24,
                    gazole_prix, sp95_prix, sp98_prix, e10_prix, e85_prix, gplc_prix,

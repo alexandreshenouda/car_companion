@@ -232,6 +232,7 @@ fun CompanionNavHost(
                         trackRepository = container.trackRepository,
                         deviceRepository = container.deviceRepository,
                         gasStationRepository = container.gasStationRepository,
+                        swissGasStationRepository = container.swissGasStationRepository,
                         focusRequestHolder = container.mapFocusRequestHolder,
                         beta = container.beta,
                         onShare = { range ->
@@ -243,6 +244,7 @@ fun CompanionNavHost(
                             }
                         },
                     )
+
                 }
             }
             composable(Destination.History.route) {

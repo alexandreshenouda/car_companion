@@ -97,6 +97,13 @@ private const val PHONE_MARKER_TINT = 0xFF4285F4.toInt()
 /** Zoom the map snaps to whenever the user explicitly asks to be taken somewhere. */
 private const val FOCUS_ZOOM = 16.0
 
+/** Zoom level to expand a cluster into its contained individual stations. */
+private const val CLUSTER_EXPAND_ZOOM = 15.0
+
+/** Minimum zoom level to show Swiss aggregated clusters. */
+private const val CLUSTER_MIN_ZOOM = 7.5
+
+
 /** A fix older than this is considered stale enough that any newer one supersedes it. */
 private const val LOCATION_STALE_MS = 30_000L
 
@@ -144,10 +151,12 @@ fun MapScreen(
     trackRepository: TrackRepository,
     deviceRepository: DeviceRepository,
     gasStationRepository: com.carlauncher.companion.data.repo.GasStationRepository,
+    swissGasStationRepository: com.carlauncher.companion.data.repo.SwissGasStationRepository,
     focusRequestHolder: MapFocusRequestHolder,
     beta: BetaContainer,
     onShare: (HistoryRange) -> Unit,
     onOpenSettings: () -> Unit = {},
+
 ) {
     val context = LocalContext.current
     val isLocalDevice = deviceId == DeviceRepository.LOCAL_DEVICE_ID
@@ -249,10 +258,10 @@ fun MapScreen(
     //    fire afterwards and yank the map back off whatever the user just asked for (that one
     //    triggers on latestPoint's *first* arrival, which can easily be seconds after the app
     //    opened, i.e. right after the user panned around and hit recenter).
-    val moveCameraTo: (GeoPoint) -> Unit = { point ->
+    fun moveCameraTo(point: GeoPoint, zoom: Double = FOCUS_ZOOM) {
         hasCenteredOnce = true
         cameraSerial += 1
-        cameraRequest = CameraRequest(point, FOCUS_ZOOM, cameraSerial)
+        cameraRequest = CameraRequest(point, zoom, cameraSerial)
     }
 
     LaunchedEffect(cameraRequest) {
@@ -270,7 +279,16 @@ fun MapScreen(
     // Radars (and the background-location grant they need) exist in the dev flavor only — this
     // returns an inert state object in prod.
     val radarOverlays = rememberRadarOverlays(beta, mapView, mapMoveEvents, hasLocationPermission)
-    val gasStationOverlays = rememberGasStationOverlays(gasStationRepository, mapView, mapMoveEvents)
+    val gasStationOverlays = rememberGasStationOverlays(
+        repository = gasStationRepository,
+        swissRepository = swissGasStationRepository,
+        mapView = mapView,
+        mapMoveEvents = mapMoveEvents,
+        getZoom = { mapView.zoomLevelDouble.toInt() },
+        onClusterExpand = { point -> moveCameraTo(point, CLUSTER_EXPAND_ZOOM) },
+    )
+
+
     LaunchedEffect(gasStationOverlays.isEnabled) {
         if (gasStationOverlays.isEnabled) {
             activeTopTile = TopTile.GAS_STATIONS
@@ -621,9 +639,28 @@ fun MapScreen(
                             followCar = false
                             focusedPoint = null
                             awaitingLocationFix = false
-                            moveCameraTo(GeoPoint(station.lat, station.lon))
-                            gasStationOverlays.showStationInfoWindow(station)
+                            if (station.isCluster) {
+                                val currentCenter = mapView.mapCenter
+                                val isCentered = Math.abs(currentCenter.latitude - station.lat) < 0.002 &&
+                                    Math.abs(currentCenter.longitude - station.lon) < 0.002
+                                if (isCentered && gasStationOverlays.lastFocusedClusterId == station.id) {
+                                    // Second click on centered cluster: zoom in to display contained stations
+                                    gasStationOverlays.lastFocusedClusterId = null
+                                    moveCameraTo(GeoPoint(station.lat, station.lon), CLUSTER_EXPAND_ZOOM)
+                                } else {
+                                    // First click: center on cluster at current zoom to display this cluster
+                                    gasStationOverlays.lastFocusedClusterId = station.id
+                                    val targetZoom = maxOf(mapView.zoomLevelDouble, CLUSTER_MIN_ZOOM)
+                                    moveCameraTo(GeoPoint(station.lat, station.lon), targetZoom)
+                                    gasStationOverlays.showStationInfoWindow(station)
+                                }
+                            } else {
+                                gasStationOverlays.lastFocusedClusterId = null
+                                moveCameraTo(GeoPoint(station.lat, station.lon), FOCUS_ZOOM)
+                                gasStationOverlays.showStationInfoWindow(station)
+                            }
                         },
+
                     )
                 }
             }

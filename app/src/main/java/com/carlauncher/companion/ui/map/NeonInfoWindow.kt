@@ -69,7 +69,7 @@ class NeonInfoWindow(mapView: MapView) : InfoWindow(R.layout.view_neon_map_bubbl
         }
 
         val station = (overlay as? Marker)?.relatedObject as? GasStation
-        if (station != null) {
+        if (station != null && !station.isCluster) {
             navButton?.visibility = View.VISIBLE
             navButton?.setOnClickListener {
                 close()
@@ -96,6 +96,7 @@ class NeonInfoWindow(mapView: MapView) : InfoWindow(R.layout.view_neon_map_bubbl
             navButton?.visibility = View.GONE
             navButton?.setOnClickListener(null)
         }
+
     }
 
     override fun onClose() {

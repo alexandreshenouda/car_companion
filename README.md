@@ -75,36 +75,41 @@ flavors](#build-flavors-dev-and-prod).
   (`data/bluetooth/BluetoothTriggerStore.kt`).
 - **Gas stations & fuel prices** (`ui/map/GasStationControls.kt`,
   `ui/map/GasStationPriceTable.kt`, `data/repo/GasStationRepository.kt`,
-  `data/db/GasStationDatabase.kt`, both flavors) — real-time prices for ~10,000
-  French service stations from the official French government feed (DGCCRF /
-  data.gouv.fr `prix-des-carburants-en-france-flux-instantane-v2`). Downloaded as
-  streamed GeoJSON and indexed in a dedicated SQLite database (`gas_stations.db`)
-  with spatial indices on `(lat, lon)` and point-of-interest type (`pop`) for
-  fast bounding-box queries as the map pans and zooms.
-  - **Map markers & fuel filter** — markers render dynamically on zoom (zoom ≥ 11.5)
-    with custom neon amber station icons. A bottom-bar dropdown pill ("Stations service" /
-    "Gas stations") selects the fuel to highlight (Gazole, SP95, SP98, E10, E85,
-    GPLc, or All fuels) or hides station markers.
-  - **Info window & navigation** — tapping a station opens a neon dark bubble
-    displaying the full price list (selected fuel highlighted in neon amber),
-    24/24 automated pump availability, highway vs road identification, and last
-    price update timestamp. A "Y aller" button launches turn-by-turn navigation directly
-    in Google Maps, Waze, or any external GPS app via a `geo:` intent with web fallback.
-  - **Single open bubble & HUD tile mutual exclusion** — opening any marker popup
-    automatically dismisses previous ones so only one bubble is ever open. On the top-left
-    HUD, the Speed zones legend and the Gas stations table mutually exclude each other:
-    opening one collapses the other into a compact floating action button.
-  - **Top-5 cheapest prices table** — an on-map HUD card ranking the 5 cheapest
-    visible stations in the current viewport for the active fuel (or Gazole by
-    default when All fuels is selected). Tapping any station in the list flies the
-    camera directly to the station at zoom 16.0 and opens its info bubble.
-  - **Daily background sync** — on the first app launch of each calendar day,
-    `GasStationRepository.checkDailySync()` automatically fetches updated prices in
-    the background and displays a Toast notification once done.
-  - **Settings management & empty state** — manual "Mettre à jour les données"
-    button in Settings with live download and indexing progress. If the map button
-    is tapped before any data has ever been downloaded, an alert dialog informs the
-    user and offers a direct button to navigate into Settings.
+  `data/repo/SwissGasStationRepository.kt`, `data/db/GasStationDatabase.kt`, both flavors)
+  — two complementary live data sources that activate automatically depending on the
+  map viewport:
+  - **French stations** (~10,000) — downloaded from the official DGCCRF / data.gouv.fr
+    feed (`prix-des-carburants-en-france-flux-instantane-v2`), stored in a dedicated SQLite
+    database (`gas_stations.db`) with spatial indices on `(lat, lon)` for fast bounding-box
+    queries. Daily background auto-sync on first app launch of the day + Toast notification.
+    Settings section with manual update button and download/indexing progress.
+  - **Swiss stations** — live per-viewport HTTP POST to the TCS `benzinGetStationByBbox` API
+    (`europe-west6-tcs-digitalbackend.cloudfunctions.net`). No local storage — results are
+    purely in-memory. The API returns clusters at low zoom (circular count badge marker) and
+    individual stations at high zoom. An automatic bounding-box guard against Swiss territory
+    (lat 45.8–47.9, lon 5.9–10.5) skips the HTTP call entirely when the map is in France.
+    Prices displayed in CHF with fiability and cheapest-station flag.
+  - **Map markers & fuel filter** — markers render dynamically on zoom (individual stations
+    at zoom ≥ 11.5; Swiss clusters from zoom ≥ 7.5). A dropdown pill selects the fuel (French fuels:
+    Gazole, SP95, SP98, E10, E85, GPLc; TCS-only: Diesel Premium, AdBlue, CNG, HVO100, H₂) or hides
+    all markers. French and Swiss fetches run concurrently and results are merged. Swiss and French
+    individual stations share the exact same neon amber gas station icon; Swiss clusters show as an
+    amber circular badge with the station count.
+  - **Info window & navigation** — tapping a station opens a neon dark bubble with prices
+    (CHF for Swiss, € for French), fiability / 24h status, highway/road badge, and a "Y aller"
+    navigation button (individual stations only — clusters omit it since they have no single
+    address). Launches external GPS app via `geo:` URI.
+  - **Top-5 cheapest prices table** — on-map HUD ranking the 5 cheapest visible stations
+    for the active fuel. Tapping an individual station flies the camera to it at zoom 16.0.
+    Tapping a Swiss cluster line centers on it at the current zoom to display the cluster and its
+    info bubble; tapping the centered cluster a second time zooms in to 15.0 to expand and display
+    its contained stations (the same expansion also occurs when tapping a centered cluster map marker).
+
+  - **Single open bubble & HUD tile mutual exclusion** — one info bubble open at a time;
+    Speed zones legend and Gas stations table mutually exclude each other.
+  - **Settings management & empty state** — no-data dialog if the French button is pressed
+    before any data has ever been downloaded (Swiss always works, no download needed).
+
 - **Profile** — a bottom tab for the user's own data, separate from the
   GPS-tracked Devices list. It leads with a level & XP progress badge (including
   the active daily login streak) and the favorite car's photo hero, followed by

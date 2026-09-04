@@ -123,14 +123,30 @@ fun GasStationPriceTable(
                                         maxLines = 1,
                                         overflow = TextOverflow.Ellipsis,
                                     )
-                                    Text(
-                                        text = station.city,
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                        maxLines = 1,
-                                        overflow = TextOverflow.Ellipsis,
-                                    )
+                                    val subtitleText = when {
+                                        station.city.isNotBlank() -> station.city
+                                        station.isCluster -> when (station.fiability) {
+                                            "CONFIDENT" -> "Prix récents"
+                                            "FEW_RECENT_PRICES" -> "Peu de prix récents"
+                                            "OLD_LAST_UPDATE" -> "Prix anciens"
+                                            "OUTDATED_LAST_PRICE_UPDATE" -> "Prix obsolètes"
+                                            else -> "Suisse"
+                                        }
+                                        station.source == com.carlauncher.companion.data.model.GasStationSource.SWITZERLAND ->
+                                            station.displayName ?: station.formattedAddress ?: "Suisse"
+                                        else -> ""
+                                    }
+                                    if (subtitleText.isNotBlank()) {
+                                        Text(
+                                            text = subtitleText,
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis,
+                                        )
+                                    }
                                 }
+
                                 Spacer(Modifier.width(6.dp))
                                 Text(
                                     text = formattedPrice,

@@ -201,4 +201,147 @@ class GasStationTest {
         // Already synced today -> should not sync again
         assertFalse(shouldSync(hasData = true, lastSyncDay = today, currentDay = today))
     }
+
+    // ── Swiss / TCS additions ─────────────────────────────────────────────────
+
+    @Test
+    fun `FuelType TCS codes are mapped correctly`() {
+        assertEquals("DIESEL", FuelType.GAZOLE.tcsCode)
+        assertEquals("SP95", FuelType.SP95.tcsCode)
+        assertEquals("SP98", FuelType.SP98.tcsCode)
+        assertEquals("E85", FuelType.E85.tcsCode)
+        assertEquals("GPL", FuelType.GPLC.tcsCode)
+        assertNull(FuelType.E10.tcsCode) // No TCS equivalent
+        assertEquals("DIESEL_PREMIUM", FuelType.DIESEL_PREMIUM.tcsCode)
+        assertEquals("ADBLUE", FuelType.ADBLUE.tcsCode)
+        assertEquals("CNG", FuelType.CNG.tcsCode)
+        assertEquals("HVO100", FuelType.HVO100.tcsCode)
+        assertEquals("H2", FuelType.H2.tcsCode)
+    }
+
+    @Test
+    fun `hasOfficialDbColumn is true only for French fuel types`() {
+        assertTrue(FuelType.GAZOLE.hasOfficialDbColumn)
+        assertTrue(FuelType.SP95.hasOfficialDbColumn)
+        assertTrue(FuelType.SP98.hasOfficialDbColumn)
+        assertTrue(FuelType.E10.hasOfficialDbColumn)
+        assertTrue(FuelType.E85.hasOfficialDbColumn)
+        assertTrue(FuelType.GPLC.hasOfficialDbColumn)
+        // TCS-only fuels must NOT have a DB column
+        assertFalse(FuelType.DIESEL_PREMIUM.hasOfficialDbColumn)
+        assertFalse(FuelType.ADBLUE.hasOfficialDbColumn)
+        assertFalse(FuelType.CNG.hasOfficialDbColumn)
+        assertFalse(FuelType.HVO100.hasOfficialDbColumn)
+        assertFalse(FuelType.H2.hasOfficialDbColumn)
+    }
+
+    @Test
+    fun `swissSupported includes all fuels with a tcsCode`() {
+        val swiss = FuelType.swissSupported
+        assertTrue(swiss.contains(FuelType.GAZOLE))
+        assertTrue(swiss.contains(FuelType.SP95))
+        assertTrue(swiss.contains(FuelType.DIESEL_PREMIUM))
+        assertFalse(swiss.contains(FuelType.E10)) // E10 has no TCS equivalent
+    }
+
+    @Test
+    fun `Swiss cluster title and shortName show point count`() {
+        val cluster = GasStation(
+            id = 235L,
+            lat = 46.20,
+            lon = 6.14,
+            address = "",
+            city = "",
+            postalCode = "",
+            pop = null,
+            automate24 = false,
+            prices = mapOf(FuelType.SP95 to 2.02),
+            availableFuels = emptyList(),
+            lastUpdate = null,
+            source = GasStationSource.SWITZERLAND,
+            isCluster = true,
+            pointCount = 54,
+            fiability = "FEW_RECENT_PRICES",
+        )
+        assertEquals("54 stations", cluster.title)
+        assertEquals("54 stations", cluster.shortName)
+        assertFalse(cluster.isHighway)
+    }
+
+    @Test
+    fun `Swiss individual station title uses brand then displayName`() {
+        val branded = GasStation(
+            id = 1L,
+            lat = 46.50,
+            lon = 6.31,
+            address = "",
+            city = "",
+            postalCode = "",
+            pop = null,
+            automate24 = false,
+            prices = mapOf(FuelType.SP98 to 2.08),
+            availableFuels = listOf("SP98"),
+            lastUpdate = null,
+            source = GasStationSource.SWITZERLAND,
+            isCluster = false,
+            brand = "ENI",
+            displayName = "Eni Gimel",
+            formattedAddress = "Rte D'aubonne 18, 1188 Gimel",
+        )
+        assertEquals("ENI", branded.title)
+        assertEquals("Rte D'aubonne 18, 1188 Gimel", branded.subtitle)
+        assertEquals("ENI", branded.shortName)
+
+        val unnamed = branded.copy(brand = null)
+        assertEquals("Eni Gimel", unnamed.title)
+
+        val brandUndefined = branded.copy(brand = "UNDEFINED", displayName = "Station Simond")
+        // In the parsed model brand would be null for "UNDEFINED" (filtered by repo); shortName falls back to displayName
+        assertEquals("UNDEFINED", brandUndefined.title) // direct model test; repo strips it
+    }
+
+    @Test
+    fun `Swiss subdescription shows fiability and cheapest flag`() {
+        val cheap = GasStation(
+            id = 427L,
+            lat = 46.39,
+            lon = 6.22,
+            address = "",
+            city = "",
+            postalCode = "",
+            pop = null,
+            automate24 = false,
+            prices = mapOf(FuelType.SP95 to 1.97),
+            availableFuels = emptyList(),
+            lastUpdate = null,
+            source = GasStationSource.SWITZERLAND,
+            isCluster = true,
+            pointCount = 16,
+            fiability = "FEW_RECENT_PRICES",
+            isCheapest = true,
+        )
+        val sub = cheap.buildSubDescriptionHtml()
+        assertTrue(sub.contains("Moins cher"))
+        assertTrue(sub.contains("Peu de prix récents"))
+    }
+
+    @Test
+    fun `Swiss formattedPrice uses CHF currency`() {
+        val station = GasStation(
+            id = 1L,
+            lat = 46.5,
+            lon = 6.3,
+            address = "",
+            city = "",
+            postalCode = "",
+            pop = null,
+            automate24 = false,
+            prices = mapOf(FuelType.SP95 to 2.02),
+            availableFuels = emptyList(),
+            lastUpdate = null,
+            source = GasStationSource.SWITZERLAND,
+        )
+        assertEquals("2.02 CHF", station.formattedPrice(FuelType.SP95))
+    }
 }
+

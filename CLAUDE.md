@@ -49,19 +49,33 @@ that don't exist in the prod flavor:)
 - **Map** (`ui/map/MapScreen.kt`) — car's live position on osmdroid/dark tiles, plus
   **[dev]** radar markers (25 countries, filterable by type) and average-speed
   "Troncon" section polylines (both via the `ui/map/RadarControls.kt` seam), and
-  **gas stations & live fuel prices** (data.gouv.fr, both flavors via
+  **gas stations & live fuel prices** (data.gouv.fr + TCS Swiss API, both flavors via
   `ui/map/GasStationControls.kt`, `ui/map/GasStationPriceTable.kt`, `ui/map/NeonInfoWindow.kt`).
 - **Gas stations & fuel prices** (`ui/map/GasStationControls.kt`,
   `ui/map/GasStationPriceTable.kt`, `data/repo/GasStationRepository.kt`,
-  `data/db/GasStationDatabase.kt`, both flavors) — real-time prices for ~10,000 French
-  stations from data.gouv.fr (`prix-des-carburants-en-france-flux-instantane-v2`).
-  Indexed in dedicated SQLite (`gas_stations.db`) with spatial indices on `(lat, lon)` and `pop`.
-  Features: dynamic zoom-gated markers (≥11.5), fuel filter dropdown ("Stations service"),
-  single-popup enforcement (`closeAllInfoWindowsOn`), rich neon info bubble with prices,
-  24/24 status, highway/road badge, and "Y aller" navigation intent (`geo:` URI launching
-  external GPS apps), top-left HUD mutual exclusion (Speed legend vs top-5 cheapest stations
-  table with click-to-recenter at zoom 16.0), daily background auto-sync on first app open
-  of each day + toast, and Settings download section with no-data prompt dialog.
+  `data/repo/SwissGasStationRepository.kt`, `data/db/GasStationDatabase.kt`, both flavors)
+  — two complementary data sources that auto-activate based on viewport geography:
+  **French stations** (~10,000, offline SQLite from data.gouv.fr, indexed on `(lat, lon)` and `pop`,
+  daily background auto-sync on first app open + toast, Settings download section);
+  **Swiss stations** (live HTTP POST to TCS `benzinGetStationByBbox` API per viewport, no local
+  storage, clusters + individual stations, viewport bounding-box guard against CH bounds so no
+  spurious network call when map is in France). Both share the `GasStation` model
+  (`GasStationSource` enum distinguishes origin), the same marker layer (French and Swiss
+  individual stations: identical neon amber gas pump icon; Swiss clusters: canvas-drawn circular
+  badge with station count visible from zoom ≥ 7.5), and the same `NeonInfoWindow`.
+  Features: dynamic zoom-gated markers (≥11.5 for individual stations, ≥7.5 for Swiss clusters),
+  combined fuel filter dropdown (French fuels + TCS-only fuels DIESEL_PREMIUM/ADBLUE/CNG/HVO100/H₂),
+  `FuelType.tcsCode` / `FuelType.hasOfficialDbColumn` fields route the filter to the right
+  source, concurrent French+Swiss fetch in `fetchBothSources()`, single-popup enforcement,
+  rich neon info bubble with prices (CHF for Swiss, € for French), 24/24 status (French) /
+  fiability label + cheapest flag (Swiss), highway/road badge (French only), "Y aller"
+  navigation intent (non-cluster stations only), top-left HUD top-5 cheapest table with
+  smart click interaction (individual stations zoom to 16.0; cluster line first click centers
+  at current zoom to display the cluster with its info bubble, second click when centered
+  zooms in to 15.0 to expand and display contained stations; cluster map markers also expand
+  when tapped while centered), HUD mutual exclusion with Speed legend.
+
+
 - **History** (`ui/history/HistoryScreen.kt`) — past tracks by range (today/7d/30d/
   all), GPX export (`GpxExporter.kt`, pure build in `:shared`'s `data/repo/`, `Uri`
   writing in `:app`'s `data/repo/GpxExporterAndroid.kt`).
