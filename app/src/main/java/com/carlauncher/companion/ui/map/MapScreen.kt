@@ -100,8 +100,9 @@ private const val FOCUS_ZOOM = 16.0
 /** Zoom level to expand a cluster into its contained individual stations. */
 private const val CLUSTER_EXPAND_ZOOM = 15.0
 
-/** Minimum zoom level to show Swiss aggregated clusters. */
-private const val CLUSTER_MIN_ZOOM = 7.5
+/** Minimum zoom level to show aggregated clusters. */
+private const val CLUSTER_MIN_ZOOM = 5.5
+
 
 
 /** A fix older than this is considered stale enough that any newer one supersedes it. */

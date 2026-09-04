@@ -60,8 +60,9 @@ import org.osmdroid.views.overlay.Overlay
 private const val MAX_VISIBLE_STATIONS = 300
 // Minimum zoom level to show individual stations (prevent visual clutter when zoomed out)
 private const val INDIVIDUAL_STATION_MIN_ZOOM = 11.5
-// Minimum zoom level to show Swiss aggregated clusters (TCS returns clusters starting at zoom 8)
-private const val CLUSTER_MIN_ZOOM = 7.5
+// Minimum zoom level to show aggregated clusters
+private const val CLUSTER_MIN_ZOOM = 5.5
+
 
 // Badge marker dimensions (dp-independent; drawn into a fixed pixel bitmap)
 private const val BADGE_SIZE_PX = 72
@@ -280,8 +281,10 @@ private suspend fun fetchBothSources(
             maxLon = bounds.lonEast,
             fuelType = fuelType,
             limit = MAX_VISIBLE_STATIONS,
+            zoom = mapView.zoomLevelDouble,
         )
     }
+
     val swissDeferred = async {
         swiss.pointsForViewport(
             minLat = bounds.latSouth,

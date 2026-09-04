@@ -105,6 +105,7 @@ class GasStationRepository(
 
     /**
      * Queries gas stations within a bounding box, optionally filtering by fuel type.
+     * When [zoom] is provided and less than 11.5, returns aggregated spatial clusters.
      */
     suspend fun pointsForViewport(
         minLat: Double,
@@ -113,9 +114,15 @@ class GasStationRepository(
         maxLon: Double,
         fuelType: FuelType? = null,
         limit: Int = 200,
+        zoom: Double? = null,
     ): List<GasStation> = withContext(Dispatchers.IO) {
-        database.stationsForViewport(minLat, maxLat, minLon, maxLon, fuelType, limit)
+        if (zoom != null && zoom < 11.5) {
+            database.clustersForViewport(minLat, maxLat, minLon, maxLon, zoom, fuelType, limit)
+        } else {
+            database.stationsForViewport(minLat, maxLat, minLon, maxLon, fuelType, limit)
+        }
     }
+
 
     /**
      * Downloads the GeoJSON dataset and indexes it into the local SQLite database.

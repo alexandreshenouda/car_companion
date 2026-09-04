@@ -81,7 +81,9 @@ flavors](#build-flavors-dev-and-prod).
   - **French stations** (~10,000) — downloaded from the official DGCCRF / data.gouv.fr
     feed (`prix-des-carburants-en-france-flux-instantane-v2`), stored in a dedicated SQLite
     database (`gas_stations.db`) with spatial indices on `(lat, lon)` for fast bounding-box
-    queries. Daily background auto-sync on first app launch of the day + Toast notification.
+    queries. Under zoom 11.5, stations are automatically clusterized using dynamic grid cells
+    via SQLite `clustersForViewport` down to zoom 5.5. At zoom ≥ 11.5, individual stations are
+    displayed. Daily background auto-sync on first app launch of the day + Toast notification.
     Settings section with manual update button and download/indexing progress.
   - **Swiss stations** — live per-viewport HTTP POST to the TCS `benzinGetStationByBbox` API
     (`europe-west6-tcs-digitalbackend.cloudfunctions.net`). No local storage — results are
@@ -90,20 +92,25 @@ flavors](#build-flavors-dev-and-prod).
     (lat 45.8–47.9, lon 5.9–10.5) skips the HTTP call entirely when the map is in France.
     Prices displayed in CHF with fiability and cheapest-station flag.
   - **Map markers & fuel filter** — markers render dynamically on zoom (individual stations
-    at zoom ≥ 11.5; Swiss clusters from zoom ≥ 7.5). A dropdown pill selects the fuel (French fuels:
+    at zoom ≥ 11.5; clusters from zoom ≥ 5.5). A dropdown pill selects the fuel (French fuels:
     Gazole, SP95, SP98, E10, E85, GPLc; TCS-only: Diesel Premium, AdBlue, CNG, HVO100, H₂) or hides
     all markers. French and Swiss fetches run concurrently and results are merged. Swiss and French
-    individual stations share the exact same neon amber gas station icon; Swiss clusters show as an
+    individual stations share the exact same neon amber gas station icon; clusters show as an
     amber circular badge with the station count.
   - **Info window & navigation** — tapping a station opens a neon dark bubble with prices
     (CHF for Swiss, € for French), fiability / 24h status, highway/road badge, and a "Y aller"
     navigation button (individual stations only — clusters omit it since they have no single
     address). Launches external GPS app via `geo:` URI.
   - **Top-5 cheapest prices table** — on-map HUD ranking the 5 cheapest visible stations
-    for the active fuel. Tapping an individual station flies the camera to it at zoom 16.0.
-    Tapping a Swiss cluster line centers on it at the current zoom to display the cluster and its
-    info bubble; tapping the centered cluster a second time zooms in to 15.0 to expand and display
-    its contained stations (the same expansion also occurs when tapping a centered cluster map marker).
+    for the active fuel. Each price is underlined with a color bar indicating freshness/confidence:
+    green (< 2 days / CONFIDENT), lime (2-3 days / FEW_RECENT_PRICES), yellow (4-7 days),
+    orange (8-14 days / OLD_LAST_UPDATE), red (> 14 days / OUTDATED). Tapping an individual station
+    flies the camera to it at zoom 16.0. Tapping a cluster line (French or Swiss) centers on it at
+    the current zoom to display the cluster and its info bubble; tapping the centered cluster a
+    second time zooms in to 15.0 to expand and display its contained stations (the same expansion
+    also occurs when tapping a centered cluster map marker).
+
+
 
   - **Single open bubble & HUD tile mutual exclusion** — one info bubble open at a time;
     Speed zones legend and Gas stations table mutually exclude each other.

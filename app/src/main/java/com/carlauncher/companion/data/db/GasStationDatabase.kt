@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteStatement
 import com.carlauncher.companion.data.model.FuelType
 import com.carlauncher.companion.data.model.GasStation
+import com.carlauncher.companion.data.model.GasStationSource
+import java.util.Locale
 
 private const val DATABASE_NAME = "gas_stations.db"
 private const val DATABASE_VERSION = 1
@@ -197,8 +199,110 @@ class GasStationDatabase(context: Context) : SQLiteOpenHelper(context, DATABASE_
         return result
     }
 
+
+    /**
+     * Queries aggregated spatial clusters of gas stations within a bounding box for low zoom levels.
+     * Uses dynamic grid cell step based on the map zoom level to group nearby stations.
+     */
+    fun clustersForViewport(
+
+         minLat: Double,
+         maxLat: Double,
+         minLon: Double,
+         maxLon: Double,
+         zoom: Double,
+         fuelType: FuelType? = null,
+         limit: Int = 200,
+     ): List<GasStation> {
+         if (zoom < 5.0) return emptyList()
+
+         val db = readableDatabase
+         val fuelFilterClause = if (fuelType != null && fuelType.hasOfficialDbColumn) {
+             "AND ${fuelType.code}_prix IS NOT NULL"
+         } else {
+             ""
+         }
+
+         // Target roughly 90px grid cells on screen so cluster badges do not overlap.
+         // At zoom Z, world width (360 deg) is 256 * 2^Z pixels.
+         val degPerPixel = 360.0 / (256.0 * Math.pow(2.0, zoom.coerceIn(3.0, 14.0)))
+         val gridStep = (degPerPixel * 90.0).coerceAtLeast(0.01)
+         val stepStr = String.format(Locale.US, "%.6f", gridStep)
+
+         val sql = """
+             SELECT COUNT(*) AS pt_count,
+                    AVG(lat) AS avg_lat,
+                    AVG(lon) AS avg_lon,
+                    MIN(gazole_prix) AS min_gazole,
+                    MIN(sp95_prix) AS min_sp95,
+                    MIN(sp98_prix) AS min_sp98,
+                    MIN(e10_prix) AS min_e10,
+                    MIN(e85_prix) AS min_e85,
+                    MIN(gplc_prix) AS min_gplc,
+                    MAX(last_update) AS max_update,
+                    CAST(ROUND(lat / $stepStr) AS INTEGER) AS grid_lat,
+                    CAST(ROUND(lon / $stepStr) AS INTEGER) AS grid_lon
+             FROM $TABLE_NAME
+             WHERE lat BETWEEN ? AND ? AND lon BETWEEN ? AND ? $fuelFilterClause
+             GROUP BY grid_lat, grid_lon
+             LIMIT ?
+         """.trimIndent()
+
+         val args = arrayOf(
+             minLat.toString(),
+             maxLat.toString(),
+             minLon.toString(),
+             maxLon.toString(),
+             limit.toString(),
+         )
+
+         val result = ArrayList<GasStation>(limit.coerceAtMost(200))
+         val cursor: Cursor = db.rawQuery(sql, args)
+         cursor.use { c ->
+             while (c.moveToNext()) {
+                 val count = c.getInt(0)
+                 val lat = c.getDouble(1)
+                 val lon = c.getDouble(2)
+                 val prices = mutableMapOf<FuelType, Double>()
+                 if (!c.isNull(3)) prices[FuelType.GAZOLE] = c.getDouble(3)
+                 if (!c.isNull(4)) prices[FuelType.SP95] = c.getDouble(4)
+                 if (!c.isNull(5)) prices[FuelType.SP98] = c.getDouble(5)
+                 if (!c.isNull(6)) prices[FuelType.E10] = c.getDouble(6)
+                 if (!c.isNull(7)) prices[FuelType.E85] = c.getDouble(7)
+                 if (!c.isNull(8)) prices[FuelType.GPLC] = c.getDouble(8)
+
+                 val maxUpdate = if (c.isNull(9)) null else c.getString(9)
+                 val gridLat = c.getLong(10)
+                 val gridLon = c.getLong(11)
+                 val syntheticId = 1_000_000_000L + Math.abs((gridLat * 31L + gridLon).hashCode().toLong())
+
+                 result.add(
+                     GasStation(
+                         id = syntheticId,
+                         lat = lat,
+                         lon = lon,
+                         address = "",
+                         city = "",
+                         postalCode = "",
+                         pop = null,
+                         automate24 = false,
+                         prices = prices,
+                         availableFuels = emptyList(),
+                         lastUpdate = maxUpdate,
+                         source = GasStationSource.FRANCE,
+                         isCluster = true,
+                         pointCount = count,
+                     ),
+                 )
+             }
+         }
+
+         return result
+     }
+
     /** Returns total number of indexed stations. */
     fun stationCount(): Int {
+
         val db = readableDatabase
         val cursor = db.rawQuery("SELECT COUNT(*) FROM $TABLE_NAME", null)
         return cursor.use { c ->

@@ -1,16 +1,21 @@
 package com.carlauncher.companion.ui.map
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
+
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocalGasStation
@@ -32,8 +37,22 @@ import androidx.compose.ui.unit.dp
 import com.carlauncher.companion.R
 import com.carlauncher.companion.data.model.FuelType
 import com.carlauncher.companion.data.model.GasStation
+import com.carlauncher.companion.data.model.PriceConfidenceLevel
 import com.carlauncher.companion.ui.common.NeonCard
 import com.carlauncher.companion.ui.theme.NeonAmber
+
+/**
+ * Returns the indicator color associated with the price confidence level,
+ * ranging from vibrant green (very recent) to vibrant red (outdated).
+ */
+private fun PriceConfidenceLevel.color(): Color = when (this) {
+    PriceConfidenceLevel.EXCELLENT -> Color(0xFF00E676) // Vibrant Green (< 2 days / CONFIDENT)
+    PriceConfidenceLevel.GOOD -> Color(0xFFAEEA00)      // Vibrant Lime (2-3 days / FEW_RECENT_PRICES)
+    PriceConfidenceLevel.MODERATE -> Color(0xFFFFD600)  // Vibrant Yellow (4-7 days)
+    PriceConfidenceLevel.AGING -> Color(0xFFFF9100)     // Vibrant Orange (8-14 days / OLD_LAST_UPDATE)
+    PriceConfidenceLevel.OUTDATED -> Color(0xFFFF5252)  // Vibrant Red (> 14 days / OUTDATED_LAST_PRICE_UPDATE)
+}
+
 
 /**
  * Top-left widget displaying the top 5 cheapest gas stations in the current viewport.
@@ -125,13 +144,18 @@ fun GasStationPriceTable(
                                     )
                                     val subtitleText = when {
                                         station.city.isNotBlank() -> station.city
-                                        station.isCluster -> when (station.fiability) {
-                                            "CONFIDENT" -> "Prix récents"
-                                            "FEW_RECENT_PRICES" -> "Peu de prix récents"
-                                            "OLD_LAST_UPDATE" -> "Prix anciens"
-                                            "OUTDATED_LAST_PRICE_UPDATE" -> "Prix obsolètes"
-                                            else -> "Suisse"
+                                        station.isCluster -> when {
+                                            station.source == com.carlauncher.companion.data.model.GasStationSource.SWITZERLAND ->
+                                                when (station.fiability) {
+                                                    "CONFIDENT" -> "Prix récents"
+                                                    "FEW_RECENT_PRICES" -> "Peu de prix récents"
+                                                    "OLD_LAST_UPDATE" -> "Prix anciens"
+                                                    "OUTDATED_LAST_PRICE_UPDATE" -> "Prix obsolètes"
+                                                    else -> "Suisse"
+                                                }
+                                            else -> "France"
                                         }
+
                                         station.source == com.carlauncher.companion.data.model.GasStationSource.SWITZERLAND ->
                                             station.displayName ?: station.formattedAddress ?: "Suisse"
                                         else -> ""
@@ -148,12 +172,26 @@ fun GasStationPriceTable(
                                 }
 
                                 Spacer(Modifier.width(6.dp))
-                                Text(
-                                    text = formattedPrice,
-                                    style = MaterialTheme.typography.labelMedium,
-                                    fontWeight = FontWeight.Bold,
-                                    color = NeonAmber,
-                                )
+                                Column(
+                                    modifier = Modifier.width(IntrinsicSize.Max),
+                                    horizontalAlignment = Alignment.End,
+                                ) {
+                                    Text(
+                                        text = formattedPrice,
+                                        style = MaterialTheme.typography.labelMedium,
+                                        fontWeight = FontWeight.Bold,
+                                        color = NeonAmber,
+                                    )
+                                    Spacer(Modifier.height(1.dp))
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .height(2.dp)
+                                            .clip(RoundedCornerShape(1.dp))
+                                            .background(station.priceConfidence.color()),
+                                    )
+                                }
+
                             }
                         }
                     }

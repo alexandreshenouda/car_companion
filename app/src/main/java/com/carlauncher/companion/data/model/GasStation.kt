@@ -6,6 +6,24 @@ import java.util.Locale
 enum class GasStationSource { FRANCE, SWITZERLAND }
 
 /**
+ * Confidence level of a gas station price, ranging from very recent to outdated.
+ * Used for color-coding price freshness indicators in the UI.
+ */
+enum class PriceConfidenceLevel {
+    /** Very recent: updated within the last 2 days, or Swiss CONFIDENT. */
+    EXCELLENT,
+    /** Recent: updated 2 to 3 days ago, or Swiss FEW_RECENT_PRICES. */
+    GOOD,
+    /** Moderate: updated 4 to 7 days ago. */
+    MODERATE,
+    /** Aging: updated 8 to 14 days ago, or Swiss OLD_LAST_UPDATE. */
+    AGING,
+    /** Outdated: updated more than 14 days ago, or Swiss OUTDATED_LAST_PRICE_UPDATE. */
+    OUTDATED,
+}
+
+
+/**
  * Represents a service station with coordinates, address, and live fuel prices.
  * Covers both French stations (from data.gouv.fr, cached in SQLite) and Swiss stations
  * (from the TCS benzinGetStationByBbox API, fetched live per viewport).
@@ -46,9 +64,45 @@ data class GasStation(
     val isHighway: Boolean
         get() = pop.equals("A", ignoreCase = true)
 
+    /**
+     * Determines the confidence/freshness level of the station's fuel prices.
+     * Evaluates against [now] for deterministic testing.
+     */
+    fun priceConfidenceAt(now: java.time.LocalDate = java.time.LocalDate.now()): PriceConfidenceLevel {
+        if (source == GasStationSource.SWITZERLAND) {
+            return when (fiability) {
+                "CONFIDENT" -> PriceConfidenceLevel.EXCELLENT
+                "FEW_RECENT_PRICES" -> PriceConfidenceLevel.GOOD
+                "OLD_LAST_UPDATE" -> PriceConfidenceLevel.AGING
+                "OUTDATED_LAST_PRICE_UPDATE" -> PriceConfidenceLevel.OUTDATED
+                else -> PriceConfidenceLevel.MODERATE
+            }
+        }
+        val update = lastUpdate
+        if (update.isNullOrBlank()) return PriceConfidenceLevel.MODERATE
+        return try {
+            val dateStr = update.trim().substringBefore("T").substringBefore(" ")
+            val date = java.time.LocalDate.parse(dateStr)
+            val daysAgo = java.time.temporal.ChronoUnit.DAYS.between(date, now)
+            when {
+                daysAgo <= 1 -> PriceConfidenceLevel.EXCELLENT
+                daysAgo in 2..3 -> PriceConfidenceLevel.GOOD
+                daysAgo in 4..7 -> PriceConfidenceLevel.MODERATE
+                daysAgo in 8..14 -> PriceConfidenceLevel.AGING
+                else -> PriceConfidenceLevel.OUTDATED
+            }
+        } catch (_: Exception) {
+            PriceConfidenceLevel.MODERATE
+        }
+    }
+
+    val priceConfidence: PriceConfidenceLevel
+        get() = priceConfidenceAt()
+
+
     val title: String
         get() = when {
-            isCluster -> "$pointCount stations"
+            isCluster -> if (pointCount == 1) "1 station" else "$pointCount stations"
             source == GasStationSource.SWITZERLAND -> brand?.takeIf { it.isNotBlank() }
                 ?: displayName?.takeIf { it.isNotBlank() }
                 ?: "Station-service"
@@ -64,8 +118,15 @@ data class GasStation(
 
     val subtitle: String
         get() = when {
-            isCluster -> prices.values.firstOrNull()
-                ?.let { String.format(Locale.US, "%.2f CHF", it) } ?: ""
+            isCluster -> {
+                val price = prices.values.firstOrNull()
+                if (price == null) ""
+                else if (source == GasStationSource.SWITZERLAND) {
+                    String.format(Locale.US, "%.2f CHF", price)
+                } else {
+                    String.format(Locale.US, "%.3f €", price)
+                }
+            }
             source == GasStationSource.SWITZERLAND ->
                 formattedAddress?.takeIf { it.isNotBlank() } ?: displayName ?: ""
             else -> buildString {
@@ -80,9 +141,10 @@ data class GasStation(
 
     val shortName: String
         get() {
-            if (isCluster) return "$pointCount stations"
+            if (isCluster) return if (pointCount == 1) "1 station" else "$pointCount stations"
             if (source == GasStationSource.SWITZERLAND) {
                 return (brand?.takeIf { it.isNotBlank() }
+
                     ?: displayName?.takeIf { it.isNotBlank() }
                     ?: formattedAddress?.takeIf { it.isNotBlank() }
                     ?: "Station-service")
@@ -156,6 +218,9 @@ data class GasStation(
                 }
             }
         }
+        if (isCluster) {
+            return "<i>Touchez à nouveau pour agrandir</i>"
+        }
         return buildString {
             append("24h/24 : ")
             append(if (automate24) "<b>Oui</b>" else "Non")
@@ -166,4 +231,5 @@ data class GasStation(
         }
     }
 }
+
 

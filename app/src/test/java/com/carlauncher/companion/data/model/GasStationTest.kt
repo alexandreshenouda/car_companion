@@ -343,5 +343,93 @@ class GasStationTest {
         )
         assertEquals("2.02 CHF", station.formattedPrice(FuelType.SP95))
     }
+
+    @Test
+    fun `French cluster properties and formatting work as expected`() {
+        val cluster = GasStation(
+            id = 1_000_000_001L,
+            lat = 48.85,
+            lon = 2.35,
+            address = "",
+            city = "",
+            postalCode = "",
+            pop = null,
+            automate24 = false,
+            prices = mapOf(FuelType.GAZOLE to 1.789),
+            availableFuels = emptyList(),
+            lastUpdate = null,
+            source = GasStationSource.FRANCE,
+            isCluster = true,
+            pointCount = 42,
+        )
+        assertEquals("42 stations", cluster.title)
+        assertEquals("42 stations", cluster.shortName)
+        assertEquals("1.789 €", cluster.subtitle)
+        assertEquals("1.789 €", cluster.formattedPrice(FuelType.GAZOLE))
+        assertTrue(cluster.buildSubDescriptionHtml().contains("Touchez"))
+
+        val singleStationCluster = cluster.copy(pointCount = 1)
+        assertEquals("1 station", singleStationCluster.title)
+        assertEquals("1 station", singleStationCluster.shortName)
+    }
+
+    @Test
+    fun `Swiss stations price confidence correctly maps fiability strings`() {
+        val base = GasStation(
+            id = 1L,
+            lat = 46.5,
+            lon = 6.3,
+            address = "",
+            city = "",
+            postalCode = "",
+            pop = null,
+            automate24 = false,
+            prices = mapOf(FuelType.SP95 to 1.95),
+            availableFuels = emptyList(),
+            lastUpdate = null,
+            source = GasStationSource.SWITZERLAND,
+        )
+
+        assertEquals(PriceConfidenceLevel.EXCELLENT, base.copy(fiability = "CONFIDENT").priceConfidence)
+        assertEquals(PriceConfidenceLevel.GOOD, base.copy(fiability = "FEW_RECENT_PRICES").priceConfidence)
+        assertEquals(PriceConfidenceLevel.AGING, base.copy(fiability = "OLD_LAST_UPDATE").priceConfidence)
+        assertEquals(PriceConfidenceLevel.OUTDATED, base.copy(fiability = "OUTDATED_LAST_PRICE_UPDATE").priceConfidence)
+        assertEquals(PriceConfidenceLevel.MODERATE, base.copy(fiability = null).priceConfidence)
+    }
+
+    @Test
+    fun `French stations price confidence maps age thresholds against reference date`() {
+        val refDate = java.time.LocalDate.of(2026, 9, 4)
+
+        fun stationWithDate(dateStr: String?): GasStation = GasStation(
+            id = 1L,
+            lat = 48.8,
+            lon = 2.3,
+            address = "",
+            city = "",
+            postalCode = "",
+            pop = null,
+            automate24 = false,
+            prices = mapOf(FuelType.GAZOLE to 1.65),
+            availableFuels = emptyList(),
+            lastUpdate = dateStr,
+            source = GasStationSource.FRANCE,
+        )
+
+        // Today -> EXCELLENT
+        assertEquals(PriceConfidenceLevel.EXCELLENT, stationWithDate("2026-09-04T08:00:00+02:00").priceConfidenceAt(refDate))
+        // 1 day ago -> EXCELLENT
+        assertEquals(PriceConfidenceLevel.EXCELLENT, stationWithDate("2026-09-03 14:00:00").priceConfidenceAt(refDate))
+        // 2 days ago -> GOOD
+        assertEquals(PriceConfidenceLevel.GOOD, stationWithDate("2026-09-02T12:00:00Z").priceConfidenceAt(refDate))
+        // 5 days ago -> MODERATE
+        assertEquals(PriceConfidenceLevel.MODERATE, stationWithDate("2026-08-30").priceConfidenceAt(refDate))
+        // 10 days ago -> AGING
+        assertEquals(PriceConfidenceLevel.AGING, stationWithDate("2026-08-25").priceConfidenceAt(refDate))
+        // 25 days ago -> OUTDATED
+        assertEquals(PriceConfidenceLevel.OUTDATED, stationWithDate("2026-08-10").priceConfidenceAt(refDate))
+        // null update -> MODERATE fallback
+        assertEquals(PriceConfidenceLevel.MODERATE, stationWithDate(null).priceConfidenceAt(refDate))
+    }
 }
 

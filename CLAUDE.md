@@ -56,14 +56,16 @@ that don't exist in the prod flavor:)
   `data/repo/SwissGasStationRepository.kt`, `data/db/GasStationDatabase.kt`, both flavors)
   — two complementary data sources that auto-activate based on viewport geography:
   **French stations** (~10,000, offline SQLite from data.gouv.fr, indexed on `(lat, lon)` and `pop`,
-  daily background auto-sync on first app open + toast, Settings download section);
+  daily background auto-sync on first app open + toast, Settings download section; clusterized
+  dynamically via SQLite `clustersForViewport` below zoom 11.5 into ~90px grid cells with point counts
+  and lowest fuel prices, individual stations shown at zoom ≥ 11.5);
   **Swiss stations** (live HTTP POST to TCS `benzinGetStationByBbox` API per viewport, no local
   storage, clusters + individual stations, viewport bounding-box guard against CH bounds so no
   spurious network call when map is in France). Both share the `GasStation` model
   (`GasStationSource` enum distinguishes origin), the same marker layer (French and Swiss
-  individual stations: identical neon amber gas pump icon; Swiss clusters: canvas-drawn circular
-  badge with station count visible from zoom ≥ 7.5), and the same `NeonInfoWindow`.
-  Features: dynamic zoom-gated markers (≥11.5 for individual stations, ≥7.5 for Swiss clusters),
+  individual stations: identical neon amber gas pump icon; clusters: canvas-drawn circular
+  badge with station count visible from zoom ≥ 5.5), and the same `NeonInfoWindow`.
+  Features: dynamic zoom-gated markers (≥11.5 for individual stations, ≥5.5 for clusters),
   combined fuel filter dropdown (French fuels + TCS-only fuels DIESEL_PREMIUM/ADBLUE/CNG/HVO100/H₂),
   `FuelType.tcsCode` / `FuelType.hasOfficialDbColumn` fields route the filter to the right
   source, concurrent French+Swiss fetch in `fetchBothSources()`, single-popup enforcement,
@@ -73,7 +75,11 @@ that don't exist in the prod flavor:)
   smart click interaction (individual stations zoom to 16.0; cluster line first click centers
   at current zoom to display the cluster with its info bubble, second click when centered
   zooms in to 15.0 to expand and display contained stations; cluster map markers also expand
-  when tapped while centered), HUD mutual exclusion with Speed legend.
+  when tapped while centered), 5-level price confidence color underline (green for < 2d / CONFIDENT,
+  lime for 2-3d / FEW_RECENT_PRICES, yellow for 4-7d, orange for 8-14d / OLD_LAST_UPDATE, red for
+  > 14d / OUTDATED), HUD mutual exclusion with Speed legend.
+
+
 
 
 - **History** (`ui/history/HistoryScreen.kt`) — past tracks by range (today/7d/30d/
