@@ -55,6 +55,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        val container = (application as CompanionApp).container
+        lifecycleScope.launch { container.gasStationRepository.checkDailySync() }
+    }
+
     /** The activity is `singleTop`-ish in practice: a second tap re-delivers here. */
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)

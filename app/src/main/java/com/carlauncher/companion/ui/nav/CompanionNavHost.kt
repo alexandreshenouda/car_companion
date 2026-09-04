@@ -231,10 +231,16 @@ fun CompanionNavHost(
                         deviceId = deviceId,
                         trackRepository = container.trackRepository,
                         deviceRepository = container.deviceRepository,
+                        gasStationRepository = container.gasStationRepository,
                         focusRequestHolder = container.mapFocusRequestHolder,
                         beta = container.beta,
                         onShare = { range ->
                             navController.navigate(Destination.Share.build(deviceId, range))
+                        },
+                        onOpenSettings = {
+                            navController.navigate(Destination.Settings.route) {
+                                launchSingleTop = true
+                            }
                         },
                     )
                 }

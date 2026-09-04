@@ -53,6 +53,8 @@ class AppContainer(context: Context) {
 
     val mapFocusRequestHolder = MapFocusRequestHolder()
 
+    val gasStationRepository = com.carlauncher.companion.data.repo.GasStationRepository(context)
+
     /** Beta-only singletons (radars, Bluetooth trigger). Empty in the prod flavor — see [BetaContainer]. */
     val beta = BetaContainer(context)
 

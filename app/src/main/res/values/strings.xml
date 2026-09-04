@@ -660,4 +660,38 @@
     <string name="radar_service_notification_text_inactive">Waiting for the car to connect</string>
     <string name="radar_service_channel_name">Radar alert status</string>
     <string name="radar_service_channel_description">Whether radar-alert monitoring is currently active</string>
+
+    <!-- ===== Gas stations (data.gouv.fr) ===== -->
+    <string name="gas_station_pill_label">Gas stations</string>
+    <string name="gas_station_hide">Hide gas stations</string>
+    <string name="gas_station_all_fuels">All fuels</string>
+    <string name="gas_station_fuel_format">Fuel: %1$s</string>
+    <string name="fuel_gazole">Gazole</string>
+    <string name="fuel_sp95">SP95</string>
+    <string name="fuel_sp98">SP98</string>
+    <string name="fuel_e10">E10</string>
+    <string name="fuel_e85">E85</string>
+    <string name="fuel_gplc">GPLc</string>
+    <string name="gas_station_automate_24_yes">24/24: Yes</string>
+    <string name="gas_station_automate_24_no">24/24: No</string>
+    <string name="gas_station_type_highway">Highway station</string>
+    <string name="gas_station_type_road">Road station</string>
+    <string name="gas_station_updated_at">Updated %1$s</string>
+    <string name="settings_gas_station_section_label">Gas stations &amp; fuel prices</string>
+    <string name="settings_gas_station_section_hint">French service stations &amp; live prices from data.gouv.fr</string>
+    <string name="settings_gas_station_update_button">Update fuel data</string>
+    <string name="settings_gas_station_downloading">Downloading…</string>
+    <string name="settings_gas_station_indexing">Indexing…</string>
+    <string name="settings_gas_station_last_update_format">Updated on %1$s (%2$d stations)</string>
+    <string name="settings_gas_station_never_updated">No data downloaded yet</string>
+    <string name="settings_gas_station_error_format">Update failed: %1$s</string>
+    <string name="gas_station_top_prices_title">Top 5 prices (%1$s)</string>
+    <string name="gas_station_no_stations_in_view">No stations in view</string>
+    <string name="gas_station_highway_badge">[Hwy]</string>
+    <string name="gas_station_table_content_description">Gas station prices</string>
+    <string name="gas_station_navigate_button">Y aller</string>
+    <string name="gas_station_toast_updated">Gas station data updated</string>
+    <string name="gas_station_no_data_dialog_title">Gas stations</string>
+    <string name="gas_station_no_data_dialog_message">No gas station data has been downloaded yet. Please go to Settings to download the data.</string>
+    <string name="gas_station_no_data_dialog_settings_button">Settings</string>
 </resources>

@@ -116,6 +116,12 @@ private data class FocusedPoint(
     val ts: Long? = null,
 )
 
+private enum class TopTile {
+    NONE,
+    SPEED_LEGEND,
+    GAS_STATIONS,
+}
+
 /**
  * Whether [candidate] should replace [current] as the phone's position. We listen to GPS *and*
  * network, so fixes arrive interleaved and out of order: prefer the newer one once the old one has
@@ -137,9 +143,11 @@ fun MapScreen(
     deviceId: String,
     trackRepository: TrackRepository,
     deviceRepository: DeviceRepository,
+    gasStationRepository: com.carlauncher.companion.data.repo.GasStationRepository,
     focusRequestHolder: MapFocusRequestHolder,
     beta: BetaContainer,
     onShare: (HistoryRange) -> Unit,
+    onOpenSettings: () -> Unit = {},
 ) {
     val context = LocalContext.current
     val isLocalDevice = deviceId == DeviceRepository.LOCAL_DEVICE_ID
@@ -147,7 +155,11 @@ fun MapScreen(
     val latestPoint by trackRepository.observeLatestPoint(deviceId).collectAsStateWithLifecycle(initialValue = null)
     val focusRequest by focusRequestHolder.request.collectAsStateWithLifecycle()
 
+    val gasStationCount by gasStationRepository.stationCount.collectAsStateWithLifecycle()
+    val hasGasStationData = gasStationCount > 0 || gasStationRepository.hasEverDownloaded()
+
     var showHistory by remember { mutableStateOf(true) }
+    var activeTopTile by rememberSaveable { mutableStateOf(TopTile.SPEED_LEGEND) }
     val historyRange by deviceRepository.observeSelectedRange().collectAsStateWithLifecycle(initialValue = HistoryRange.LAST_7_DAYS)
     val scope = rememberCoroutineScope()
     var historyPoints by remember { mutableStateOf<List<LocationPointEntity>>(emptyList()) }
@@ -258,6 +270,19 @@ fun MapScreen(
     // Radars (and the background-location grant they need) exist in the dev flavor only — this
     // returns an inert state object in prod.
     val radarOverlays = rememberRadarOverlays(beta, mapView, mapMoveEvents, hasLocationPermission)
+    val gasStationOverlays = rememberGasStationOverlays(gasStationRepository, mapView, mapMoveEvents)
+    LaunchedEffect(gasStationOverlays.isEnabled) {
+        if (gasStationOverlays.isEnabled) {
+            activeTopTile = TopTile.GAS_STATIONS
+        } else if (activeTopTile == TopTile.GAS_STATIONS) {
+            activeTopTile = if (showHistory) TopTile.SPEED_LEGEND else TopTile.NONE
+        }
+    }
+    LaunchedEffect(showHistory) {
+        if (!showHistory && activeTopTile == TopTile.SPEED_LEGEND) {
+            activeTopTile = if (gasStationOverlays.isEnabled) TopTile.GAS_STATIONS else TopTile.NONE
+        }
+    }
 
     DisposableEffect(mapView) {
         val listener = object : MapListener {
@@ -419,6 +444,7 @@ fun MapScreen(
                 // First, so osmdroid's list-order rendering keeps the section bands and radar
                 // markers underneath the history trail and the car/phone markers. No-op in prod.
                 radarOverlays.applyOverlays(view)
+                gasStationOverlays.applyOverlays(view)
 
                 if (showHistory && historyPoints.size > 1) {
                     for (segment in historySegments) {
@@ -567,8 +593,40 @@ fun MapScreen(
             }
         }
 
-        if (showHistory) {
-            SpeedLegend(modifier = Modifier.align(Alignment.TopStart).padding(16.dp))
+        if (showHistory || gasStationOverlays.isEnabled) {
+            Column(
+                modifier = Modifier
+                    .align(Alignment.TopStart)
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                if (showHistory) {
+                    SpeedLegend(
+                        expanded = activeTopTile == TopTile.SPEED_LEGEND,
+                        onToggleExpanded = {
+                            activeTopTile = if (activeTopTile == TopTile.SPEED_LEGEND) TopTile.NONE else TopTile.SPEED_LEGEND
+                        },
+                    )
+                }
+
+                if (gasStationOverlays.isEnabled) {
+                    GasStationPriceTable(
+                        stations = gasStationOverlays.stations,
+                        selectedFuel = gasStationOverlays.selectedFuel,
+                        expanded = activeTopTile == TopTile.GAS_STATIONS,
+                        onToggleExpanded = {
+                            activeTopTile = if (activeTopTile == TopTile.GAS_STATIONS) TopTile.NONE else TopTile.GAS_STATIONS
+                        },
+                        onStationClick = { station ->
+                            followCar = false
+                            focusedPoint = null
+                            awaitingLocationFix = false
+                            moveCameraTo(GeoPoint(station.lat, station.lon))
+                            gasStationOverlays.showStationInfoWindow(station)
+                        },
+                    )
+                }
+            }
         }
 
         Column(
@@ -625,6 +683,12 @@ fun MapScreen(
 
                 // Renders nothing in prod.
                 RadarControls(radarOverlays)
+
+                GasStationControls(
+                    state = gasStationOverlays,
+                    hasData = hasGasStationData,
+                    onOpenSettings = onOpenSettings,
+                )
             }
 
             if (showHistory) {
@@ -638,9 +702,11 @@ fun MapScreen(
 }
 
 @Composable
-private fun SpeedLegend(modifier: Modifier = Modifier) {
-    var expanded by rememberSaveable { mutableStateOf(true) }
-
+private fun SpeedLegend(
+    expanded: Boolean,
+    onToggleExpanded: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     AnimatedContent(
         targetState = expanded,
         modifier = modifier,
@@ -653,7 +719,7 @@ private fun SpeedLegend(modifier: Modifier = Modifier) {
                 glow = false,
                 topBar = false,
                 shape = RoundedCornerShape(14.dp),
-                onClick = { expanded = false },
+                onClick = onToggleExpanded,
             ) {
                 Column(Modifier.padding(10.dp)) {
                     SpeedZone.entries.forEach { zone ->
@@ -671,7 +737,7 @@ private fun SpeedLegend(modifier: Modifier = Modifier) {
             }
         } else {
             SmallFloatingActionButton(
-                onClick = { expanded = true },
+                onClick = onToggleExpanded,
             ) {
                 Icon(
                     Icons.Filled.Speed,

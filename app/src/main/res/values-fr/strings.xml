@@ -191,7 +191,7 @@
     <string name="map_record_location_content_description">Enregistrer la position depuis le GPS du téléphone</string>
     <string name="map_no_position_data">Pas encore de données de position</string>
     <string name="map_speed_unit_kmh">km/h</string>
-    <string name="map_history_trail_label">Trace de l\'historique</string>
+    <string name="map_history_trail_label">Historique</string>
     <string name="map_last_update_format">%1$s · %2$s</string>
     <string name="map_legend_speed_format">%1$s km/h</string>
     <string name="map_speed_legend_content_description">Légende des vitesses</string>
@@ -660,4 +660,38 @@
     <string name="radar_service_notification_text_inactive">En attente de connexion à la voiture</string>
     <string name="radar_service_channel_name">État des alertes radar</string>
     <string name="radar_service_channel_description">Indique si la surveillance des alertes radar est active</string>
+
+    <!-- ===== Stations-service (data.gouv.fr) ===== -->
+    <string name="gas_station_pill_label">Stations</string>
+    <string name="gas_station_hide">Masquer les stations</string>
+    <string name="gas_station_all_fuels">Tous les carburants</string>
+    <string name="gas_station_fuel_format">Carburant : %1$s</string>
+    <string name="fuel_gazole">Gazole</string>
+    <string name="fuel_sp95">SP95</string>
+    <string name="fuel_sp98">SP98</string>
+    <string name="fuel_e10">E10</string>
+    <string name="fuel_e85">E85</string>
+    <string name="fuel_gplc">GPLc</string>
+    <string name="gas_station_automate_24_yes">24h/24 : Oui</string>
+    <string name="gas_station_automate_24_no">24h/24 : Non</string>
+    <string name="gas_station_type_highway">Station autoroute</string>
+    <string name="gas_station_type_road">Station route</string>
+    <string name="gas_station_updated_at">Mis à jour le %1$s</string>
+    <string name="settings_gas_station_section_label">Stations-service &amp; carburants</string>
+    <string name="settings_gas_station_section_hint">Données des stations françaises &amp; prix en temps réel de data.gouv.fr</string>
+    <string name="settings_gas_station_update_button">Mettre à jour les données</string>
+    <string name="settings_gas_station_downloading">Téléchargement en cours…</string>
+    <string name="settings_gas_station_indexing">Indexation des données…</string>
+    <string name="settings_gas_station_last_update_format">Mis à jour le %1$s (%2$d stations)</string>
+    <string name="settings_gas_station_never_updated">Aucune donnée téléchargée</string>
+    <string name="settings_gas_station_error_format">Échec de la mise à jour : %1$s</string>
+    <string name="gas_station_top_prices_title">Top 5 prix (%1$s)</string>
+    <string name="gas_station_no_stations_in_view">Aucune station visible</string>
+    <string name="gas_station_highway_badge">[Autoroute]</string>
+    <string name="gas_station_table_content_description">Prix des carburants</string>
+    <string name="gas_station_navigate_button">Y aller</string>
+    <string name="gas_station_toast_updated">Données des stations-service mises à jour</string>
+    <string name="gas_station_no_data_dialog_title">Stations service</string>
+    <string name="gas_station_no_data_dialog_message">Aucune donnée de stations-service n\'a été téléchargée. Rendez-vous dans les paramètres pour télécharger les données.</string>
+    <string name="gas_station_no_data_dialog_settings_button">Paramètres</string>
 </resources>
