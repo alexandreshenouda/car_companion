@@ -545,8 +545,13 @@ Three suites, run separately:
 No `app/src/androidTest`.
 
 ## Conventions
-- Keep `README.md` in sync when a change affects a documented feature, architecture
-  piece, or build/setup step. Pure bug fixes or internal refactors don't need it.
+- **Always update documentation for feature & architecture changes**: Whenever adding,
+  modifying, or removing a feature, architectural component, database entity, seam, or
+  build/setup step, **always update both `README.md` and `CLAUDE.md`** as a mandatory
+  completion step before concluding the task:
+  - `README.md`: Update "What it does", build flavor breakdown, architecture, and any relevant feature sections.
+  - `CLAUDE.md`: Update "Functionality overview", package structure (`:app` and `:shared`), seams, and test suite breakdowns.
+  - Pure internal bug fixes or refactors that do not change user-facing behavior, architecture, or public APIs do not require doc updates.
 - Don't change the app's theming (colour values, `ui/theme/`, or the mechanism by
   which a colour reaches the UI, e.g. runtime `setTint`) unless explicitly requested —
   keep the existing colour mechanism intact even when swapping assets. The current
