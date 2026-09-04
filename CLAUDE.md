@@ -48,7 +48,20 @@ with shipped features. Summary for quick orientation; **[dev]** marks the beta f
 that don't exist in the prod flavor:)
 - **Map** (`ui/map/MapScreen.kt`) — car's live position on osmdroid/dark tiles, plus
   **[dev]** radar markers (25 countries, filterable by type) and average-speed
-  "Troncon" section polylines (both via the `ui/map/RadarControls.kt` seam).
+  "Troncon" section polylines (both via the `ui/map/RadarControls.kt` seam), and
+  **gas stations & live fuel prices** (data.gouv.fr, both flavors via
+  `ui/map/GasStationControls.kt`, `ui/map/GasStationPriceTable.kt`, `ui/map/NeonInfoWindow.kt`).
+- **Gas stations & fuel prices** (`ui/map/GasStationControls.kt`,
+  `ui/map/GasStationPriceTable.kt`, `data/repo/GasStationRepository.kt`,
+  `data/db/GasStationDatabase.kt`, both flavors) — real-time prices for ~10,000 French
+  stations from data.gouv.fr (`prix-des-carburants-en-france-flux-instantane-v2`).
+  Indexed in dedicated SQLite (`gas_stations.db`) with spatial indices on `(lat, lon)` and `pop`.
+  Features: dynamic zoom-gated markers (≥11.5), fuel filter dropdown ("Stations service"),
+  single-popup enforcement (`closeAllInfoWindowsOn`), rich neon info bubble with prices,
+  24/24 status, highway/road badge, and "Y aller" navigation intent (`geo:` URI launching
+  external GPS apps), top-left HUD mutual exclusion (Speed legend vs top-5 cheapest stations
+  table with click-to-recenter at zoom 16.0), daily background auto-sync on first app open
+  of each day + toast, and Settings download section with no-data prompt dialog.
 - **History** (`ui/history/HistoryScreen.kt`) — past tracks by range (today/7d/30d/
   all), GPX export (`GpxExporter.kt`, pure build in `:shared`'s `data/repo/`, `Uri`
   writing in `:app`'s `data/repo/GpxExporterAndroid.kt`).
@@ -74,14 +87,12 @@ that don't exist in the prod flavor:)
   `RadarAlertService` (supersedes Android Auto's `CarConnection` signal). Persisted as
   Android shared-prefs XML at
   `/data/data/com.carlauncher.companion/shared_prefs/bluetooth_trigger.xml`.
-- **Settings** **[dev]** (`ui/settings/SettingsScreen.kt`, gear icon in the main screen's
-  top bar) — two kill switches over `data/settings/BackgroundFeatureSettings.kt` (both
-  on by default): "car-started push notifications" (FCM topic subscribe/unsubscribe +
-  early-return in `CompanionFcmService.onMessageReceived`) and "background radar checks"
-  (gates every `RadarAlertService` start path — `BetaAppInitializer.observeCarConnection`,
-  `BluetoothCarDetector`, `CarBluetoothReceiver.startTracking`, the FCM-triggered start —
-  plus a belt-and-braces check in `RadarAlertService.onCreate` against a `START_STICKY`
-  restart, and stops the service immediately on toggle-off regardless of what started it).
+- **Settings** (`ui/settings/SettingsScreen.kt`, gear icon in the main screen's
+  top bar / reachable from Profile) — available in both flavors for display options
+  and the gas station fuel dataset update section (manual update button with
+  download/indexing progress and station count); **[dev]** two kill switches over
+  `data/settings/BackgroundFeatureSettings.kt` (both on by default: "car-started push
+  notifications" and "background radar checks").
 - **Trophies** (`ui/trophies/TrophiesScreen.kt`, reached from Profile) — 29 unlockable
   achievements over the lifetime driving history of *all* devices combined; pure
   definitions in `:shared`'s `data/model/Trophy.kt`, icon/title/description decoration
@@ -339,6 +350,8 @@ and doesn't fit a `:shared` seam. Paths below are under `src/main` unless tagged
     one-shot when a toggle flips on — WorkManager itself has no iOS equivalent, hence
     staying here) and `CloudPrefsLabels.kt` (the `@StringRes` label/description
     extension properties for `Visibility`/`FeedScope`/`LeaderboardVisibility`/`SyncCategory`/`ProfileSection`).
+  - `data/db/GasStationDatabase.kt` — standalone SQLite database (`gas_stations.db`)
+    for ~10k French stations, spatial queries and bulk replace without Room churn
   - `data/bluetooth/BluetoothTriggerStore.kt` **[dev]** — persists chosen car BT device(s)
   - `data/firebase/` **[dev]** — `PushDocument.kt`, `TrackRemoteSource.kt` (Firestore
     read/listen)
@@ -348,27 +361,33 @@ and doesn't fit a `:shared` seam. Paths below are under `src/main` unless tagged
   - `data/model/` — `EventType.kt` (car meet/racetrack/exploration/other, Compose icon +
     accent color baked in — see the `:shared` section above for why this one never
     split), `TrophyUi.kt`/`HistoryRangeUi.kt` (icon/`@StringRes` extension properties for
-    `:shared`'s `Trophy`/`HistoryRange`), `ShareTemplate.kt`;
+    `:shared`'s `Trophy`/`HistoryRange`), `ShareTemplate.kt`, `FuelType.kt`, `GasStation.kt`;
     **[dev]** `RadarSection.kt`, `RadarIcons.kt`, `RadarType.kt`, `RadarPoint.kt`
   - `data/repo/` — `TrackRepository.kt` (pure Room + delegation to the
     `RemoteTrackSync` **seam** — see the `:shared` section above for why this stayed),
-    `RemoteTrackSync.kt` (**seam**, one per flavor), `RadarRepository.kt` **[dev]**
-    (parses bundled per-country GPX lazily), `SectionRepository.kt` **[dev]** (reads
-    generated `radar_sections.json`), `GpxImporterAndroid.kt`/`GpxExporterAndroid.kt`
-    (the `Uri`/`ContentResolver` file-I/O half of `:shared`'s `GpxImporter`/`GpxExporter`,
-    as extension functions so call sites read identically to before the split).
+    `RemoteTrackSync.kt` (**seam**, one per flavor), `GasStationRepository.kt`
+    (streaming GeoJSON from data.gouv.fr, background daily sync, viewport spatial queries),
+    `RadarRepository.kt` **[dev]** (parses bundled per-country GPX lazily),
+    `SectionRepository.kt` **[dev]** (reads generated `radar_sections.json`),
+    `GpxImporterAndroid.kt`/`GpxExporterAndroid.kt` (the `Uri`/`ContentResolver` file-I/O
+    half of `:shared`'s `GpxImporter`/`GpxExporter`, as extension functions so call
+    sites read identically to before the split).
 - `push/CompanionFcmService.kt` **[dev]** — FCM data-message handling ("car started" push)
 - `ui/` — Compose: `nav/CompanionNavHost.kt` + `Destinations.kt` (bottom nav: Map /
   History / Stats / Profile always, plus Feed inserted as the 2nd tab once signed in —
-  `bottomTabs(signedIn: Boolean)`, not a static list; Devices, Bluetooth trigger, and
-  Settings are top-bar-only, not bottom tabs, and dev-only) + `nav/BetaNavEntries.kt` (**seam**),
+  `bottomTabs(signedIn: Boolean)`, not a static list; Devices and Bluetooth trigger are
+  top-bar-only, not bottom tabs, and dev-only) + `nav/BetaNavEntries.kt` (**seam**),
   `map/MapScreen.kt` + `CartoDarkMatterTileSource.kt` (osmdroid, retina dark
   tiles with optional Carto API key via `BuildConfig.CARTO_API_KEY`) + `MapViewExt.kt`
   (`awaitFirstLayout()`, shared by any screen that zooms an osmdroid `MapView` to a
-  bounding box on load) + `map/RadarControls.kt` (**seam**),
+  bounding box on load) + `map/RadarControls.kt` (**seam**) + `map/GasStationControls.kt`
+  (pill dropdown, fuel selector, no-data dialog) + `map/GasStationPriceTable.kt`
+  (top-5 cheapest stations in viewport, click-to-recenter) + `map/NeonInfoWindow.kt`
+  (single open popup enforcement, "Y aller" navigation intent),
   `history/HistoryScreen.kt` (track history, single-point deletion, day clearing, reassigning),
   `stats/StatsScreen.kt`, `devices/DevicesScreen.kt` **[dev]**,
-  `bluetooth/BluetoothTriggerScreen.kt` **[dev]**, `settings/SettingsScreen.kt` **[dev]**,
+  `bluetooth/BluetoothTriggerScreen.kt` **[dev]**, `settings/SettingsScreen.kt` (both flavors;
+  display options & gas station update section in shared UI, beta kill switches dev-only),
   `profile/ProfileScreen.kt` (XP/level progress with login streak badge, favorite-car photo hero,
   cloud account navigation tile, stat buttons for Garage/Events/Trophies, navigation tiles for
   Friends/Leaderboard, personal info card), `garage/` (`GarageScreen.kt`, `CarDetailScreen.kt` —
@@ -518,10 +537,9 @@ Three suites, run separately:
   (`kotlin.io.encoding.Base64`), shared by `KeyVault` and `CloudSyncManager` rather than
   duplicated in either.
 - `./gradlew :app:testDevDebugUnitTest` (and `testProdDebugUnitTest`) — `:app`'s own
-  JUnit 4 suite, pure-JVM: currently just `data/model/TrophyTest.kt` (catalogue
-  uniqueness + `progress()`/`isUnlocked()` against the `Trophy` enum `:shared` owns —
-  what stayed here is Compose-adjacent enough, or thin enough, not to warrant its own
-  `commonTest` coverage).
+  JUnit 4 suite, pure-JVM: `data/model/TrophyTest.kt` and `data/model/GasStationTest.kt`
+  (fuel types, highway/road differentiation, snippet generation, short name extraction,
+  top 5 price sorting, hasEverDownloaded and daily sync condition logic).
 - `./gradlew -p buildSrc test` — `buildSrc/src/test/kotlin/radar/SectionPairingTest.kt`,
   covering `buildSrc/src/main/kotlin/radar/SectionPairing.kt`.
 No `app/src/androidTest`.

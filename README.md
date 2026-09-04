@@ -73,6 +73,38 @@ flavors](#build-flavors-dev-and-prod).
   turning Bluetooth off counts as "all disconnected" too. Addresses and
   connection state are persisted by `BluetoothTriggerStore`
   (`data/bluetooth/BluetoothTriggerStore.kt`).
+- **Gas stations & fuel prices** (`ui/map/GasStationControls.kt`,
+  `ui/map/GasStationPriceTable.kt`, `data/repo/GasStationRepository.kt`,
+  `data/db/GasStationDatabase.kt`, both flavors) — real-time prices for ~10,000
+  French service stations from the official French government feed (DGCCRF /
+  data.gouv.fr `prix-des-carburants-en-france-flux-instantane-v2`). Downloaded as
+  streamed GeoJSON and indexed in a dedicated SQLite database (`gas_stations.db`)
+  with spatial indices on `(lat, lon)` and point-of-interest type (`pop`) for
+  fast bounding-box queries as the map pans and zooms.
+  - **Map markers & fuel filter** — markers render dynamically on zoom (zoom ≥ 11.5)
+    with custom neon amber station icons. A bottom-bar dropdown pill ("Stations service" /
+    "Gas stations") selects the fuel to highlight (Gazole, SP95, SP98, E10, E85,
+    GPLc, or All fuels) or hides station markers.
+  - **Info window & navigation** — tapping a station opens a neon dark bubble
+    displaying the full price list (selected fuel highlighted in neon amber),
+    24/24 automated pump availability, highway vs road identification, and last
+    price update timestamp. A "Y aller" button launches turn-by-turn navigation directly
+    in Google Maps, Waze, or any external GPS app via a `geo:` intent with web fallback.
+  - **Single open bubble & HUD tile mutual exclusion** — opening any marker popup
+    automatically dismisses previous ones so only one bubble is ever open. On the top-left
+    HUD, the Speed zones legend and the Gas stations table mutually exclude each other:
+    opening one collapses the other into a compact floating action button.
+  - **Top-5 cheapest prices table** — an on-map HUD card ranking the 5 cheapest
+    visible stations in the current viewport for the active fuel (or Gazole by
+    default when All fuels is selected). Tapping any station in the list flies the
+    camera directly to the station at zoom 16.0 and opens its info bubble.
+  - **Daily background sync** — on the first app launch of each calendar day,
+    `GasStationRepository.checkDailySync()` automatically fetches updated prices in
+    the background and displays a Toast notification once done.
+  - **Settings management & empty state** — manual "Mettre à jour les données"
+    button in Settings with live download and indexing progress. If the map button
+    is tapped before any data has ever been downloaded, an alert dialog informs the
+    user and offers a direct button to navigate into Settings.
 - **Profile** — a bottom tab for the user's own data, separate from the
   GPS-tracked Devices list. It leads with a level & XP progress badge (including
   the active daily login streak) and the favorite car's photo hero, followed by
@@ -167,7 +199,7 @@ trigger**, **all Firebase functionality** (remote device discovery, Firestore
 history sync, and the "car started" FCM push), and **radars** (the map's radar
 markers / average-speed section lines and the proximity-alert service).
 Everything else — local GPS tracking, History, Stats, Share, Devices' local
-row, Profile, Garage, Events, Trophies — is in both. `prod` is, in effect, a
+row, Profile, Garage, Events, Trophies, Gas stations & fuel prices — is in both. `prod` is, in effect, a
 purely local, offline trip recorder.
 
 Beta code is **not compiled into `prod` at all** — it isn't hidden behind a
@@ -258,6 +290,13 @@ a conditional.
   markers or generate `radar_sections.json` — see [Radar
   data](#radar-data-optional-dev-flavor-only) below for the file format and
   naming.
+- **Gas station database** (`data/db/GasStationDatabase.kt`,
+  `data/repo/GasStationRepository.kt`, both flavors) — a dedicated SQLite database
+  (`gas_stations.db`, kept separate from Room so that bulk replacing ~10k stations
+  does not invalidate Room query caches or trigger unnecessary migration complexity).
+  Ingestion streams gzipped GeoJSON from data.gouv.fr directly using `android.util.JsonReader`
+  into a single SQLite transaction with an index on `(lat, lon)` and `pop` for
+  sub-millisecond bounding box lookups.
 
 ## iOS port (in progress)
 
